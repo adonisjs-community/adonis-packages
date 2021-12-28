@@ -11,6 +11,3 @@ type: 3rd-party
 maintainers:
   - name: eidellev
     github: eidellev
-compatibility:
-  nuxt: ^2.0.0
-  requires: {}

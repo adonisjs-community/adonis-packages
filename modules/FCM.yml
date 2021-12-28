@@ -11,6 +11,3 @@ type: 3rd-party
 maintainers:
   - name: lookinlab
     github: lookinlab
-compatibility:
-  nuxt: ^2.0.0
-  requires: {}

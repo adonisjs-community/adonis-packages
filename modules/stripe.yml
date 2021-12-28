@@ -11,6 +11,3 @@ type: 3rd-party
 maintainers:
   - name: mezielabs
     github: mezielabs
-compatibility:
-  nuxt: ^2.0.0
-  requires: {}

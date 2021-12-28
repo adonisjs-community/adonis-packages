@@ -11,6 +11,3 @@ type: official
 maintainers:
   - name: adonisjs
     github: adonisjs
-compatibility:
-  nuxt: ^2.0.0
-  requires: {}

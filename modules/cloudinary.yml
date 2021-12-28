@@ -11,6 +11,3 @@ type: 3rd-party
 maintainers:
   - name: liam-edwards
     github: liam-edwards
-compatibility:
-  nuxt: ^2.0.0
-  requires: {}

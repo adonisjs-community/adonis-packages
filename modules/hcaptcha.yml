@@ -13,6 +13,3 @@ type: 3rd-party
 maintainers:
   - name: NerdyLuffy
     github: NerdyLuffy
-compatibility:
-  nuxt: ^2.0.0
-  requires: {}

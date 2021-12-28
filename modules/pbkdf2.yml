@@ -11,6 +11,3 @@ type: 3rd-party
 maintainers:
   - name: maxgalbu
     github: maxgalbu
-compatibility:
-  nuxt: ^2.0.0
-  requires: {}
