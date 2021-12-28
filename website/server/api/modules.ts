@@ -32,6 +32,7 @@ async function fetchModuleStats (module: ModuleInfo) {
           return []
         })
     ])
+
     module.downloads = npm.downloads.lastMonth
     module.stars = github.stars
     module.publishedAt = +new Date(npm.publishedAt || undefined)
@@ -43,9 +44,8 @@ async function fetchModuleStats (module: ModuleInfo) {
     module.publishedAt = rand(1_600_000_000_000, 1_630_000_000_000)
     module.createdAt = rand(1_600_000_000_000, 1_630_000_000_000)
     module.contributors = [
-      { login: 'nuxt' },
-      { login: 'vuejs' },
-      { login: 'unjs' }
+      { login: 'poppinss' },
+      { login: 'adonisjs' }
     ]
 
     // Uncoment for real stats
