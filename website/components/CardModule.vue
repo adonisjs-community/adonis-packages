@@ -117,28 +117,6 @@ import { CATEGORIES_ICONS } from '~/composables/constants'
 defineProps<{ mod: ModuleInfo }>()
 
 const coverError = ref(false)
-
-interface CompatibilityData {
-  statusText: string
-  icon: string | null
-  color: string
-  class?: string
-}
-
-const tagMap = Object.fromEntries(VERSIONS.map(v => [v.key, { tagText: v.label }]))
-const supportMap = {
-  supported: { supportText: 'Supported', supportIcon: 'i-carbon-checkmark', color: '#1aa346', cssClass: '' },
-  notSupported: { supportText: 'Not supported', supportIcon: 'i-carbon-help', color: '#61626c', cssClass: 'opacity-85' },
-  wip: { supportText: 'Work in progress', supportIcon: 'i-carbon-time', color: '#c4930a', cssClass: '' }
-}
-const useModuleComptatibility = (mod: ModuleInfo) => {
-  return ['2.x', '2.x-bridge', '3.x'].map(tag => ({
-    tag,
-    ...tagMap[tag],
-    ...(mod.tags.includes(tag) ? supportMap.supported : supportMap.notSupported)
-  }))
-}
-
 const tooltipClass = 'bg-secondary-dark text-white px-2 py-1 m-1 rounded text-sm shadow'
 
 function numberFormat (num: number, options = { precision: 1 }) {

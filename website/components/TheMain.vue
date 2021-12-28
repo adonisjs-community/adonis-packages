@@ -68,9 +68,6 @@
             v-if="displayFiltersBlock"
           >
             <div>Filter{{ filtersCount > 1 ? 's' : '' }}</div>
-            <FilterLabel v-if="selectedVersion" @close="selectedVersion = null">
-              {{ getVersionFromKey(selectedVersion).label }}
-            </FilterLabel>
             <FilterLabel v-if="selectedCategory" @close="selectedCategory = null">
               {{ selectedCategory }}
             </FilterLabel>
@@ -123,7 +120,7 @@
 import LazyHydrate from 'vue-lazy-hydration'
 import Fuse from 'fuse.js/dist/fuse.basic.esm'
 import { breakpointsTailwind } from '@vueuse/core'
-import { CATEGORIES_ICONS, MODULE_INCREMENT_LOADING, VERSIONS } from '~/composables/constants'
+import { CATEGORIES_ICONS, MODULE_INCREMENT_LOADING } from '~/composables/constants'
 import type { ModulesData } from '~/composables/fetch'
 
 const sort = (a:number, b:number, asc?:boolean) => asc ? a - b : b - a
@@ -199,11 +196,6 @@ const pageFilteredModules = computed(() => {
 
 watch([q, orderBy, sortBy, selectedVersion, selectedCategory], syncURL, { deep: true })
 watch(() => vm.proxy.$route, applyURLFilters)
-
-function getVersionFromKey (key: string) {
-  const version = VERSIONS.find(version => version.key === key)
-  return version
-}
 
 function toggleCategory (category) {
   if (selectedCategory.value === category) {
