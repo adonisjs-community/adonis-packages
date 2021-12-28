@@ -1,0 +1,16 @@
+name: redis
+description: AdonisJS addon for Redis
+repo: adonisjs/redis
+npm: '@adonisjs/redis'
+icon: ''
+github: https://github.com/adonisjs/redis
+website: https://github.com/adonisjs/redis
+learn_more: ''
+category: Devtools
+type: official
+maintainers:
+  - name: adonisjs
+    github: adonisjs
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

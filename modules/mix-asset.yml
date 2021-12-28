@@ -1,0 +1,16 @@
+name: mix-asset
+description: Laravel Mix for Asset Bundler on AdonisJS
+repo: wahyubucil/adonis-mix-asset
+npm: adonis-mix-asset
+icon: mix.png
+github: https://github.com/wahyubucil/adonis-mix-asset
+website: https://github.com/wahyubucil/adonis-mix-asset
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: wahyubucil
+    github: wahyubucil
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

@@ -1,0 +1,16 @@
+name: sentry
+description: Sentry provider for AdonisJS 5
+repo: reg2005/adonis5-sentry
+npm: adonis5-sentry
+icon: sentry.png
+github: https://github.com/reg2005/adonis5-sentry
+website: https://github.com/reg2005/adonis5-sentry
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: reg2005
+    github: reg2005
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

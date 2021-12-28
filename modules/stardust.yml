@@ -1,0 +1,16 @@
+name: stardust
+description: Use adonis routes in the client
+repo: eidellev/adonis-stardust
+npm: '@eidellev/adonis-stardust'
+icon: ''
+github: https://github.com/eidellev/adonis-stardust
+website: https://github.com/eidellev/adonis-stardust
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: eidellev
+    github: eidellev
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

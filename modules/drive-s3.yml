@@ -1,0 +1,16 @@
+name: drive-s3
+description: S3 driver for AdonisJS drive
+repo: adonisjs/drive-s3
+npm: '@adonisjs/drive-s3'
+icon: ''
+github: https://github.com/adonisjs/drive-s3
+website: https://github.com/adonisjs/drive-s3
+learn_more: ''
+category: Devtools
+type: official
+maintainers:
+  - name: adonisjs
+    github: adonisjs
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

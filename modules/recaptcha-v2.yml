@@ -1,0 +1,16 @@
+name: recaptcha-v2
+description: Google reCAPTCHA v2 for AdonisJS
+repo: lookinlab/adonis-recaptcha2
+npm: adonis-recaptcha2
+icon: recaptcha.png
+github: https://github.com/lookinlab/adonis-recaptcha2
+website: https://github.com/lookinlab/adonis-recaptcha2
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: lookinlab
+    github: lookinlab
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

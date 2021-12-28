@@ -1,0 +1,16 @@
+name: bullmq
+description: Adonis 5 bullmq provider
+repo: reg2005/adonis5-bullmq
+npm: adonis5-bullmq
+icon: ''
+github: https://github.com/reg2005/adonis5-bullmq
+website: https://github.com/reg2005/adonis5-bullmq
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: reg2005
+    github: reg2005
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

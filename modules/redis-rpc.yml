@@ -1,0 +1,16 @@
+name: redis-rpc
+description: Simple RPC Provider for Adonis 5, based on Redis pub/sub transport
+repo: reg2005/adonis5-redis-rpc
+npm: adonis5-redis-rpc
+icon: ''
+github: https://github.com/reg2005/adonis5-redis-rpc
+website: https://github.com/reg2005/adonis5-redis-rpc
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: reg2005
+    github: reg2005
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

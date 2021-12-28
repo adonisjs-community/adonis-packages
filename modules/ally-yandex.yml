@@ -1,0 +1,16 @@
+name: ally-yandex
+description: A driver of AdonisJS Ally for Yandex
+repo: lookinlab/adonis-ally-yandex
+npm: adonis-ally-yandex
+icon: yandex.png
+github: https://github.com/lookinlab/adonis-ally-yandex
+website: https://github.com/lookinlab/adonis-ally-yandex
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: lookinlab
+    github: lookinlab
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

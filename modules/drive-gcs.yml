@@ -1,0 +1,16 @@
+name: drive-gcs
+description: Google cloud storage driver for AdonisJS drive
+repo: adonisjs/drive-gcs
+npm: '@adonisjs/drive-gcs'
+icon: ''
+github: https://github.com/adonisjs/drive-gcs
+website: https://github.com/adonisjs/drive-gcs
+learn_more: ''
+category: Devtools
+type: official
+maintainers:
+  - name: adonisjs
+    github: adonisjs
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

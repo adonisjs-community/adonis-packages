@@ -1,0 +1,16 @@
+name: Lucid Filter
+description: Addon for filtering AdonisJS Lucid ORM
+repo: lookinlab/adonis-lucid-filter
+npm: adonis-lucid-filter
+icon: ''
+github: https://github.com/lookinlab/adonis-lucid-filter
+website: https://github.com/lookinlab/adonis-lucid-filter
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: lookinlab
+    github: lookinlab
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

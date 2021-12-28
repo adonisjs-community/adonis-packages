@@ -1,0 +1,16 @@
+name: request-throttler
+description: Request throttler provider for AdonisJS 5
+repo: reg2005/adonis-request-throttler
+npm: adonis-request-throttler
+icon: ''
+github: https://github.com/reg2005/adonis-request-throttler
+website: https://github.com/reg2005/adonis-request-throttler
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: reg2005
+    github: reg2005
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

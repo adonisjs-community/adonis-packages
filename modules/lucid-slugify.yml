@@ -1,0 +1,16 @@
+name: lucid-slugify
+description: Generate unique slugs for your Lucid models
+repo: adonisjs/lucid-slugify
+npm: '@adonisjs/lucid-slugify'
+icon: ''
+github: https://github.com/adonisjs/lucid-slugify
+website: https://github.com/adonisjs/lucid-slugify
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: adonisjs
+    github: adonisjs
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

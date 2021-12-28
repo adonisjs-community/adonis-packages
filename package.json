@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "workspaces": [
+    "npm",
+    "website"
+  ],
+  "scripts": {
+    "build": "yarn cli build",
+    "cli": "jiti ./lib/cli",
+    "dev": "cd website && yarn dev",
+    "lint": "eslint --ext .vue,.ts .",
+    "release": "yarn cli version && cd npm && npm publish",
+    "sync": "yarn cli sync",
+    "test": "yarn lint && yarn sync"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^8.0.0",
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^16.11.9",
+    "@vue/runtime-dom": "^3.2.22",
+    "defu": "^5.0.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-nuxt": "^3.0.0",
+    "globby": "^12.0.2",
+    "hasha": "^5.2.2",
+    "jiti": "^1.12.9",
+    "js-yaml": "^4.1.0",
+    "ohmyfetch": "^0.4.7",
+    "typescript": "^4.5.2"
+  }
+}

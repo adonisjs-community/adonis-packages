@@ -1,0 +1,16 @@
+name: nats
+description: Adonis NATS broker
+repo: reg2005/adonis5-nats
+npm: adonis5-nats
+icon: ''
+github: https://github.com/reg2005/adonis5-nats
+website: https://github.com/reg2005/adonis5-nats
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: reg2005
+    github: reg2005
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

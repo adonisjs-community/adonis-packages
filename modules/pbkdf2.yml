@@ -1,0 +1,16 @@
+name: pbkdf2
+description: ''
+repo: maxgalbu/adonis5-pbkdf2
+npm: adonis5-pbkdf2
+icon: ''
+github: https://github.com/maxgalbu/adonis5-pbkdf2
+website: https://github.com/maxgalbu/adonis5-pbkdf2
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: maxgalbu
+    github: maxgalbu
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

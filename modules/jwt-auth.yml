@@ -1,0 +1,16 @@
+name: jwt-auth
+description: ''
+repo: maxgalbu/adonis5-jwt
+npm: adonis5-jwt
+icon: ''
+github: https://github.com/maxgalbu/adonis5-jwt
+website: https://github.com/maxgalbu/adonis5-jwt
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: maxgalbu
+    github: maxgalbu
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}

@@ -1,0 +1,16 @@
+name: Class Validator
+description: Class validator for adonis framework
+repo: tnkemdilim/adonis-class-validator
+npm: adonis-class-validator
+icon: ''
+github: https://github.com/tnkemdilim/adonis-class-validator
+website: https://github.com/tnkemdilim/adonis-class-validator
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: tnkemdilim
+    github: tnkemdilim
+compatibility:
+  nuxt: ^2.0.0
+  requires: {}
