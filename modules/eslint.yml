@@ -1,0 +1,13 @@
+name: eslint
+description: ESlint rules for AdonisJs applications and addons
+repo: adonisjs-community/eslint-plugin-adonis
+npm: eslint-plugin-adonis
+icon: ''
+github: https://github.com/adonisjs-community/eslint-plugin-adonis
+website: https://github.com/adonisjs-community/eslint-plugin-adonis
+learn_more: ''
+category: Devtools
+type: community
+maintainers:
+  - name: adonisjs-community
+    github: adonisjs-community

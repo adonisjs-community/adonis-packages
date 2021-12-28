@@ -1,0 +1,13 @@
+name: bouncer
+description: Authorization layer for AdonisJS
+repo: adonisjs/bouncer
+npm: '@adonisjs/bouncer'
+icon: ''
+github: https://github.com/adonisjs/bouncer
+website: https://github.com/adonisjs/bouncer
+learn_more: ''
+category: Devtools
+type: official
+maintainers:
+  - name: adonisjs
+    github: adonisjs

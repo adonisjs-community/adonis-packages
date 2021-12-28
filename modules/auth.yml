@@ -1,0 +1,13 @@
+name: auth
+description: Offical authentication provider for Adonis framework
+repo: adonisjs/auth
+npm: '@adonisjs/auth'
+icon: ''
+github: https://github.com/adonisjs/auth
+website: https://github.com/adonisjs/auth
+learn_more: ''
+category: Devtools
+type: official
+maintainers:
+  - name: adonisjs
+    github: adonisjs
