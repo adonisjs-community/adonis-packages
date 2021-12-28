@@ -6,7 +6,7 @@ icon: gcs.png
 github: https://github.com/adonisjs/drive-gcs
 website: https://github.com/adonisjs/drive-gcs
 learn_more: ''
-category: Devtools
+category: Storage
 type: official
 maintainers:
   - name: adonisjs

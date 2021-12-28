@@ -6,7 +6,7 @@ icon: redis.png
 github: https://github.com/adonisjs/redis
 website: https://github.com/adonisjs/redis
 learn_more: ''
-category: Devtools
+category: Database
 type: official
 maintainers:
   - name: adonisjs

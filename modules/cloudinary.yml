@@ -6,7 +6,7 @@ icon: cloudinary.png
 github: https://github.com/liam-edwards/adonisjs-cloudinary
 website: https://github.com/liam-edwards/adonisjs-cloudinary
 learn_more: ''
-category: Devtools
+category: Storage
 type: 3rd-party
 maintainers:
   - name: liam-edwards

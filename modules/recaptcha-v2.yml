@@ -6,7 +6,7 @@ icon: recaptcha.png
 github: https://github.com/lookinlab/adonis-recaptcha2
 website: https://github.com/lookinlab/adonis-recaptcha2
 learn_more: ''
-category: Devtools
+category: Security
 type: 3rd-party
 maintainers:
   - name: lookinlab

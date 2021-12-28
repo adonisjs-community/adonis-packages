@@ -8,7 +8,7 @@ icon: hcaptcha.png
 github: https://github.com/NerdyLuffy/adonisjs-hcaptcha
 website: https://github.com/NerdyLuffy/adonisjs-hcaptcha
 learn_more: ''
-category: Devtools
+category: Security
 type: 3rd-party
 maintainers:
   - name: NerdyLuffy

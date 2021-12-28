@@ -8,7 +8,7 @@ icon: ''
 github: https://github.com/adonisjs/shield
 website: https://github.com/adonisjs/shield
 learn_more: ''
-category: Devtools
+category: Security
 type: official
 maintainers:
   - name: adonisjs

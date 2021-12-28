@@ -6,7 +6,7 @@ icon: azure.png
 github: https://github.com/AlexanderYW/Adonis-Drive-Azure-Storage
 website: https://github.com/AlexanderYW/Adonis-Drive-Azure-Storage
 learn_more: ''
-category: Devtools
+category: Storage
 type: 3rd-party
 maintainers:
   - name: AlexanderYW

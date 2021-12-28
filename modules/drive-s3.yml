@@ -6,7 +6,7 @@ icon: s3.png
 github: https://github.com/adonisjs/drive-s3
 website: https://github.com/adonisjs/drive-s3
 learn_more: ''
-category: Devtools
+category: Storage
 type: official
 maintainers:
   - name: adonisjs
