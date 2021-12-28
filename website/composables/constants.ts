@@ -5,7 +5,9 @@ export const CATEGORIES_ICONS = {
   Devtools: 'i-carbon-code',
   Extensions: 'i-carbon-model-alt',
   Monitoring: 'i-carbon-content-view',
-  Payment: 'i-carbon-wallet'
+  Payment: 'i-carbon-wallet',
+  Storage: 'i-carbon-block-storage-alt',
+  Security: 'i-carbon-security'
 }
 
 export const ORDER_BY_FIELDS = {
