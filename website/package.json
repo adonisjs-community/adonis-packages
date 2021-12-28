@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "nuxt-modules-website",
+  "name": "adonis-modules-website",
   "version": "0.0.0",
   "scripts": {
     "build": "yarn build:npm && nuxi build",
