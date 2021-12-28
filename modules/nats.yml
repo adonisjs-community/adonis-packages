@@ -1,12 +1,12 @@
 name: nats
-description: Adonis NATS broker
+description: Scale your Adonis 5 application to infinity with microservices based on classes (with code completion from client side!) and NATS transport
 repo: reg2005/adonis5-nats
 npm: adonis5-nats
 icon: ''
 github: https://github.com/reg2005/adonis5-nats
 website: https://github.com/reg2005/adonis5-nats
 learn_more: ''
-category: Devtools
+category: Communication
 type: 3rd-party
 maintainers:
   - name: reg2005

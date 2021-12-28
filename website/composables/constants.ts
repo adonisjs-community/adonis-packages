@@ -1,11 +1,15 @@
 export const CATEGORIES_ICONS = {
   Authentication: 'i-carbon-two-factor-authentication',
+  Authorization: 'i-carbon-virtual-column-key',
+  Communication: 'i-carbon-network-4',
   Database: 'i-carbon-data-base',
   Deployment: 'i-carbon-3rd-party-connected',
   Devtools: 'i-carbon-code',
   Extensions: 'i-carbon-model-alt',
   Monitoring: 'i-carbon-content-view',
+  Messaging: 'i-carbon-chat',
   Payment: 'i-carbon-wallet',
+  Rendering: 'i-carbon-layers',
   Storage: 'i-carbon-block-storage-alt',
   Security: 'i-carbon-security'
 }

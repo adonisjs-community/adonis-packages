@@ -8,7 +8,7 @@ icon: ''
 github: https://github.com/adonisjs/mail
 website: https://github.com/adonisjs/mail
 learn_more: ''
-category: Devtools
+category: Messaging
 type: official
 maintainers:
   - name: adonisjs

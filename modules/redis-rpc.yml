@@ -6,7 +6,7 @@ icon: ''
 github: https://github.com/reg2005/adonis5-redis-rpc
 website: https://github.com/reg2005/adonis5-redis-rpc
 learn_more: ''
-category: Devtools
+category: Communication
 type: 3rd-party
 maintainers:
   - name: reg2005

@@ -6,7 +6,7 @@ icon: firebase.png
 github: https://github.com/lookinlab/adonis-fcm
 website: https://github.com/lookinlab/adonis-fcm
 learn_more: ''
-category: Devtools
+category: Messaging
 type: 3rd-party
 maintainers:
   - name: lookinlab
