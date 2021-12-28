@@ -71,7 +71,7 @@ npx yarn dev
 
 Then visit http://localhost:3000
 
-In the development, the npm downloads and GitHub stars will be mocked unless setting `USE_ADONIS_API` variable.
+In the development, the npm downloads and GitHub stars will be mocked unless setting `USE_NUXT_API` variable.
 
 ## Acknowledgement
 
