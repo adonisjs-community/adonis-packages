@@ -37,12 +37,8 @@ export default defineNuxtConfig({
   buildModules: [
     // https://github.com/windicss/nuxt-windicss
     'nuxt-windicss',
-    // https://image.nuxtjs.org
-    // '@nuxt/image',
     // https://pwa.nuxtjs.org
     '@nuxtjs/pwa',
-    // https://github.com/moritzsternemann/vue-plausible
-    'vue-plausible',
     // https://html-validator.nuxtjs.org
     '@nuxtjs/html-validator',
     '@nuxtjs/color-mode',
@@ -65,10 +61,7 @@ export default defineNuxtConfig({
     name: 'Adonis Modules',
     short_name: 'Adonis Modules',
     description: 'Explore Adonis Modules',
-    theme_color: '#003c3c'
-  },
-  plausible: {
-    domain: 'https://adonis-modules.vercel.com'
+    theme_color: '#5a45ff'
   },
   colorMode: {
     preference: 'system',
