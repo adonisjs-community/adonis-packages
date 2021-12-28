@@ -11,7 +11,7 @@
     >
       Discover our list of modules to supercharge your
       <a
-        href="https://nuxtjs.org"
+        href="https://adonisjs.com/"
         rel="noopener"
         target="_blank"
         class="border-b border-current hover:text-primary hover:border-primary-600"
