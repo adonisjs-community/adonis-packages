@@ -7,7 +7,7 @@
       <span class="text-primary dark:text-primary">Adonis</span> Modules
     </h1>
     <p
-      class="text-body-md sm:text-body-lg md:text-body-xl max-w-3xl text-primary-darker dark:text-secondary-lightest"
+      class="text-body-md sm:text-body-lg md:text-body-xl max-w-3xl text-primary-darker dark:text-white"
     >
       Discover our list of modules to supercharge your
       <a
