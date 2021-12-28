@@ -22,7 +22,7 @@ export default defineNuxtConfig({
       { hid: 'og:image', property: 'og:image', content: `${url}/preview.png` },
       // Twitter Card
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
-      { hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@adonisframework' },
       { hid: 'twitter:title', name: 'twitter:title', content: title },
       { hid: 'twitter:description', name: 'twitter:description', content: description },
       { hid: 'twitter:image', name: 'twitter:image', content: `${url}/preview.png` },
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     ],
     link: [
       { hid: 'favicon', rel: 'icon', type: 'image/png', href: '/favicon.png' },
-      { hid: 'search', rel: 'search', type: 'application/opensearchdescription+xml', href: '/search.xml', title: 'Nuxt Modules' }
+      { hid: 'search', rel: 'search', type: 'application/opensearchdescription+xml', href: '/search.xml', title: 'Adonis Modules' }
     ]
   },
   components: true,
