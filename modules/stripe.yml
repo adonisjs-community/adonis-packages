@@ -6,7 +6,7 @@ icon: stripe.png
 github: https://github.com/mezielabs/adonis-stripe
 website: https://github.com/mezielabs/adonis-stripe
 learn_more: ''
-category: Devtools
+category: Payment
 type: 3rd-party
 maintainers:
   - name: mezielabs

@@ -6,7 +6,7 @@ icon: sentry.png
 github: https://github.com/reg2005/adonis5-sentry
 website: https://github.com/reg2005/adonis5-sentry
 learn_more: ''
-category: Devtools
+category: Monitoring
 type: 3rd-party
 maintainers:
   - name: reg2005

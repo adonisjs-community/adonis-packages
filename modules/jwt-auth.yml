@@ -1,12 +1,12 @@
 name: jwt-auth
-description: ''
+description: Add JWT authentication to Adonisjs v5
 repo: maxgalbu/adonis5-jwt
 npm: adonis5-jwt
 icon: ''
 github: https://github.com/maxgalbu/adonis5-jwt
 website: https://github.com/maxgalbu/adonis5-jwt
 learn_more: ''
-category: Devtools
+category: Authentication
 type: 3rd-party
 maintainers:
   - name: maxgalbu

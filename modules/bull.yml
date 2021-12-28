@@ -1,4 +1,5 @@
 name: bull
+description: "The easiest way to start using an asynchronous job queue with AdonisJS. Ready for Adonis v5 ⚡️"
 repo: Rocketseat/adonis-bull
 npm: '@rocketseat/adonis-bull'
 icon: bull.png

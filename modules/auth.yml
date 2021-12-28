@@ -6,7 +6,7 @@ icon: ''
 github: https://github.com/adonisjs/auth
 website: https://github.com/adonisjs/auth
 learn_more: ''
-category: Devtools
+category: Authentication
 type: official
 maintainers:
   - name: adonisjs

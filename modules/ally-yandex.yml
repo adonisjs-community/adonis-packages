@@ -6,7 +6,7 @@ icon: yandex.png
 github: https://github.com/lookinlab/adonis-ally-yandex
 website: https://github.com/lookinlab/adonis-ally-yandex
 learn_more: ''
-category: Devtools
+category: Authentication
 type: 3rd-party
 maintainers:
   - name: lookinlab

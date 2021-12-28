@@ -6,7 +6,7 @@ icon: vk.png
 github: https://github.com/lookinlab/adonis-ally-vk
 website: https://github.com/lookinlab/adonis-ally-vk
 learn_more: ''
-category: Devtools
+category: Authentication
 type: 3rd-party
 maintainers:
   - name: lookinlab

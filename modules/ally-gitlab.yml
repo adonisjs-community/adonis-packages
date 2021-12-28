@@ -6,7 +6,7 @@ icon: gitlab.png
 github: https://github.com/rubenmoya/adonis-ally-gitlab
 website: https://github.com/rubenmoya/adonis-ally-gitlab
 learn_more: ''
-category: Devtools
+category: Authentication
 type: 3rd-party
 maintainers:
   - name: rubenmoya

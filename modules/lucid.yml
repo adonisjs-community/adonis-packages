@@ -6,7 +6,7 @@ icon: ''
 github: https://github.com/adonisjs/lucid
 website: https://github.com/adonisjs/lucid
 learn_more: ''
-category: Devtools
+category: Database
 type: official
 maintainers:
   - name: adonisjs

@@ -6,7 +6,7 @@ icon: ''
 github: https://github.com/adonisjs/lucid-slugify
 website: https://github.com/adonisjs/lucid-slugify
 learn_more: ''
-category: Devtools
+category: Database
 type: official
 maintainers:
   - name: adonisjs
