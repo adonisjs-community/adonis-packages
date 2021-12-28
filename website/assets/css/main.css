@@ -7,7 +7,7 @@ html.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('assets/fonts/PolySans-Median.woff2') format('woff2');
+  src: url("fonts/PolySans-Median.ttf") format('truetype');
 }
 
 @font-face {
@@ -15,7 +15,7 @@ html.dark {
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('assets/fonts/PolySans-Neutral.woff2') format('woff2');
+  src: url("fonts/PolySans-Neutral.ttf") format('truetype');
 }
 
 @font-face {
@@ -23,5 +23,5 @@ html.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('assets/fonts/Graphik-Regular.woff2') format('woff2');
+  src: url("fonts/Graphik-Regular.ttf") format('truetype');
 }
