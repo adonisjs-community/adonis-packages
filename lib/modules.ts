@@ -35,9 +35,9 @@ export async function sync (name, repo?: string, isNew: boolean = false) {
   module.npm = pkg.name
 
   // Type
-  if (module.repo.startsWith('nuxt-community/')) {
+  if (module.repo.startsWith('adonisjs-community/')) {
     module.type = 'community'
-  } else if (module.repo.startsWith('nuxt/')) {
+  } else if (module.repo.startsWith('adonisjs/')) {
     module.type = 'official'
   } else {
     module.type = '3rd-party'
@@ -91,7 +91,8 @@ export async function sync (name, repo?: string, isNew: boolean = false) {
   // Auto name
   if (!module.name) {
     module.name = (pkg.name.startsWith('@') ? pkg.name.split('/')[1] : pkg.name)
-      .replace('nuxt-', '')
+      .replace('adonis-', '')
+      .replace('adonis5-', '')
       .replace('-module', '')
   }
 
@@ -99,6 +100,7 @@ export async function sync (name, repo?: string, isNew: boolean = false) {
   // TODO: Sync with maintainers.app
   if (!module.maintainers.length) {
     const owner = module.repo.split('/')[0]
+    console.log(owner)
     if (owner !== 'nuxt-community' && owner !== 'nuxt') {
       module.maintainers.push({
         name: owner,
@@ -138,10 +140,7 @@ export async function getModule (name): Promise<ModuleInfo> {
     category: 'Devtools', // see modules/_categories.json
     type: '3rd-party', // official, community, 3rd-party
     maintainers: [],
-    compatibility: {
-      nuxt: '^2.0.0',
-      requires: {}
-    }
+    contributors: []
   }
 
   const file = resolve(modulesDir, name + '.yml')

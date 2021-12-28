@@ -1,12 +1,4 @@
 import type { categories } from './categories'
-
-// TODO: Move to @nuxt/kit
-// TODO: Support version matrix
-export interface ModuleCompatibility {
- nuxt: string
- requires: { bridge?: boolean | 'optional' },
-}
-
 export interface MaintainerInfo {
   name: string
   github: string
@@ -35,7 +27,6 @@ export interface ModuleInfo {
   type: ModuleType
   maintainers: MaintainerInfo[]
   contributors: GithubContributor[]
-  compatibility: ModuleCompatibility
 
   // Fetched in realtime API for modules.nuxt.org
   downloads?: number
