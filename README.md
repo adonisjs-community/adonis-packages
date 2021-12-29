@@ -3,7 +3,7 @@
   <br/>
   <h3>AdonisJS Modules</h3>
   <p>Discover AdonisJS modules to supercharge your project !</p>
-  <p>👉 <a href="https://adonis-modules.vercel.app/">https://adonis-modules.vercel.app</a> 👈</p>
+  <p>👉 <a href="https://modules.adonisjs.com">https://modules.adonisjs.com</a> 👈</p>
 </div>
 
 
