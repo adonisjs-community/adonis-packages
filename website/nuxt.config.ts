@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from '@nuxt/bridge'
 
-const title = 'Explore Adonis Modules'
-const description = 'Discover our list of modules to supercharge your Adonis project. Created by the Adonis community.'
+const title = 'Explore AdonisJS Modules'
+const description = 'Discover our list of modules to supercharge your AdonisJS project. Created by the AdonisJS community.'
 const url = 'https://adonis-modules.vercel.com'
 
 export default defineNuxtConfig({
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     ],
     link: [
       { hid: 'favicon', rel: 'icon', type: 'image/png', href: '/favicon.png' },
-      { hid: 'search', rel: 'search', type: 'application/opensearchdescription+xml', href: '/search.xml', title: 'Adonis Modules' }
+      { hid: 'search', rel: 'search', type: 'application/opensearchdescription+xml', href: '/search.xml', title: 'AdonisJS Modules' }
     ]
   },
   components: true,
@@ -58,9 +58,9 @@ export default defineNuxtConfig({
   },
   plugins: ['~/plugins/v-tooltip.ts'],
   manifest: {
-    name: 'Adonis Modules',
-    short_name: 'Adonis Modules',
-    description: 'Explore Adonis Modules',
+    name: 'AdonisJS Modules',
+    short_name: 'AdonisJS Modules',
+    description: 'Explore AdonisJS Modules',
     theme_color: '#5a45ff'
   },
   colorMode: {

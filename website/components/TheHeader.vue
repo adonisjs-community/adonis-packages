@@ -4,7 +4,7 @@
       class="text-display-5 sm:text-display-4 md:text-display-3 pb-1 mb-2 md:mb-4 font-serif overflow-ellipsis overflow-hidden"
     >
       Explore
-      <span class="text-primary dark:text-primary">Adonis</span> Modules
+      <span class="text-primary dark:text-primary">AdonisJS</span> Modules
     </h1>
     <p
       class="text-body-md sm:text-body-lg md:text-body-xl max-w-3xl text-primary-darker dark:text-white"
@@ -15,7 +15,7 @@
         rel="noopener"
         target="_blank"
         class="border-b border-current hover:text-primary hover:border-primary-600"
-      >Adonis project</a>. Created by the Adonis team and community.
+      >AdonisJS project</a>. Created by the AdonisJS team and community.
     </p>
     <div class="max-w-xl mt-4 text-left">
       <a

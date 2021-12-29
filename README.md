@@ -1,8 +1,8 @@
 <div align="center">
   <img src="https://i.imgur.com/2wGdEJN.png" width="200" fill="red"/>
   <br/>
-  <h3>Adonis Modules</h3>
-  <p>Discover Adonis modules to supercharge your project !</p>
+  <h3>AdonisJS Modules</h3>
+  <p>Discover AdonisJS modules to supercharge your project !</p>
   <p>👉 <a href="https://adonis-modules.vercel.app/">https://adonis-modules.vercel.app</a> 👈</p>
 </div>
 
@@ -10,7 +10,7 @@
 
 ## Modules Database
 
-Metadata of adonis modules are maintained in [yml](https://en.wikipedia.org/wiki/YAML) files inside [./modules](./modules) directory and automatically synced from upstream to fetch latest information.
+Metadata of AdonisJS modules are maintained in [yml](https://en.wikipedia.org/wiki/YAML) files inside [./modules](./modules) directory and automatically synced from upstream to fetch latest information.
 
 ### Contribution
 

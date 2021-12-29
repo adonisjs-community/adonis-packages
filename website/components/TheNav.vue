@@ -3,7 +3,7 @@
     <slot name="head" />
     <div class="flex" :class="isSearchOpen ? 'hidden': ''">
       <a href="/" class="inline-flex text-2xl">
-        <IconAdonisLogo alt="Adonis logo" width="120" />
+        <IconAdonisLogo alt="AdonisJS logo" width="120" />
       </a>
     </div>
     <div class="flex shadow-sm w-full max-w-xl flex-auto">
