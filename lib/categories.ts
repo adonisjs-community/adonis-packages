@@ -6,9 +6,10 @@ export const categories = [
   'Deployment',
   'Devtools',
   'Extensions',
-  'Monitoring',
   'Messaging',
+  'Monitoring',
   'Payment',
   'Rendering',
+  'Security',
   'Storage'
 ] as const
