@@ -1,7 +1,7 @@
 name: imgix
 description: An Imgix provider for AdonisJS
 repo: bitkidd/adonis-imgix
-npm: '@bitkidd/adonis-credentials'
+npm: '@bitkidd/adonis-imgix'
 icon: imgix.png
 github: https://github.com/bitkidd/adonis-imgix
 website: https://github.com/bitkidd/adonis-imgix

@@ -1,6 +1,7 @@
 name: meilisearch
 description: A MeiliSearch provider for AdonisJS
 repo: bitkidd/adonis-meilisearch
+npm: '@bitkidd/adonis-meilisearch'
 icon: meilisearch.png
 github: https://github.com/bitkidd/adonis-meilisearch
 website: https://github.com/bitkidd/adonis-meilisearch
