@@ -1,20 +1,20 @@
 <div align="center">
   <img src="https://i.imgur.com/2wGdEJN.png" width="200" fill="red"/>
   <br/>
-  <h3>AdonisJS Modules</h3>
-  <p>Discover AdonisJS modules to supercharge your project !</p>
-  <p>👉 <a href="https://modules.adonisjs.com">https://modules.adonisjs.com</a> 👈</p>
+  <h3>AdonisJS Packages</h3>
+  <p>Discover AdonisJS packages to supercharge your project !</p>
+  <p>👉 <a href="https://packages.adonisjs.com">https://packages.adonisjs.com</a> 👈</p>
 </div>
 
 
 
-## Modules Database
+## Packages Database
 
-Metadata of AdonisJS modules are maintained in [yml](https://en.wikipedia.org/wiki/YAML) files inside [./modules](./modules) directory and automatically synced from upstream to fetch latest information.
+Metadata of AdonisJS packages are maintained in [yml](https://en.wikipedia.org/wiki/YAML) files inside [./packages](./packages) directory and automatically synced from upstream to fetch latest information.
 
 ### Contribution
 
-- If you feel a module is missing, please create a new [issue]()
+- If you feel a package is missing, please create a new [issue]()
 - If some data is outdated please directly open a pull request
 
 ### Schema
@@ -25,11 +25,11 @@ Field Name      | Auto sync | Description
 `description`   | Yes       | Short description
 `repo`          | No        | Github repository. Format is `org/name` or `org/name#main/path`
 `npm`           | Yes       | NPM package name
-`icon`          | No        | Icon of module from [./website/static/icons](./website/static/icons) directory
+`icon`          | No        | Icon of package from [./website/static/icons](./website/static/icons) directory
 `github`        | No        | Github URL
 `website`       | No        | Website URL
 `learn_more`    | No        | Link to learn more (website or relevant integration website)
-`category`      | No        | Module category from [./lib/categories.json](./lib/categories.json)
+`category`      | No        | Package category from [./lib/categories.json](./lib/categories.json)
 `type`          | No        | `community` (for [adonisjs-community](https://github.com/adonisjs-community/)), `official` (for https://github.com/) or `3rd-party`
 `maintainers`   | Yes       | List of maintainers each item has `name`, `github` and `avatar`
 
@@ -46,7 +46,7 @@ Example: `yarn sync eslint adonisjs-community/eslint-plugin-adonis`
 
 To sync with a branch different than `master`, suffix the repo with `#repo-branch`, example: `yarn sync eslint adonisjs-community/eslint-plugin-adonis#dev`
 
-### Auto update all current modules
+### Auto update all current packages
 
 ```bash
 yarn sync
@@ -61,7 +61,7 @@ yarn build
 ## Website development
 
 - Clone repository
-- Install website depenedencies using `npx yarn install`
+- Install website dependencies using `npx yarn install`
 
 Start development:
 

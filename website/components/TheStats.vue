@@ -16,7 +16,7 @@
           id="item-1"
           class="font-normal leading-6 text-sm sm:mt-2 sm:text-sm sm:capitalize"
         >
-          modules
+          packages
         </dt>
       </div>
       <div class="flex-col space-y-2 p-4">

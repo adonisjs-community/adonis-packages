@@ -14,7 +14,7 @@
           type="search"
           aria-label="Search"
           class="block bg-gray-200/40 dark:bg-secondary-dark/50 w-full py-1 px-3 h-10 text-base leading-6 placeholder-white dark:placeholder-white transition duration-150 ease-in-out appearance-none md:pr-10 rounded-lg focus:ring-3 focus:ring-primary-700  focus:ring-opacity-50 focus:outline-none focus:placeholder-gray-300 sm:flex-1"
-          placeholder="Search a module (name, category, username, etc.)"
+          placeholder="Search a package (name, category, username, etc.)"
         >
         <span
           class="absolute hidden px-2 text-gray opacity-50 bg-gray-200 dark:bg-secondary-dark rounded-md md:inline-block text-md top-2 bottom-2 right-2"

@@ -1,5 +1,5 @@
 {
-  "name": "adonis-modules",
+  "name": "adonis-packages",
   "version": "0.1.0",
   "license": "MIT",
   "main": "./modules.json"

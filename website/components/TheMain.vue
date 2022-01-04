@@ -89,7 +89,7 @@
         <div class="flex flex-col items-center justify-between min-h-18 sm:flex-row p-5 mb-4 border nuxt-border nuxt-card-bg rounded-lg">
           <div>
             <span class="font-black text-2xl">{{ filteredModules.length }}</span>
-            module{{ filteredModules.length > 1 ? 's' : '' }} found
+            package{{ filteredModules.length > 1 ? 's' : '' }} found
           </div>
           <TheOrderBy
             v-show="!q"

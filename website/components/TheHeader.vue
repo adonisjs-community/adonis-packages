@@ -4,12 +4,12 @@
       class="text-display-5 sm:text-display-4 md:text-display-3 pb-1 mb-2 md:mb-4 font-serif overflow-ellipsis overflow-hidden"
     >
       Explore
-      <span class="text-primary dark:text-primary">AdonisJS</span> Modules
+      <span class="text-primary dark:text-primary">AdonisJS</span> Packages
     </h1>
     <p
       class="text-body-md sm:text-body-lg md:text-body-xl max-w-3xl text-primary-darker dark:text-white"
     >
-      Discover our list of modules to supercharge your
+      Discover our list of packages to supercharge your
       <a
         href="https://adonisjs.com/"
         rel="noopener"
@@ -19,7 +19,7 @@
     </p>
     <div class="max-w-xl mt-4 text-left">
       <a
-        href="https://github.com/julien-r44/adonis-modules"
+        href="https://github.com/adonisjs-community/adonis-modules"
         rel="noopener"
         target="_blank"
         class="text-sm font-semibold items-center py-2 px-4 text-secondary-darker dark:text-white bg-gray-500 bg-opacity-10 hover:bg-opacity-20 rounded-lg inline-flex gap-3"
