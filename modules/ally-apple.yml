@@ -1,6 +1,7 @@
 name: ally-apple
 description: An Apple driver for AdonisJS Ally
 repo: bitkidd/adonis-modules
+npm: '@bitkidd/adonis-ally-apple'
 icon: apple.png
 github: https://github.com/bitkidd/adonis-ally-apple
 website: https://github.com/bitkidd/adonis-ally-apple
