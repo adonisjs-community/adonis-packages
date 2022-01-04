@@ -13,11 +13,16 @@ export function fetchRawGithub (path) {
   return $fetch('https://raw.githubusercontent.com/' + path)
 }
 
-export function fetchGithubPkg (repo) {
+export async function fetchGithubPkg (repo) {
   let path
   [repo, path = 'master'] = repo.split('#')
 
-  return fetchRawGithub(repo + '/' + path + '/' + 'package.json')
+  try {
+    const rawData = await fetchRawGithub(repo + '/' + path + '/' + 'package.json')
+    return JSON.parse(rawData)
+  } catch (error) {
+    return {}
+  }
 }
 
 export function uniq (items: any[]) {
