@@ -1,0 +1,13 @@
+name: adonisjs-select-related
+description: Select related functionality for lucid
+repo: chirgjin/adonisjs-select-related
+npm: adonisjs-select-related
+icon: ''
+github: https://github.com/chirgjin/adonisjs-select-related
+website: https://github.com/chirgjin/adonisjs-select-related
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: chirgjin
+    github: chirgjin
