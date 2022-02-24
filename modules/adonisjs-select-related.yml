@@ -6,7 +6,7 @@ icon: ''
 github: https://github.com/chirgjin/adonisjs-select-related
 website: https://github.com/chirgjin/adonisjs-select-related
 learn_more: ''
-category: Devtools
+category: Database
 type: 3rd-party
 maintainers:
   - name: chirgjin
