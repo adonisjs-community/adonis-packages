@@ -1,0 +1,13 @@
+name: adonis-dynamodb
+repo: Melchyore/adonis-dynamodb
+description: 'A DynamoDB (Dyngoose) wrapper for AdonisJS'
+icon: ''
+github: https://github.com/Melchyore/adonis-dynamodb
+website: https://github.com/Melchyore/adonis-dynamodb
+npm: adonis-dynamodb
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Melchyore
+    github: Melchyore
