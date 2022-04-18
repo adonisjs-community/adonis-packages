@@ -11,7 +11,8 @@ export const CATEGORIES_ICONS = {
   Payment: 'i-carbon-wallet',
   Rendering: 'i-carbon-layers',
   Storage: 'i-carbon-block-storage-alt',
-  Security: 'i-carbon-security'
+  Security: 'i-carbon-security',
+  Testing: 'i-carbon-task-complete',
 }
 
 export const ORDER_BY_FIELDS = {

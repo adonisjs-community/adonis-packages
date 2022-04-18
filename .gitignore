@@ -13,3 +13,4 @@ cache
 package-lock.json
 npm/modules.json
 .idea
+.tool-versions
