@@ -1,0 +1,13 @@
+name: ally-azure-ad
+description: An Azure AD driver for AdonisJS Ally
+repo: AlexanderYW/adonis-ally-azure-ad
+npm: 'adonis-ally-azure-ad'
+icon: azure.png
+github: https://github.com/AlexanderYW/adonis-ally-azure-ad
+website: https://github.com/AlexanderYW/adonis-ally-azure-ad
+learn_more: ''
+category: Authentication
+type: 3rd-party
+maintainers:
+  - name: AlexanderYW
+    github: AlexanderYW
