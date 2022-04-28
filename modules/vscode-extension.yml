@@ -1,0 +1,13 @@
+name: "VSCode Extension"
+description: "💻 Official VS Code Extension for AdonisJS"
+repo: Julien-R44/adonis-vscode-extension
+npm: ''
+icon: 'vscode.png'
+github: https://github.com/Julien-R44/adonis-vscode-extension
+website: https://marketplace.visualstudio.com/items?itemName=jripouteau.adonis-vscode-extension
+learn_more: ''
+category: Devtools
+type: official
+maintainers:
+  - name: Julien Ripouteau
+    github: Julien-R44
