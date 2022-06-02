@@ -1,0 +1,13 @@
+name: @verful/notifications
+description: Japa plugin to use markdown tables as input test data
+repo: guntribam/table-driven-tests
+npm: '@verful/notifications'
+icon: ''
+github: https://github.com/verful/notifications
+website: https://github.com/verful/notifications
+learn_more: ''
+category: Messaging
+type: 3rd-party
+maintainers:
+  - name: arthur-er
+    github: arthur-er
