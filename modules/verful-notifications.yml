@@ -1,6 +1,6 @@
 name: @verful/notifications
-description: Japa plugin to use markdown tables as input test data
-repo: guntribam/table-driven-tests
+description: Handle notifications on your AdonisJS applications
+repo: verful/notifications
 npm: '@verful/notifications'
 icon: ''
 github: https://github.com/verful/notifications
