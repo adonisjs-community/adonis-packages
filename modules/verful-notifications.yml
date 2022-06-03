@@ -1,4 +1,4 @@
-name: @verful/notifications
+name: '@verful/notifications'
 description: Handle notifications on your AdonisJS applications
 repo: verful/notifications
 npm: '@verful/notifications'
