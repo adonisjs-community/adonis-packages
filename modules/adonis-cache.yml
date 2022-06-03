@@ -1,0 +1,13 @@
+name: @melchyore/adonis-cache
+repo: Melchyore/adonis-cache
+description: 'Cache package for AdonisJS V5'
+icon: ''
+github: https://github.com/Melchyore/adonis-cache
+website: https://github.com/Melchyore/adonis-cache
+npm: '@melchyore/adonis-cache'
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Melchyore
+    github: Melchyore
