@@ -1,0 +1,13 @@
+name: '@melchyore/adonis-lucid-observer'
+repo: Melchyore/adonis-lucid-observer
+description: 'Use classes instead of decorators to observe your Lucid models'
+icon: ''
+github: https://github.com/Melchyore/adonis-lucid-observer
+website: https://github.com/Melchyore/adonis-lucid-observer
+npm: '@melchyore/adonis-lucid-observer'
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Melchyore
+    github: Melchyore
