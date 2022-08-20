@@ -1,0 +1,13 @@
+name: '@melchyore/adonis-form-request'
+repo: Melchyore/adonis-form-request
+description: 'Use dedicated classes to authorize and validate requests'
+icon: ''
+github: https://github.com/Melchyore/adonis-form-request
+website: https://github.com/Melchyore/adonis-form-request
+npm: '@melchyore/adonis-form-request'
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Melchyore
+    github: Melchyore
