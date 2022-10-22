@@ -1,5 +1,5 @@
 name: radonis
-description: Build monolythic AdonisJS applications with a modern, React-based frontend stack
+description: Build monolithic AdonisJS applications with a modern, React-based frontend stack
 repo: microeinhundert/radonis
 npm: '@microeinhundert/radonis'
 icon: radonis.png
