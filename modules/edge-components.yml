@@ -1,0 +1,13 @@
+name: '@jrmc/edge-components'
+description: The most popular, free and open-source Tailwind CSS component library in edge template engine with daisyUI and Alpine.js
+repo: batosai/edge-components
+npm: '@jrmc/edge-components'
+icon:
+github: https://github.com/batosai/edge-components
+website: https://edge-components.jrmc.dev/
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Jeremy Chaufourier
+    github: batosai
