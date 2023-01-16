@@ -1,0 +1,13 @@
+name: 'adonisjs-scheduler'
+description: Task scheduler for AdonisJS
+repo: KABBOUCHI/adonisjs-scheduler
+npm: 'adonisjs-scheduler'
+icon: ''
+github: https://github.com/KABBOUCHI/adonisjs-scheduler
+website: https://github.com/KABBOUCHI/adonisjs-scheduler
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Georges KABBOUCHI
+    github: KABBOUCHI
