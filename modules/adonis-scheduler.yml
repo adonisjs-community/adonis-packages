@@ -1,0 +1,13 @@
+name: '@stouder-io/adonis-scheduler'
+description: Unopinionated scheduler for Adonis
+repo: Xstoudi/adonis-scheduler
+npm: '@stouder-io/adonis-scheduler'
+icon:
+github: https://github.com/Xstoudi/adonis-scheduler
+website: https://github.com/Xstoudi/adonis-scheduler
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Xavier Stouder
+    github: Xstoudi
