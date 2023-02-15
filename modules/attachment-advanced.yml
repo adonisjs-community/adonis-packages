@@ -1,0 +1,13 @@
+name: attachment-advanced
+description: Turn any field on your Lucid model to an attachment data type while automatically generating variant sizes for the attached image files and preview image for video and document files
+repo: adonisjs/batosai/attachment-advanced
+npm: '@jrmc/attachment-advanced'
+icon: ''
+github: https://github.com/batosai/attachment-advanced
+website: https://github.com/batosai/attachment-advanced
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Jeremy Chaufourier
+    github: batosai
