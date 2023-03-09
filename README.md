@@ -10,7 +10,7 @@
 
 ## Packages Database
 
-Metadata of AdonisJS packages are maintained in [yml](https://en.wikipedia.org/wiki/YAML) files inside [./packages](./packages) directory and automatically synced from upstream to fetch latest information.
+Metadata of AdonisJS packages are maintained in [yml](https://en.wikipedia.org/wiki/YAML) files inside [./modules](./modules) directory and automatically synced from upstream to fetch latest information.
 
 ### Contribution
 
