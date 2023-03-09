@@ -148,6 +148,7 @@ const fuseOptions = {
     'npm',
     'category',
     'maintainers.name',
+    'adonisversion.name',
     'maintainers.github',
     'description',
     'repo',

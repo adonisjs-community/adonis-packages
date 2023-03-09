@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: liam-edwards
     github: liam-edwards
+adonisversions:
+  - name: 5.*

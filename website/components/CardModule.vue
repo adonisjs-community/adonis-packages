@@ -37,12 +37,44 @@
           class="flex text-lg font-semibold items-center dark:text-white h-9 line-2 leading-tight"
         >
           <span>{{ mod.name }}</span>
+          
           <UnoIcon
             v-if="mod.type === 'official'"
             v-tooltip="{ content: 'Official',classes: tooltipClass }"
             class="i-carbon-badge text-yellow-600 text-lg ml-1 my-auto opacity-85"
           />
+                    
+          <span
+            v-for="version in mod.adonisversions"
+            v-tooltip="{ content: 'Supported Adonis Version',classes: tooltipClass }"
+            :aria-label="version.name"
+            class="right+5 -top-1 bg-gray-100 text-gray-800 relative text-xs font-medium m-1 p-1 py-0.6 rounded dark:bg-gray-700 dark:text-gray-300"
+          >
+            {{ version.name }}
+          </span>
+
         </h2>
+        <div class="flex -space-x-3 hover:space-x-0 absolute hover:bg-white mt-2 dark:hover:bg-secondary-darkest">
+          <a
+            v-for="contributor of mod.contributors.slice(0, 5).reverse()"
+            :key="contributor.login"
+            v-tooltip="{ content: contributor.name || contributor.login, classes: ['bg-primary', 'text-white', 'px-2', 'py-1', 'rounded', 'text-sm', 'mb-2'] }"
+            :aria-label="contributor.name || contributor.login"
+            :href="`https://github.com/${contributor.login}`"
+            target="_blank"
+            rel="noopener"
+          >
+            <!-- TODO: use <nuxt-img> -->
+            <img
+              class="w-7 h-7 flex rounded-full text-white border-2 border-grey dark:border-primary-900"
+              :src="'https://api.nuxtjs.org/api/ipx/s_44,f_webp/gh_avatar/' + contributor.login"
+              :alt="contributor.name|| contributor.login"
+              format="jpg"
+              width="28"
+              height="28"
+            >
+          </a>
+        </div>    
       </div>
     </div>
 
@@ -60,6 +92,7 @@
           :href="mod.github"
           aria-label="stars"
           target=" _blank"
+          title="Github Stars"
           rel="noopener"
           class="flex whitespace-nowrap w-full mr-4 text-sky-dark hover:text-primary dark:hover:text-primary-300 dark:text-white"
         >
@@ -75,6 +108,7 @@
           :href="npmUrl(mod)"
           aria-label="npm"
           target=" _blank"
+          title="Downloads last 30 days"
           rel="noopener"
           class="flex whitespace-nowrap w-full mr-4 text-sky-dark hover:text-primary dark:hover:text-primary-300 dark:text-white"
         >
@@ -83,34 +117,29 @@
             class="text-sm leading-5 font-medium truncate"
           >{{ numberFormat(mod.downloads) }} installs</div>
         </a>
-      </div>
-      <div class="flex -space-x-3 hover:space-x-0 absolute right-0 -bottom-1 hover:bg-white  dark:hover:bg-secondary-darkest">
         <a
-          v-for="contributor of mod.contributors.slice(0, 5).reverse()"
-          :key="contributor.login"
-          v-tooltip="{ content: contributor.name || contributor.login, classes: ['bg-primary', 'text-white', 'px-2', 'py-1', 'rounded', 'text-sm', 'mb-2'] }"
-          :aria-label="contributor.name || contributor.login"
-          :href="`https://github.com/${contributor.login}`"
-          target="_blank"
+          v-if="mod.updatedAt"
+          :href="npmUrl(mod)"
+          aria-label="npm_date"
+          target=" _blank"
+          title="Last update"
           rel="noopener"
+          class="flex whitespace-nowrap w-full mr-4 text-sky-dark hover:text-primary dark:hover:text-primary-300 dark:text-white"
         >
-          <!-- TODO: use <nuxt-img> -->
-          <img
-            class="w-7 h-7 flex rounded-full text-white border-4 border-white dark:border-primary-900"
-            :src="'https://api.nuxtjs.org/api/ipx/s_44,f_webp/gh_avatar/' + contributor.login"
-            :alt="contributor.name|| contributor.login"
-            format="jpg"
-            width="28"
-            height="28"
-          >
+        <UnoIcon class="mr-2 i-carbon-calendar" />
+          <div
+            class="text-sm leading-5 font-medium truncate"
+          >{{ formatDate(mod.updatedAt) }}</div>
         </a>
-      </div>
+        
+      </div>      
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ModuleInfo, MaintainerInfo } from '~/../lib/types'
+// import moment from 'moment';
 import { numberFormatter } from '~/utils/format'
 import { CATEGORIES_ICONS } from '~/composables/constants'
 
@@ -118,6 +147,13 @@ defineProps<{ mod: ModuleInfo }>()
 
 const coverError = ref(false)
 const tooltipClass = 'bg-secondary-dark text-white px-2 py-1 m-1 rounded text-sm shadow'
+
+function formatDate (datestring: string){
+  if (datestring) {
+    const date = new Date(datestring);  
+    return new Intl.DateTimeFormat('default', {month: 'short', year: '2-digit'}).format(date);
+    }
+}
 
 function numberFormat (num: number, options = { precision: 1 }) {
   return numberFormatter(num, options)

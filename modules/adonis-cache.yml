@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: Melchyore
     github: Melchyore
+adonisversions:
+  - name: 5.*

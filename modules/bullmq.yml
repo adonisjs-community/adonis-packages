@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: reg2005
     github: reg2005
+adonisversions:
+  - name: 5.*

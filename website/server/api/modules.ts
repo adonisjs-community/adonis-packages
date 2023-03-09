@@ -37,12 +37,14 @@ async function fetchModuleStats (module: ModuleInfo) {
     module.stars = github.stars
     module.publishedAt = +new Date(npm.publishedAt || undefined)
     module.createdAt = +new Date(npm.createdAt || undefined)
+    module.updatedAt = +new Date(npm.updatedAt || undefined)
     module.contributors = contributors
   } else {
     module.downloads = rand(0, 500)
     module.stars = rand(0, 2000)
     module.publishedAt = rand(1_600_000_000_000, 1_630_000_000_000)
     module.createdAt = rand(1_600_000_000_000, 1_630_000_000_000)
+    module.updatedAt = rand(1_600_000_000_000, 1_630_000_000_000)
     module.contributors = [
       { login: 'poppinss' },
       { login: 'adonisjs' }

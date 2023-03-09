@@ -32,6 +32,7 @@ Field Name      | Auto sync | Description
 `category`      | No        | Package category from [./lib/categories.json](./lib/categories.json)
 `type`          | No        | `community` (for [adonisjs-community](https://github.com/adonisjs-community/)), `official` (for https://github.com/) or `3rd-party`
 `maintainers`   | Yes       | List of maintainers each item has `name`, `github` and `avatar`
+`adonisversions` | No        | List of supported AdonisJS versions each item has `name`
 
 
 ## Maintenance

@@ -139,6 +139,7 @@ export async function getModule (name): Promise<ModuleInfo> {
     learn_more: '',
     category: 'Devtools', // see modules/_categories.json
     type: '3rd-party', // official, community, 3rd-party
+    adonisversions: [],
     maintainers: [],
     contributors: []
   }

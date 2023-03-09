@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: Romain Lanz
     github: RomainLanz
+adonisversions:
+  - name: 5.*

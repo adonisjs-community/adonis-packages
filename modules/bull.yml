@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: Rocketseat
     github: Rocketseat
+adonisversions:
+  - name: 5.*

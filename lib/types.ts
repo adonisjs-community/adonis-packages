@@ -5,6 +5,10 @@ export interface MaintainerInfo {
   twitter?: string
 }
 
+export interface AdonisVersion {
+  name: string
+}
+
 export interface GithubContributor {
   login: string
   name?: string
@@ -25,6 +29,7 @@ export interface ModuleInfo {
   learn_more: string
   category: (typeof categories)[number]
   type: ModuleType
+  adonisversions: AdonisVersion[]
   maintainers: MaintainerInfo[]
   contributors: GithubContributor[]
 
@@ -32,6 +37,7 @@ export interface ModuleInfo {
   downloads?: number
   tags?: string[]
   stars?: number
+  updatedAt?: number
   publishedAt?: number
   createdAt?: number
 }
