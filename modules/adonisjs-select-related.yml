@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: chirgjin
     github: chirgjin
+compatibility:
+  adonis: ^5.0.0

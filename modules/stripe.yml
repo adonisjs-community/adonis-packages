@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: mezielabs
     github: mezielabs
+compatibility:
+  adonis: ^5.0.0

@@ -1,5 +1,9 @@
 import type { categories } from './categories.js'
 
+export interface ModuleCompatibility {
+  adonis: string
+ }
+
 export interface MaintainerInfo {
   name: string
   github: string
@@ -28,6 +32,7 @@ export interface ModuleInfo {
   type: ModuleType
   maintainers: MaintainerInfo[]
   contributors?: GithubContributor[]
+  compatibility: ModuleCompatibility
 
   // Fetched in realtime API for modules.nuxt.org
   downloads?: number

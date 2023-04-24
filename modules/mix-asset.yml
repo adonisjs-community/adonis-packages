@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: wahyubucil
     github: wahyubucil
+compatibility:
+  adonis: ^5.0.0

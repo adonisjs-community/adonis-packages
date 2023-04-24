@@ -22,4 +22,9 @@ export const ORDER_BY_FIELDS = {
   createdAt: 'Created'
 }
 
+export const VERSIONS = [
+  { key: '6.x', label: 'AdonisJS 6', icon: 'i-file-icons-adonisjs' },
+  { key: '5.x', label: 'AdonisJS 5', icon: 'i-file-icons-adonisjs' }
+]
+
 export const MODULE_INCREMENT_LOADING = 12

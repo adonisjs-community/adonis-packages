@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: lookinlab
     github: lookinlab
+compatibility:
+  adonis: ^5.0.0

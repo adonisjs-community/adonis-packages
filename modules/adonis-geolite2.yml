@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: Xstoudi
     github: Xstoudi
+compatibility:
+  adonis: ^5.0.0

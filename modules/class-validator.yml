@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: tnkemdilim
     github: tnkemdilim
+compatibility:
+  adonis: ^5.0.0

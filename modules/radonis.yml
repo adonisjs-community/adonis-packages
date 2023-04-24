@@ -13,3 +13,5 @@ type: 3rd-party
 maintainers:
   - name: microeinhundert
     github: microeinhundert
+compatibility:
+  adonis: ^5.0.0

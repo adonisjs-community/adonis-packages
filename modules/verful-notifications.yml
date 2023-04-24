@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: verful
     github: verful
+compatibility:
+  adonis: ^5.0.0

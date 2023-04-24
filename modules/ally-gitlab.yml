@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: rubenmoya
     github: rubenmoya
+compatibility:
+  adonis: ^5.0.0

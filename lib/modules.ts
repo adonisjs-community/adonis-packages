@@ -135,12 +135,19 @@ export async function getModule (name: string): Promise<ModuleInfo> {
     learn_more: '',
     category: 'Devtools', // see categories.ts
     type: '3rd-party', // official, community, 3rd-party
-    maintainers: []
+    maintainers: [],
+    compatibility: {
+      adonis: '^5.0.0'
+    }
   }
 
   const file = resolve(modulesDir, name + '.yml')
   if (existsSync(file)) {
     module = defu(yml.load(await fsp.readFile(file, 'utf-8')) as object, module)
+  }
+
+  if (module.type === 'official') {
+    module.compatibility!.adonis = '^5.0.0 || ^6.0.0'
   }
 
   return module

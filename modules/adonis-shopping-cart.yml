@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: alexpechkarev
     github: alexpechkarev
+compatibility:
+  adonis: ^5.0.0

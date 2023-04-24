@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: Georges KABBOUCHI
     github: KABBOUCHI
+compatibility:
+  adonis: ^5.0.0

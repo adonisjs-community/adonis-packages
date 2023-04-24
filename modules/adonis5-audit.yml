@@ -13,3 +13,5 @@ maintainers:
     github: ks-labs
   - name: vinicios.dev
     github: vinicioslc
+compatibility:
+  adonis: ^5.0.0

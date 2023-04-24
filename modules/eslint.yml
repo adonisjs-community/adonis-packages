@@ -11,3 +11,5 @@ type: community
 maintainers:
   - name: adonisjs-community
     github: adonisjs-community
+compatibility:
+  adonis: ^5.0.0

@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: maxgalbu
     github: maxgalbu
+compatibility:
+  adonis: ^5.0.0

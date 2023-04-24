@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: setten-io
     github: setten-io
+compatibility:
+  adonis: ^5.0.0

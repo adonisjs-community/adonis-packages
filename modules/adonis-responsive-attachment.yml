@@ -13,3 +13,5 @@ type: 3rd-party
 maintainers:
   - name: Ndianabasi Udonkang
     github: ndianabasi
+compatibility:
+  adonis: ^5.0.0

@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: guntribam
     github: guntribam
+compatibility:
+  adonis: ^5.0.0

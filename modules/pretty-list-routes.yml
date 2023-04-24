@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: Julien-R44
     github: Julien-R44
+compatibility:
+  adonis: ^5.0.0

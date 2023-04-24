@@ -48,6 +48,31 @@
             <UnoIcon class="i-carbon-close" />
           </button>
 
+          <!-- AdonisJS versions -->
+          <FilterButtons
+            title="AdonisJS version"
+            subtitle="Show modules working with:"
+            :items="VERSIONS"
+            :selected-item="selectedVersion"
+            @toggle="toggleVersion"
+          >
+            <template #icon="{ icon }">
+              <UnoIcon
+                class="text-md"
+                :class="icon"
+              />
+            </template>
+
+            <template #badge="{ key }">
+              <div
+                v-if="key === '6.x'"
+                class="text-primary-600 whitespace-nowrap	 text-xs dark:text-primary-400 border border-primary bg-primary-500/10 px-1.5 text-xs rounded-full"
+              >
+                Soon
+              </div>
+            </template>
+          </FilterButtons>
+
           <!-- Categories -->
           <FilterButtons
             title="Categories"
@@ -112,8 +137,9 @@
 </template>
 
 <script setup lang="ts">
+// @ts-ignore
 import Fuse from 'fuse.js/dist/fuse.basic.esm'
-import { CATEGORIES_ICONS, MODULE_INCREMENT_LOADING } from '~/composables/constants'
+import { CATEGORIES_ICONS, MODULE_INCREMENT_LOADING, VERSIONS } from '~/composables/constants'
 import type { ModulesData } from '~/composables/fetch'
 
 const sort = (a:number, b:number, asc?:boolean) => asc ? a - b : b - a
@@ -175,8 +201,9 @@ const filteredModules = computed(() => {
   if (selectedCategory.value) {
     modules = modules.filter(module => module.category === selectedCategory.value)
   }
+
   if (selectedVersion.value) {
-    modules = modules.filter(module => module.tags.includes(selectedVersion.value))
+    modules = modules.filter(module => (module.tags || []).includes(selectedVersion.value!))
   }
   return modules
 })
@@ -188,7 +215,7 @@ const pageFilteredModules = computed(() => {
 watch([q, orderBy, sortBy, selectedVersion, selectedCategory], syncURL, { deep: true })
 watch(() => vm.proxy.$route, applyURLFilters)
 
-function toggleCategory (category) {
+function toggleCategory (category: string) {
   if (selectedCategory.value === category) {
     selectedCategory.value = null
     return
@@ -196,7 +223,7 @@ function toggleCategory (category) {
   selectedCategory.value = category
 }
 
-function toggleVersion (version) {
+function toggleVersion (version: string) {
   if (selectedVersion.value === version) {
     selectedVersion.value = null
     return
@@ -239,7 +266,7 @@ function syncURL () {
 }
 
 function applyURLFilters () {
-  const route = vm.proxy.$route
+  const route = vm!.proxy!.$route
   if (typeof route.query.q === 'string') {
     q.value = route.query.q
   }
@@ -250,10 +277,10 @@ function applyURLFilters () {
     orderBy.value = route.query.orderBy
   }
   if (route.query.category) {
-    toggleCategory(route.query.category)
+    toggleCategory(route.query.category as string)
   }
   if (route.query.version) {
-    toggleVersion(route.query.version)
+    toggleVersion(route.query.version as string)
   }
 }
 
