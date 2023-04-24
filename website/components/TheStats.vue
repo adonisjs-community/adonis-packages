@@ -56,8 +56,8 @@
 </template>
 
 <script setup lang="ts">
-import { numberFormatter } from '~/utils/format'
 import { ModuleInfo } from '~/../lib/types'
+import { numberFormatter } from '~/utils/format'
 
 defineProps<{
   stats: {

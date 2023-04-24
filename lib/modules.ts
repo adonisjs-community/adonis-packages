@@ -7,7 +7,7 @@ import { categories } from './categories'
 import { ModuleInfo } from './types'
 import { fetchGithubPkg, modulesDir, distDir, distFile } from './utils'
 
-export async function sync (name, repo?: string, isNew: boolean = false) {
+export async function sync (name, repo?: string, isNew = false) {
   const module = await getModule(name)
 
   // Repo
@@ -109,7 +109,6 @@ export async function sync (name, repo?: string, isNew: boolean = false) {
     } else if (!isNew) {
       throw new Error(`No maintainer for ${module.name}`)
     } else {
-      // eslint-disable-next-line no-console
       console.log(`[TODO] Add a maintainer to ./modules/${name}.yml`)
     }
   }

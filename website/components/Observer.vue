@@ -4,9 +4,12 @@
 
 <script setup lang="ts">
 const props = defineProps<{ options?: {} }>()
-const emit = defineEmits<{(...args:any[]): void}>()
+const emit = defineEmits<{
+  (...args:any[]): void,
+  intersect: (e: IntersectionObserverEntry) => void
+}>()
 
-const observer = ref<IntersectionObserver>(null)
+const observer = ref<IntersectionObserver | null>(null)
 
 const elem = ref(null)
 
@@ -17,8 +20,8 @@ onMounted(() => {
     }
   }, props.options)
 
-  observer.value.observe(elem.value)
+  observer.value.observe(elem.value!)
 })
 
-onUnmounted(() => { observer.value.disconnect() })
+onUnmounted(() => { observer.value!.disconnect() })
 </script>

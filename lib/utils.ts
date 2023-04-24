@@ -10,19 +10,14 @@ export function fetchPKG (name) {
 }
 
 export function fetchRawGithub (path) {
-  return $fetch('https://raw.githubusercontent.com/' + path)
+  return $fetch('https://raw.githubusercontent.com/' + path, { responseType: 'json' })
 }
 
-export async function fetchGithubPkg (repo) {
+export function fetchGithubPkg (repo) {
   let path
-  [repo, path = 'master'] = repo.split('#')
+  [repo, path = 'main'] = repo.split('#')
 
-  try {
-    const rawData = await fetchRawGithub(repo + '/' + path + '/' + 'package.json')
-    return JSON.parse(rawData)
-  } catch (error) {
-    return {}
-  }
+  return fetchRawGithub(repo + '/' + path + '/' + 'package.json')
 }
 
 export function uniq (items: any[]) {

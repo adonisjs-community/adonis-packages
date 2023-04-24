@@ -52,6 +52,10 @@
 
 <script setup lang="ts">
 
+defineEmits<{
+  toggle:(key: string) => void
+}>()
+
 interface Item {
   key: string
   label: string
