@@ -11,5 +11,6 @@ export const categories = [
   'Payment',
   'Rendering',
   'Security',
-  'Storage'
+  'Storage',
+  'Testing'
 ] as const
