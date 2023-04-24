@@ -1,6 +1,6 @@
 name: request-throttler
 description: Request throttler provider for AdonisJS 5
-repo: reg2005/adonis-request-throttler
+repo: reg2005/adonis-request-throttler#master
 npm: adonis-request-throttler
 icon: ''
 github: https://github.com/reg2005/adonis-request-throttler

@@ -1,13 +1,13 @@
-name: '@setten/bull-queue'
-description: Queue system based on BullMQ for AdonisJS 5
+name: bull-queue
+description: Queue system based on BullMQ for AdonisJS
 repo: setten-io/adonis-bull-queue
 npm: '@setten/bull-queue'
-icon: 
+icon: ''
 github: https://github.com/setten-io/adonis-bull-queue
 website: https://github.com/setten-io/adonis-bull-queue
 learn_more: ''
 category: Extensions
 type: 3rd-party
 maintainers:
-  - name: Romain Lanz
-    github: RomainLanz
+  - name: setten-io
+    github: setten-io

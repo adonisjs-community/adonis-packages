@@ -1,6 +1,6 @@
 name: Lucid Filter
 description: Addon for filtering AdonisJS Lucid ORM
-repo: lookinlab/adonis-lucid-filter
+repo: lookinlab/adonis-lucid-filter#develop
 npm: adonis-lucid-filter
 icon: ''
 github: https://github.com/lookinlab/adonis-lucid-filter

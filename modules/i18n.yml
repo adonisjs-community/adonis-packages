@@ -1,6 +1,6 @@
 name: i18n
 description: Internationalization for AdonisJS apps
-repo: adonisjs/i18n
+repo: adonisjs/i18n#develop
 npm: '@adonisjs/i18n'
 icon: ''
 github: https://github.com/adonisjs/i18n

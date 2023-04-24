@@ -1,6 +1,6 @@
 name: bullmq
 description: Adonis 5 bullmq provider
-repo: reg2005/adonis5-bullmq
+repo: reg2005/adonis5-bullmq#master
 npm: adonis5-bullmq
 icon: bullmq.png
 github: https://github.com/reg2005/adonis5-bullmq

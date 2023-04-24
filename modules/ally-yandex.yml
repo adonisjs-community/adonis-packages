@@ -1,6 +1,6 @@
 name: ally-yandex
 description: A driver of AdonisJS Ally for Yandex
-repo: lookinlab/adonis-ally-yandex
+repo: lookinlab/adonis-ally-yandex#master
 npm: adonis-ally-yandex
 icon: yandex.png
 github: https://github.com/lookinlab/adonis-ally-yandex

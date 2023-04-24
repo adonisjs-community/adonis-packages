@@ -1,13 +1,13 @@
-name: '@stouder-io/adonis-geolite2'
-description: "Maxmind's GeoLite2 integration for Adonis"
+name: adonis-geolite2
+description: Maxmind's GeoLite2 integration for Adonis
 repo: Xstoudi/adonis-geolite2
 npm: '@stouder-io/adonis-geolite2'
-icon:
+icon: ''
 github: https://github.com/Xstoudi/adonis-geolite2
 website: https://github.com/Xstoudi/adonis-geolite2
 learn_more: ''
 category: Extensions
 type: 3rd-party
 maintainers:
-  - name: Xavier Stouder
+  - name: Xstoudi
     github: Xstoudi

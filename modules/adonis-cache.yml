@@ -1,10 +1,10 @@
-name: '@melchyore/adonis-cache'
-repo: Melchyore/adonis-cache
-description: 'Cache package for AdonisJS V5'
-icon: ''
-github: https://github.com/Melchyore/adonis-cache
-website: https://github.com/Melchyore/adonis-cache
+name: adonis-cache
+description: Cache package for AdonisJS V5
+repo: Melchyore/adonis-cache#master
 npm: '@melchyore/adonis-cache'
+icon: ''
+github: https://github.com/Melchyore/adonis-cache/tree/master
+website: https://github.com/Melchyore/adonis-cache/tree/master
 learn_more: ''
 category: Database
 type: 3rd-party

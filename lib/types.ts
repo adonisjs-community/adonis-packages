@@ -27,7 +27,7 @@ export interface ModuleInfo {
   category: (typeof categories)[number]
   type: ModuleType
   maintainers: MaintainerInfo[]
-  contributors: GithubContributor[]
+  contributors?: GithubContributor[]
 
   // Fetched in realtime API for modules.nuxt.org
   downloads?: number

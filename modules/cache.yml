@@ -1,6 +1,6 @@
 name: cache
 description: Cache provider for AdonisJS 5
-repo: reg2005/adonis5-cache
+repo: reg2005/adonis5-cache#master
 npm: adonis5-cache
 icon: ''
 github: https://github.com/reg2005/adonis5-cache

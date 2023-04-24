@@ -1,6 +1,6 @@
 name: pbkdf2
 description: A package that adds PBKDF2 to the hashers of Adonisjs v5.
-repo: maxgalbu/adonis5-pbkdf2
+repo: maxgalbu/adonis5-pbkdf2#master
 npm: adonis5-pbkdf2
 icon: ''
 github: https://github.com/maxgalbu/adonis5-pbkdf2

@@ -1,6 +1,6 @@
 name: drive-s3
 description: S3 driver for AdonisJS drive
-repo: adonisjs/drive-s3
+repo: adonisjs/drive-s3#develop
 npm: '@adonisjs/drive-s3'
 icon: s3.png
 github: https://github.com/adonisjs/drive-s3

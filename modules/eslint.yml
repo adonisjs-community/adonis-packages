@@ -1,6 +1,6 @@
 name: eslint
 description: ESlint rules for AdonisJs applications and addons
-repo: adonisjs-community/eslint-plugin-adonis
+repo: adonisjs-community/eslint-plugin-adonis#develop
 npm: eslint-plugin-adonis
 icon: eslint.png
 github: https://github.com/adonisjs-community/eslint-plugin-adonis

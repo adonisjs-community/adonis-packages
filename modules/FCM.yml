@@ -1,6 +1,6 @@
 name: FCM
 description: Firebase Cloud Messaging for AdonisJS
-repo: lookinlab/adonis-fcm
+repo: lookinlab/adonis-fcm#develop
 npm: adonis-fcm
 icon: firebase.png
 github: https://github.com/lookinlab/adonis-fcm

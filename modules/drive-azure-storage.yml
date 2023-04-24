@@ -1,6 +1,6 @@
 name: drive-azure-storage
 description: Azure storage driver for AdonisJS drive
-repo: AlexanderYW/Adonis-Drive-Azure-Storage
+repo: AlexanderYW/Adonis-Drive-Azure-Storage#master
 npm: adonis-drive-azure-storage
 icon: azure.png
 github: https://github.com/AlexanderYW/Adonis-Drive-Azure-Storage

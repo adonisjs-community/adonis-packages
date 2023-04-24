@@ -1,6 +1,6 @@
 name: session
 description: Session provider for AdonisJS
-repo: adonisjs/session
+repo: adonisjs/session#develop
 npm: '@adonisjs/session'
 icon: ''
 github: https://github.com/adonisjs/session

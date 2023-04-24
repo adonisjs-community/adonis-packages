@@ -1,5 +1,7 @@
 name: route-model-binding
-description: Bind the route parameters with Lucid models and automatically query the database
+description: >-
+  Bind the route parameters with Lucid models and automatically query the
+  database
 repo: adonisjs/route-model-binding
 npm: '@adonisjs/route-model-binding'
 icon: ''

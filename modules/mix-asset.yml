@@ -1,6 +1,6 @@
 name: mix-asset
 description: Laravel Mix for Asset Bundler on AdonisJS
-repo: wahyubucil/adonis-mix-asset
+repo: wahyubucil/adonis-mix-asset#master
 npm: adonis-mix-asset
 icon: mix.png
 github: https://github.com/wahyubucil/adonis-mix-asset

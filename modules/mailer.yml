@@ -2,7 +2,7 @@ name: mailer
 description: >-
   Mail provider for adonis framework and has support for all common mailing
   services to send emails
-repo: adonisjs/mail
+repo: adonisjs/mail#develop
 npm: '@adonisjs/mail'
 icon: ''
 github: https://github.com/adonisjs/mail

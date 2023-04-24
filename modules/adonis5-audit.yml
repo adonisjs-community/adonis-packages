@@ -1,11 +1,11 @@
-name: "adonis5-audit"
+name: adonis5-audit
 description: Utility to easily audit models in AdonisJS
 repo: ks-labs/adonis5-audit
-npm: "adonis5-audit"
-icon: "audit.png"
+npm: adonis5-audit
+icon: audit.png
 github: https://github.com/ks-labs/adonis5-audit
 website: https://github.com/ks-labs/adonis5-audit
-learn_more: ""
+learn_more: ''
 category: Database
 type: 3rd-party
 maintainers:

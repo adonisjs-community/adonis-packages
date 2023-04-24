@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="https://i.imgur.com/2wGdEJN.png" width="200" fill="red"/>
-  <br/>
+  <img src="https://i.imgur.com/2wGdEJN.png" width="200" fill="red" />
+  <br />
   <h3>AdonisJS Packages</h3>
   <p>Discover AdonisJS packages to supercharge your project !</p>
   <p>👉 <a href="https://packages.adonisjs.com">https://packages.adonisjs.com</a> 👈</p>
@@ -12,7 +12,7 @@ Metadata of AdonisJS packages are maintained in [yml](https://en.wikipedia.org/w
 
 ### Contribution
 
-- If you feel a package is missing, please create a new [issue]()
+- If you feel a package is missing, please create a new [issue]() or open a pull request after [syncing](#add-or-update-repository) your package
 - If some data is outdated please directly open a pull request
 
 ### Schema
@@ -41,7 +41,7 @@ pnpm sync <name> <repo>
 
 Example: `pnpm sync eslint adonisjs-community/eslint-plugin-adonis`
 
-To sync with a branch different than `master`, suffix the repo with `#repo-branch`, example: `pnpm sync eslint adonisjs-community/eslint-plugin-adonis#dev`
+**To sync with a branch different than `master`, suffix the repo with `#repo-branch`, example: `pnpm sync eslint adonisjs-community/eslint-plugin-adonis#dev`**
 
 ### Auto update all current packages
 

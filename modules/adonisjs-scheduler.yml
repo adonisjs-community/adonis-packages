@@ -1,7 +1,7 @@
-name: 'adonisjs-scheduler'
+name: adonisjs-scheduler
 description: Task scheduler for AdonisJS
-repo: KABBOUCHI/adonisjs-scheduler
-npm: 'adonisjs-scheduler'
+repo: KABBOUCHI/adonisjs-scheduler#master
+npm: adonisjs-scheduler
 icon: ''
 github: https://github.com/KABBOUCHI/adonisjs-scheduler
 website: https://github.com/KABBOUCHI/adonisjs-scheduler

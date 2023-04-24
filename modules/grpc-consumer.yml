@@ -1,5 +1,5 @@
 name: grpc-consumer
-description: "🕸️ Adonis gRPC client provider for easily communicate with gRPC services"
+description: 🕸️ Adonis gRPC client provider for easily communicate with gRPC services
 repo: Julien-R44/adonis-grpc-consumer
 npm: adonis-grpc-consumer
 icon: grpc-consumer.png

@@ -1,6 +1,6 @@
 name: ally-vk
 description: A driver of AdonisJS Ally for vk.com
-repo: lookinlab/adonis-ally-vk
+repo: lookinlab/adonis-ally-vk#master
 npm: adonis-ally-vk
 icon: vk.png
 github: https://github.com/lookinlab/adonis-ally-vk

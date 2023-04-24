@@ -100,7 +100,6 @@ export async function sync (name, repo?: string, isNew = false) {
   // TODO: Sync with maintainers.app
   if (!module.maintainers.length) {
     const owner = module.repo.split('/')[0]
-    console.log(owner)
     if (owner !== 'nuxt-community' && owner !== 'nuxt') {
       module.maintainers.push({
         name: owner,
@@ -138,8 +137,7 @@ export async function getModule (name): Promise<ModuleInfo> {
     learn_more: '',
     category: 'Devtools', // see modules/_categories.json
     type: '3rd-party', // official, community, 3rd-party
-    maintainers: [],
-    contributors: []
+    maintainers: []
   }
 
   const file = resolve(modulesDir, name + '.yml')

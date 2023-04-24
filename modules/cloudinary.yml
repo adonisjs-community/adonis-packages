@@ -1,6 +1,6 @@
 name: cloudinary
 description: A Cloudinary Wrapper for Adonis 5
-repo: liam-edwards/adonisjs-cloudinary
+repo: liam-edwards/adonisjs-cloudinary#master
 npm: adonisjs-cloudinary
 icon: cloudinary.png
 github: https://github.com/liam-edwards/adonisjs-cloudinary

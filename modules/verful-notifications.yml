@@ -1,13 +1,13 @@
-name: '@verful/notifications'
-description: Handle notifications on your AdonisJS applications
-repo: verful/notifications
+name: verful-notifications
+description: The easiest way to send notifications in AdonisJS
+repo: verful/adonis-notifications#master
 npm: '@verful/notifications'
 icon: ''
-github: https://github.com/verful/notifications
-website: https://github.com/verful/notifications
+github: https://github.com/verful/adonis-notifications/tree/master
+website: https://github.com/verful/adonis-notifications/tree/master
 learn_more: ''
 category: Messaging
 type: 3rd-party
 maintainers:
-  - name: arthur-er
-    github: arthur-er
+  - name: verful
+    github: verful
