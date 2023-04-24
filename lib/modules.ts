@@ -117,25 +117,23 @@ export async function sync (name, repo?: string, isNew = false) {
     module.description = pkg.description
   }
 
-  // Compatibility
-
   // Write module
   await writeModule(module)
 
   return module
 }
 
-export async function getModule (name): Promise<ModuleInfo> {
+export async function getModule (name: string): Promise<ModuleInfo> {
   let module: ModuleInfo = {
     name,
     description: '',
-    repo: '', // nuxt/example
-    npm: '', // @nuxt/core
+    repo: '', // adonisjs/example
+    npm: '', // @adonisjs/core
     icon: '', // url or filename from /static/icons
     github: '', // github link
     website: '',
     learn_more: '',
-    category: 'Devtools', // see modules/_categories.json
+    category: 'Devtools', // see categories.ts
     type: '3rd-party', // official, community, 3rd-party
     maintainers: []
   }
@@ -148,29 +146,38 @@ export async function getModule (name): Promise<ModuleInfo> {
   return module
 }
 
-export async function writeModule (module) {
+export async function writeModule (module: ModuleInfo) {
   const file = resolve(modulesDir, `${module.name}.yml`)
+
   await fsp.writeFile(file, yml.dump(module), 'utf8')
 }
 
+/**
+ * Read all modules from the modules directory
+ */
 export async function readModules () {
   const globPattern = join(modulesDir, '*.yml').replace(/\\/g, '/')
-  const names = (await globby(globPattern)).map(p => basename(p, extname(p))).filter(_ => _)
+  const files = await globby(globPattern)
+  const names = files.map(p => basename(p, extname(p))).filter(Boolean)
 
-  return Promise.all(names.map(n => getModule(n)))
+  return Promise
+    .all(names.map(n => getModule(n)))
     .then(modules => modules.filter(m => m.name))
 }
 
+/**
+ * Sync all modules from the modules directory
+ */
 export async function syncAll () {
   const modules = await readModules()
-  const updatedModules = await Promise.all(modules.map((module) => {
-    return sync(module.name, module.repo)
-  }))
+  const updatedModules = await Promise.all(modules.map(module => sync(module.name, module.repo)))
+
   return updatedModules
 }
 
 export async function build () {
   const modules = await readModules()
+
   await fsp.mkdir(distDir, { recursive: true })
   await fsp.writeFile(distFile, JSON.stringify(modules, null, 2))
 }

@@ -1,3 +1,4 @@
+import { ui } from './cliui.js'
 import { sync, syncAll, build } from './modules.js'
 import { version } from './version.js'
 
@@ -9,14 +10,15 @@ async function main () {
       {
         const [name, repo] = args
         if (name) {
-          console.log('Syncing ' + (name === '-' ? repo : name))
+          ui.logger.info('Syncing ' + (name === '-' ? repo : name))
           const module = await sync(name, repo, true)
-          console.log('Synced', module.name)
-        } else {
-          console.log('Syncing all modules')
-          const modules = await syncAll()
-          console.log('Sync ' + modules.length + ' modules')
+          ui.logger.info('Synced ' + module.name)
+          return
         }
+
+        ui.logger.info('Syncing all modules')
+        const modules = await syncAll()
+        ui.logger.info('Synced ' + modules.length + ' modules')
       }
       break
     case 'build':

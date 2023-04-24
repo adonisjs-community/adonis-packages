@@ -1,3 +1,6 @@
+/**
+ * Different available modules categories
+ */
 export const categories = [
   'Authentication',
   'Authorization',
