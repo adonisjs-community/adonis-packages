@@ -1,14 +1,13 @@
 <template>
-  <div class="pb-16 relative bg-gray-100 dark:bg-secondary-black nuxt-text-default">
+  <div class="pb-16 relative bg-gray-100 dark:bg-secondary-black nuxt-text-default font-sans">
     <div
       class="relative bg-primary shadow w-full sticky top-0 z-50 backdrop-filter backdrop-blur-[12px] border-none"
     >
       <TheNav ref="searchEl" :search="q" @update:search="v=>q=v">
         <template #head>
           <button
-            v-show="!lg"
             aria-label="Toggle Drawer"
-            class="!outline-none text-xl h-1.2em my-auto"
+            class="!outline-none text-xl h-1.2em my-auto block lg:hidden"
             @click="isDrawerOpen = true"
           >
             <UnoIcon class="i-carbon-menu text-white" />
@@ -33,19 +32,17 @@
     </div>
 
     <!-- Body -->
-    <div class="w-full max-w-390 px-4 mx-auto pt-8 grid grid-cols-1 lg:grid-cols-[18em,1fr] gap-4">
+    <div class="w-full max-w-390 px-4 mx-auto pt-8 grid grid-cols-1 lg:grid-cols-[18em_1fr] gap-4">
       <!-- Sidebar -->
       <TheDrawer
-        :enabled="!lg"
         :open="isDrawerOpen"
         :drawer-class="'bg-gray-100 dark:bg-secondary-black p-4 w-20em border-r nuxt-border h-full overflow-auto'"
         @close="isDrawerOpen=false"
       >
         <div class="p-4 relative">
           <button
-            v-show="!lg"
             aria-label="Close Drawer"
-            class="absolute top-0 right-0 !outline-none text-2xl"
+            class="absolute top-0 right-0 !outline-none text-2xl block lg:hidden"
             @click="isDrawerOpen = false"
           >
             <UnoIcon class="i-carbon-close" />
@@ -105,9 +102,7 @@
           style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))"
         >
           <template v-for="mod of pageFilteredModules">
-            <LazyHydrate :key="mod.name" when-visible>
-              <CardModule :mod="mod" />
-            </LazyHydrate>
+            <CardModule :mod="mod" />
           </template>
           <Observer @intersect="intersectedModulesLoading" />
         </div>
@@ -117,9 +112,7 @@
 </template>
 
 <script setup lang="ts">
-import LazyHydrate from 'vue-lazy-hydration'
 import Fuse from 'fuse.js/dist/fuse.basic.esm'
-import { breakpointsTailwind } from '@vueuse/core'
 import { CATEGORIES_ICONS, MODULE_INCREMENT_LOADING } from '~/composables/constants'
 import type { ModulesData } from '~/composables/fetch'
 
@@ -131,8 +124,6 @@ const props = defineProps<{
 
 const vm = getCurrentInstance()
 const searchEl = ref()
-
-const { md, lg } = useBreakpoints(breakpointsTailwind)
 
 const isDrawerOpen = ref(false)
 const q = ref('')

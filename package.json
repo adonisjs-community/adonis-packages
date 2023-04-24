@@ -1,22 +1,19 @@
 {
   "private": true,
-  "workspaces": [
-    "npm",
-    "website"
-  ],
   "scripts": {
-    "build": "yarn cli build",
+    "build": "pnpm cli build",
     "cli": "jiti ./lib/cli",
-    "dev": "cd website && yarn dev",
+    "dev": "pnpm -C website dev",
     "lint": "eslint --ext .vue,.ts .",
-    "release": "yarn cli version && cd npm && npm publish",
-    "sync": "yarn cli sync",
-    "test": "yarn lint && yarn sync"
+    "release": "pnpm cli version && cd npm && npm publish",
+    "sync": "pnpm cli sync",
+    "test": "pnpm lint && pnpm sync"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "@types/js-yaml": "^4.0.5",
     "@types/node": "^17.0.5",
+    "@unocss/nuxt": "^0.51.8",
     "@vue/runtime-dom": "^3.2.26",
     "defu": "^5.0.0",
     "eslint": "^8.5.0",

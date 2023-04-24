@@ -21,29 +21,49 @@
         >/</span>
       </label>
     </div>
-    <button
-      aria-label="Search"
-      class="block md:hidden !outline-none text-xl h-1.2em my-auto"
-      @click="toggleSearch()"
-    >
-      <UnoIcon class="i-carbon-search text-white" />
-    </button>
-    <button aria-label="Toggle theme" class="!outline-none text-xl h-1.2em my-auto" @click="toggleDarkMode()">
-      <ColorScheme placeholder="..." tag="span">
-        <UnoIcon v-if="$colorMode.preference === 'system'" class="text-white i-carbon-laptop" />
-        <UnoIcon v-else-if="$colorMode.value === 'dark'" class="text-white i-carbon-moon" />
-        <UnoIcon v-else class="text-white i-carbon-sun" />
-      </ColorScheme>
-    </button>
+    <div class="flex gap-3">
+      <button
+        aria-label="Search"
+        class="block md:hidden !outline-none text-xl h-1.2em my-auto"
+        @click="toggleSearch()"
+      >
+        <UnoIcon class="i-carbon-search" />
+      </button>
+      <a
+        aria-label="GitHub"
+        class="!outline-none text-xl h-1.2em my-auto"
+        href="https://github.com/adonisjs-community/adonis-packages"
+        target="_blank"
+      >
+        <UnoIcon class="i-carbon-logo-github" />
+      </a>
+      <button
+        aria-label="Toggle theme"
+        class="!outline-none text-xl h-1.2em my-auto"
+        @click="toggleColorMode()"
+      >
+        <UnoIcon class="dark:i-carbon-moon i-carbon-sun" />
+      </button>
+    </div>
     <slot name="tail" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { useEventListener } from '@vueuse/core'
 import { isMobile } from '~/utils/detectUserAgent'
 
 const props = defineProps<{ search: string }>()
 const emit = defineEmits<{(e: 'update:search', v: string): void }>()
+
+const colorMode = useColorMode()
+function toggleColorMode () {
+  colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'
+}
+
+const updateSearch = useDebounceFn((v: string) => {
+  emit('update:search', v)
+}, 500)
 
 const searchEl = ref<HTMLInputElement>()
 const searchModel = computed<string>({
@@ -51,17 +71,11 @@ const searchModel = computed<string>({
     return props.search
   },
   set (v) {
-    emit('update:search', v)
+    updateSearch(v)
   }
 })
 
 const isSearchOpen = ref(false)
-
-const toggleNext = {
-  system: 'dark', // TODO
-  dark: 'light',
-  light: 'dark'
-}
 
 async function toggleSearch () {
   isSearchOpen.value = !isSearchOpen.value
@@ -74,11 +88,6 @@ async function toggleSearch () {
 
 function focusSearchInput () {
   searchEl.value?.focus()
-}
-
-const vm = getCurrentInstance().proxy
-function toggleDarkMode () {
-  vm.$colorMode.preference = toggleNext[vm.$colorMode.preference] || 'system'
 }
 
 onMounted(() => {

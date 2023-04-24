@@ -6,8 +6,6 @@
   <p>👉 <a href="https://packages.adonisjs.com">https://packages.adonisjs.com</a> 👈</p>
 </div>
 
-
-
 ## Packages Database
 
 Metadata of AdonisJS packages are maintained in [yml](https://en.wikipedia.org/wiki/YAML) files inside [./modules](./modules) directory and automatically synced from upstream to fetch latest information.
@@ -29,33 +27,32 @@ Field Name      | Auto sync | Description
 `github`        | No        | Github URL
 `website`       | No        | Website URL
 `learn_more`    | No        | Link to learn more (website or relevant integration website)
-`category`      | No        | Package category from [./lib/categories.json](./lib/categories.json)
+`category`      | No        | Package category from [./lib/categories.ts](./lib/categories.ts)
 `type`          | No        | `community` (for [adonisjs-community](https://github.com/adonisjs-community/)), `official` (for https://github.com/) or `3rd-party`
 `maintainers`   | Yes       | List of maintainers each item has `name`, `github` and `avatar`
-
 
 ## Maintenance
 
 ### Add or update repository
 
 ```bash
-yarn sync <name> <repo>
+pnpm sync <name> <repo>
 ```
 
-Example: `yarn sync eslint adonisjs-community/eslint-plugin-adonis`
+Example: `pnpm sync eslint adonisjs-community/eslint-plugin-adonis`
 
-To sync with a branch different than `master`, suffix the repo with `#repo-branch`, example: `yarn sync eslint adonisjs-community/eslint-plugin-adonis#dev`
+To sync with a branch different than `master`, suffix the repo with `#repo-branch`, example: `pnpm sync eslint adonisjs-community/eslint-plugin-adonis#dev`
 
 ### Auto update all current packages
 
 ```bash
-yarn sync
+pnpm sync
 ```
 
 ### Generate `npm/modules.json`
 
 ```bash
-yarn build
+pnpm build
 ```
 
 ## Website development
@@ -66,7 +63,7 @@ yarn build
 Start development:
 
 ```bash
-npx yarn dev
+pnpm dev
 ```
 
 Then visit http://localhost:3000
