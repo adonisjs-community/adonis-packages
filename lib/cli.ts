@@ -1,5 +1,5 @@
-import { sync, syncAll, build } from './modules'
-import { version } from './version'
+import { sync, syncAll, build } from './modules.js'
+import { version } from './version.js'
 
 async function main () {
   const [command, ...args] = process.argv.splice(2)

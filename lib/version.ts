@@ -1,8 +1,8 @@
-import path from 'path'
-import { promises as fsp } from 'fs'
+import path from 'node:path'
+import { promises as fsp } from 'node:fs'
 import hasha from 'hasha'
-import { rootDir, distFile } from './utils'
-import { build } from './modules'
+import { rootDir, distFile } from './utils.js'
+import { build } from './modules.js'
 
 export async function version () {
   await build()

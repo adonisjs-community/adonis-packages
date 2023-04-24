@@ -1,11 +1,11 @@
-import { resolve, join, basename, extname } from 'path'
-import { promises as fsp, existsSync } from 'fs'
+import { resolve, join, basename, extname } from 'node:path'
+import { promises as fsp, existsSync } from 'node:fs'
 import * as yml from 'js-yaml'
 import { globby } from 'globby'
 import defu from 'defu'
-import { categories } from './categories'
-import { ModuleInfo } from './types'
-import { fetchGithubPkg, modulesDir, distDir, distFile } from './utils'
+import { categories } from './categories.js'
+import { ModuleInfo } from './types.js'
+import { fetchGithubPkg, modulesDir, distDir, distFile } from './utils.js'
 
 export async function sync (name, repo?: string, isNew = false) {
   const module = await getModule(name)

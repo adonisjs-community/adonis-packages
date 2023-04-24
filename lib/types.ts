@@ -1,4 +1,5 @@
-import type { categories } from './categories'
+import type { categories } from './categories.js'
+
 export interface MaintainerInfo {
   name: string
   github: string
