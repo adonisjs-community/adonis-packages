@@ -39,8 +39,11 @@ export async function sync (name, repo?: string, isNew = false) {
     module.type = 'community'
   } else if (module.repo.startsWith('adonisjs/')) {
     module.type = 'official'
+  } else if (module.repo.startsWith('japa/')) {
+    module.type = 'official'
+    module.category = 'Testing'
   } else {
-    module.type = '3rd-party'
+    module.type = 'community'
   }
 
   // Category
