@@ -72,6 +72,7 @@
           </div>
         </a>
         <a
+          v-if="mod.npm"
           :href="npmUrl(mod)"
           aria-label="npm"
           target=" _blank"

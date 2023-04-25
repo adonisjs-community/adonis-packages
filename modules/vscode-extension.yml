@@ -1,7 +1,6 @@
 name: vscode-extension
 description: 💻 Official VS Code Extension for AdonisJS
 repo: Julien-R44/adonis-vscode-extension
-npm: adonis-vscode-extension
 icon: vscode.png
 github: https://github.com/Julien-R44/adonis-vscode-extension
 website: >-

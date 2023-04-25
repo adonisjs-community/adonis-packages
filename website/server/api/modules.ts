@@ -12,15 +12,23 @@ function rand (min: number, max: number) {
   return min + Math.round((Math.random() * (max - min)))
 }
 
+async function fetchNpmPackage (module: ModuleInfo) {
+  if (!module.npm) {
+    return { downloads: { lastMonth: 0 } }
+  }
+
+  return $fetch<any>(`https://api.nuxtjs.org/api/npm/package/${module.npm}`)
+    .catch((err) => {
+      console.error(`Cannot fetch npm info for ${module.npm}: ${err}`)
+      return { downloads: { lastMonth: 0 } }
+    })
+}
+
 async function fetchModuleStats (module: ModuleInfo) {
   const ghRepo = module.repo.split('#')[0]
   if (process.env.NODE_ENV === 'production' || process.env.USE_NUXT_API) {
     const [npm, github, contributors] = await Promise.all([
-      $fetch<any>(`https://api.nuxtjs.org/api/npm/package/${module.npm}`)
-        .catch((err) => {
-          console.error(`Cannot fetch npm info for ${module.npm}: ${err}`)
-          return { downloads: { lastMonth: 0 } }
-        }),
+      fetchNpmPackage(module),
       $fetch<any>(`https://api.nuxtjs.org/api/github/repo/${ghRepo}`)
         .catch((err) => {
           console.error(`Cannot fetch github repo info for ${ghRepo}: ${err}`)

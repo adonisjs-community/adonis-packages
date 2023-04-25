@@ -23,7 +23,7 @@ export interface ModuleInfo {
   name: string
   description:string
   repo: string
-  npm: string
+  npm?: string
   icon?: string
   github: string
   website:string
