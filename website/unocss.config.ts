@@ -1,8 +1,4 @@
-import presetUno from '@unocss/preset-uno'
-import presetAttributify from '@unocss/preset-attributify'
-import presetWebFonts from '@unocss/preset-web-fonts'
-import presetIcons from '@unocss/preset-icons'
-import { defineConfig } from 'unocss'
+import { presetUno, presetAttributify, presetWebFonts, presetIcons, defineConfig } from 'unocss'
 
 export default defineConfig({
   include: [/\.vue$/, /\.ts$/, /\.vue\?vue/],

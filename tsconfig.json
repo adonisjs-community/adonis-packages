@@ -1,7 +1,12 @@
 {
-  "extends": "./website/.nuxt/tsconfig.json",
-
   "ts-node": {
     "transpileOnly": true
+  },
+
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "dist",
+    "module": "ESNext",
+    "moduleResolution": "nodenext"
   }
 }

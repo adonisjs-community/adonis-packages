@@ -37,6 +37,9 @@ devDependencies:
   ohmyfetch:
     specifier: ^0.4.21
     version: 0.4.21
+  unocss:
+    specifier: ^0.51.8
+    version: 0.51.8(@unocss/webpack@0.51.8)(postcss@8.4.23)(vite@4.3.1)
   vue-plausible:
     specifier: ^1.3.2
     version: 1.3.2
