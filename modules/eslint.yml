@@ -7,7 +7,7 @@ github: https://github.com/adonisjs-community/eslint-plugin-adonis
 website: https://github.com/adonisjs-community/eslint-plugin-adonis
 learn_more: ''
 category: Devtools
-type: community
+type: official
 maintainers:
   - name: adonisjs-community
     github: adonisjs-community

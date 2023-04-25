@@ -73,9 +73,27 @@
             </template>
           </FilterButtons>
 
+          <!-- Type  -->
+          <FilterButtons
+            title="Type"
+            subtitle="Show modules made by the AdonisJS team or by the community"
+            :items="[{
+              key: 'official',
+              label: 'Official',
+              icon: 'i-carbon-badge'
+            }, {
+              key: '3rd-party',
+              label: 'Community',
+              icon: 'i-carbon-user-multiple'
+            }]"
+            :selected-item="selectedType"
+            @toggle="toggleType"
+          />
+
           <!-- Categories -->
           <FilterButtons
             title="Categories"
+            subtitle="Show modules of category:"
             :items="categoriesList"
             :selected-item="selectedCategory"
             @toggle="toggleCategory"
@@ -92,6 +110,12 @@
             <div>Filter{{ filtersCount > 1 ? 's' : '' }}</div>
             <FilterLabel v-if="selectedCategory" @close="selectedCategory = null">
               {{ selectedCategory }}
+            </FilterLabel>
+            <FilterLabel v-if="selectedType" class="capitalize" @close="selectedType = null">
+              {{ selectedType }}
+            </FilterLabel>
+            <FilterLabel v-if="selectedVersion" class="capitalize" @close="selectedVersion = null">
+              {{ selectedVersion }}
             </FilterLabel>
             <FilterLabel v-if="q" @close="q = ''">
               {{ q }}
@@ -157,6 +181,7 @@ const orderBy = ref('downloads')
 const sortBy = ref('desc')
 const selectedVersion = ref<string | null>()
 const selectedCategory = ref<string | null>()
+const selectedType = ref<string | null>()
 const moduleLoaded = ref(MODULE_INCREMENT_LOADING)
 const fuseOptions = {
   threshold: 0.1,
@@ -174,12 +199,13 @@ const fuseOptions = {
 const fuseIndex = Fuse.createIndex(fuseOptions.keys, props.state.modules)
 const fuse = new Fuse(props.state.modules, fuseOptions, fuseIndex)
 
-const displayFiltersBlock = computed(() => selectedCategory.value || q.value || selectedVersion.value)
+const displayFiltersBlock = computed(() => selectedCategory.value || q.value || selectedVersion.value || selectedType.value)
 
 const filtersCount = computed(() => {
   let count = 0
   if (selectedCategory.value) { count++ }
   if (selectedVersion.value) { count++ }
+  if (selectedType.value) { count++ }
   if (q.value) { count++ }
   return count
 })
@@ -205,6 +231,11 @@ const filteredModules = computed(() => {
   if (selectedVersion.value) {
     modules = modules.filter(module => (module.tags || []).includes(selectedVersion.value!))
   }
+
+  if (selectedType.value) {
+    modules = modules.filter(module => module.type === selectedType.value)
+  }
+
   return modules
 })
 
@@ -212,8 +243,17 @@ const pageFilteredModules = computed(() => {
   return Array.from(filteredModules.value).splice(0, moduleLoaded.value)
 })
 
-watch([q, orderBy, sortBy, selectedVersion, selectedCategory], syncURL, { deep: true })
+watch([q, orderBy, sortBy, selectedVersion, selectedCategory, selectedType], syncURL, { deep: true })
 watch(() => vm.proxy.$route, applyURLFilters)
+
+function toggleType (type: string) {
+  if (selectedType.value === type) {
+    selectedType.value = null
+    return
+  }
+
+  selectedType.value = type
+}
 
 function toggleCategory (category: string) {
   if (selectedCategory.value === category) {
@@ -234,6 +274,7 @@ function toggleVersion (version: string) {
 function clearFilters () {
   selectedCategory.value = null
   selectedVersion.value = null
+  selectedType.value = null
   q.value = null
   moduleLoaded.value = MODULE_INCREMENT_LOADING
 }
@@ -259,6 +300,10 @@ function syncURL () {
   if (selectedVersion.value) {
     queries.push(`version=${selectedVersion.value}`)
   }
+  if (selectedType.value) {
+    queries.push(`type=${selectedType.value}`)
+  }
+
   let query = queries.join('&')
   if (query) { query = '?' + query }
 
