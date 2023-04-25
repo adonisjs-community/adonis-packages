@@ -1,12 +1,12 @@
 import { ModuleInfo } from '../../../lib/types'
 
-export default async () => {
+export default defineEventHandler(async () => {
   const _modules = await import('../../../npm/modules.json').then(r => r.default || r) as ModuleInfo[]
   const modules = await Promise.all(_modules.map(module => fetchModuleStats(module)))
   return {
     modules
   }
-}
+})
 
 function rand (min: number, max: number) {
   return min + Math.round((Math.random() * (max - min)))
