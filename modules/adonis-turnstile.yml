@@ -1,0 +1,15 @@
+name: adonis-turnstile
+description: A Cloudflare Turnstile CAPCHA package for Adonisjs framework.
+repo: tuanvu0995/adonis-turnstile
+npm: adonis-turnstile
+icon: turnstile.png
+github: https://github.com/tuanvu0995/adonis-turnstile
+website: https://github.com/tuanvu0995/adonis-turnstile
+learn_more: ''
+category: Security
+type: community
+maintainers:
+  - name: Vu Lai
+    github: tuanvu0995
+compatibility:
+  adonis: ^5.0.0
