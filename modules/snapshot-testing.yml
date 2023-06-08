@@ -1,0 +1,15 @@
+name: snapshot-testing
+description: Snapshot testing plugin for Japa
+repo: japa/snapshot
+npm: '@japa/snapshot'
+icon: ''
+github: https://github.com/japa/snapshot
+website: https://github.com/japa/snapshot
+learn_more: ''
+category: Testing
+type: official
+maintainers:
+  - name: japa
+    github: japa
+compatibility:
+  adonis: ^5.0.0
