@@ -1,0 +1,16 @@
+name: portal
+description: >-
+  Scaffold login, signup, password reset and email verification controllers and views with one command.
+repo: adonisaddons/portal#master
+npm: "@adonisaddons/portal"
+icon: ""
+github: https://github.com/adonisaddons/portal
+website: https://github.com/adonisaddons/portal
+learn_more: ""
+category: Authentication
+type: 3rd-party
+maintainers:
+  - name: dmdboi
+    github: dmdboi
+compatibility:
+  adonis: ^5
