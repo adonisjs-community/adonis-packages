@@ -58,13 +58,8 @@ pnpm build
 ## Website development
 
 - Clone repository
-- Install website dependencies using `npx yarn install`
-
-Start development:
-
-```bash
-pnpm dev
-```
+- Install website dependencies using `pnpm install -r`
+- Start development server using `pnpm dev`
 
 Then visit http://localhost:3000
 
