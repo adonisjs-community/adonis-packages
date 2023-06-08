@@ -16,9 +16,9 @@
       </div>
     </a>
 
-    <div class="flex items-start w-full h-20">
+    <div class="flex items-center w-full h-20">
       <div
-        class="relative border  bg-white border-gray-200 dark:bg-secondary-dark dark:border-secondary-dark w-20 h-20 rounded-lg flex flex-none items-center justify-center"
+        class="relative border bg-mauve border-mauve3  w-20 h-20 rounded-lg flex flex-none items-center justify-center"
       >
         <!-- TODO: use <nuxt-img> -->
         <img
@@ -32,7 +32,7 @@
         >
         <UnoIcon v-else :class="iconPlaceholder(mod)" class="text-4xl opacity-20" />
       </div>
-      <div class="ml-6 w-full h-full">
+      <div class="ml-6 flex items-center w-full h-full">
         <h2
           class="flex text-lg font-semibold items-center dark:text-white h-9 line-2 leading-tight"
         >
@@ -40,7 +40,7 @@
           <UnoIcon
             v-if="mod.type === 'official'"
             v-tooltip="{ content: 'Official',classes: tooltipClass }"
-            class="i-carbon-badge text-yellow-600 text-lg ml-1 my-auto opacity-85"
+            class="i-carbon-badge dark:text-yellow9 text-yellow11 text-lg ml-2 my-auto opacity-85"
           />
         </h2>
       </div>
@@ -48,7 +48,7 @@
 
     <div class="h-20 mt-4">
       <p
-        class="text-sky-dark dark:text-white dark:opacity-85 text-sm font-normal line-clamp-3 mt-2"
+        class="text-mauve12 text-sm font-normal line-clamp-3 mt-2"
       >
         {{ mod.description }}
       </p>
@@ -62,7 +62,7 @@
           aria-label="stars"
           target=" _blank"
           rel="noopener"
-          class="flex whitespace-nowrap w-full mr-4 text-sky-dark hover:text-primary dark:hover:text-primary-300 dark:text-white"
+          class="flex whitespace-nowrap w-full mr-4 text-mauve11 hover:text-violet10 dark:hover:text-primary-300"
         >
           <UnoIcon class="mr-2 i-carbon-star" />
           <div class="text-sm leading-5 font-medium truncate">
@@ -78,7 +78,7 @@
           aria-label="npm"
           target=" _blank"
           rel="noopener"
-          class="flex whitespace-nowrap w-full mr-4 text-sky-dark hover:text-primary dark:hover:text-primary-300 dark:text-white"
+          class="flex whitespace-nowrap w-full mr-4 text-mauve11 hover:text-violet10 dark:hover:text-primary-300"
         >
           <UnoIcon class="mr-2 i-carbon-download" />
           <div
@@ -86,7 +86,7 @@
           >{{ numberFormat(mod.downloads) }} installs</div>
         </a>
       </div>
-      <div class="flex -space-x-3 hover:space-x-0 absolute right-0 -bottom-1 hover:bg-white  dark:hover:bg-secondary-darkest">
+      <div class="flex -space-x-3 hover:space-x-0 absolute right-0 -bottom-1">
         <a
           v-for="contributor of (mod.contributors || []).slice(0, 5).reverse()"
           :key="contributor.login"
@@ -98,7 +98,7 @@
         >
           <!-- TODO: use <nuxt-img> -->
           <img
-            class="w-7 h-7 flex rounded-full text-white border-4 border-white dark:border-primary-900"
+            class="w-7 h-7 flex rounded-full text-white border-4 border-transparent"
             :src="'https://api.nuxtjs.org/api/ipx/s_44,f_webp/gh_avatar/' + contributor.login"
             :alt="contributor.name|| contributor.login"
             format="jpg"

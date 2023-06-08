@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       bodyAttrs: {
-        class: 'bg-cloudy-grey min-h-screen'
+        class: 'bg-mauve1 min-h-screen'
       },
       title,
       meta: [

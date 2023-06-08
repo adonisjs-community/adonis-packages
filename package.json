@@ -24,6 +24,7 @@
     "js-yaml": "^4.1.0",
     "ohmyfetch": "^0.4.21",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "unocss-preset-radix": "^2.5.1"
   }
 }

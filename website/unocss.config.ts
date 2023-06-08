@@ -1,4 +1,5 @@
 import { presetUno, presetAttributify, presetWebFonts, presetIcons, defineConfig } from 'unocss'
+import { presetRadix } from 'unocss-preset-radix'
 
 export default defineConfig({
   include: [/\.vue$/, /\.ts$/, /\.vue\?vue/],
@@ -7,6 +8,16 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetAttributify(),
+    // @ts-ignore
+    presetRadix({
+      darkSelector: '.dark',
+      lightSelector: '.light',
+      palette: ['blue', 'mauve', 'violet', 'yellow'],
+      aliases: {
+        primary: 'mauve'
+      },
+      extend: false
+    }),
     presetIcons({
       scale: 1.2,
       extraProperties: {
@@ -24,75 +35,16 @@ export default defineConfig({
   ],
 
   theme: {
-    colors: {
-      primary: {
-        50: '#ffffff',
-        100: '#efecff',
-        200: '#dedaff',
-        300: '#9c8fff',
-        400: '#7b6aff',
-        DEFAULT: '#5A45FF',
-        600: '#4837cc',
-        700: '#362999',
-        800: '#241c66',
-        900: '#262626'
-      },
-      secondary: {
-        DEFAULT: '#2a2647',
-        surface: '#E5F9FF',
-        lightest: '#B7E1ED',
-        lighter: '#95CDDE',
-        light: '#71A2B0',
-        dark: '#141414',
-        darker: '#141414',
-        darkest: '#262626',
-        black: '#141414'
-      },
-      green: {
-        // 50: "#eefdf2",
-        50: '#d0fcde',
-        100: '#b0fccb',
-        200: '#8cfab7',
-        300: '#64f4a3',
-        400: '#37e990',
-        500: '#00d77d',
-        600: '#00bb6a',
-        700: '#009956',
-        800: '#047342',
-        900: '#134d2e'
-        // 950: "#132a1c",
-      },
-      ringWidth: {
-        3: '3px'
-      },
-      inset: {
-        13: '13px'
-      },
-      'line-height': {
-        14: '0.875rem'
-      },
-      sky: {
-        surface: '#E5F9FF',
-        lightest: '#B7E1ED',
-        lighter: '#95CDDE',
-        light: '#71A2B0',
-        DEFAULT: '#497A87',
-        dark: '#255461',
-        darker: '#003543',
-        darkest: '#012A35',
-        black: '#001E26'
-      }
-    },
     transitionProperty: {
       height: 'height'
     }
   },
 
   shortcuts: {
-    'nuxt-border': 'border-gray-200 dark:border-secondary-darker',
-    'nuxt-card-border': 'border border-gray-200 dark:border-secondary-darker hover:border-primary focus:border-primary-800 dark:hover:border-primary-300 dark:focus:border-secondary outline-none ring-0',
-    'nuxt-card-bg': 'bg-white dark:bg-secondary-darkest',
-    'nuxt-text-default': 'text-sky-darkest dark:text-white',
+    'nuxt-border': 'border border-mauve4',
+    'nuxt-card-border': 'border border-mauve4 hover:border-violet6 outline-none ring-0',
+    'nuxt-card-bg': 'dark:bg-mauve2 bg-mauve1',
+    'nuxt-text-default': 'text-mauve12',
 
     'nuxt-text-highlight': 'py-2 px-4 rounded-md bg-gray-100 dark:bg-white dark:bg-opacity-10 hober:bg-gray-200',
     'nuxt-text-highlight-hover': 'nuxt-text-highlight dark:hover:bg-opacity-9 light:hover:bg-gray-50'

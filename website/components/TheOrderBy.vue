@@ -1,23 +1,23 @@
 <template>
-  <div class="flex items-center text-forest-night">
+  <div class="flex items-center text-mauve12">
     <label
       for="options-menu"
       class="mr-3"
       @click="toggleOrderByMenu"
     >Order by</label>
-    <div class="flex border border-gray-400/20 rounded-md">
+    <div class="flex border border-mauve5 rounded-md">
       <div class="relative w-28 my-auto">
         <button
           type="button"
           :aria-label="`change sort`"
-          class="flex items-center justify-center w-full p-1 px-2 hover:bg-skborder-sky-lightest focus:bg-skborder-sky-lightest focus:outline-none hover:border-grey-light"
+          class="flex items-center justify-center w-full p-1 px-2 focus:border-mauve-6 focus:outline-none hover:border-mauve-7"
           @click="toggleOrderByMenu"
         >
           {{ currentOrderByLabel }}
         </button>
         <div
           v-show="displayOrderByMenu"
-          class="absolute left-0 z-10 origin-top-right rounded-b-md shadow-lg border border-gray-400/20 shadow-xs bg-white dark:bg-secondary-darkest"
+          class="absolute left-0 py-1 z-10 origin-top-right rounded-b-md shadow-lg border border-mauve4 shadow-xs bg-mauve2"
         >
           <div
             id="options-menu"
@@ -30,7 +30,7 @@
               :key="key"
               type="button"
               :aria-label="`sort by ${key}`"
-              class="flex items-center justify-center p-1 px-2 w-28 hover:bg-cloudy-grey focus:text-grey-darkest text-forest-night focus:outline-none rounded-b-md"
+              class="flex text-sm mx-1 justify-center p-1 px-2 w-28 hover:bg-violet4 focus:text-mauve10 text-mauve12 focus:outline-none rounded-md"
               @click="selectOrderBy(key)"
             >
               {{ option }}
@@ -42,7 +42,7 @@
         <button
           type="button"
           :aria-label="sortBy === 'asc' ? 'sort ascending' : 'sort descending'"
-          class="flex items-center p-2 hover:bg-skborder-sky-lightest focus:bg-skborder-sky-lightest focus:outline-none rounded-r-md"
+          class="flex items-center p-2 hover:bg-violet4 focus:bg-skborder-sky-lightest focus:outline-none rounded-r-md"
           @click="toggleSortBy"
         >
           <UnoIcon :class="sortBy === 'asc' ? 'i-carbon-sort-ascending' : 'i-carbon-sort-descending'" />

@@ -1,7 +1,7 @@
 <template>
-  <div class="pb-16 relative bg-gray-100 dark:bg-secondary-black nuxt-text-default font-sans">
+  <div class="pb-16 relative dark:bg-mauve1 bg-mauve2  nuxt-text-default font-sans">
     <div
-      class="relative bg-primary shadow w-full sticky top-0 z-50 backdrop-filter backdrop-blur-[12px] border-none"
+      class="relative dark:bg-mauve1 bg-mauve2 shadow-sm w-full sticky top-0 z-50 backdrop-filter backdrop-blur-[12px]"
     >
       <TheNav ref="searchEl" :search="q" @update:search="v=>q=v">
         <template #head>
@@ -16,7 +16,7 @@
       </TheNav>
     </div>
     <div
-      class="pt-10 pb-16 px-3 lg:px-10 lg:pt-24 lg:pb-32 bg-white dark:bg-secondary-darkest dark:bg-secondary-darkest relative"
+      class="pt-10 pb-16 px-3 lg:px-10 lg:pt-24 lg:pb-32 bg-white dark:bg-mauve2 relative"
     >
       <div class="container mx-auto flex flex-col sm:flex-row justify-between">
         <div class="flex flex-wrap justify-between gap-y-5 w-full">
@@ -32,7 +32,7 @@
     </div>
 
     <!-- Body -->
-    <div class="w-full max-w-390 px-4 mx-auto pt-8 grid grid-cols-1 lg:grid-cols-[18em_1fr] gap-4">
+    <div class="w-full max-w-390 px-4  mx-auto pt-8 grid grid-cols-1 lg:grid-cols-[18em_1fr] gap-4">
       <!-- Sidebar -->
       <TheDrawer
         :open="isDrawerOpen"
@@ -66,7 +66,7 @@
             <template #badge="{ key }">
               <div
                 v-if="key === '6.x'"
-                class="text-primary-600 whitespace-nowrap	 text-xs dark:text-primary-400 border border-primary bg-primary-500/10 px-1.5 text-xs rounded-full"
+                class="text-violet11 whitespace-nowrap text-xs border border-violet9 bg-mauve3 px-1.5 text-xs rounded-full"
               >
                 Soon
               </div>
