@@ -183,8 +183,11 @@ const selectedVersion = ref<string | null>()
 const selectedCategory = ref<string | null>()
 const selectedType = ref<string | null>()
 const moduleLoaded = ref(MODULE_INCREMENT_LOADING)
+const modules = [...props.state.modules]
 const fuseOptions = {
-  threshold: 0.1,
+  threshold: 0,
+  includeScore: true,
+  includeMatches: true,
   keys: [
     'name',
     'npm',
@@ -192,12 +195,12 @@ const fuseOptions = {
     'maintainers.name',
     'maintainers.github',
     'description',
-    'repo',
-    'tags'
+    'repo'
   ]
 }
-const fuseIndex = Fuse.createIndex(fuseOptions.keys, props.state.modules)
-const fuse = new Fuse(props.state.modules, fuseOptions, fuseIndex)
+
+const fuseIndex = Fuse.createIndex(fuseOptions.keys, modules)
+const fuse = new Fuse(modules, fuseOptions, fuseIndex)
 
 const displayFiltersBlock = computed(() => selectedCategory.value || q.value || selectedVersion.value || selectedType.value)
 
