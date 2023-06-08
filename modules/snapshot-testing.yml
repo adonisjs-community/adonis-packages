@@ -2,7 +2,7 @@ name: snapshot-testing
 description: Snapshot testing plugin for Japa
 repo: japa/snapshot
 npm: '@japa/snapshot'
-icon: ''
+icon: japa.png
 github: https://github.com/japa/snapshot
 website: https://github.com/japa/snapshot
 learn_more: ''
