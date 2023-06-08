@@ -57,6 +57,7 @@
     <div class="flex w-full z-30 relative">
       <div class="flex flex-none">
         <a
+          v-if="mod.stars"
           :href="mod.github"
           aria-label="stars"
           target=" _blank"
@@ -72,7 +73,7 @@
           </div>
         </a>
         <a
-          v-if="mod.npm"
+          v-if="mod.npm && mod.downloads"
           :href="npmUrl(mod)"
           aria-label="npm"
           target=" _blank"
@@ -87,7 +88,7 @@
       </div>
       <div class="flex -space-x-3 hover:space-x-0 absolute right-0 -bottom-1 hover:bg-white  dark:hover:bg-secondary-darkest">
         <a
-          v-for="contributor of mod.contributors.slice(0, 5).reverse()"
+          v-for="contributor of (mod.contributors || []).slice(0, 5).reverse()"
           :key="contributor.login"
           v-tooltip="{ content: contributor.name || contributor.login, classes: ['bg-primary', 'text-white', 'px-2', 'py-1', 'rounded', 'text-sm', 'mb-2'] }"
           :aria-label="contributor.name || contributor.login"
