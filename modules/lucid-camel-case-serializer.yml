@@ -1,7 +1,7 @@
 name: lucid-camel-case-serializer
 description: Camel cased serialization for Lucid models
 repo: AdonifyCode/lucid-camel-case-serializer
-npm: @adonify/lucid-camel-case-serializer
+npm: '@adonify/lucid-camel-case-serializer'
 icon: ''
 github: https://github.com/AdonifyCode/lucid-camel-case-serializer
 website: https://github.com/AdonifyCode/lucid-camel-case-serializer
