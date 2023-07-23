@@ -2,7 +2,7 @@ name: ally-twitch
 description: A Twitch driver for AdonisJS Ally
 repo: mrgmnn/ally-twitch-driver
 npm: 'adonis-ally-twitch'
-icon: apple.png
+icon: twitch.png
 github: https://github.com/mrgmnn/ally-twitch-driver
 website: https://github.com/mrgmnn/ally-twitch-driver
 learn_more: ''
