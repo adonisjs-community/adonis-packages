@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "pnpm cli build",
-    "cli": "ts-node-esm ./lib/cli.ts",
+    "cli": "node --loader ts-node/esm ./lib/cli.ts",
     "dev": "pnpm -C website dev",
     "lint": "eslint --ext .vue,.ts .",
     "release": "pnpm cli version && cd npm && npm publish",
