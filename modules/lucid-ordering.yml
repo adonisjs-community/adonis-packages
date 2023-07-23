@@ -1,0 +1,15 @@
+name: lucid-ordering
+description: Simple ordering for Lucid models with AdonisJS
+repo: AdonifyCode/lucid-ordering
+npm: @adonify/lucid-ordering
+icon: ''
+github: https://github.com/AdonifyCode/lucid-ordering
+website: https://github.com/AdonifyCode/lucid-ordering
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Darian Sampare
+    github: justDare
+compatibility:
+  adonis: ^5.0.0
