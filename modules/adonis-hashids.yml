@@ -1,0 +1,15 @@
+name: adonis-hashids
+description: Generate YouTube-like IDs for AdonisJS Lucid models
+repo: eokwukwe/adonis-hashids
+npm: '@fcoded/adonis-hashids2'
+icon: ''
+github: https://github.com/eokwukwe/adonis-hashids
+website: https://github.com/eokwukwe/adonis-hashids
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Okwukwe Ewurum
+    github: eokwukwe
+compatibility:
+  adonis: ^5.0.0
