@@ -11,3 +11,5 @@ type: 3rd-party
 maintainers:
   - name: Alexis Bouchez
     github: alexisbouchez
+compatibility:
+  adonis: ^5.0.0
