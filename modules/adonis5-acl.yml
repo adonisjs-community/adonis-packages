@@ -1,0 +1,15 @@
+name: adonis5-acl
+description: Add role/permission based access to your AdonisJS applications routes
+repo: steveyout/adonis5-acl#master
+npm: '@steveyout/adonis5-acl'
+icon: adonis5-acl
+github: https://github.com/steveyout/adonis5-acl
+website: https://github.com/steveyout/adonis5-acl
+learn_more: ''
+category: Authorization
+type: community
+maintainers:
+  - name: Steve Yout
+    github: steveyout
+compatibility:
+  adonis: ^5.0.0
