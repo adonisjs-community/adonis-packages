@@ -1,18 +1,45 @@
 import { test } from '@japa/runner'
 import ace from '@adonisjs/core/services/ace'
-import AddPackage from '../../../commands/add_package.js'
-import { readPackageFile } from '../../helpers.js'
+import app from '@adonisjs/core/services/app'
+import { PackageFetcher } from '#services/package_fetcher'
 
-test.group('Add Package', (group) => {
+import AddPackage from '../../../commands/add_package.js'
+import { deletePackageFile, readPackageFile } from '../../helpers.js'
+
+/**
+ * Swap the package fetcher with a fake implementation
+ */
+function swapPackageFetcher(options: { githubResponse?: any; npmResponse?: any } = {}) {
+  app.container.swap(PackageFetcher, () => ({
+    fetchGithubPkg: async () =>
+      options.githubResponse ?? {
+        name: 'github-package-name',
+        description: 'Github package description',
+        author: { name: 'Github package author' },
+      },
+    fetchNpmPkg: async () =>
+      options.npmResponse ?? {
+        time: { created: '2022-01-01', modified: '2023-01-01' },
+        description: 'Npm package description',
+      },
+  }))
+}
+
+test.group('[Commands] Add Package', (group) => {
+  group.each.teardown(async () => app.container.restoreAll())
+
   group.each.setup(() => {
     ace.ui.switchMode('raw')
     return () => ace.ui.switchMode('normal')
   })
 
-  test('create the package file correctly', async ({ assert }) => {
+  test('create package file with data fetched from github and npm', async ({ assert, cleanup }) => {
+    swapPackageFetcher()
+    cleanup(() => deletePackageFile('test-package'))
+
     const command = await ace.create(AddPackage, [])
 
-    command.prompt.trap('repo').replyWith('julien-r44/adonisjs-prometheus')
+    command.prompt.trap('repo').replyWith('owner/repo')
     command.prompt.trap('name').replyWith('test-package')
     command.prompt.trap('type').replyWith('Database')
 
@@ -21,15 +48,56 @@ test.group('Add Package', (group) => {
     const file = await readPackageFile('test-package')
     assert.containsSubset(file, {
       name: 'test-package',
-      github: 'https://github.com/julien-r44/adonisjs-prometheus/tree/main',
-      website: 'https://github.com/julien-r44/adonisjs-prometheus/tree/main',
-      description: 'Prometheus wrapper for Adonis 5',
-      npm: 'adonis5-prometheus',
+      github: 'https://github.com/owner/repo/tree/main',
+      website: 'https://github.com/owner/repo/tree/main',
+      description: 'Github package description',
+      npm: 'github-package-name',
       compatibility: { adonis: '^5.0.0' },
-      maintainers: [{}],
-      firstReleaseAt: '2021-12-18T22:49:27.072Z',
+      maintainers: [{ name: 'Github package author', github: 'Github package author' }],
+      firstReleaseAt: '2022-01-01',
+      lastReleaseAt: '2023-01-01',
       type: 'community',
       category: 'Database',
     })
+  })
+
+  test('create with type "official" is from official scope', async ({ assert, cleanup }) => {
+    swapPackageFetcher()
+    cleanup(() => deletePackageFile('test-package'))
+
+    const command = await ace.create(AddPackage, [])
+
+    command.prompt.trap('repo').replyWith('adonisjs/repo')
+    command.prompt.trap('name').replyWith('test-package')
+    command.prompt.trap('type').replyWith('Database')
+
+    await command.exec()
+
+    const file = await readPackageFile('test-package')
+    assert.deepEqual(file.type, 'official')
+  })
+
+  test('reject if repo is not in format username/repo', async () => {
+    const command = await ace.create(AddPackage, [])
+
+    command.prompt.trap('repo').assertFails('repo', /Please enter a valid github repo name/)
+
+    await command.exec()
+  })
+
+  test('display error if unable to fetch details from github and npm', async ({ assert }) => {
+    swapPackageFetcher({
+      githubResponse: Promise.reject(new Error('Unable to fetch details from github')),
+    })
+
+    const command = await ace.create(AddPackage, [])
+    command.prompt.trap('repo').replyWith('owner/repo')
+
+    await command.exec()
+
+    command.assertFailed()
+    command.assertLogMatches(
+      /Unable to fetch details from github and npm. Double check the repo name/
+    )
   })
 })
