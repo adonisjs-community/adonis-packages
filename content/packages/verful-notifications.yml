@@ -1,0 +1,15 @@
+name: verful-notifications
+description: The easiest way to send notifications in AdonisJS
+repo: verful/adonis-notifications#master
+npm: '@verful/notifications'
+icon: ''
+github: https://github.com/verful/adonis-notifications/tree/master
+website: https://github.com/verful/adonis-notifications/tree/master
+learn_more: ''
+category: Messaging
+type: 3rd-party
+maintainers:
+  - name: verful
+    github: verful
+compatibility:
+  adonis: ^5.0.0

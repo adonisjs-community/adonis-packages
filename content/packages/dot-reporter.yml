@@ -1,0 +1,15 @@
+name: dot-reporter
+description: Dot reporter for japa test runner
+repo: japa/dot-reporter#develop
+npm: '@japa/dot-reporter'
+icon: ''
+github: https://github.com/japa/dot-reporter/tree/develop
+website: https://github.com/japa/dot-reporter/tree/develop
+learn_more: ''
+category: Testing
+type: official
+maintainers:
+  - name: japa
+    github: japa
+compatibility:
+  adonis: ^5.0.0

@@ -1,0 +1,15 @@
+name: lucid-soft-deletes
+description: Addon for soft deletes AdonisJS Lucid ORM
+repo: lookinlab/adonis-lucid-soft-deletes#develop
+npm: adonis-lucid-soft-deletes
+icon: ''
+github: https://github.com/lookinlab/adonis-lucid-soft-deletes
+website: https://github.com/lookinlab/adonis-lucid-soft-deletes
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: lookinlab
+    github: lookinlab
+compatibility:
+  adonis: ^5.0.0

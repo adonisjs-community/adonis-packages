@@ -1,0 +1,17 @@
+name: adonis5-audit
+description: Utility to easily audit models in AdonisJS
+repo: ks-labs/adonis5-audit
+npm: adonis5-audit
+icon: audit.png
+github: https://github.com/ks-labs/adonis5-audit
+website: https://github.com/ks-labs/adonis5-audit
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: KS Labs
+    github: ks-labs
+  - name: vinicios.dev
+    github: vinicioslc
+compatibility:
+  adonis: ^5.0.0

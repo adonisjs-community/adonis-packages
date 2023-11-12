@@ -1,0 +1,15 @@
+name: grpc-consumer
+description: 🕸️ Adonis gRPC client provider for easily communicate with gRPC services
+repo: Julien-R44/adonis-grpc-consumer
+npm: adonis-grpc-consumer
+icon: grpc-consumer.png
+github: https://github.com/Julien-R44/adonis-grpc-consumer
+website: https://github.com/Julien-R44/adonis-grpc-consumer
+learn_more: ''
+category: Communication
+type: 3rd-party
+maintainers:
+  - name: Julien-R44
+    github: Julien-R44
+compatibility:
+  adonis: ^5.0.0

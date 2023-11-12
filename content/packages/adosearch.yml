@@ -1,0 +1,15 @@
+name: adosearch
+description: typed, deeply nested database search for adonis.js applications
+repo: Obapelumi/adosearch
+npm: adosearch
+icon: ''
+github: https://github.com/Obapelumi/adosearch
+website: https://github.com/Obapelumi/adosearch
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Emmanuel
+    github: Obapelumi
+compatibility:
+  adonis: ^5.0.0

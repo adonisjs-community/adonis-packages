@@ -1,0 +1,15 @@
+name: 'adonisjs-girouette'
+description: 'Decorators to handle routing directly inside the controller'
+repo: softwarecitadel/adonisjs-girouette
+npm: '@softwarecitadel/adonisjs-girouette'
+icon: ''
+github: https://github.com/softwarecitadel/adonisjs-girouette
+website: https://github.com/softwarecitadel/adonisjs-girouette
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Alexis Bouchez
+    github: alexisbouchez
+compatibility:
+  adonis: ^5.0.0

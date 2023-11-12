@@ -1,0 +1,15 @@
+name: bullmq
+description: Adonis 5 bullmq provider
+repo: reg2005/adonis5-bullmq#master
+npm: adonis5-bullmq
+icon: bullmq.png
+github: https://github.com/reg2005/adonis5-bullmq
+website: https://github.com/reg2005/adonis5-bullmq
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: reg2005
+    github: reg2005
+compatibility:
+  adonis: ^5.0.0

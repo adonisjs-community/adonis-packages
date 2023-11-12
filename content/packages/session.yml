@@ -1,0 +1,15 @@
+name: session
+description: Session provider for AdonisJS
+repo: adonisjs/session#develop
+npm: '@adonisjs/session'
+icon: ''
+github: https://github.com/adonisjs/session
+website: https://github.com/adonisjs/session
+learn_more: ''
+category: Extensions
+type: official
+maintainers:
+  - name: adonisjs
+    github: adonisjs
+compatibility:
+  adonis: ^5.0.0 || ^6.0.0

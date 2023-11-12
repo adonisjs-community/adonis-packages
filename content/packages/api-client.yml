@@ -1,0 +1,15 @@
+name: api-client
+description: Browser and API testing client for Japa. Built on top of Playwright
+repo: japa/api-client#develop
+npm: '@japa/api-client'
+icon: japa.png
+github: https://github.com/japa/api-client/tree/develop
+website: https://github.com/japa/api-client/tree/develop
+learn_more: ''
+category: Testing
+type: official
+maintainers:
+  - name: japa
+    github: japa
+compatibility:
+  adonis: ^5.0.0
