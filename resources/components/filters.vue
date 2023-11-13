@@ -93,7 +93,6 @@ const categories = [
     icon: 'i-carbon-task-complete'
   }
 ]
-
 </script>
 
 <style scoped>
