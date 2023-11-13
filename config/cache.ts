@@ -1,9 +1,11 @@
 import { defineConfig, store, drivers } from '@adonisjs/cache'
 
 const cacheConfig = defineConfig({
-  default: 'redis',
+  default: 'cache',
   stores: {
-    redis: store().useL1Layer(drivers.memory({})),
+    cache: store()
+      .useL1Layer(drivers.memory({}))
+      .useL2Layer(drivers.database({ connectionName: 'sqlite' })),
   },
 })
 

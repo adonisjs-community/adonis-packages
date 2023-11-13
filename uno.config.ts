@@ -1,3 +1,5 @@
+import { presetForms } from '@julr/unocss-preset-forms'
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import {
   defineConfig,
   presetAttributify,
@@ -8,8 +10,6 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-
-import { presetForms } from '@julr/unocss-preset-forms'
 
 export default defineConfig({
   theme: {
@@ -34,11 +34,20 @@ export default defineConfig({
     presetIcons({
       scale: 1.2,
       warn: true,
+      collections: {
+        custom: FileSystemIconLoader('./resources/assets/icons', (svg) =>
+          svg.replace(/#fff/, 'currentColor')
+        ),
+      },
     }),
     presetTypography(),
     presetWebFonts({
       provider: 'bunny',
       fonts: {
+        title: {
+          name: 'PolySans',
+          provider: 'none',
+        },
         sans: {
           name: 'Poppins',
           weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],

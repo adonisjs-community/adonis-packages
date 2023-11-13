@@ -7,6 +7,7 @@
 |
 */
 
+const ModulesController = () => import('#controllers/modules_controller')
 import router from '@adonisjs/core/services/router'
 
-router.get('/', ({ inertia }) => inertia.render('home'))
+router.get('/', [ModulesController, 'renderLanding'])

@@ -1,4 +1,4 @@
-import { categories } from '../content/categories.js'
+import type { categories } from '../content/categories.js'
 
 // TODO
 
@@ -82,7 +82,8 @@ export interface PackageInfo {
    * Keywords for the package. Used for search
    */
   keywords?: string[]
-  downloads?: number
+  stars: number
+  downloads: number
   firstReleaseAt?: number
   lastReleaseAt?: number
 }

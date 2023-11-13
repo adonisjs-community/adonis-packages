@@ -33,6 +33,7 @@
     "@adonisjs/tsconfig": "^1.1.8",
     "@adonisjs/vite": "^1.0.0",
     "@iconify/json": "^2.2.141",
+    "@iconify/utils": "^2.1.11",
     "@japa/assert": "^2.0.0",
     "@japa/file-system": "^2.0.1",
     "@japa/plugin-adonisjs": "^2.0.0",
@@ -59,6 +60,7 @@
     "@adonisjs/cache": "file:../../adonis/cache",
     "@adonisjs/core": "^6.1.5-31",
     "@adonisjs/inertia": "file:../../adonis/inertia-adonisjs6",
+    "@adonisjs/lucid": "19.0.0-3",
     "@adonisjs/session": "^7.0.0-13",
     "@adonisjs/shield": "^8.0.0-8",
     "@adonisjs/static": "^1.0.3-2",
@@ -69,7 +71,9 @@
     "globby": "^14.0.0",
     "js-yaml": "^4.1.0",
     "luxon": "^3.4.3",
-    "reflect-metadata": "^0.1.13"
+    "p-limit": "^4.0.0",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.1.6"
   },
   "eslintConfig": {
     "extends": "@adonisjs/eslint-config/app",

@@ -14,7 +14,7 @@ export default class BuildPackages extends BaseCommand {
   static options: CommandOptions = {}
 
   #contentFolder = join(getDirname(import.meta.url), '../content')
-  #distFolder = join(getDirname(import.meta.url), '../build/')
+  #distFolder = join(getDirname(import.meta.url), '../content/build/')
 
   /**
    * Read a package file from the disk
@@ -42,7 +42,10 @@ export default class BuildPackages extends BaseCommand {
   async run() {
     const packages = await this.#readPackages()
 
+    const distFile = join(this.#distFolder, 'packages.json')
     await mkdir(this.#distFolder, { recursive: true })
-    await writeFile(join(this.#distFolder, 'packages.json'), JSON.stringify(packages, null, 2))
+    await writeFile(distFile, JSON.stringify(packages, null, 2))
+
+    this.logger.success(`Packages file created successfully at "${distFile}"`)
   }
 }

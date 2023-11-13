@@ -2,7 +2,10 @@
   "extends": "@adonisjs/tsconfig/tsconfig.app.json",
   "compilerOptions": {
     "rootDir": "./",
+    "moduleResolution": "Node16",
+    "module": "Node16",
     "outDir": "./build",
+    "resolveJsonModule": true,
     "paths": {
       "#controllers/*": ["./app/controllers/*.js"],
       "#exceptions/*": ["./app/exceptions/*.js"],
