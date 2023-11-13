@@ -66,6 +66,7 @@
     "@poppinss/utils": "^6.5.1",
     "@vinejs/vine": "^1.6.0",
     "edge.js": "^6.0.0-10",
+    "globby": "^14.0.0",
     "js-yaml": "^4.1.0",
     "luxon": "^3.4.3",
     "reflect-metadata": "^0.1.13"

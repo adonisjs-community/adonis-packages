@@ -113,17 +113,6 @@ export default class AddPackage extends BaseCommand {
     return 'community'
   }
 
-  /**
-   * Handle errors
-   */
-  async completed() {
-    if (this.error) {
-      this.logger.error(this.error.message)
-      this.exitCode = 1
-      return true
-    }
-  }
-
   @inject()
   async run(packageFetcher: PackageFetcher) {
     this.#displayHeader()
@@ -164,5 +153,16 @@ export default class AddPackage extends BaseCommand {
       .add('')
       .add('Make sure to review the file and add any missing information before submitting a PR.')
       .render()
+  }
+
+  /**
+   * Handle errors
+   */
+  async completed() {
+    if (this.error) {
+      this.logger.error(this.error.message)
+      this.exitCode = 1
+      return true
+    }
   }
 }

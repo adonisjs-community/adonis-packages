@@ -1,5 +1,11 @@
-import { BaseCommand } from '@adonisjs/core/ace'
 import type { CommandOptions } from '@adonisjs/core/types/ace'
+
+import { load } from 'js-yaml'
+import { globby } from 'globby'
+import { basename, join } from 'node:path'
+import { getDirname } from '@poppinss/utils'
+import { BaseCommand } from '@adonisjs/core/ace'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 
 export default class BuildPackages extends BaseCommand {
   static commandName = 'build:packages'
@@ -7,5 +13,36 @@ export default class BuildPackages extends BaseCommand {
 
   static options: CommandOptions = {}
 
-  async run() {}
+  #contentFolder = join(getDirname(import.meta.url), '../content')
+  #distFolder = join(getDirname(import.meta.url), '../build/')
+
+  /**
+   * Read a package file from the disk
+   */
+  async #readPackageFile(fileName: string) {
+    const filePath = join(this.#contentFolder, 'packages', `${fileName}.yml`)
+    return load(await readFile(filePath, 'utf-8')) as Record<string, any>
+  }
+
+  /**
+   * Read all stored packages from the disk
+   */
+  async #readPackages() {
+    const globPattern = join(this.#contentFolder, 'packages', '*.yml').replace(/\\/g, '/')
+    const files = await globby(globPattern)
+    const names = files.map((p) => basename(p, '.yml')).filter(Boolean)
+
+    return await Promise.all(names.map((n) => this.#readPackageFile(n)))
+  }
+
+  /**
+   * Read all packages stored as .yml and store them as a single
+   * JSON file
+   */
+  async run() {
+    const packages = await this.#readPackages()
+
+    await mkdir(this.#distFolder, { recursive: true })
+    await writeFile(join(this.#distFolder, 'packages.json'), JSON.stringify(packages, null, 2))
+  }
 }
