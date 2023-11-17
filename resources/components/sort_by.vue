@@ -24,10 +24,10 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
 
 <template>
   <Listbox v-model="value" as="div">
-    <div class="relative mt-2">
+    <div class="relative">
       <ListboxButton
         v-slot="{ open }"
-        class="relative w-[230px] cursor-default rounded-xl search-bar-input py-3 pl-5 pr-10 text-left text-white shadow-sm sm:leading-6"
+        class="relative md:w-[230px] w-full cursor-default rounded-xl search-bar-input py-3 pl-5 pr-10 text-left text-white shadow-sm sm:leading-6"
       >
         <span class="inline-flex w-full truncate">
           <span class="truncate">{{ selectedOption?.label }}</span>

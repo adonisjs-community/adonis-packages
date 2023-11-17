@@ -16,7 +16,7 @@ const categoriesWithCount = categories.map((category) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-y-8">
+  <div class="flex-col gap-y-8 hidden" md="flex">
     <div>
       <p class="text-3xl font-bold">AdonisJS version</p>
       <div class="flex mt-6 gap-x-6">
