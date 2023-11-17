@@ -5,13 +5,13 @@ const input = defineModel<string>()
 <template>
   <div class="relative">
     <i
-      class="absolute top-[10px] left-[12px] inline-block i-fluent-emoji-magnifying-glass-tilted-right"
+      class="absolute top-[14px] left-[12px] inline-block i-fluent-emoji-magnifying-glass-tilted-right"
     />
     <input
       v-model="input"
       type="text"
       placeholder="Search for a package"
-      class="search-bar-input w-full border-0 bg-transparent py-2 px-4 pl-10 rounded-xl"
+      class="search-bar-input w-full border-0 bg-transparent py-3 px-4 pl-10 rounded-xl"
     />
   </div>
 </template>

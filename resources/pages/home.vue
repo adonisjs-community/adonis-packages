@@ -6,6 +6,7 @@ import type { PackageInfo, PackagesFilters } from '@/types'
 import Hero from '@/components/hero.vue'
 import Header from '@/components/header.vue'
 import Footer from '@/components/footer.vue'
+import SortBy from '@/components/sort_by.vue'
 import Filters from '@/components/filters.vue'
 import SearchBar from '@/components/search_bar.vue'
 import MainSection from '@/components/main_section.vue'
@@ -14,7 +15,9 @@ defineProps<{
   packages: PackageInfo[]
 }>()
 
-const filters = ref<PackagesFilters>({})
+const filters = ref<PackagesFilters>({
+  sort: 'updated',
+})
 </script>
 
 <template>
@@ -28,8 +31,9 @@ const filters = ref<PackagesFilters>({})
       <div class="grid grid-cols-[18em_1fr] gap-24 items-start">
         <Filters v-model="filters" />
         <div class="flex flex-col">
-          <div class="flex justify-between">
+          <div class="flex justify-between items-center">
             <SearchBar v-model="filters.search" />
+            <SortBy v-model="filters.sort" />
           </div>
           <MainSection class="mt-8" :filters="filters" :packages="packages" />
         </div>

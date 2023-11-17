@@ -33,15 +33,20 @@ function iconPlaceholder({ category }: PackageInfo) {
 const filteredPackages = computed(() => {
   let packages = props.packages
 
+  if (props.filters.category) {
+    packages = packages.filter((pkg) => pkg.category === props.filters.category)
+  }
+
   if (props.filters.search) {
     packages = fuse.search(props.filters.search).map((r) => r.item)
   } else {
-    // Sort only if no search
-    // packages.sort((a, b) => sort(a[orderBy.value], b[orderBy.value], sortBy.value === 'asc'))
-  }
-
-  if (props.filters.category) {
-    packages = packages.filter((pkg) => pkg.category === props.filters.category)
+    const sortBy = props.filters.sort!
+    if (sortBy === 'stars') packages.sort((a, b) => (b.stars || 0) - (a.stars || 0))
+    if (sortBy === 'downloads') packages.sort((a, b) => (b.downloads || 0) - (a.downloads || 0))
+    if (sortBy === 'created')
+      packages.sort((a, b) => (b.firstReleaseAt || 0) - (a.firstReleaseAt || 0))
+    if (sortBy === 'updated')
+      packages.sort((a, b) => (b.lastReleaseAt || 0) - (a.lastReleaseAt || 0))
   }
 
   return packages
