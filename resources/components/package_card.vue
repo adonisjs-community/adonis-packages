@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { millify } from 'millify'
+import AdonisIcon from './icons/adonis_icon.vue'
 import type { PackageInfo } from '@/types'
 import { categories } from '~/content/categories'
 import Tag from '@/components/tag.vue'
@@ -19,7 +20,7 @@ function iconPlaceholder({ category }: PackageInfo) {
 
 <template>
   <a
-    class="card flex rounded-xl gap-y-2 px-5 py-5 group cursor-pointer"
+    class="card relative flex rounded-xl gap-y-2 px-5 py-5 group cursor-pointer"
     :href="package.website || package.github"
     target="_blank"
   >
@@ -40,9 +41,21 @@ function iconPlaceholder({ category }: PackageInfo) {
       </div>
     </div>
     <div class="flex flex-col gap-y-1">
-      <p class="text-2xl font-bold">
-        {{ package.name }}
-      </p>
+      <div class="absolute inset-0 overflow-hidden rounded-xl m-1 pointer-events-none">
+        <AdonisIcon
+          v-if="package.type === 'official'"
+          class="absolute opacity-1 scale-600 top-2 -rotate-20 -right-2"
+        />
+      </div>
+      <div class="flex items-baseline gap-2">
+        <p class="text-2xl font-bold">
+          {{ package.name }}
+        </p>
+        <i
+          v-if="package.type === 'official'"
+          class="inline-block text-lg relative top-[2px] i-fluent-emoji-military-medal"
+        />
+      </div>
       <p class="text-white-300 text-sm line-clamp-3">
         {{ package.description }}
       </p>
@@ -78,10 +91,7 @@ function iconPlaceholder({ category }: PackageInfo) {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.6s ease-in-out;
   border: 1px solid transparent;
-  &:hover {
-    border: 1px solid rgba(140, 140, 140, 0.1);
-  }
 }
 </style>

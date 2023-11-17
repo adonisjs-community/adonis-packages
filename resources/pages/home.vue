@@ -22,7 +22,7 @@ const filters = ref<PackagesFilters>({
 
 <template>
   <div class="flex flex-col min-h-full">
-    <Head title="AdonisJS packages" />
+    <Head title="AdonisJS packages - Discover the best AdonisJS packages" />
 
     <Header />
     <Hero />
