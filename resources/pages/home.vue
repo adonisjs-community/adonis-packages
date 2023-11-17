@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Head } from '@inertiajs/vue3'
 import type { PackageInfo } from '@/types'
 
 import Hero from '@/components/hero.vue'
@@ -14,6 +15,8 @@ defineProps<{
 
 <template>
   <div class="flex flex-col min-h-full">
+    <Head title="AdonisJS packages" />
+
     <Header />
     <Hero />
 
