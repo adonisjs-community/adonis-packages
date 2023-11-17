@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { millify } from 'millify'
 import { computed } from 'vue'
+import Fuse from 'fuse.js'
 import type { PackageInfo, PackagesFilters } from '@/types'
 import Tag from '@/components/tag.vue'
 import { categories } from '~/content/categories'
@@ -9,6 +10,17 @@ const props = defineProps<{
   packages: PackageInfo[]
   filters: PackagesFilters
 }>()
+
+const fuseOptions = {
+  threshold: 0.2,
+  includeScore: true,
+  includeMatches: true,
+  isCaseSensitive: false,
+  keys: ['name', 'npm', 'category', 'description', 'repo'],
+}
+
+const fuseIndex = Fuse.createIndex(fuseOptions.keys, props.packages)
+const fuse = new Fuse(props.packages, fuseOptions, fuseIndex)
 
 function numberFormatter(num: number) {
   return millify(num || 0, { precision: 1 })
@@ -19,11 +31,20 @@ function iconPlaceholder({ category }: PackageInfo) {
 }
 
 const filteredPackages = computed(() => {
-  if (!props.filters.category) {
-    return props.packages
+  let packages = props.packages
+
+  if (props.filters.search) {
+    packages = fuse.search(props.filters.search).map((r) => r.item)
+  } else {
+    // Sort only if no search
+    // packages.sort((a, b) => sort(a[orderBy.value], b[orderBy.value], sortBy.value === 'asc'))
   }
 
-  return props.packages.filter((pkg) => pkg.category === props.filters.category)
+  if (props.filters.category) {
+    packages = packages.filter((pkg) => pkg.category === props.filters.category)
+  }
+
+  return packages
 })
 </script>
 

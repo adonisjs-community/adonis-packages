@@ -26,6 +26,9 @@ dependencies:
   '@adonisjs/static':
     specifier: ^1.0.3-2
     version: 1.0.3-2(@adonisjs/core@6.1.5-31)
+  '@headlessui/vue':
+    specifier: ^1.7.16
+    version: 1.7.16(vue@3.3.8)
   '@inertiajs/vue3':
     specifier: ^1.0.14
     version: 1.0.14(vue@3.3.8)
@@ -41,6 +44,9 @@ dependencies:
   edge.js:
     specifier: ^6.0.0-10
     version: 6.0.0-10
+  fuse.js:
+    specifier: ^7.0.0
+    version: 7.0.0
   globby:
     specifier: ^14.0.0
     version: 14.0.0
@@ -1135,6 +1141,15 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@headlessui/vue@1.7.16(vue@3.3.8):
+    resolution: {integrity: sha512-nKT+nf/q6x198SsyK54mSszaQl/z+QxtASmgMEJtpxSX2Q0OPJX0upS/9daDyiECpeAsvjkoOrm2O/6PyBQ+Qg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.3.8(typescript@5.2.2)
+    dev: false
 
   /@humanwhocodes/config-array@0.11.13:
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -4903,6 +4918,11 @@ packages:
   /functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
+
+  /fuse.js@7.0.0:
+    resolution: {integrity: sha512-14F4hBIxqKvD4Zz/XjDc3y94mNZN6pRv3U13Udo0lNLCWRBUsrMv2xwcF/y/Z5sV6+FQW+/ow68cHpm4sunt8Q==}
+    engines: {node: '>=10'}
+    dev: false
 
   /gauge@3.0.2:
     resolution: {integrity: sha512-+5J6MS/5XksCuXq++uFRsnUd7Ovu1XenbeuIuNRJxYWjgQbPuFhT14lAvsWfqfAmnwluf1OwMjz39HjfLPci0Q==}

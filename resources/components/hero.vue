@@ -19,7 +19,7 @@ import Button from '@/components/ui/button.vue'
 
           <div class="max-w-xl">
             <Button as="a" theme="primary" left-icon="i-fa6-brands-github">
-              Contribute on github
+              Contribute on GitHub
             </Button>
           </div>
         </div>
