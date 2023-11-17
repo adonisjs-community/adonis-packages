@@ -23,6 +23,7 @@
         <model-viewer alt="AdonisJS 3d logo"
           class="flex-1 h-110"
           auto-rotate
+          disable-zoom
           orientation="0deg 0deg 0deg"
           auto-rotate-delay="400"
           rotation-per-second="30deg"

@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite'
-import adonisjs from '@adonisjs/vite/client'
-import vue from '@vitejs/plugin-vue'
 import unocss from 'unocss/vite'
+import { defineConfig } from 'vite'
 import { resolve } from 'node:path'
+import vue from '@vitejs/plugin-vue'
 import postcssNested from 'postcss-nested'
+import adonisjs from '@adonisjs/vite/client'
 import { getDirname } from '@poppinss/utils'
 
 export default defineConfig({
