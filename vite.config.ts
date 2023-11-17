@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [
     // @ts-expect-error
     unocss(),
-    vue(),
+    vue({ script: { defineModel: true } }),
     adonisjs({
       /**
        * Entrypoints of your application. Each entrypoint will

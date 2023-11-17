@@ -1,5 +1,5 @@
 <template>
-  <div class="flex space-x-2 text-lg">
+  <div class="flex gap-x-2 text-lg">
     <a href="https://twitter.com/adonisframework">
       <i class="inline-block i-fa6-brands-x-twitter text-white" />
     </a>

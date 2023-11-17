@@ -1,64 +1,9 @@
 <script setup lang="ts">
+import type { PackagesFilters } from '@/types'
 import Button from '@/components/ui/button.vue'
+import { categories } from '~/content/categories'
 
-const categories = [
-  {
-    label: 'Authentication',
-    icon: 'i-carbon-two-factor-authentication',
-  },
-  {
-    label: 'Authorization',
-    icon: 'i-carbon-virtual-column-key',
-  },
-  {
-    label: 'Communication',
-    icon: 'i-carbon-network-4',
-  },
-  {
-    label: 'Database',
-    icon: 'i-carbon-data-base',
-  },
-  {
-    label: 'Deployment',
-    icon: 'i-carbon-3rd-party-connected',
-  },
-  {
-    label: 'Devtools',
-    icon: 'i-carbon-code',
-  },
-  {
-    label: 'Extensions',
-    icon: 'i-carbon-model-alt',
-  },
-  {
-    label: 'Messaging',
-    icon: 'i-carbon-content-view',
-  },
-  {
-    label: 'Monitoring',
-    icon: 'i-carbon-chat',
-  },
-  {
-    label: 'Payment',
-    icon: 'i-carbon-wallet',
-  },
-  {
-    label: 'Rendering',
-    icon: 'i-carbon-layers',
-  },
-  {
-    label: 'Security',
-    icon: 'i-carbon-block-storage-alt',
-  },
-  {
-    label: 'Storage',
-    icon: 'i-carbon-security',
-  },
-  {
-    label: 'Testing',
-    icon: 'i-carbon-task-complete',
-  },
-]
+const filters = defineModel<PackagesFilters>({ required: true })
 </script>
 
 <template>
@@ -77,11 +22,31 @@ const categories = [
           <button
             v-for="category in categories"
             :key="category.label"
-            class="flex text-left items-center gap-x-4 transition-all ease-in-out duration-200 cursor-pointer"
+            class="flex text-left group items-center gap-x-4 transition-all ease-in-out duration-200 cursor-pointer"
             hover="translate-x-2"
+            @click="
+              filters.category === category.label
+                ? (filters.category = undefined)
+                : (filters.category = category.label)
+            "
           >
-            <div class="bg-#171717 text-sm px-2.4 py-2 flex items-center rounded-xl">
-              <i class="text-white-300 inline-block" :class="category.icon" />
+            <div
+              class="group-hover:bg-primary transition-colors duration-500 text-sm px-2.4 py-2 flex items-center rounded-xl"
+              :class="{
+                'bg-[#171717]': filters.category !== category.label,
+                'bg-primary': filters.category === category.label,
+              }"
+            >
+              <i
+                class="group-hover:text-white inline-block"
+                :class="[
+                  category.icon,
+                  {
+                    'text-white-300': filters.category !== category.label,
+                    'text-white': filters.category === category.label,
+                  },
+                ]"
+              />
             </div>
             <div>
               <p class="text-white-400">

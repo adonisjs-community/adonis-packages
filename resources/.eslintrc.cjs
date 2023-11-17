@@ -19,5 +19,6 @@ module.exports = {
   rules: {
     'n/no-missing-import': 'off',
     'unicorn/filename-case': ['error', { cases: { snakeCase: true } }],
+    'unicorn/prevent-abbreviations': 'off',
   },
 }

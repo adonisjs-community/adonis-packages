@@ -60,4 +60,21 @@ export default defineConfig({
     }),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
+
+  safelist: [
+    'i-carbon-two-factor-authentication',
+    'i-carbon-virtual-column-key',
+    'i-carbon-network-4',
+    'i-carbon-data-base',
+    'i-carbon-3rd-party-connected',
+    'i-carbon-code',
+    'i-carbon-model-alt',
+    'i-carbon-content-view',
+    'i-carbon-chat',
+    'i-carbon-wallet',
+    'i-carbon-layers',
+    'i-carbon-block-storage-alt',
+    'i-carbon-security',
+    'i-carbon-task-complete',
+  ],
 })

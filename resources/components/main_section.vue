@@ -1,28 +1,39 @@
 <script setup lang="ts">
 import { millify } from 'millify'
+import { computed } from 'vue'
 import type { PackageInfo, PackagesFilters } from '@/types'
-
 import Tag from '@/components/tag.vue'
-
 import { categories } from '~/content/categories'
 
-defineProps<{
+const props = defineProps<{
   packages: PackageInfo[]
   filters: PackagesFilters
 }>()
 
-function numberFormatter(_number: number) {
-  return millify(_number || 0, { precision: 1 })
+function numberFormatter(num: number) {
+  return millify(num || 0, { precision: 1 })
 }
 
 function iconPlaceholder({ category }: PackageInfo) {
   return categories.find((c) => c.label === category)?.icon || 'i-fluent-emoji-package-24-regular'
 }
+
+const filteredPackages = computed(() => {
+  if (!props.filters.category) {
+    return props.packages
+  }
+
+  return props.packages.filter((pkg) => pkg.category === props.filters.category)
+})
 </script>
 
 <template>
   <section class="grid grid-cols-3 gap-5">
-    <div v-for="pkg in packages" :key="pkg.name" class="card flex rounded-xl gap-y-2 px-5 py-5">
+    <div
+      v-for="pkg in filteredPackages"
+      :key="pkg.name"
+      class="card flex rounded-xl gap-y-2 px-5 py-5"
+    >
       <Tag>{{ pkg.category }}</Tag>
       <div class="h-12 w-12 mt-4 items-center justify-center">
         <img v-if="pkg.icon" class="h-full" :src="`/icons/${pkg.icon}`" />
@@ -62,7 +73,6 @@ function iconPlaceholder({ category }: PackageInfo) {
 
 <style scoped>
 .card {
-  /* border: 1px solid rgba(84, 104, 255, 0.45); */
   background: rgba(20, 20, 20, 0.57);
   flex-direction: column;
   justify-content: space-between;

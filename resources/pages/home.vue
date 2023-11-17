@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3'
-import type { PackageInfo } from '@/types'
+import { ref } from 'vue'
+import type { PackageInfo, PackagesFilters } from '@/types'
 
 import Hero from '@/components/hero.vue'
 import Header from '@/components/header.vue'
@@ -11,6 +12,8 @@ import MainSection from '@/components/main_section.vue'
 defineProps<{
   packages: PackageInfo[]
 }>()
+
+const filters = ref<PackagesFilters>({})
 </script>
 
 <template>
@@ -21,9 +24,9 @@ defineProps<{
     <Hero />
 
     <div class="container mx-auto">
-      <div class="grid grid-cols-[18em_1fr] gap-24">
-        <Filters />
-        <MainSection :packages="packages" />
+      <div class="grid grid-cols-[18em_1fr] gap-24 items-start">
+        <Filters v-model="filters" />
+        <MainSection :filters="filters" :packages="packages" />
       </div>
     </div>
 

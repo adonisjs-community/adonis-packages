@@ -12,7 +12,7 @@ import Button from '@/components/ui/button.vue'
             <span class="text-primary">AdonisJS</span> packages
           </h1>
 
-          <p class="font-content leading-7">
+          <p class="font-content leading-6">
             Discover our list of packages to supercharge your AdonisJS project.<br />
             Created by the AdonisJS team and community.
           </p>
@@ -52,7 +52,6 @@ import Button from '@/components/ui/button.vue'
   bottom: 0%;
   height: 130%;
   width: 100%;
-  /* left: -5%; */
   pointer-events: none;
   background:
     url(@/assets/noise.webp) repeat,
