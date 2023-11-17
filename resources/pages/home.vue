@@ -20,10 +20,10 @@ import Hero from '@/components/hero.vue'
 import Filters from '@/components/filters.vue'
 import MainSection from '@/components/main_section.vue'
 import Footer from '@/components/footer.vue'
+import { PackageInfo } from '@/types'
 
-// TODO
-const props = defineProps<{
-  packages: ModuleInfo[]
+defineProps<{
+  packages: PackageInfo[]
 }>()
 </script>
 

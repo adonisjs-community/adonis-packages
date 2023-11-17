@@ -1,4 +1,4 @@
-name: adonis-responsive-attachment
+name: responsive-attachment
 description: >-
   Turn any field on your Lucid models to an image attachment data type while
   automatically generating responsive sizes for the attached image files.
