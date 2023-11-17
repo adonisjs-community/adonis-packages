@@ -29,7 +29,7 @@ const filters = ref<PackagesFilters>({
 
     <div class="container mx-auto">
       <div class="grid grid-cols-[18em_1fr] gap-24 items-start">
-        <Filters v-model="filters" />
+        <Filters v-model="filters" :packages="packages" />
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
             <SearchBar v-model="filters.search" />
