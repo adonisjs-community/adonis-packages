@@ -13,9 +13,12 @@ import Socials from '@/components/socials.vue'
     </div>
 
     <div class="bg-[#1C1C1C] py-12">
-      <div class="container mx-auto">
-        <div class="flex justify-between">
-          <div class="flex gap-x-24">
+      <div class="p-container">
+        <div
+          class="flex flex-col justify-between items-center text-center gap-y-8"
+          md="flex-row items-start text-left"
+        >
+          <div class="flex flex-col gap-x-24 gap-y-8" md="flex-row">
             <div class="flex flex-col font-sans text-sm gap-y-1">
               <p class="text-white text-lg font-title mb-2">General Resources</p>
               <a class="text-white-300">Documentation</a>

@@ -5,9 +5,12 @@ import Button from '@/components/ui/button.vue'
 <template>
   <div class="relative py-32 mt-12">
     <div class="hero w-full">
-      <div class="container mx-auto flex relative items-center">
+      <div
+        class="p-container flex flex-col relative text-center items-center"
+        md="text-left flex-row"
+      >
         <div class="flex flex-col space-y-6 flex-1">
-          <h1 class="text-7xl font-black">
+          <h1 class="text-6xl font-black" sm="text-7xl">
             Discover the best<br />
             <span class="text-primary">AdonisJS</span> packages
           </h1>
@@ -26,7 +29,8 @@ import Button from '@/components/ui/button.vue'
 
         <model-viewer
           alt="AdonisJS 3d logo"
-          class="flex-1 h-110"
+          class="flex-1 h-110 hidden"
+          md="block"
           auto-rotate
           disable-zoom
           orientation="0deg 0deg 0deg"

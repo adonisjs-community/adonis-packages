@@ -5,7 +5,7 @@ import Socials from '@/components/socials.vue'
 
 <template>
   <header class="border-b border-b-gray/10 backdrop-blur sticky top-0 z-10">
-    <div class="container mx-auto py-4 flex justify-between w-full items-center">
+    <div class="p-container py-4 flex justify-between w-full items-center">
       <a href="http://adonisjs.com">
         <AdonisLogo />
       </a>

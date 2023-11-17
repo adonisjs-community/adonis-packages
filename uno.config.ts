@@ -27,6 +27,10 @@ export default defineConfig({
     },
   },
 
+  shortcuts: {
+    'p-container': 'px-8 container mx-auto',
+  },
+
   presets: [
     presetUno(),
     presetAttributify(),
