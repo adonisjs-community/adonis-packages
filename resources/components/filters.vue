@@ -1,39 +1,5 @@
-<template>
-  <div class="flex flex-col gap-y-8">
-    <div>
-      <p class="text-3xl font-bold">AdonisJS version</p>
-      <div class="flex mt-6 gap-x-6">
-        <Button class="flex-1" theme="outline">Adonis 6</Button>
-        <Button class="flex-1" theme="outline">Adonis 5</Button>
-      </div>
-    </div>
-    <div>
-      <p class="text-3xl font-bold">Categories</p>
-      <div class="flex mt-6 gap-x-6">
-
-        <div class="flex flex-col gap-y-4 font-content">
-          <button
-            v-for="category in categories"
-            :key="category.label"
-            class="flex text-left items-center gap-x-4 transition-all ease-in-out duration-200 cursor-pointer"
-            hover="translate-x-2"
-          >
-            <div class="bg-#171717 text-sm px-2.4 py-2 flex items-center rounded-xl">
-              <i class="text-white-300 inline-block" :class="category.icon"></i>
-            </div>
-            <div>
-              <p class="text-white-400">{{ category.label }}</p>
-              <p class="text-xs text-white-300">{{ (Math.random() * 100).toFixed() }} packages</p>
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import Button from '@/components/ui/button.vue';
+import Button from '@/components/ui/button.vue'
 
 const categories = [
   {
@@ -90,11 +56,44 @@ const categories = [
   },
   {
     label: 'Testing',
-    icon: 'i-carbon-task-complete'
-  }
+    icon: 'i-carbon-task-complete',
+  },
 ]
 </script>
 
-<style scoped>
+<template>
+  <div class="flex flex-col gap-y-8">
+    <div>
+      <p class="text-3xl font-bold">AdonisJS version</p>
+      <div class="flex mt-6 gap-x-6">
+        <Button class="flex-1" theme="outline"> Adonis 6 </Button>
+        <Button class="flex-1" theme="outline"> Adonis 5 </Button>
+      </div>
+    </div>
+    <div>
+      <p class="text-3xl font-bold">Categories</p>
+      <div class="flex mt-6 gap-x-6">
+        <div class="flex flex-col gap-y-4 font-content">
+          <button
+            v-for="category in categories"
+            :key="category.label"
+            class="flex text-left items-center gap-x-4 transition-all ease-in-out duration-200 cursor-pointer"
+            hover="translate-x-2"
+          >
+            <div class="bg-#171717 text-sm px-2.4 py-2 flex items-center rounded-xl">
+              <i class="text-white-300 inline-block" :class="category.icon" />
+            </div>
+            <div>
+              <p class="text-white-400">
+                {{ category.label }}
+              </p>
+              <p class="text-xs text-white-300">{{ (Math.random() * 100).toFixed() }} packages</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
-</style>
+<style scoped></style>

@@ -1,8 +1,9 @@
-import '@unocss/reset/tailwind.css'
-import 'virtual:uno.css'
-import './css/app.css'
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
+
+import './css/app.css'
+import 'virtual:uno.css'
+import '@unocss/reset/tailwind.css'
 
 createInertiaApp({
   resolve: (name) => {

@@ -1,8 +1,7 @@
 import app from '@adonisjs/core/services/app'
 import { defineConfig } from '@adonisjs/lucid'
 
-console.log(app.tmpPath('db.sqlite3'))
-const dbConfig = defineConfig({
+const databaseConfig = defineConfig({
   connection: 'sqlite',
   connections: {
     sqlite: {
@@ -19,4 +18,4 @@ const dbConfig = defineConfig({
   },
 })
 
-export default dbConfig
+export default databaseConfig

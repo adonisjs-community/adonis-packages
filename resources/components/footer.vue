@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Socials from '@/components/socials.vue'
+</script>
+
 <template>
   <div>
     <div class="flex items-center">
@@ -42,13 +46,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import Socials from '@/components/socials.vue';
-import AdonisIcon from '@/components/icons/adonis_icon.vue';
-</script>
-
 <style scoped>
 .footer-separator {
-  box-shadow: 0px 0px 10px 1px rgba(84, 104, 255, 0.40);
+  box-shadow: 0px 0px 10px 1px rgba(84, 104, 255, 0.4);
 }
 </style>

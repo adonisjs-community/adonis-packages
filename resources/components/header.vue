@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import Socials from '@/components/socials.vue'
+
+const links = [
+  {
+    href: 'https://docs.adonisjs.com/',
+    text: 'Documentation',
+  },
+  {
+    href: 'https://adonisjs.com/blog',
+    text: 'Blog',
+  },
+  {
+    href: '',
+    text: 'Community',
+  },
+]
+</script>
+
 <template>
   <header class="border-b border-b-[#454545] backdrop-blur-[6px] sticky top-0 z-10">
     <div class="container mx-auto py-4 flex justify-between w-full items-center">
@@ -15,22 +34,3 @@
     </div>
   </header>
 </template>
-
-<script setup lang="ts">
-import Socials from '@/components/socials.vue'
-
-const links = [
-  {
-    href: 'https://docs.adonisjs.com/',
-    text: 'Documentation'
-  },
-  {
-    href: 'https://adonisjs.com/blog',
-    text: 'Blog'
-  },
-  {
-    href: '',
-    text: 'Community'
-  }
-]
-</script>

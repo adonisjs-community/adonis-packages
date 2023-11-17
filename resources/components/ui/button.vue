@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, useSlots } from 'vue'
 
-const props = withDefaults(
+const properties = withDefaults(
   defineProps<{
     as?: 'button' | 'a'
     size?: 'l' | 'm' | 's'
@@ -27,13 +27,15 @@ const props = withDefaults(
 
 const slots = useSlots()
 
-const component = computed(() => props.as)
-const isDisabled = computed(() => (props.loading || props.disabled) && component.value === 'button')
+const component = computed(() => properties.as)
+const isDisabled = computed(
+  () => (properties.loading || properties.disabled) && component.value === 'button'
+)
 const cursorClass = computed(() => (isDisabled.value ? '--cursor-disabled' : '--cursor-pointer'))
-const btnType = computed(() => (component.value === 'button' ? props.type : undefined))
-const alignClass = computed(() => `--align-${props.align}`)
-const hasLeftIcon = computed(() => !!slots['left-icon'] || props.leftIcon)
-const hasRightIcon = computed(() => !!slots['right-icon'] || props.rightIcon)
+const buttonType = computed(() => (component.value === 'button' ? properties.type : undefined))
+const alignClass = computed(() => `--align-${properties.align}`)
+const hasLeftIcon = computed(() => !!slots['left-icon'] || properties.leftIcon)
+const hasRightIcon = computed(() => !!slots['right-icon'] || properties.rightIcon)
 const hasIcon = computed(() => hasLeftIcon.value || hasRightIcon.value)
 </script>
 
@@ -55,16 +57,16 @@ const hasIcon = computed(() => hasLeftIcon.value || hasRightIcon.value)
         '--icon': hasIcon,
       },
     ]"
-    :type="btnType"
+    :type="buttonType"
   >
     <div v-if="hasLeftIcon" class="btn__icon-left flex">
       <slot name="left-icon">
         <i v-if="leftIcon" :class="`inline-block text-xl ${leftIcon} ${iconClass}`" />
       </slot>
     </div>
-      <span class="flex w-full">
-        <slot></slot>
-      </span>
+    <span class="flex w-full">
+      <slot />
+    </span>
     <div v-if="hasRightIcon" class="btn__icon-right flex">
       <slot name="right-icon">
         <i v-if="rightIcon" :class="`inline-block text-xl ${rightIcon} ${iconClass}`" />
@@ -112,11 +114,11 @@ const hasIcon = computed(() => hasLeftIcon.value || hasRightIcon.value)
 
   &.--primary {
     @apply bg-primary text-white;
-    box-shadow: 0px 0px 31px 11px rgba(84, 104, 255, 0.30);
+    box-shadow: 0px 0px 31px 11px rgba(84, 104, 255, 0.3);
 
     &:hover {
       @apply bg-primary-600;
-      box-shadow: 0px 0px 40px 11px rgba(84, 104, 255, 0.30);
+      box-shadow: 0px 0px 40px 11px rgba(84, 104, 255, 0.3);
     }
 
     &:focus {

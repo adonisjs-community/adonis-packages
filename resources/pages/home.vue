@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import type { PackageInfo } from '@/types'
+
+import Hero from '@/components/hero.vue'
+import Header from '@/components/header.vue'
+import Footer from '@/components/footer.vue'
+import Filters from '@/components/filters.vue'
+import MainSection from '@/components/main_section.vue'
+
+defineProps<{
+  packages: PackageInfo[]
+}>()
+</script>
+
 <template>
   <div class="flex flex-col min-h-full">
     <Header />
@@ -14,19 +28,4 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import Header from '@/components/header.vue'
-import Hero from '@/components/hero.vue'
-import Filters from '@/components/filters.vue'
-import MainSection from '@/components/main_section.vue'
-import Footer from '@/components/footer.vue'
-import { PackageInfo } from '@/types'
-
-defineProps<{
-  packages: PackageInfo[]
-}>()
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>
