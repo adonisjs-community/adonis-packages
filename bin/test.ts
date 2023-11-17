@@ -13,6 +13,8 @@
 process.env.NODE_ENV = 'test'
 
 import 'reflect-metadata'
+
+// eslint-disable-next-line perfectionist/sort-imports
 import { Ignitor, prettyPrintError } from '@adonisjs/core'
 import { configure, processCLIArgs, run } from '@japa/runner'
 

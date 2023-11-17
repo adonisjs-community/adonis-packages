@@ -28,7 +28,7 @@
           auto-rotate-delay="400"
           rotation-per-second="30deg"
           disable-pan
-          src="/adonisjs2.glb"
+          src="/adonisjs.glb"
           shadow-intensity="1"
           camera-controls
           touch-action="pan-y">
