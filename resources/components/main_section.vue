@@ -48,12 +48,3 @@ const filteredPackages = computed(() => {
     <PackageCard v-for="pkg in filteredPackages" :key="pkg.name" :package="pkg" />
   </section>
 </template>
-
-<style scoped>
-.card {
-  background: rgba(20, 20, 20, 0.57);
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-</style>

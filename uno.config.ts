@@ -63,6 +63,7 @@ export default defineConfig({
       },
     }),
   ],
+
   transformers: [transformerDirectives(), transformerVariantGroup()],
 
   safelist: [
