@@ -5,11 +5,11 @@ import Socials from '@/components/socials.vue'
 <template>
   <div>
     <div class="flex items-center">
-      <hr class="flex-1 border-0 bg-primary h-0.2 footer-separator" />
-      <div class="relative w-15 flex items-center justify-center">
-        <i class="absolute inline-block text-7xl i-custom-adonis-icon" />
+      <hr class="flex-1 border-0 bg-primary/40 h-0.2 footer-separator" />
+      <div class="relative w-12 flex items-center justify-center">
+        <i class="absolute inline-block text-5xl i-custom-adonis-icon" />
       </div>
-      <hr class="flex-1 border-0 bg-primary h-0.2 footer-separator" />
+      <hr class="flex-1 border-0 bg-primary/40 h-0.2 footer-separator" />
     </div>
 
     <div class="bg-[#1C1C1C] py-12">
@@ -51,6 +51,6 @@ import Socials from '@/components/socials.vue'
 
 <style scoped>
 .footer-separator {
-  box-shadow: 0px 0px 10px 1px rgba(84, 104, 255, 0.4);
+  box-shadow: 0px 0px 10px 1px rgba(84, 104, 255, 0.1);
 }
 </style>

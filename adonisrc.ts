@@ -41,6 +41,7 @@ export default defineConfig({
     () => import('@adonisjs/cache/cache_provider'),
     () => import('@adonisjs/inertia/inertia_provider'),
     () => import('@adonisjs/lucid/database_provider'),
+    () => import('./providers/app_provider.js'),
   ],
 
   /*

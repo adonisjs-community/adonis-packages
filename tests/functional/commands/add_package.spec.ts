@@ -10,19 +10,26 @@ import { deletePackageFile, readPackageFile } from '../../helpers.js'
  * Swap the package fetcher with a fake implementation
  */
 function swapPackageFetcher(options: { githubResponse?: any; npmResponse?: any } = {}) {
-  app.container.swap(PackageFetcher, () => ({
-    fetchGithubPkg: async () =>
-      options.githubResponse ?? {
+  const fetcher = class extends PackageFetcher {
+    async fetchGithubPkg() {
+      if (options.githubResponse) return options.githubResponse
+      return {
         name: 'github-package-name',
         description: 'Github package description',
         author: { name: 'Github package author' },
-      },
-    fetchNpmPkg: async () =>
-      options.npmResponse ?? {
+      }
+    }
+
+    async fetchNpmPkg() {
+      if (options.npmResponse) return options.npmResponse
+      return {
         time: { created: '2022-01-01', modified: '2023-01-01' },
         description: 'Npm package description',
-      },
-  }))
+      }
+    }
+  }
+
+  app.container.swap(PackageFetcher, () => new fetcher())
 }
 
 test.group('[Commands] Add Package', (group) => {
@@ -85,7 +92,7 @@ test.group('[Commands] Add Package', (group) => {
     await command.exec()
   })
 
-  test('display error if unable to fetch details from github and npm', async ({ assert }) => {
+  test('display error if unable to fetch details from github and npm', async () => {
     swapPackageFetcher({
       githubResponse: Promise.reject(new Error('Unable to fetch details from github')),
     })

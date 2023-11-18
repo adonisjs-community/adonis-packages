@@ -1,5 +1,5 @@
 name: prometheus
-description: 📊 Prometheus wrapper for Adonis 5
+description: '📊 Prometheus wrapper for Adonis 5'
 repo: Julien-R44/adonis5-prometheus
 npm: adonis5-prometheus
 icon: prometheus.png

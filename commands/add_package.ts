@@ -137,7 +137,6 @@ export default class AddPackage extends BaseCommand {
     this.#package.lastReleaseAt = npmPkg.time.modified
     this.#package.type = this.#determinePackageType(repo.name)
     this.#package.github = `https://github.com/${repo.name}/tree/${repo.branch}`
-    this.#package.maintainers = [{ name: githubPkg.author.name, github: githubPkg.author.name }]
     this.#package.website = this.#package.github
 
     /**

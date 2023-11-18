@@ -1,18 +1,12 @@
 <script setup lang="ts">
-import type { PackageInfo, PackagesFilters } from '@/types'
+import type { PackageCategories, PackagesFilters } from '@/types'
 import Button from '@/components/ui/button.vue'
-import { categories } from '~/content/categories'
 
 const props = defineProps<{
-  packages: PackageInfo[]
+  categories: PackageCategories
 }>()
 
 const filters = defineModel<PackagesFilters>({ required: true })
-
-const categoriesWithCount = categories.map((category) => {
-  const count = props.packages.filter((pkg) => pkg.category === category.label).length
-  return { ...category, count }
-})
 </script>
 
 <template>
@@ -29,7 +23,7 @@ const categoriesWithCount = categories.map((category) => {
       <div class="flex mt-6 gap-x-6">
         <div class="flex flex-col gap-y-4 font-content">
           <button
-            v-for="category in categoriesWithCount"
+            v-for="category in props.categories"
             :key="category.label"
             class="flex text-left group items-center gap-x-4 transition-all ease-in-out duration-200 cursor-pointer"
             hover="translate-x-2"

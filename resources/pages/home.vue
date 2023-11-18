@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3'
+import { Head, router } from '@inertiajs/vue3'
 import { ref } from 'vue'
-import type { PackageInfo, PackagesFilters } from '@/types'
+import { useUrlSearchParams, watchDeep } from '@vueuse/core'
+import type { HomeResponse, PackagesFilters } from '@/types'
 
 import Hero from '@/components/hero.vue'
 import Header from '@/components/header.vue'
@@ -10,13 +11,24 @@ import SortBy from '@/components/sort_by.vue'
 import Filters from '@/components/filters.vue'
 import SearchBar from '@/components/search_bar.vue'
 import MainSection from '@/components/main_section.vue'
+import Pagination from '@/components/pagination.vue'
 
-defineProps<{
-  packages: PackageInfo[]
-}>()
-
+const props = defineProps<HomeResponse>()
+const params = useUrlSearchParams<PackagesFilters>('history')
 const filters = ref<PackagesFilters>({
-  sort: 'updated',
+  sort: params.sort || 'stars',
+  category: params.category,
+  search: params.search,
+  page: +(props.meta.currentPage || 1),
+})
+
+watchDeep(filters, () => {
+  router.visit('/', {
+    method: 'get',
+    data: filters.value,
+    preserveState: true,
+    preserveScroll: true,
+  })
 })
 </script>
 
@@ -33,13 +45,22 @@ const filters = ref<PackagesFilters>({
       </div>
       <div class="p-container">
         <div class="gap-24 items-start" md="grid grid-cols-[18em_1fr]">
-          <Filters v-model="filters" :packages="packages" />
+          <Filters v-model="filters" :categories="categories" />
           <div class="flex flex-col w-full">
             <div class="flex flex-col w-full justify-between gap-2" md="items-center flex-row">
               <SearchBar v-model="filters.search" />
               <SortBy v-model="filters.sort" />
             </div>
-            <MainSection class="mt-8" :filters="filters" :packages="packages" />
+            <div class="flex flex-col items-center">
+              <MainSection class="mt-8 w-full" :filters="filters" :packages="packages" />
+              <Pagination
+                class="mt-8"
+                :pages="meta.pages"
+                :current-page="meta.currentPage"
+                :total="meta.total"
+                @update:current-page="filters.page = $event"
+              />
+            </div>
           </div>
         </div>
       </div>

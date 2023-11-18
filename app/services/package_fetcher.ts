@@ -1,3 +1,5 @@
+import env from '#start/env'
+
 /**
  * Responsible for fetching package details from NPM and Github
  */
@@ -8,6 +10,28 @@ export class PackageFetcher {
   async fetchNpmPkg(name: string) {
     const result = await fetch(`http://registry.npmjs.org/${name}`).then((res) => res.json())
     return result as Promise<Record<string, any>>
+  }
+
+  /**
+   * Fetch package downloads from npm
+   */
+  async fetchPackageDownloads(name: string) {
+    const result = await fetch(`https://api.npmjs.org/downloads/point/last-month/${name}`).then(
+      (res) => res.json()
+    )
+    return result as Promise<Record<string, any>>
+  }
+
+  /**
+   * Fetch github stars from github REST Api
+   */
+  async fetchGithubStars(repo: string) {
+    const result = await fetch(`https://api.github.com/repos/${repo}`, {
+      headers: { Authorization: `token ${env.get('GITHUB_TOKEN')}` },
+    })
+
+    const json = (await result.json()) as { stargazers_count: number }
+    return { stars: json.stargazers_count }
   }
 
   /**

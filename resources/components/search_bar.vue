@@ -1,5 +1,15 @@
 <script setup lang="ts">
-const input = defineModel<string>()
+import { ref, watch } from 'vue'
+import { refDebounced } from '@vueuse/core'
+
+const props = defineProps<{
+  modelValue?: string
+}>()
+
+const emit = defineEmits(['update:modelValue'])
+const input = ref(props.modelValue)
+const debounced = refDebounced(input, 400)
+watch(debounced, (value) => emit('update:modelValue', value))
 </script>
 
 <template>

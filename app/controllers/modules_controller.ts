@@ -1,15 +1,18 @@
 import { inject } from '@adonisjs/core'
 import { HttpContext } from '@adonisjs/core/http'
-import { StatsFetcher } from '#services/stats_fetcher'
-
-import { categories } from '../../content/categories.js'
+import { getHomeValidator } from '#validators/main'
+import { PackagesFetcher } from '#services/packages_fetcher'
 
 export default class ModulesController {
   @inject()
-  async renderLanding(ctx: HttpContext, statsFetcher: StatsFetcher) {
+  async getHome(ctx: HttpContext, statsFetcher: PackagesFetcher) {
+    const payload = await ctx.request.validateUsing(getHomeValidator)
+    let { packages, categories, meta } = await statsFetcher.fetchPackages(payload)
+
     return ctx.inertia.render('home', {
-      packages: await statsFetcher.fetchStats(),
+      packages,
       categories,
+      meta,
     })
   }
 }
