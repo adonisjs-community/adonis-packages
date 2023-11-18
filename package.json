@@ -27,7 +27,8 @@
     "#middleware/*": "./app/middleware/*.js",
     "#validators/*": "./app/validators/*.js",
     "#start/*": "./start/*.js",
-    "#config/*": "./config/*.js"
+    "#config/*": "./config/*.js",
+    "#types/*": "./types/*.js"
   },
   "dependencies": {
     "@adonisjs/cache": "^1.0.0-0",

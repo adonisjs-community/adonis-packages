@@ -111,16 +111,3 @@ export type PackagesFilters = {
  * Package categories with count
  */
 export type PackageCategories = Array<(typeof categories)[number] & { count: number }>
-
-/**
- * Route responses
- */
-export interface HomeResponse {
-  packages: PackageInfo[]
-  categories: PackageCategories
-  meta: {
-    total: number
-    currentPage: number
-    pages: number
-  }
-}

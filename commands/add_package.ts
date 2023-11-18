@@ -1,3 +1,5 @@
+import type { PackageInfo } from '#types/main'
+
 import { dump } from 'js-yaml'
 import { join } from 'node:path'
 import { inject } from '@adonisjs/core'
@@ -6,7 +8,6 @@ import { getDirname } from '@poppinss/utils'
 import { BaseCommand } from '@adonisjs/core/ace'
 import { PackageFetcher } from '#services/package_fetcher'
 
-import type { PackageInfo } from '../app/types.js'
 import { categories } from '../content/categories.js'
 
 export default class AddPackage extends BaseCommand {

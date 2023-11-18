@@ -1,1 +1,1 @@
-export * from '../app/types.js'
+export * from '../types/main.js'

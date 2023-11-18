@@ -1,3 +1,5 @@
+import type { PackageInfo } from '#types/main'
+
 import { load } from 'js-yaml'
 import { join } from 'node:path'
 import { faker } from '@faker-js/faker'
@@ -5,7 +7,6 @@ import { getDirname } from '@poppinss/utils'
 import { readFile, rm } from 'node:fs/promises'
 import { PackageFetcher } from '#services/package_fetcher'
 
-import type { PackageInfo } from '../app/types.js'
 import { categories } from '../content/categories.js'
 
 const dirname = getDirname(import.meta.url)

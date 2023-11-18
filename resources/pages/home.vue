@@ -2,7 +2,7 @@
 import { Head, router } from '@inertiajs/vue3'
 import { ref } from 'vue'
 import { useUrlSearchParams, watchDeep } from '@vueuse/core'
-import type { HomeResponse, PackagesFilters } from '@/types'
+import type { GetHomeResponse, PackagesFilters } from '@/types'
 
 import Hero from '@/components/hero.vue'
 import Header from '@/components/header.vue'
@@ -13,7 +13,7 @@ import SearchBar from '@/components/search_bar.vue'
 import MainSection from '@/components/main_section.vue'
 import Pagination from '@/components/pagination.vue'
 
-const props = defineProps<HomeResponse>()
+const props = defineProps<GetHomeResponse>()
 const params = useUrlSearchParams<PackagesFilters>('history')
 const filters = ref<PackagesFilters>({
   sort: params.sort || 'stars',
