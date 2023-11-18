@@ -13,9 +13,9 @@ import { inertiaApiClient } from '@adonisjs/inertia/plugins/api_client'
  */
 export const plugins: Config['plugins'] = [
   assert(),
-  pluginAdonisJS(app),
   apiClient(),
-  inertiaApiClient(),
+  pluginAdonisJS(app),
+  inertiaApiClient(app),
 ]
 
 /**
