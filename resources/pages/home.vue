@@ -77,7 +77,7 @@ watchDeep(filters, () => {
 }
 
 .bg-topography {
-  background-size: 920px;
+  background-size: 620px;
   background-image: url('@/assets/topography.svg');
 }
 </style>

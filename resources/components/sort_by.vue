@@ -4,17 +4,17 @@ import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headless
 import type { PackagesFilters } from '@/types'
 
 const sortOptions = [
-  { label: 'Newest', value: 'created', description: 'Sort by packages that just dropped' },
-  { label: 'Most stars', value: 'stars', description: 'Sort by packages that have the most stars' },
+  { label: 'Newest', value: 'created', description: 'Check out the newest packages on the block' },
+  { label: 'Top stars', value: 'stars', description: 'See the packages that are crowd favorites' },
   {
     label: 'Most downloads',
     value: 'downloads',
-    description: 'Sort by packages that have the most downloads',
+    description: 'Find packages that everyone is downloading',
   },
   {
-    label: 'Most recent update',
+    label: 'Recently updated',
     value: 'updated',
-    description: 'Sort by packages that have the most recent update',
+    description: 'Look at packages that just got updated',
   },
 ] as Array<{ label: string; value: PackagesFilters['sort']; description: string }>
 
@@ -27,9 +27,9 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
     <div class="relative">
       <ListboxButton
         v-slot="{ open }"
-        class="relative md:w-[230px] w-full cursor-default rounded-xl search-bar-input py-3 pl-5 pr-10 text-left text-white shadow-sm sm:leading-6"
+        class="relative md:w-[230px] w-full cursor-pointer rounded-xl search-bar-input py-3 pl-5 pr-10 text-left text-white shadow-sm sm:leading-6"
       >
-        <span class="inline-flex w-full truncate">
+        <span class="inline-flex text-white-400 w-full truncate">
           <span class="truncate">{{ selectedOption?.label }}</span>
         </span>
         <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center pr-2">
@@ -40,13 +40,16 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
         </span>
       </ListboxButton>
 
-      <transition
-        leave-active-class="transition ease-in duration-100"
-        leave-from-class="opacity-100"
-        leave-to-class="opacity-0"
+      <Transition
+        enter-active-class="transition ease-out duration-400"
+        enter-from-class="opacity-0 -translate-y-3"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition transform ease-in duration-150"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-3"
       >
         <ListboxOptions
-          class="absolute z-10 mt-2 w-full overflow-auto rounded-md option py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          class="absolute z-10 mt-2 w-full overflow-auto rounded-xl option py-2 text-base shadow-lg px-2"
         >
           <ListboxOption
             v-for="option in sortOptions"
@@ -56,15 +59,15 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
             :value="option.value"
           >
             <li
-              class="relative cursor-default select-none py-2 pl-3 pr-9 transition-colors duration-200 cursor-pointer"
+              class="relative cursor-default rounded-lg select-none py2 pl-3 pr-4 transition-colors duration-200 cursor-pointer"
               :class="[active ? 'bg-primary' : '']"
             >
-              <div class="flex flex-col">
-                <span>
+              <div class="flex flex-col font-content">
+                <span class="text-base">
                   {{ option.label }}
                 </span>
                 <span
-                  class="text-xs leading-3 font-thin pr-8"
+                  class="text-xs font-thin pr-8"
                   :class="[active ? 'text-indigo-200' : 'text-gray-500']"
                 >
                   {{ option.description }}
@@ -81,7 +84,7 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
             </li>
           </ListboxOption>
         </ListboxOptions>
-      </transition>
+      </Transition>
     </div>
   </Listbox>
 </template>

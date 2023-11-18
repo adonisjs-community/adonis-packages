@@ -7,7 +7,10 @@ import Socials from '@/components/socials.vue'
     <div class="flex items-center">
       <hr class="flex-1 border-0 bg-primary/40 h-0.2 footer-separator" />
       <div class="relative w-12 flex items-center justify-center">
-        <i class="absolute inline-block text-5xl i-custom-adonis-icon" />
+        <i
+          class="absolute inline-block text-5xl i-custom-adonis-icon transition duration-1500 ease-in-out"
+          hover="rotate-360"
+        />
       </div>
       <hr class="flex-1 border-0 bg-primary/40 h-0.2 footer-separator" />
     </div>
@@ -19,26 +22,26 @@ import Socials from '@/components/socials.vue'
           md="flex-row items-start text-left"
         >
           <div class="flex flex-col gap-x-24 gap-y-8" md="flex-row">
-            <div class="flex flex-col font-sans text-sm gap-y-1">
+            <div class="flex flex-col font-content text-sm gap-y-2">
               <p class="text-white text-lg font-title mb-2">General Resources</p>
-              <a class="text-white-300">Documentation</a>
-              <a class="text-white-300">Packages</a>
-              <a class="text-white-300">Newsletter</a>
-              <a class="text-white-300">VSCode Extensions</a>
+              <a href="https://docs.adonisjs.com" class="item">Documentation</a>
+              <a href="https://packages.adonisjs.com" class="item">Packages</a>
+              <a href="https://buttondown.email/adonisjs" class="item">Newsletter</a>
+              <a href="https://github.com/adonisjs/core/discussions" class="item"> Discussions </a>
             </div>
-            <div class="flex flex-col font-sans text-sm gap-y-1">
-              <p class="text-white text-lg font-title mb-2">General Resources</p>
-              <p class="text-white-300">Documentation</p>
-              <p class="text-white-300">Packages</p>
-              <p class="text-white-300">Newsletter</p>
-              <p class="text-white-300">VSCode Extensions</p>
+            <div class="flex flex-col font-content text-sm gap-y-2">
+              <p class="text-white text-lg font-title mb-2">Documentations</p>
+              <a href="https://docs.adonisjs.com" class="item">AdonisJS</a>
+              <a href="https://japa.dev/" class="item">Japa</a>
+              <a href="https://edgejs.dev/docs/introduction" class="item">EdgeJS</a>
+              <a href="https://vinejs.dev/docs/introduction" class="item"> VineJS </a>
+              <a href="https://bentocache.julr.dev" class="item"> BentoCache </a>
             </div>
-            <div class="flex flex-col font-sans text-sm gap-y-1">
-              <p class="text-white text-lg font-title mb-2">General Resources</p>
-              <p class="text-white-300">Documentation</p>
-              <p class="text-white-300">Packages</p>
-              <p class="text-white-300">Newsletter</p>
-              <p class="text-white-300">VSCode Extensions</p>
+            <div class="flex flex-col font-content text-sm gap-y-2">
+              <p class="text-white text-lg font-title mb-2">Others</p>
+              <a href="https://blog.adonisjs.com" class="item">Blog</a>
+              <a href="https://about.adonisjs.com" class="item">About</a>
+              <a href="https://support.adonisjs.com" class="item">Entreprise Support</a>
             </div>
           </div>
 
@@ -52,5 +55,10 @@ import Socials from '@/components/socials.vue'
 <style scoped>
 .footer-separator {
   box-shadow: 0px 0px 10px 1px rgba(84, 104, 255, 0.1);
+}
+
+.item {
+  transition: color 0.2s ease-in-out;
+  @apply text-white-300 text-sm;
 }
 </style>

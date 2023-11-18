@@ -12,13 +12,6 @@ const filters = defineModel<PackagesFilters>({ required: true })
 <template>
   <div class="flex-col gap-y-8 hidden" md="flex">
     <div>
-      <p class="text-3xl font-bold">AdonisJS version</p>
-      <div class="flex mt-6 gap-x-6">
-        <Button class="flex-1" theme="outline"> Adonis 6 </Button>
-        <Button class="flex-1" theme="outline"> Adonis 5 </Button>
-      </div>
-    </div>
-    <div>
       <p class="text-3xl font-bold">Categories</p>
       <div class="flex mt-6 gap-x-6">
         <div class="flex flex-col gap-y-4 font-content">

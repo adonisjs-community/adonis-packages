@@ -18,13 +18,6 @@ export default await Env.create(new URL('../', import.meta.url), {
   HOST: Env.schema.string({ format: 'host' }),
   LOG_LEVEL: Env.schema.string(),
   CACHE_STORE: Env.schema.enum(['cache', 'test'] as const),
-
-  /*
-  |----------------------------------------------------------
-  | Variables for configuring session package
-  |----------------------------------------------------------
-  */
   SESSION_DRIVER: Env.schema.enum(['cookie', 'memory'] as const),
-
   GITHUB_TOKEN: Env.schema.string(),
 })
