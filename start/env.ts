@@ -17,7 +17,6 @@ export default await Env.create(new URL('../', import.meta.url), {
   APP_KEY: Env.schema.string(),
   HOST: Env.schema.string({ format: 'host' }),
   LOG_LEVEL: Env.schema.string(),
-  CACHE_VIEWS: Env.schema.boolean(),
   CACHE_STORE: Env.schema.enum(['cache', 'test'] as const),
 
   /*
