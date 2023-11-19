@@ -4,10 +4,10 @@ import 'github-markdown-css/github-markdown-dark.css'
 import { Head } from '@inertiajs/vue3'
 import Toc from './components/toc.vue'
 import Links from './components/links.vue'
+import Heading from './components/heading.vue'
 import type { GetPackageResponse } from '@/types'
 
 import Layout from '@/layouts/default.vue'
-import PackageLogo from '@/components/package_logo.vue'
 
 const props = defineProps<GetPackageResponse>()
 </script>
@@ -16,31 +16,20 @@ const props = defineProps<GetPackageResponse>()
   <Layout>
     <Head :title="`AdonisJS packages - ${props.package.name}`" />
 
-    <div class="pb-28 pt-12">
+    <div class="pb-28 pt-6" md="pt-12">
       <div class="overflow-hidden absolute inset-0">
         <span class="bg-gradient"></span>
       </div>
 
       <div class="p-container z-1">
         <!-- Heading -->
-        <div class="text-left flex flex-col">
-          <div class="flex items-center gap-6">
-            <PackageLogo size="16" :package="package" />
-            <div class="flex flex-col gap-2">
-              <h1 class="text-5xl font-bold relative top-2">{{ package.name }}</h1>
-              <span class="text-base mt-2 font-content text-white-400">
-                {{ package.description }}
-              </span>
-            </div>
-          </div>
-          <hr class="my-7 border-b-1 border-t-0 border-white/6" />
-        </div>
+        <Heading :package="package" />
 
         <!-- Readme & Toc -->
-        <div class="grid grid-cols-[1fr_18em] gap-24 relative">
+        <div class="relative flex flex-col-reverse gap-12" md="grid grid-cols-[1fr_18em] gap-24">
           <section class="markdown-body" v-html="readme"></section>
-          <div class="sticky top-90px toc overflow-auto z-13">
-            <div class="border-l border-white/6 pl-6">
+          <div class="overflow-auto z-13 toc" md="sticky top-90px">
+            <div md="border-l border-white/6 pl-6">
               <Toc :markdown="readme" />
               <Links class="mt-4" :package="package" />
             </div>
