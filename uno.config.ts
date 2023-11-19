@@ -16,9 +16,7 @@ export default defineConfig({
   content: {
     pipeline: {
       include: [
-        // the default
         /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
-        // include js/ts files
         './content/categories.ts',
       ],
     },
@@ -43,6 +41,10 @@ export default defineConfig({
   shortcuts: {
     'p-container': 'px-8 container mx-auto',
   },
+
+  rules: [
+    ['ease-bounce', { 'transition-timing-function': 'cubic-bezier(0.18, 0.89, 0.32, 1.28)' }],
+  ],
 
   presets: [
     presetUno(),

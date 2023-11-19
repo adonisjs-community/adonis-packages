@@ -29,7 +29,7 @@ const props = defineProps<GetPackageResponse>()
         <div class="relative flex flex-col-reverse gap-12" md="grid grid-cols-[1fr_18em] gap-24">
           <section class="markdown-body" v-html="readme"></section>
           <div class="overflow-auto z-13 toc" md="sticky top-90px">
-            <div md="border-l border-white/6 pl-6">
+            <div md="border-l border-white/6 pl-6 pr-4">
               <Toc :markdown="readme" />
               <Links class="mt-4" :package="package" />
             </div>
