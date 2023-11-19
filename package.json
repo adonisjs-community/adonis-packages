@@ -41,6 +41,7 @@
     "@headlessui/vue": "^1.7.16",
     "@inertiajs/vue3": "^1.0.14",
     "@poppinss/utils": "^6.5.1",
+    "@sindresorhus/slugify": "^2.2.1",
     "@vinejs/vine": "^1.6.0",
     "@vueuse/core": "^10.6.1",
     "edge.js": "^6.0.0-10",

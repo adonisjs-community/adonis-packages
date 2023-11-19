@@ -1,12 +1,32 @@
 <script setup lang="ts">
+import { useEventListener } from '@vueuse/core'
 import { ref, watchEffect } from 'vue'
 
 type TocElement = { id: string; level: number; textContent: string | null }
 
 const props = defineProps<{ markdown: string }>()
 const elements = ref<TocElement[]>([])
+const activeSections = ref<string>()
 
 watchEffect(() => parseMarkdown())
+useEventListener('scroll', handleScroll)
+
+/**
+ * Handle scroll event and set active section
+ */
+function handleScroll() {
+  const sections = elements.value.map((element) => document.querySelector(`#${element.id}`))
+  const offsetThreshold = 90 // Adjust this value as needed
+  activeSections.value = undefined
+
+  for (const section of sections) {
+    const rect = section!.getBoundingClientRect()
+    if (rect.top >= -offsetThreshold && rect.bottom <= window.innerHeight + offsetThreshold) {
+      activeSections.value = section!.id
+      break
+    }
+  }
+}
 
 /**
  * Parse the markdown and extract the headings
@@ -50,6 +70,7 @@ function onTocClick(id: string) {
           'ml-2': element.level === 2,
           'ml-4': element.level === 3,
           'ml-6': element.level === 4,
+          'text-indigo': activeSections === element.id,
         }"
         @click.prevent="onTocClick(element.id)"
       >

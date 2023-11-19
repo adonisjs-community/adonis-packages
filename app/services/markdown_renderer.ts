@@ -1,5 +1,6 @@
 import HlJs from 'highlight.js'
 import MarkdownIt from 'markdown-it'
+import slugify from '@sindresorhus/slugify'
 import MarkdownItAnchor from 'markdown-it-anchor'
 
 /**
@@ -23,7 +24,7 @@ export class MarkdownRenderer {
       },
     })
 
-    this.#renderer.use(MarkdownItAnchor)
+    this.#renderer.use(MarkdownItAnchor, { slugify: (str) => slugify(str) })
   }
 
   render(markdown: string): string {
