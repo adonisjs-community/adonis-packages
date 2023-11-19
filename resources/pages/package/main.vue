@@ -26,11 +26,13 @@ const props = defineProps<GetPackageResponse>()
         <div class="text-left flex flex-col">
           <div class="flex items-center gap-6">
             <PackageLogo size="16" :package="package" />
-            <h1 class="text-5xl font-bold relative top-2">{{ package.name }}</h1>
+            <div class="flex flex-col gap-2">
+              <h1 class="text-5xl font-bold relative top-2">{{ package.name }}</h1>
+              <span class="text-base mt-2 font-content text-white-400">
+                {{ package.description }}
+              </span>
+            </div>
           </div>
-          <span class="text-base mt-2 font-content text-white-400">
-            {{ package.description }}
-          </span>
           <hr class="my-7 border-b-1 border-t-0 border-white/6" />
         </div>
 

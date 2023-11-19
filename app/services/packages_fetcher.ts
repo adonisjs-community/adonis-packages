@@ -132,7 +132,11 @@ export class PackagesFetcher {
 
     if (options.search) {
       packages = packages.filter((pkg) => {
-        return pkg.name.includes(options.search!) || pkg.description.includes(options.search!)
+        const search = options.search!.toLowerCase()
+        const name = pkg.name.toLowerCase()
+        const description = pkg.description.toLowerCase()
+
+        return name.includes(search) || description.includes(search)
       })
     }
 
