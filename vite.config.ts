@@ -10,17 +10,12 @@ export default defineConfig({
   plugins: [
     // @ts-expect-error
     unocss(),
-    vue({ script: { defineModel: true } }),
+    vue({
+      script: { defineModel: true },
+      template: { compilerOptions: { isCustomElement: (tag) => ['model-viewer'].includes(tag) } },
+    }),
     adonisjs({
-      /**
-       * Entrypoints of your application. Each entrypoint will
-       * result in a separate bundle.
-       */
       entrypoints: ['resources/app.ts'],
-
-      /**
-       * Paths to watch and reload the browser on file change
-       */
       reload: ['resources/views/**/*.edge'],
     }),
   ],
