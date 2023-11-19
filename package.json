@@ -31,9 +31,9 @@
     "#types/*": "./types/*.js"
   },
   "dependencies": {
-    "@adonisjs/cache": "^1.0.0-0",
+    "@adonisjs/cache": "1.0.0-0",
     "@adonisjs/core": "^6.1.5-31",
-    "@adonisjs/inertia": "file:../../adonis/inertia-adonisjs6",
+    "@adonisjs/inertia": "1.0.0-1",
     "@adonisjs/lucid": "19.0.0-3",
     "@adonisjs/session": "^7.0.0-13",
     "@adonisjs/shield": "^8.0.0-8",
