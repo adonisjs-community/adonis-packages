@@ -14,13 +14,13 @@ export class MarkdownRenderer {
     this.#renderer = new MarkdownIt({
       html: true,
       highlight(str, lang) {
-        if (lang && HlJs.getLanguage(lang)) {
-          try {
-            return HlJs.highlight(lang, str).value
-          } catch (__) {}
-        }
+        if (!lang || !HlJs.getLanguage(lang)) return ''
 
-        return ''
+        try {
+          return HlJs.highlight(str, { language: lang }).value
+        } catch (__) {
+          return ''
+        }
       },
     })
 
