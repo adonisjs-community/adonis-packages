@@ -5,9 +5,12 @@ import cache from '@adonisjs/cache/services/main'
 import logger from '@adonisjs/core/services/logger'
 
 import { categories } from '../../content/categories.js'
+import { MarkdownRenderer } from './markdown_renderer.js'
 import type { PackageFetcher } from './package_fetcher.js'
 
 export class PackagesFetcher {
+  #markdownRenderer = new MarkdownRenderer()
+
   constructor(
     protected packageFetcher: PackageFetcher,
     protected packagesList: PackageInfo[]
@@ -49,6 +52,22 @@ export class PackagesFetcher {
       .catch((err) => {
         logger.error(`Cannot fetch github repo info for ${pkg.repo}: ${err}`)
         return { stars: 0 }
+      })
+  }
+
+  /**
+   * Get the github readme from cache or fetch it from github
+   */
+  async #getPackageReadme(pkg: PackageInfo) {
+    if (!pkg.repo) return ''
+
+    const cacheKey = this.#createCacheKey(`github:repo:readme:${pkg.repo}`)
+    const [repo, branch] = pkg.repo.split('#')
+    return cache
+      .getOrSet(cacheKey, () => this.packageFetcher.fetchReadme(repo, branch))
+      .catch((err) => {
+        logger.error(`Cannot fetch github repo info for ${pkg.repo}: ${err}`)
+        return ''
       })
   }
 
@@ -136,5 +155,17 @@ export class PackagesFetcher {
         currentPage: page,
       },
     }
+  }
+
+  async fetchPackage(name: string) {
+    const pkg = this.packagesList.find((pkg_) => pkg_.name === name)
+    if (!pkg) {
+      throw new Error(`Cannot find package ${name}`)
+    }
+
+    const stats = await this.#fetchPackageStats(pkg)
+    const readme = await this.#getPackageReadme(pkg)
+
+    return { package: stats, readme: this.#markdownRenderer.render(readme) }
   }
 }

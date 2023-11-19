@@ -43,4 +43,14 @@ export class PackageFetcher {
     const url = `https://raw.githubusercontent.com/${repository}/${branch}/package.json`
     return fetch(url).then((res) => res.json()) as Promise<Record<string, any>>
   }
+
+  /**
+   * Fetch README.md file from github repository
+   * @param repository Github repository name in format username/repo-name
+   * @param branch Branch to fetch the README.md file from
+   */
+  fetchReadme(repository: string, branch = 'main') {
+    const url = `https://raw.githubusercontent.com/${repository}/${branch}/README.md`
+    return fetch(url).then((res) => res.text()) as Promise<string>
+  }
 }

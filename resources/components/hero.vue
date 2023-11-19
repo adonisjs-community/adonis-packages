@@ -3,7 +3,7 @@ import Button from '@/components/ui/button.vue'
 </script>
 
 <template>
-  <div class="relative py-32 mt-12">
+  <div class="relative py-24 mb-14">
     <div class="hero w-full">
       <div
         class="p-container flex flex-col relative text-center items-center"

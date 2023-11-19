@@ -2,16 +2,15 @@
 import { Head, router } from '@inertiajs/vue3'
 import { ref } from 'vue'
 import { useUrlSearchParams, watchDeep } from '@vueuse/core'
+import SortBy from './components/sort_by.vue'
+import Filters from './components/filters.vue'
+import SearchBar from './components/search_bar.vue'
+import MainSection from './components/main_section.vue'
+import Pagination from './components/pagination.vue'
 import type { GetHomeResponse, PackagesFilters } from '@/types'
 
 import Hero from '@/components/hero.vue'
-import Header from '@/components/header.vue'
-import Footer from '@/components/footer.vue'
-import SortBy from '@/components/sort_by.vue'
-import Filters from '@/components/filters.vue'
-import SearchBar from '@/components/search_bar.vue'
-import MainSection from '@/components/main_section.vue'
-import Pagination from '@/components/pagination.vue'
+import Layout from '@/layouts/default.vue'
 
 const props = defineProps<GetHomeResponse>()
 const params = useUrlSearchParams<PackagesFilters>('history')
@@ -33,24 +32,28 @@ watchDeep(filters, () => {
 </script>
 
 <template>
-  <div class="flex flex-col min-h-full">
+  <Layout>
     <Head title="AdonisJS packages - Discover the best AdonisJS packages" />
-
-    <Header />
     <Hero />
 
     <div class="relative pb-28">
       <div class="absolute inset-0 bg-mask pointer-events-none">
         <div class="bg-topography absolute inset-0"></div>
       </div>
+
       <div class="p-container">
-        <div class="gap-24 items-start" md="grid grid-cols-[18em_1fr]">
+        <div class="gap-4 items-start 2xl:gap-12" md="grid grid-cols-[18em_1fr]">
+          <!-- Category filters -->
           <Filters v-model="filters" :categories="categories" />
+
+          <!-- Search and sort -->
           <div class="flex flex-col w-full">
             <div class="flex flex-col w-full justify-between gap-2" md="items-center flex-row">
               <SearchBar v-model="filters.search" />
               <SortBy v-model="filters.sort" />
             </div>
+
+            <!-- Main section -->
             <div class="flex flex-col items-center">
               <MainSection class="mt-8 w-full" :filters="filters" :packages="packages" />
               <Pagination
@@ -65,9 +68,7 @@ watchDeep(filters, () => {
         </div>
       </div>
     </div>
-
-    <Footer />
-  </div>
+  </Layout>
 </template>
 
 <style scoped>

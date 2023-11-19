@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { millify } from 'millify'
-import AdonisIcon from './icons/adonis_icon.vue'
+import { Link } from '@inertiajs/vue3'
 import type { PackageInfo } from '@/types'
-import { categories } from '~/content/categories'
+import AdonisIcon from '@/components/icons/adonis_icon.vue'
 import Tag from '@/components/tag.vue'
+import PackageLogo from '@/components/package_logo.vue'
 
 defineProps<{
   package: PackageInfo
@@ -12,16 +13,12 @@ defineProps<{
 function numberFormatter(num: number) {
   return millify(num || 0, { precision: 1 })
 }
-
-function iconPlaceholder({ category }: PackageInfo) {
-  return categories.find((c) => c.label === category)?.icon || 'i-fluent-emoji-package-24-regular'
-}
 </script>
 
 <template>
-  <a
+  <Link
     class="card relative flex rounded-xl gap-y-2 px-5 py-5 group cursor-pointer"
-    :href="package.website || package.github"
+    :href="`/packages/${package.name}`"
     target="_blank"
   >
     <div class="flex items-center justify-between w-full">
@@ -30,16 +27,8 @@ function iconPlaceholder({ category }: PackageInfo) {
         class="inline-block i-icon-park-outline-share text-xs text-white-300 opacity-0 group-hover:opacity-100 transition duration-500 hover:text-white"
       />
     </div>
-    <div class="h-12 w-12 mt-4 items-center justify-center">
-      <img v-if="package.icon" class="h-full object-contain" :src="`/icons/${package.icon}`" />
-      <div
-        v-else
-        style="background: rgba(43, 43, 43, 0.23)"
-        class="h-full flex items-center justify-center rounded-xl overflow-hidden"
-      >
-        <i class="inline-block bg-grey text-lg" :class="iconPlaceholder(package)" />
-      </div>
-    </div>
+    <PackageLogo size="12" :package="package" />
+
     <div class="flex flex-col gap-y-1">
       <div class="absolute inset-0 overflow-hidden rounded-xl m-1 pointer-events-none">
         <AdonisIcon
@@ -82,7 +71,7 @@ function iconPlaceholder({ category }: PackageInfo) {
         </span>
       </a>
     </div>
-  </a>
+  </Link>
 </template>
 
 <style scoped lang="postcss">

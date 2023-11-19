@@ -48,17 +48,12 @@ export default defineConfig({
     presetWebFonts({
       provider: 'bunny',
       fonts: {
-        title: {
-          name: 'PolySans',
-          provider: 'none',
-        },
+        title: { name: 'PolySans', provider: 'none' },
+        mono: { name: 'JetBrains Mono', provider: 'google' },
+        content: { name: 'Graphik', provider: 'none' },
         sans: {
           name: 'Poppins',
           weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-        },
-        content: {
-          name: 'Graphik',
-          provider: 'none',
         },
       },
     }),

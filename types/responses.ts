@@ -9,3 +9,8 @@ export interface GetHomeResponse {
     pages: number
   }
 }
+
+export interface GetPackageResponse {
+  package: PackageInfo
+  readme: string
+}

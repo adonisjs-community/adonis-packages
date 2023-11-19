@@ -11,3 +11,4 @@ const PackagesController = () => import('#controllers/packages_controller')
 import router from '@adonisjs/core/services/router'
 
 router.get('/', [PackagesController, 'getHome'])
+router.get('/packages/:name', [PackagesController, 'getPackage'])
