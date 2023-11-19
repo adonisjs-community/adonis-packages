@@ -16,12 +16,11 @@ useEventListener('scroll', handleScroll)
  */
 function handleScroll() {
   const sections = elements.value.map((element) => document.querySelector(`#${element.id}`))
-  const offsetThreshold = 90 // Adjust this value as needed
   activeSections.value = undefined
 
   for (const section of sections) {
     const rect = section!.getBoundingClientRect()
-    if (rect.top >= -offsetThreshold && rect.bottom <= window.innerHeight + offsetThreshold) {
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
       activeSections.value = section!.id
       break
     }
@@ -39,6 +38,7 @@ function parseMarkdown() {
   elements.value = [...headings].flatMap(({ id, textContent, tagName }) => {
     const level = Number.parseInt(tagName[1])
     if (level > 2) return []
+    if (!id.trim()) return []
 
     return { id, level, textContent }
   })

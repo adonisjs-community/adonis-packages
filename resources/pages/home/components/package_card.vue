@@ -37,7 +37,7 @@ function numberFormatter(num: number) {
         />
       </div>
       <div class="flex items-baseline gap-2">
-        <p class="text-2xl font-bold">
+        <p class="text-2xl font-bold line-clamp-1">
           {{ package.name }}
         </p>
         <i
@@ -45,7 +45,7 @@ function numberFormatter(num: number) {
           class="inline-block text-lg relative top-[2px] i-fluent-emoji-military-medal"
         />
       </div>
-      <p class="text-base10 text-sm line-clamp-3">
+      <p class="text-base10 text-sm line-clamp-2">
         {{ package.description }}
       </p>
     </div>
