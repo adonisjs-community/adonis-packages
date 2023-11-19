@@ -49,7 +49,7 @@ import Socials from '@/components/socials.vue'
         </div>
       </div>
 
-      <p class="text-center font-content text-base12-300 text-xs mt-8 py-2 pb-2">
+      <p class="text-center font-content text-base10 text-xs mt-8 py-2 pb-2">
         Created with
         <i
           class="inline-block text-base mx1 align-sub i-fluent-emoji-sparkling-heart text-red-500"
@@ -68,6 +68,6 @@ import Socials from '@/components/socials.vue'
 
 .item {
   transition: color 0.2s ease-in-out;
-  @apply text-base12-300 text-sm;
+  @apply text-base10 text-sm hover:text-base12;
 }
 </style>
