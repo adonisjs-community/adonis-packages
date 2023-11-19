@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PackageCategories, PackagesFilters } from '@/types'
+import type { PackageCategories, PackageCategory, PackagesFilters } from '@/types'
 import Button from '@/components/ui/button.vue'
 
 const props = defineProps<{
@@ -7,6 +7,11 @@ const props = defineProps<{
 }>()
 
 const filters = defineModel<PackagesFilters>({ required: true })
+
+function handleCategoryClick(category: PackageCategory) {
+  filters.value.category = filters.value.category === category ? undefined : category
+  filters.value.page = 1
+}
 </script>
 
 <template>
@@ -20,34 +25,22 @@ const filters = defineModel<PackagesFilters>({ required: true })
             :key="category.label"
             class="flex text-left group items-center gap-x-4 transition-all ease-in-out duration-200 cursor-pointer"
             hover="translate-x-2"
-            @click="
-              filters.category === category.label
-                ? (filters.category = undefined)
-                : (filters.category = category.label)
-            "
+            @click="handleCategoryClick(category.label)"
           >
             <div
               class="group-hover:bg-primary transition-colors duration-500 text-sm px-2.4 py-2 flex items-center rounded-xl"
-              :class="{
-                'bg-[#171717]': filters.category !== category.label,
-                'bg-primary': filters.category === category.label,
-              }"
+              :class="[filters.category === category.label ? 'bg-primary' : 'bg-[#171717]']"
             >
               <i
                 class="group-hover:text-white inline-block"
                 :class="[
                   category.icon,
-                  {
-                    'text-white-300': filters.category !== category.label,
-                    'text-white': filters.category === category.label,
-                  },
+                  filters.category !== category.label ? 'text-white-300' : 'text-white',
                 ]"
               />
             </div>
             <div>
-              <p class="text-white-400">
-                {{ category.label }}
-              </p>
+              <p class="text-white-400">{{ category.label }}</p>
               <p class="text-xs text-white-300">{{ category.count }} packages</p>
             </div>
           </button>

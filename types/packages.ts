@@ -101,7 +101,7 @@ export interface PackageInfo {
  * Packages filtering options
  */
 export type PackagesFilters = {
-  category?: PackageCategory | 'all'
+  category?: PackageCategory
   search?: string
   sort?: 'downloads' | 'stars' | 'updated' | 'created'
   page?: number
