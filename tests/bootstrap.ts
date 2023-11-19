@@ -3,6 +3,7 @@ import type { Config } from '@japa/runner/types'
 import { assert } from '@japa/assert'
 import { apiClient } from '@japa/api-client'
 import app from '@adonisjs/core/services/app'
+import { browserClient } from '@japa/browser-client'
 import { pluginAdonisJS } from '@japa/plugin-adonisjs'
 import testUtils from '@adonisjs/core/services/test_utils'
 import { inertiaApiClient } from '@adonisjs/inertia/plugins/api_client'
@@ -16,6 +17,10 @@ export const plugins: Config['plugins'] = [
   apiClient(),
   pluginAdonisJS(app),
   inertiaApiClient(app),
+  browserClient({
+    contextOptions: { baseURL: 'http://localhost:3333' },
+    runInSuites: ['browser'],
+  }),
 ]
 
 /**

@@ -19,7 +19,7 @@ dependencies:
     version: 19.0.0-3(@adonisjs/assembler@6.1.3-25)(@adonisjs/core@6.1.5-31)(luxon@3.4.3)(sqlite3@5.1.6)
   '@adonisjs/session':
     specifier: ^7.0.0-13
-    version: 7.0.0-13(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(edge.js@6.0.0-10)
+    version: 7.0.0-13(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(@japa/browser-client@2.0.1)(edge.js@6.0.0-10)
   '@adonisjs/shield':
     specifier: ^8.0.0-8
     version: 8.0.0-8(@adonisjs/core@6.1.5-31)(@adonisjs/session@7.0.0-13)(@japa/api-client@2.0.1)(edge.js@6.0.0-10)
@@ -118,12 +118,15 @@ devDependencies:
   '@japa/assert':
     specifier: ^2.0.1
     version: 2.0.1(@japa/runner@3.0.5)(openapi-types@12.1.3)
+  '@japa/browser-client':
+    specifier: ^2.0.1
+    version: 2.0.1(@japa/assert@2.0.1)(@japa/runner@3.0.5)(playwright@1.40.0)
   '@japa/file-system':
     specifier: ^2.0.1
     version: 2.0.1(@japa/assert@2.0.1)(@japa/runner@3.0.5)
   '@japa/plugin-adonisjs':
     specifier: ^2.0.1
-    version: 2.0.1(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(@japa/runner@3.0.5)
+    version: 2.0.1(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(@japa/browser-client@2.0.1)(@japa/runner@3.0.5)(playwright@1.40.0)
   '@japa/runner':
     specifier: ^3.0.5
     version: 3.0.5
@@ -166,6 +169,9 @@ devDependencies:
   pino-pretty:
     specifier: ^10.2.3
     version: 10.2.3
+  playwright:
+    specifier: ^1.40.0
+    version: 1.40.0
   postcss-nested:
     specifier: ^6.0.1
     version: 6.0.1(postcss@8.4.31)
@@ -482,7 +488,7 @@ packages:
     dependencies:
       '@adonisjs/assembler': 6.1.3-25(typescript@5.2.2)
       '@adonisjs/core': 6.1.5-31(@adonisjs/assembler@6.1.3-25)(@vinejs/vine@1.6.0)(edge.js@6.0.0-10)
-      '@adonisjs/session': 7.0.0-13(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(edge.js@6.0.0-10)
+      '@adonisjs/session': 7.0.0-13(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(@japa/browser-client@2.0.1)(edge.js@6.0.0-10)
       '@japa/api-client': 2.0.1(@japa/assert@2.0.1)(@japa/runner@3.0.5)
       '@poppinss/utils': 6.5.1
       crc-32: 1.2.2
@@ -550,7 +556,7 @@ packages:
       '@poppinss/colors': 4.1.0
       string-width: 6.1.0
 
-  /@adonisjs/session@7.0.0-13(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(edge.js@6.0.0-10):
+  /@adonisjs/session@7.0.0-13(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(@japa/browser-client@2.0.1)(edge.js@6.0.0-10):
     resolution: {integrity: sha512-TJYgsn2nAOR7cTCuSe0b8FS6JbBJosZ82UqZjnY2t7Bu8mgejL6e+a/P7IuTw/61erMtgne+wE2q3PPTDso6Og==}
     engines: {node: '>=18.16.0'}
     peerDependencies:
@@ -571,6 +577,7 @@ packages:
     dependencies:
       '@adonisjs/core': 6.1.5-31(@adonisjs/assembler@6.1.3-25)(@vinejs/vine@1.6.0)(edge.js@6.0.0-10)
       '@japa/api-client': 2.0.1(@japa/assert@2.0.1)(@japa/runner@3.0.5)
+      '@japa/browser-client': 2.0.1(@japa/assert@2.0.1)(@japa/runner@3.0.5)(playwright@1.40.0)
       '@poppinss/utils': 6.5.1
       edge.js: 6.0.0-10
     dev: false
@@ -590,7 +597,7 @@ packages:
         optional: true
     dependencies:
       '@adonisjs/core': 6.1.5-31(@adonisjs/assembler@6.1.3-25)(@vinejs/vine@1.6.0)(edge.js@6.0.0-10)
-      '@adonisjs/session': 7.0.0-13(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(edge.js@6.0.0-10)
+      '@adonisjs/session': 7.0.0-13(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(@japa/browser-client@2.0.1)(edge.js@6.0.0-10)
       '@japa/api-client': 2.0.1(@japa/assert@2.0.1)(@japa/runner@3.0.5)
       '@poppinss/utils': 6.5.1
       csrf: 3.1.0
@@ -1379,6 +1386,20 @@ packages:
     transitivePeerDependencies:
       - openapi-types
 
+  /@japa/browser-client@2.0.1(@japa/assert@2.0.1)(@japa/runner@3.0.5)(playwright@1.40.0):
+    resolution: {integrity: sha512-Bo2PNAWWZOcGsMW52EU4hc+2k/Kx9Alz8opxcwY7Gybpi+fEzqGYZspTLE7sqaGlgpgcLHEFE2demg26q8r8/w==}
+    engines: {node: '>=18.16.0'}
+    peerDependencies:
+      '@japa/assert': ^2.0.0
+      '@japa/runner': ^3.0.0
+      playwright: ^1.38.1
+    dependencies:
+      '@japa/assert': 2.0.1(@japa/runner@3.0.5)(openapi-types@12.1.3)
+      '@japa/runner': 3.0.5
+      '@sindresorhus/slugify': 2.2.1
+      playwright: 1.40.0
+      qs: 6.11.2
+
   /@japa/core@8.1.1:
     resolution: {integrity: sha512-R3dvXd/CsDB4yEKoeaHjU7dL6qOpdfBK3+tVL1kLWIDbyJz034NtX7WkI7ns5u1WnXIQJ+mqtjh8dn6cfeWhTw==}
     engines: {node: '>=18.16.0'}
@@ -1415,7 +1436,7 @@ packages:
       slash: 5.1.0
     dev: true
 
-  /@japa/plugin-adonisjs@2.0.1(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(@japa/runner@3.0.5):
+  /@japa/plugin-adonisjs@2.0.1(@adonisjs/core@6.1.5-31)(@japa/api-client@2.0.1)(@japa/browser-client@2.0.1)(@japa/runner@3.0.5)(playwright@1.40.0):
     resolution: {integrity: sha512-J9Y9jKc6I+QXcFkV+zQyRtfTiLriin5X/V8Gy/FbZ5fVV/aIYolYgCwXESX+QCcO6HyFoE7sYLkD4VJFl1E7Cg==}
     engines: {node: '>=18.16.0'}
     peerDependencies:
@@ -1434,7 +1455,9 @@ packages:
     dependencies:
       '@adonisjs/core': 6.1.5-31(@adonisjs/assembler@6.1.3-25)(@vinejs/vine@1.6.0)(edge.js@6.0.0-10)
       '@japa/api-client': 2.0.1(@japa/assert@2.0.1)(@japa/runner@3.0.5)
+      '@japa/browser-client': 2.0.1(@japa/assert@2.0.1)(@japa/runner@3.0.5)(playwright@1.40.0)
       '@japa/runner': 3.0.5
+      playwright: 1.40.0
     dev: true
 
   /@japa/runner@3.0.5:
@@ -2003,14 +2026,12 @@ packages:
     dependencies:
       '@sindresorhus/transliterate': 1.6.0
       escape-string-regexp: 5.0.0
-    dev: false
 
   /@sindresorhus/transliterate@1.6.0:
     resolution: {integrity: sha512-doH1gimEu3A46VX6aVxpHTeHrytJAG6HgdxntYnCFiIFHEM/ZGpG8KiZGBChchjQmG0XFIBL552kBTjVcMZXwQ==}
     engines: {node: '>=12'}
     dependencies:
       escape-string-regexp: 5.0.0
-    dev: false
 
   /@swc/core-darwin-arm64@1.3.82:
     resolution: {integrity: sha512-JfsyDW34gVKD3uE0OUpUqYvAD3yseEaicnFP6pB292THtLJb0IKBBnK50vV/RzEJtc1bR3g1kNfxo2PeurZTrA==}
@@ -5181,6 +5202,13 @@ packages:
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
+  /fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    optional: true
+
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -7215,6 +7243,20 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
     dev: true
+
+  /playwright-core@1.40.0:
+    resolution: {integrity: sha512-fvKewVJpGeca8t0ipM56jkVSU6Eo0RmFvQ/MaCQNDYm+sdvKkMBBWTE1FdeMqIdumRaXXjZChWHvIzCGM/tA/Q==}
+    engines: {node: '>=16'}
+    hasBin: true
+
+  /playwright@1.40.0:
+    resolution: {integrity: sha512-gyHAgQjiDf1m34Xpwzaqb76KgfzYrhK7iih+2IzcOCoZWr/8ZqmdBw+t0RU85ZmfJMgtgAiNtBQ/KS2325INXw==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright-core: 1.40.0
+    optionalDependencies:
+      fsevents: 2.3.2
 
   /plur@4.0.0:
     resolution: {integrity: sha512-4UGewrYgqDFw9vV6zNV+ADmPAUAfJPKtGvb/VdpQAx25X5f3xXdGdyOEVFwkl8Hl/tl7+xbeHqSEM+D5/TirUg==}
