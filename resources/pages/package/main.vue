@@ -36,7 +36,39 @@ const props = defineProps<GetPackageResponse>()
         <!-- Readme & Toc -->
         <div class="grid grid-cols-[1fr_18em] gap-24 relative">
           <section class="markdown-body" v-html="readme"></section>
-          <Toc class="sticky top-[90px] toc overflow-auto z-13" :markdown="readme" />
+          <div class="sticky top-90px toc overflow-auto z-13">
+            <Toc :markdown="readme" />
+
+            <div class="mt-4">
+              <p class="mb-2 text-lg font-bold">Links</p>
+
+              <div class="flex flex-col">
+                <a
+                  class="flex transition duration-300 items-center hover:text-base12 gap-2 text-sm text-base10 py-1"
+                  :href="package.github"
+                >
+                  <i class="inline-block i-jam-github" />
+                  <span> Check repository </span>
+                </a>
+                <a
+                  v-if="package.npm"
+                  class="flex transition duration-300 items-center hover:text-base12 gap-2 text-sm text-base10 py-1"
+                  :href="`https://www.npmjs.com/package/${package.npm}`"
+                >
+                  <i class="inline-block i-mdi-npm-variant-outline" />
+                  <span> NPM package </span>
+                </a>
+                <a
+                  v-if="package.website"
+                  class="flex transition duration-300 items-center hover:text-base12 gap-2 text-sm text-base10 py-1"
+                  :href="package.website"
+                >
+                  <i class="inline-block i-jam-arrow-square-up-right" />
+                  <span> See webite </span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
