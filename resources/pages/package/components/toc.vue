@@ -45,7 +45,7 @@ function onTocClick(id: string) {
     <div v-for="element in elements" :key="element.id" class="font-content flex flex-col gap-12">
       <a
         :href="`#${element.id}`"
-        class="block text-sm text-white-300 py-1 hover:text-white transition duration-300"
+        class="block text-sm text-base10 py-1 hover:text-white transition duration-300"
         :class="{
           'ml-2': element.level === 2,
           'ml-4': element.level === 3,

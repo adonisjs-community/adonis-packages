@@ -1,3 +1,4 @@
+import { presetRadix } from 'unocss-preset-radix'
 import { presetForms } from '@julr/unocss-preset-forms'
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import {
@@ -12,6 +13,17 @@ import {
 } from 'unocss'
 
 export default defineConfig({
+  content: {
+    pipeline: {
+      include: [
+        // the default
+        /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+        // include js/ts files
+        './content/categories.ts',
+      ],
+    },
+  },
+
   theme: {
     colors: {
       primary: {
@@ -19,10 +31,11 @@ export default defineConfig({
         DEFAULT: '#5468FF',
         600: '#475fff',
       },
+
       white: {
-        300: '#8C8C8C',
-        400: '#EAEAEA',
-        DEFAULT: '#fff',
+        300: '#7C7A85',
+        400: '#B5B2BC',
+        DEFAULT: '#EEEEF0',
       },
     },
   },
@@ -35,6 +48,45 @@ export default defineConfig({
     presetUno(),
     presetAttributify(),
     presetForms(),
+    presetRadix({
+      extend: true,
+      aliases: {
+        base: 'mauve',
+      },
+      palette: [
+        'amber',
+        'blue',
+        'bronze',
+        'brown',
+        'crimson',
+        'cyan',
+        'gold',
+        'grass',
+        'gray',
+        'green',
+        'indigo',
+        'lime',
+        'mauve',
+        'mint',
+        'olive',
+        'orange',
+        'pink',
+        'plum',
+        'purple',
+        'red',
+        'sage',
+        'sand',
+        'sky',
+        'slate',
+        'teal',
+        'tomato',
+        'violet',
+        'yellow',
+        'jade',
+        'iris',
+        'ruby',
+      ],
+    }),
     presetIcons({
       scale: 1.2,
       warn: true,
@@ -60,21 +112,4 @@ export default defineConfig({
   ],
 
   transformers: [transformerDirectives(), transformerVariantGroup()],
-
-  safelist: [
-    'i-carbon-two-factor-authentication',
-    'i-carbon-virtual-column-key',
-    'i-carbon-network-4',
-    'i-carbon-data-base',
-    'i-carbon-3rd-party-connected',
-    'i-carbon-code',
-    'i-carbon-model-alt',
-    'i-carbon-content-view',
-    'i-carbon-chat',
-    'i-carbon-wallet',
-    'i-carbon-layers',
-    'i-carbon-block-storage-alt',
-    'i-carbon-security',
-    'i-carbon-task-complete',
-  ],
 })

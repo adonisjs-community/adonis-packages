@@ -36,7 +36,7 @@ const props = defineProps<GetPackageResponse>()
         <!-- Readme & Toc -->
         <div class="grid grid-cols-[1fr_18em] gap-24 relative">
           <section class="markdown-body" v-html="readme"></section>
-          <Toc :markdown="readme" />
+          <Toc class="sticky top-[90px] toc overflow-auto z-13" :markdown="readme" />
         </div>
       </div>
     </div>
@@ -44,6 +44,10 @@ const props = defineProps<GetPackageResponse>()
 </template>
 
 <style lang="postcss">
+.toc {
+  max-height: calc(100vh - 90px);
+}
+
 .bg-gradient::before {
   position: absolute;
   z-index: 0;

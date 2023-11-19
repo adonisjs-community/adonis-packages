@@ -22,12 +22,12 @@ defineProps<{
   </section>
   <!-- Not found package section -->
   <div v-else class="flex flex-col items-center justify-center h-96">
-    <p class="text-2xl text-white">No packages found !</p>
-    <div class="text-white-300 text-center mt-4">
+    <p class="text-2xl">No packages found !</p>
+    <div class="text-base10 text-center mt-4">
       If you think a package is missing here, <br />
       please feel free to create a PR on the repository to add it !
     </div>
-    <Button class="mt-4" as="a" theme="primary" left-icon="i-fa6-brands-github">
+    <Button class="mt-6" as="a" theme="primary" left-icon="i-fa6-brands-github">
       Contribute on GitHub
     </Button>
   </div>

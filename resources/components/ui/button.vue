@@ -113,7 +113,7 @@ const hasIcon = computed(() => hasLeftIcon.value || hasRightIcon.value)
   }
 
   &.--primary {
-    @apply bg-primary text-white;
+    @apply bg-primary text-base12;
     box-shadow: 0px 0px 31px 11px rgba(84, 104, 255, 0.3);
 
     &:hover {

@@ -13,7 +13,7 @@ watch(debounced, (value) => emit('update:modelValue', value))
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative shadow-sm">
     <i
       class="absolute top-[14px] left-[18px] inline-block i-fluent-emoji-magnifying-glass-tilted-right"
     />
@@ -21,13 +21,7 @@ watch(debounced, (value) => emit('update:modelValue', value))
       v-model="input"
       type="text"
       placeholder="Search for a package"
-      class="search-bar-input w-full border-0 bg-transparent py-3 px-6 pl-12 rounded-xl focus:(ring-0 outline-0)"
+      class="bg-base2 w-full border-0 py-3 px-6 pl-12 rounded-xl focus:(ring-0 outline-0)"
     />
   </div>
 </template>
-
-<style scoped>
-.search-bar-input {
-  background: rgba(20, 20, 20, 0.57);
-}
-</style>

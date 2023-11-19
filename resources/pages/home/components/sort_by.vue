@@ -27,14 +27,14 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
     <div class="relative">
       <ListboxButton
         v-slot="{ open }"
-        class="relative md:w-[230px] w-full cursor-pointer rounded-xl search-bar-input py-3 pl-5 pr-10 text-left text-white shadow-sm sm:leading-6"
+        class="relative md:w-[230px] w-full cursor-pointer rounded-xl !bg-base2 py-3 pl-5 pr-10 text-left text-base12 shadow-sm sm:leading-6"
       >
-        <span class="inline-flex text-white-400 w-full truncate">
+        <span class="inline-flex text-base-11 w-full truncate">
           <span class="truncate">{{ selectedOption?.label }}</span>
         </span>
         <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center pr-2">
           <i
-            class="i-fa6-solid-chevron-down text-sm text-white-400 transform transition-transform duration-200"
+            class="i-fa6-solid-chevron-down text-sm text-base-11 transform transition-transform duration-200"
             :class="[open ? 'transform rotate-180' : '']"
           />
         </span>
@@ -49,7 +49,7 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
         leave-to-class="opacity-0 -translate-y-3"
       >
         <ListboxOptions
-          class="absolute z-10 mt-2 w-full overflow-auto rounded-xl option py-2 text-base shadow-lg px-2"
+          class="absolute z-10 mt-2 w-full bg-base2 overflow-auto rounded-xl py-2 text-base shadow-lg px-2"
         >
           <ListboxOption
             v-for="option in sortOptions"
@@ -77,9 +77,9 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
               <span
                 v-if="selected"
                 class="absolute inset-y-0 right-0 flex items-center pr-4"
-                :class="[active ? 'text-white' : 'text-indigo-600']"
+                :class="[active ? 'text-base12' : 'text-indigo-600']"
               >
-                <i class="i-fa6-solid-check text-white-400 text-sm" />
+                <i class="i-fa6-solid-check text-base-11 text-sm" />
               </span>
             </li>
           </ListboxOption>
@@ -88,13 +88,3 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
     </div>
   </Listbox>
 </template>
-
-<style scoped>
-.search-bar-input {
-  background: rgba(20, 20, 20, 0.57);
-}
-
-.option {
-  background: rgba(20, 20, 20, 1);
-}
-</style>

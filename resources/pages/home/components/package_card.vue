@@ -24,7 +24,7 @@ function numberFormatter(num: number) {
     <div class="flex items-center justify-between w-full">
       <Tag>{{ package.category }}</Tag>
       <i
-        class="inline-block i-icon-park-outline-share text-xs text-white-300 opacity-0 group-hover:opacity-100 transition duration-500 hover:text-white"
+        class="inline-block i-icon-park-outline-share text-xs text-base10 opacity-0 group-hover:opacity-100 transition duration-500 hover:text-white"
       />
     </div>
     <PackageLogo size="12" :package="package" />
@@ -33,7 +33,7 @@ function numberFormatter(num: number) {
       <div class="absolute inset-0 overflow-hidden rounded-xl m-1 pointer-events-none">
         <AdonisIcon
           v-if="package.type === 'official'"
-          class="absolute opacity-1 scale-600 top-2 -rotate-20 -right-2"
+          class="absolute opacity-2 scale-600 top-2 -rotate-20 -right-2"
         />
       </div>
       <div class="flex items-baseline gap-2">
@@ -45,12 +45,12 @@ function numberFormatter(num: number) {
           class="inline-block text-lg relative top-[2px] i-fluent-emoji-military-medal"
         />
       </div>
-      <p class="text-white-300 text-sm line-clamp-3">
+      <p class="text-base10 text-sm line-clamp-3">
         {{ package.description }}
       </p>
     </div>
 
-    <div class="flex text-md text-white-300 gap-6 mt-4">
+    <div class="flex text-md text-base10 gap-6 mt-4">
       <a
         class="flex items-center gap-1.3 transition-colors duration-600 hover:text-white"
         :href="package.github"
@@ -76,7 +76,7 @@ function numberFormatter(num: number) {
 
 <style scoped lang="postcss">
 .card {
-  background: #171717;
+  @apply bg-base2;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;

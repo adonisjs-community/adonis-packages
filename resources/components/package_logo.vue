@@ -21,11 +21,7 @@ function iconPlaceholder({ category }: PackageInfo) {
     }"
   >
     <img v-if="package.icon" class="h-full object-contain" :src="`/icons/${package.icon}`" />
-    <div
-      v-else
-      style="background: rgba(43, 43, 43, 0.23)"
-      class="h-full flex items-center justify-center rounded-xl overflow-hidden"
-    >
+    <div v-else class="bg-base3 h-full flex items-center justify-center rounded-xl overflow-hidden">
       <i class="inline-block bg-grey text-lg" :class="iconPlaceholder(package)" />
     </div>
   </div>
