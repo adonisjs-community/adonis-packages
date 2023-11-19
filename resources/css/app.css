@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 * {
   margin: 0;
   padding: 0;
@@ -9,28 +11,4 @@ html, body {
   background-color: #1C1C1C;
   font-family: 'PolySans', sans-serif;
   color: #fff;
-}
-
-@font-face {
-  font-family: 'PolySans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("@/assets/fonts/PolySans-Median.ttf") format('truetype');
-}
-
-@font-face {
-  font-family: 'PolySans';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("@/assets/fonts/PolySans-Neutral.ttf") format('truetype');
-}
-
-@font-face {
-  font-family: 'Graphik';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("@/assets/fonts/Graphik-Regular.ttf") format('truetype');
 }
