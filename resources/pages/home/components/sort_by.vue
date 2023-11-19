@@ -23,7 +23,7 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
 </script>
 
 <template>
-  <Listbox v-model="value" as="div">
+  <Listbox v-model="value" as="div" data-testid="sort-by">
     <div class="relative">
       <ListboxButton
         v-slot="{ open }"

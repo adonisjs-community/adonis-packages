@@ -22,7 +22,7 @@ function numberFormatter(num: number) {
     target="_blank"
   >
     <div class="flex items-center justify-between w-full">
-      <Tag>{{ package.category }}</Tag>
+      <Tag data-testid="package-category">{{ package.category }}</Tag>
       <i
         class="inline-block i-icon-park-outline-share text-xs text-base10 opacity-0 group-hover:opacity-100 transition duration-500 hover:text-white"
       />
@@ -37,7 +37,7 @@ function numberFormatter(num: number) {
         />
       </div>
       <div class="flex items-baseline gap-2">
-        <p class="text-2xl font-bold line-clamp-1">
+        <p data-testid="package-name" class="text-2xl font-bold line-clamp-1">
           {{ package.name }}
         </p>
         <i
@@ -57,7 +57,9 @@ function numberFormatter(num: number) {
         target="_blank"
       >
         <i class="inline-block i-fluent-emoji-star" />
-        <span class="text-sm relative top-0.4">{{ package.stars }} stars</span>
+        <span data-testid="package-stars" class="text-sm relative top-0.4">
+          {{ package.stars }} stars
+        </span>
       </a>
 
       <a

@@ -15,7 +15,7 @@ import Layout from '@/layouts/default.vue'
 const props = defineProps<GetHomeResponse>()
 const params = useUrlSearchParams<PackagesFilters>('history')
 const filters = ref<PackagesFilters>({
-  sort: params.sort || 'stars',
+  sort: params.sort,
   category: params.category,
   search: params.search,
   page: +(props.meta.currentPage || 1),

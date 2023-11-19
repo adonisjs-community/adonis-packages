@@ -24,7 +24,7 @@ If you are looking for a good starting point to learn AdonisJS, then this repo m
 - IoC container and Dependency injection using AdonisJS. For example, we leverage them to easily test our controller and comands without having to fetch real data from NPM and Github APIs
 - Developping custom commands with pretty prompts and spinners using AdonisJS Ace
 - Testing commands, controllers, and service using IoC container, Api Client, and Inertia test helpers
-- End-to-end testing using Playwright
+- [End-to-end testing](./tests/browser/) using Playwright
 - Github Actions CI/CD : we use Github Actions to run our tests, check linting, type checking and build the application before deploying it to our server
 - Caching using Bentocache : instead of calling the NPM and Github APIs on each request, we use a 2-layer ( Memory + Sqlite ) cache system to store the data and refresh it only when needed. See [./config/cache.ts](./config/cache.ts) for more details.
 - Dockerizing the application in order to make it easy to deploy

@@ -25,6 +25,7 @@ function handleCategoryClick(category: PackageCategory) {
             :key="category.label"
             class="flex text-left group items-center gap-x-4 transition-all ease-in-out duration-200 cursor-pointer"
             hover="translate-x-2"
+            data-testid="category-button"
             @click="handleCategoryClick(category.label)"
           >
             <div
@@ -43,7 +44,7 @@ function handleCategoryClick(category: PackageCategory) {
               />
             </div>
             <div>
-              <p class="text-base12">{{ category.label }}</p>
+              <p data-testid="category-label" class="text-base12">{{ category.label }}</p>
               <p class="text-xs text-base10">{{ category.count }} packages</p>
             </div>
           </button>

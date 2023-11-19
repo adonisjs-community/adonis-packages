@@ -17,10 +17,7 @@ export const plugins: Config['plugins'] = [
   apiClient(),
   pluginAdonisJS(app),
   inertiaApiClient(app),
-  browserClient({
-    contextOptions: { baseURL: 'http://localhost:3333' },
-    runInSuites: ['browser'],
-  }),
+  browserClient({ runInSuites: ['browser'] }),
 ]
 
 /**
