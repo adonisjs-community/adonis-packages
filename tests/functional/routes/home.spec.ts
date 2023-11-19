@@ -17,8 +17,8 @@ test.group('Home', () => {
     response.assertStatus(200)
     response.assertInertiaComponent('home')
 
-    assert.deepEqual((response.inertiaProps.categories as any).length, categories.length)
-    assert.deepEqual((response.inertiaProps.packages as any).length, 7)
+    assert.deepEqual(response.inertiaProps.categories.length, categories.length)
+    assert.deepEqual(response.inertiaProps.packages.length, 7)
     assert.deepEqual(response.inertiaProps.meta, {
       total: 7,
       currentPage: 1,
