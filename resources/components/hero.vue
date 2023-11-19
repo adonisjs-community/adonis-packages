@@ -33,14 +33,19 @@ import Button from '@/components/ui/button.vue'
           md="block"
           auto-rotate
           disable-zoom
+          interaction-prompt="none"
           orientation="0deg 0deg 0deg"
           auto-rotate-delay="400"
           rotation-per-second="30deg"
           disable-pan
           src="/adonisjs.glb"
-          shadow-intensity="1"
           camera-controls
           touch-action="pan-y"
+          camera-orbit="30.24deg 95.94deg 18.36m"
+          field-of-view="30deg"
+          shadow-intensity="0.6"
+          shadow-softness="1"
+          tone-mapping="commerce"
         />
       </div>
     </div>
@@ -64,5 +69,9 @@ import Button from '@/components/ui/button.vue'
   -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
   mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
   opacity: 0.5;
+}
+
+model-viewer {
+  --progress-bar-color: transparent;
 }
 </style>
