@@ -29,7 +29,6 @@ FROM base
 ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=production-deps /app/node_modules /app/node_modules
-COPY --from=production-deps /app/package.json /app/package.json
 COPY --from=build /app/build /app
 COPY --from=build /app/content/build/packages.json /app/content/build/packages.json
 EXPOSE 8080
