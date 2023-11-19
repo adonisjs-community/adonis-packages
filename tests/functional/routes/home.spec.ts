@@ -15,7 +15,7 @@ test.group('Home', () => {
     const response = await client.get('/').withInertia().header('X-Inertia-Version', '1')
 
     response.assertStatus(200)
-    response.assertInertiaComponent('home')
+    response.assertInertiaComponent('home/main')
 
     assert.deepEqual(response.inertiaProps.categories.length, categories.length)
     assert.deepEqual(response.inertiaProps.packages.length, 7)

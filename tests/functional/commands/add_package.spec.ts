@@ -60,7 +60,6 @@ test.group('[Commands] Add Package', (group) => {
       description: 'Github package description',
       npm: 'github-package-name',
       compatibility: { adonis: '^5.0.0' },
-      maintainers: [{ name: 'Github package author', github: 'Github package author' }],
       firstReleaseAt: '2022-01-01',
       lastReleaseAt: '2023-01-01',
       type: 'community',
