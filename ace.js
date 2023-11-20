@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 /*
 |--------------------------------------------------------------------------
 | JavaScript entrypoint for running ace commands
@@ -13,6 +14,8 @@
 | "node --loader=ts-node/esm bin/console.js"
 |
 */
+
+process.env.TS_NODE_PROJECT = 'tsconfig.node.json'
 
 import { aceShell } from '@adonisjs/core/ace/shell'
 
