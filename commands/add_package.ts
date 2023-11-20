@@ -159,7 +159,6 @@ export default class AddPackage extends BaseCommand {
    */
   async completed() {
     if (this.error) {
-      console.log(this.error)
       this.logger.error(this.error.message)
       this.exitCode = 1
       return true
