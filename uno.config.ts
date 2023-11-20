@@ -94,7 +94,7 @@ export default defineConfig({
       warn: true,
       collections: {
         custom: FileSystemIconLoader('./resources/assets/icons', (svg) =>
-          svg.replace(/#fff/, 'currentColor')
+          svg.replace(/#fff/, 'currentColor'),
         ),
       },
     }),

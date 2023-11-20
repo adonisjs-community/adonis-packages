@@ -1,5 +1,3 @@
-import type { PackageInfo, PackagesFilters } from '#types/main'
-
 import pLimit from 'p-limit'
 import cache from '@adonisjs/cache/services/main'
 import logger from '@adonisjs/core/services/logger'
@@ -7,13 +5,14 @@ import logger from '@adonisjs/core/services/logger'
 import { categories } from '../../content/categories.js'
 import { MarkdownRenderer } from './markdown_renderer.js'
 import type { PackageFetcher } from './package_fetcher.js'
+import type { PackageInfo, PackagesFilters } from '#types/main'
 
 export class PackagesFetcher {
   #markdownRenderer = new MarkdownRenderer()
 
   constructor(
     protected packageFetcher: PackageFetcher,
-    protected packagesList: PackageInfo[]
+    protected packagesList: PackageInfo[],
   ) {}
 
   /**

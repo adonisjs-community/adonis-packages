@@ -17,7 +17,7 @@ export class PackageFetcher {
    */
   async fetchPackageDownloads(name: string) {
     const result = await fetch(`https://api.npmjs.org/downloads/point/last-month/${name}`).then(
-      (res) => res.json()
+      (res) => res.json(),
     )
     return result as Promise<Record<string, any>>
   }

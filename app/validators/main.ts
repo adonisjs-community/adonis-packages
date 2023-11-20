@@ -8,5 +8,5 @@ export const getHomeValidator = vine.compile(
     search: vine.string().optional(),
     category: vine.enum(categories.map((category) => category.label)).optional(),
     page: vine.number().optional(),
-  })
+  }),
 )

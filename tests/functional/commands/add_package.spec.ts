@@ -1,9 +1,9 @@
 import { test } from '@japa/runner'
 import ace from '@adonisjs/core/services/ace'
 import app from '@adonisjs/core/services/app'
-import { PackageFetcher } from '#services/package_fetcher'
 
 import AddPackage from '../../../commands/add_package.js'
+import { PackageFetcher } from '#services/package_fetcher'
 import { deletePackageFile, readPackageFile } from '../../helpers.js'
 
 /**
@@ -103,7 +103,7 @@ test.group('[Commands] Add Package', (group) => {
 
     command.assertFailed()
     command.assertLogMatches(
-      /Unable to fetch details from github and npm. Double check the repo name/
+      /Unable to fetch details from github and npm. Double check the repo name/,
     )
   })
 })

@@ -1,13 +1,13 @@
 <template>
   <div class="flex gap-x-2 text-lg text-base12">
     <a href="https://twitter.com/adonisframework">
-      <i class="inline-block i-fa6-brands-x-twitter" />
+      <i class="i-fa6-brands-x-twitter inline-block" />
     </a>
     <a href="https://github.com/adonisjs">
-      <i class="inline-block i-fa6-brands-github" />
+      <i class="i-fa6-brands-github inline-block" />
     </a>
     <a href="https://discord.gg/vDcEjq6">
-      <i class="inline-block i-fa6-brands-discord" />
+      <i class="i-fa6-brands-discord inline-block" />
     </a>
   </div>
 </template>

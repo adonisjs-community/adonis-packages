@@ -7,8 +7,9 @@
 |
 */
 
-const PackagesController = () => import('#controllers/packages_controller')
 import router from '@adonisjs/core/services/router'
+
+const PackagesController = () => import('#controllers/packages_controller')
 
 router.get('/', [PackagesController, 'getHome'])
 router.get('/packages/:name', [PackagesController, 'getPackage'])

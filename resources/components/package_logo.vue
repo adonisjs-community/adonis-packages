@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { PackageInfo } from '@/types'
 import { categories } from '~/content/categories'
+
+import type { PackageInfo } from '@/types'
 
 defineProps<{
   package: PackageInfo
@@ -21,8 +22,8 @@ function iconPlaceholder({ category }: PackageInfo) {
     }"
   >
     <img v-if="package.icon" class="h-full object-contain" :src="`/icons/${package.icon}`" />
-    <div v-else class="bg-base3 h-full flex items-center justify-center rounded-xl overflow-hidden">
-      <i class="inline-block bg-grey text-lg" :class="iconPlaceholder(package)" />
+    <div v-else class="h-full flex items-center justify-center overflow-hidden rounded-xl bg-base3">
+      <i class="bg-grey inline-block text-lg" :class="iconPlaceholder(package)" />
     </div>
   </div>
 </template>

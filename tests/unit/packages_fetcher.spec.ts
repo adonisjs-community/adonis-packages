@@ -1,7 +1,7 @@
 import { test } from '@japa/runner'
 import cache from '@adonisjs/cache/services/main'
-import { PackagesFetcher } from '#services/packages_fetcher'
 
+import { PackagesFetcher } from '#services/packages_fetcher'
 import { FakePkgFetcher, packageFactory } from '../helpers.js'
 
 test.group('Packages Fetcher', (group) => {
@@ -62,14 +62,14 @@ test.group('Packages Fetcher', (group) => {
 
     assert.deepEqual(
       stars,
-      stars.sort((a, b) => b - a)
+      stars.sort((a, b) => b - a),
     )
   })
 
   test('return pagination meta', async ({ assert }) => {
     const fetcher = new PackagesFetcher(
       new FakePkgFetcher(),
-      Array.from({ length: 50 }).map(() => packageFactory())
+      Array.from({ length: 50 }).map(() => packageFactory()),
     )
 
     const result = await fetcher.fetchPackages({ page: 2 })

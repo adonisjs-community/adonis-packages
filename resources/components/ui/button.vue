@@ -22,14 +22,14 @@ const properties = withDefaults(
     type: 'button',
     align: 'center',
     as: 'button',
-  }
+  },
 )
 
 const slots = useSlots()
 
 const component = computed(() => properties.as)
 const isDisabled = computed(
-  () => (properties.loading || properties.disabled) && component.value === 'button'
+  () => (properties.loading || properties.disabled) && component.value === 'button',
 )
 const cursorClass = computed(() => (isDisabled.value ? '--cursor-disabled' : '--cursor-pointer'))
 const buttonType = computed(() => (component.value === 'button' ? properties.type : undefined))
@@ -64,7 +64,7 @@ const hasIcon = computed(() => hasLeftIcon.value || hasRightIcon.value)
         <i v-if="leftIcon" :class="`inline-block text-xl ${leftIcon} ${iconClass}`" />
       </slot>
     </div>
-    <span class="flex w-full">
+    <span class="w-full flex">
       <slot />
     </span>
     <div v-if="hasRightIcon" class="btn__icon-right flex">

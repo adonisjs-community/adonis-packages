@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/vue'
+
 import type { PackagesFilters } from '@/types'
 
 const sortOptions = [
@@ -27,14 +28,14 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
     <div class="relative">
       <ListboxButton
         v-slot="{ open }"
-        class="relative md:w-[230px] w-full cursor-pointer rounded-xl !bg-base2 py-3 pl-5 pr-10 text-left text-base12 shadow-sm sm:leading-6"
+        class="relative w-full cursor-pointer rounded-xl py-3 pl-5 pr-10 text-left text-base12 shadow-sm md:w-[230px] !bg-base2 sm:leading-6"
       >
-        <span class="inline-flex text-base-11 w-full truncate">
+        <span class="w-full inline-flex truncate text-base-11">
           <span class="truncate">{{ selectedOption?.label }}</span>
         </span>
         <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center pr-2">
           <i
-            class="i-fa6-solid-chevron-down text-sm text-base-11 transform transition-transform duration-200"
+            class="i-fa6-solid-chevron-down transform text-sm text-base-11 transition-transform duration-200"
             :class="[open ? 'transform rotate-180' : '']"
           />
         </span>
@@ -49,7 +50,7 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
         leave-to-class="opacity-0 -translate-y-3"
       >
         <ListboxOptions
-          class="absolute z-10 mt-2 w-full bg-base2 overflow-auto rounded-xl py-2 text-base shadow-lg px-2"
+          class="absolute z-10 mt-2 w-full overflow-auto rounded-xl bg-base2 px-2 py-2 text-base shadow-lg"
         >
           <ListboxOption
             v-for="option in sortOptions"
@@ -59,7 +60,7 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
             :value="option.value"
           >
             <li
-              class="relative cursor-default rounded-lg select-none py2 pl-3 pr-4 transition-colors duration-200 cursor-pointer"
+              class="relative cursor-default cursor-pointer select-none rounded-lg py2 pl-3 pr-4 transition-colors duration-200"
               :class="[active ? 'bg-primary' : '']"
             >
               <div class="flex flex-col font-content">
@@ -67,7 +68,7 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
                   {{ option.label }}
                 </span>
                 <span
-                  class="text-xs font-thin pr-8"
+                  class="pr-8 text-xs font-thin"
                   :class="[active ? 'text-indigo-200' : 'text-gray-500']"
                 >
                   {{ option.description }}
@@ -79,7 +80,7 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
                 class="absolute inset-y-0 right-0 flex items-center pr-4"
                 :class="[active ? 'text-base12' : 'text-indigo-600']"
               >
-                <i class="i-fa6-solid-check text-base-11 text-sm" />
+                <i class="i-fa6-solid-check text-sm text-base-11" />
               </span>
             </li>
           </ListboxOption>

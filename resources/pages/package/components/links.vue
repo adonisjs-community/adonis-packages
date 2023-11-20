@@ -12,27 +12,27 @@ defineProps<{
 
     <div class="flex flex-col">
       <a
-        class="flex transition duration-300 items-center hover:text-base12 gap-2 text-sm text-base10 py-1"
+        class="flex items-center gap-2 py-1 text-sm text-base10 transition duration-300 hover:text-base12"
         :href="package.github"
       >
-        <i class="inline-block i-jam-github" />
-        <span> Check repository </span>
+        <i class="i-jam-github inline-block" />
+        <span>Check repository</span>
       </a>
       <a
         v-if="package.npm"
-        class="flex transition duration-300 items-center hover:text-base12 gap-2 text-sm text-base10 py-1"
+        class="flex items-center gap-2 py-1 text-sm text-base10 transition duration-300 hover:text-base12"
         :href="`https://www.npmjs.com/package/${package.npm}`"
       >
-        <i class="inline-block i-mdi-npm-variant-outline" />
-        <span> NPM package </span>
+        <i class="i-mdi-npm-variant-outline inline-block" />
+        <span>NPM package</span>
       </a>
       <a
         v-if="package.website"
-        class="flex transition duration-300 items-center hover:text-base12 gap-2 text-sm text-base10 py-1"
+        class="flex items-center gap-2 py-1 text-sm text-base10 transition duration-300 hover:text-base12"
         :href="package.website"
       >
-        <i class="inline-block i-jam-arrow-square-up-right" />
-        <span> See webite </span>
+        <i class="i-jam-arrow-square-up-right inline-block" />
+        <span>See webite</span>
       </a>
     </div>
   </div>

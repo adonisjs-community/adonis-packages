@@ -9,9 +9,9 @@
 |
 */
 
-import { Ignitor, prettyPrintError } from '@adonisjs/core'
-
 import 'reflect-metadata'
+
+import { Ignitor, prettyPrintError } from '@adonisjs/core'
 
 /**
  * URL to the application root. AdonisJS need it to resolve

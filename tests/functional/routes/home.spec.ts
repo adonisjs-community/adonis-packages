@@ -1,8 +1,8 @@
 import { test } from '@japa/runner'
 import app from '@adonisjs/core/services/app'
-import { PackagesFetcher } from '#services/packages_fetcher'
 
 import { categories } from '../../../content/categories.js'
+import { PackagesFetcher } from '#services/packages_fetcher'
 import { FakePkgFetcher, packageFactory } from '../../helpers.js'
 
 test.group('Home', () => {
@@ -45,7 +45,7 @@ test.group('Home', () => {
     assert.deepEqual([...new Set(categoriesRes)], ['Database'])
     assert.deepEqual(
       downloads,
-      downloads.sort((a, b) => b - a)
+      downloads.sort((a, b) => b - a),
     )
   })
 })

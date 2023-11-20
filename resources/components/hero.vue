@@ -3,20 +3,23 @@ import Button from '@/components/ui/button.vue'
 </script>
 
 <template>
-  <div class="relative py-24 mb-14">
+  <div class="relative mb-14 py-24">
     <div class="hero w-full">
       <div
-        class="p-container flex flex-col relative text-center items-center"
+        class="relative flex flex-col items-center text-center p-container"
         md="text-left flex-row"
       >
-        <div class="flex flex-col space-y-6 flex-1">
+        <div class="flex flex-1 flex-col space-y-6">
           <h1 class="text-6xl font-black" sm="text-7xl">
-            Discover the best<br />
-            <span class="text-primary">AdonisJS</span> packages
+            Discover the best
+            <br />
+            <span class="text-primary">AdonisJS</span>
+            packages
           </h1>
 
-          <p class="font-content leading-6">
-            Discover our list of packages to supercharge your AdonisJS project.<br />
+          <p class="leading-6 font-content">
+            Discover our list of packages to supercharge your AdonisJS project.
+            <br />
             Created by the AdonisJS team and community.
           </p>
 
@@ -29,7 +32,7 @@ import Button from '@/components/ui/button.vue'
 
         <model-viewer
           alt="AdonisJS 3d logo"
-          class="flex-1 h-110 hidden"
+          class="hidden h-110 flex-1"
           md="block"
           auto-rotate
           disable-zoom

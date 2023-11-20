@@ -1,11 +1,10 @@
-import type { CommandOptions } from '@adonisjs/core/types/ace'
-
 import { load } from 'js-yaml'
 import { globby } from 'globby'
 import { basename, join } from 'node:path'
 import { getDirname } from '@poppinss/utils'
 import { BaseCommand } from '@adonisjs/core/ace'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import type { CommandOptions } from '@adonisjs/core/types/ace'
 
 export default class BuildPackages extends BaseCommand {
   static commandName = 'build:packages'

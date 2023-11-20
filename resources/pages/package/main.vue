@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import 'highlight.js/styles/felipec.min.css'
 import 'github-markdown-css/github-markdown-dark.css'
+
 import { Head } from '@inertiajs/vue3'
+
 import Toc from './components/toc.vue'
+import Layout from '@/layouts/default.vue'
 import Links from './components/links.vue'
 import Heading from './components/heading.vue'
 import type { GetPackageResponse } from '@/types'
-
-import Layout from '@/layouts/default.vue'
 
 const props = defineProps<GetPackageResponse>()
 </script>
@@ -17,18 +18,18 @@ const props = defineProps<GetPackageResponse>()
     <Head :title="`AdonisJS packages - ${props.package.name}`" />
 
     <div class="pb-28 pt-6" md="pt-12">
-      <div class="overflow-hidden absolute inset-0">
+      <div class="absolute inset-0 overflow-hidden">
         <span class="bg-gradient"></span>
       </div>
 
-      <div class="p-container z-1">
+      <div class="z-1 p-container">
         <!-- Heading -->
         <Heading :package="package" />
 
         <!-- Readme & Toc -->
         <div class="relative flex flex-col-reverse gap-12" md="grid grid-cols-[1fr_18em] gap-24">
           <section class="markdown-body" v-html="readme"></section>
-          <div class="overflow-auto z-13 toc" md="sticky top-90px">
+          <div class="toc z-13 overflow-auto" md="sticky top-90px">
             <div md="border-l border-white/6 pl-6 pr-4">
               <Toc :markdown="readme" />
               <Links class="mt-4" :package="package" />

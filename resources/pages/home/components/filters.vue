@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { PackageCategories, PackageCategory, PackagesFilters } from '@/types'
-import Button from '@/components/ui/button.vue'
 
 const props = defineProps<{
   categories: PackageCategories
@@ -15,28 +14,28 @@ function handleCategoryClick(category: PackageCategory) {
 </script>
 
 <template>
-  <div class="flex-col gap-y-8 hidden" md="flex">
+  <div class="hidden flex-col gap-y-8" md="flex">
     <div>
       <p class="text-3xl font-bold">Categories</p>
-      <div class="flex mt-6 gap-x-6">
+      <div class="mt-6 flex gap-x-6">
         <div class="flex flex-col gap-y-4 font-content">
           <button
             v-for="category in props.categories"
             :key="category.label"
-            class="flex text-left group items-center gap-x-4 transition-all ease-in-out duration-200 cursor-pointer"
+            class="group flex cursor-pointer items-center gap-x-4 text-left transition-all duration-200 ease-in-out"
             hover="translate-x-2"
             data-testid="category-button"
             @click="handleCategoryClick(category.label)"
           >
             <div
-              class="transition-colors duration-500 text-sm px-2.4 py-2 flex items-center rounded-xl"
+              class="flex items-center rounded-xl px-2.4 py-2 text-sm transition-colors duration-500"
               :class="[
                 filters.category === category.label ? category.color : 'bg-base2',
                 `group-hover:${category.color}`,
               ]"
             >
               <i
-                class="group-hover:text-base12 inline-block"
+                class="inline-block group-hover:text-base12"
                 :class="[
                   category.icon,
                   filters.category !== category.label ? 'text-base12' : 'text-base12',

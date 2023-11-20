@@ -1,7 +1,8 @@
 import { inject } from '@adonisjs/core'
-import { HttpContext } from '@adonisjs/core/http'
+import type { HttpContext } from '@adonisjs/core/http'
+
 import { getHomeValidator } from '#validators/main'
-import { PackagesFetcher } from '#services/packages_fetcher'
+import type { PackagesFetcher } from '#services/packages_fetcher'
 
 export default class PackagesController {
   /**

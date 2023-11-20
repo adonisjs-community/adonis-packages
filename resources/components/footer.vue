@@ -5,40 +5,40 @@ import Socials from '@/components/socials.vue'
 <template>
   <div>
     <div class="flex items-center">
-      <hr class="flex-1 border-0 bg-primary/40 h-0.2 footer-separator" />
+      <hr class="footer-separator h-0.2 flex-1 border-0 bg-primary/40" />
       <div class="relative w-12 flex items-center justify-center">
         <i
-          class="absolute inline-block text-5xl i-custom-adonis-icon transition duration-500 ease-bounce animate-head-shake"
+          class="i-custom-adonis-icon absolute inline-block animate-head-shake text-5xl transition duration-500 ease-bounce"
           hover="rotate-360"
         />
       </div>
-      <hr class="flex-1 border-0 bg-primary/40 h-0.2 footer-separator" />
+      <hr class="footer-separator h-0.2 flex-1 border-0 bg-primary/40" />
     </div>
 
     <div class="bg-base1 py-12 pb-0">
       <div class="p-container">
         <div
-          class="flex flex-col justify-between items-center text-center gap-y-8"
+          class="flex flex-col items-center justify-between gap-y-8 text-center"
           md="flex-row items-start text-left"
         >
           <div class="flex flex-col gap-x-24 gap-y-8" md="flex-row">
-            <div class="flex flex-col font-content text-sm gap-y-2">
-              <p class="text-base12 text-lg font-title mb-2">General Resources</p>
+            <div class="flex flex-col gap-y-2 text-sm font-content">
+              <p class="mb-2 text-lg font-title text-base12">General Resources</p>
               <a href="https://docs.adonisjs.com" class="item">Documentation</a>
               <a href="https://packages.adonisjs.com" class="item">Packages</a>
               <a href="https://buttondown.email/adonisjs" class="item">Newsletter</a>
-              <a href="https://github.com/adonisjs/core/discussions" class="item"> Discussions </a>
+              <a href="https://github.com/adonisjs/core/discussions" class="item">Discussions</a>
             </div>
-            <div class="flex flex-col font-content text-sm gap-y-2">
-              <p class="text-base12 text-lg font-title mb-2">Documentations</p>
+            <div class="flex flex-col gap-y-2 text-sm font-content">
+              <p class="mb-2 text-lg font-title text-base12">Documentations</p>
               <a href="https://docs.adonisjs.com" class="item">AdonisJS</a>
               <a href="https://japa.dev/" class="item">Japa</a>
               <a href="https://edgejs.dev/docs/introduction" class="item">EdgeJS</a>
-              <a href="https://vinejs.dev/docs/introduction" class="item"> VineJS </a>
-              <a href="https://bentocache.julr.dev" class="item"> BentoCache </a>
+              <a href="https://vinejs.dev/docs/introduction" class="item">VineJS</a>
+              <a href="https://bentocache.julr.dev" class="item">BentoCache</a>
             </div>
-            <div class="flex flex-col font-content text-sm gap-y-2">
-              <p class="text-base12 text-lg font-title mb-2">Others</p>
+            <div class="flex flex-col gap-y-2 text-sm font-content">
+              <p class="mb-2 text-lg font-title text-base12">Others</p>
               <a href="https://blog.adonisjs.com" class="item">Blog</a>
               <a href="https://about.adonisjs.com" class="item">About</a>
               <a href="https://support.adonisjs.com" class="item">Entreprise Support</a>
@@ -49,13 +49,13 @@ import Socials from '@/components/socials.vue'
         </div>
       </div>
 
-      <p class="text-center font-content text-base10 text-xs mt-8 py-2 pb-4">
+      <p class="mt-8 py-2 pb-4 text-center text-xs font-content text-base10">
         Created with
         <i
-          class="inline-block text-base mx1 align-sub i-fluent-emoji-sparkling-heart text-red-500"
+          class="i-fluent-emoji-sparkling-heart mx1 inline-block align-sub text-base text-red-500"
         />
         by
-        <a href="https://twitter.com/julien_rpt" class="underline"> Julien Ripouteau </a>
+        <a href="https://twitter.com/julien_rpt" class="underline">Julien Ripouteau</a>
       </p>
     </div>
   </div>

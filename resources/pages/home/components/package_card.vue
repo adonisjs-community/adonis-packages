@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { millify } from 'millify'
 import { Link } from '@inertiajs/vue3'
-import type { PackageInfo } from '@/types'
-import AdonisIcon from '@/components/icons/adonis_icon.vue'
+
 import Tag from '@/components/tag.vue'
+import type { PackageInfo } from '@/types'
 import PackageLogo from '@/components/package_logo.vue'
+import AdonisIcon from '@/components/icons/adonis_icon.vue'
 
 defineProps<{
   package: PackageInfo
@@ -17,47 +18,47 @@ function numberFormatter(num: number) {
 
 <template>
   <Link
-    class="card relative flex rounded-xl gap-y-2 px-5 py-5 group cursor-pointer"
+    class="group card relative flex cursor-pointer gap-y-2 rounded-xl px-5 py-5"
     :href="`/packages/${package.name}`"
     target="_blank"
   >
-    <div class="flex items-center justify-between w-full">
+    <div class="w-full flex items-center justify-between">
       <Tag data-testid="package-category">{{ package.category }}</Tag>
       <i
-        class="inline-block i-icon-park-outline-share text-xs text-base10 opacity-0 group-hover:opacity-100 transition duration-500 hover:text-white"
+        class="i-icon-park-outline-share inline-block text-xs text-base10 opacity-0 transition duration-500 hover:text-white group-hover:opacity-100"
       />
     </div>
     <PackageLogo size="12" :package="package" />
 
     <div class="flex flex-col gap-y-1">
-      <div class="absolute inset-0 overflow-hidden rounded-xl m-1 pointer-events-none">
+      <div class="pointer-events-none absolute inset-0 m-1 overflow-hidden rounded-xl">
         <AdonisIcon
           v-if="package.type === 'official'"
-          class="absolute opacity-2 scale-600 top-2 -rotate-20 -right-2"
+          class="absolute top-2 scale-600 opacity-2 -right-2 -rotate-20"
         />
       </div>
       <div class="flex items-baseline gap-2">
-        <p data-testid="package-name" class="text-2xl font-bold line-clamp-1">
+        <p data-testid="package-name" class="line-clamp-1 text-2xl font-bold">
           {{ package.name }}
         </p>
         <i
           v-if="package.type === 'official'"
-          class="inline-block text-lg relative top-[2px] i-fluent-emoji-military-medal"
+          class="i-fluent-emoji-military-medal relative top-[2px] inline-block text-lg"
         />
       </div>
-      <p class="text-base10 text-sm line-clamp-2">
+      <p class="line-clamp-2 text-sm text-base10">
         {{ package.description }}
       </p>
     </div>
 
-    <div class="flex text-md text-base10 gap-6 mt-4">
+    <div class="text-md mt-4 flex gap-6 text-base10">
       <a
         class="flex items-center gap-1.3 transition-colors duration-600 hover:text-white"
         :href="package.github"
         target="_blank"
       >
-        <i class="inline-block i-fluent-emoji-star" />
-        <span data-testid="package-stars" class="text-sm relative top-0.4">
+        <i class="i-fluent-emoji-star inline-block" />
+        <span data-testid="package-stars" class="relative top-0.4 text-sm">
           {{ package.stars }} stars
         </span>
       </a>
@@ -67,8 +68,8 @@ function numberFormatter(num: number) {
         :href="`https://www.npmjs.com/package/${package.npm}`"
         target="_blank"
       >
-        <i class="inline-block i-fluent-emoji-chart-increasing" />
-        <span class="text-sm relative top-0.4">
+        <i class="i-fluent-emoji-chart-increasing inline-block" />
+        <span class="relative top-0.4 text-sm">
           {{ numberFormatter(package.downloads) }} installs
         </span>
       </a>

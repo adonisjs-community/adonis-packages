@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useEventListener } from '@vueuse/core'
 import { ref, watchEffect } from 'vue'
+import { useEventListener } from '@vueuse/core'
 
 type TocElement = { id: string; level: number; textContent: string | null }
 
@@ -62,10 +62,10 @@ function onTocClick(id: string) {
 <template>
   <div>
     <p class="mb-2 text-lg font-bold">Table of contents</p>
-    <div v-for="element in elements" :key="element.id" class="font-content flex flex-col gap-12">
+    <div v-for="element in elements" :key="element.id" class="flex flex-col gap-12 font-content">
       <a
         :href="`#${element.id}`"
-        class="block text-sm text-base10 py-1 hover:text-white transition duration-300"
+        class="block py-1 text-sm text-base10 transition duration-300 hover:text-white"
         :class="{
           'ml-2': element.level === 2,
           'ml-4': element.level === 3,

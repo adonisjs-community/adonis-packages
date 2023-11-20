@@ -8,7 +8,7 @@ import { getDirname } from '@poppinss/utils'
 
 export default defineConfig({
   plugins: [
-    // @ts-expect-error
+    // @ts-expect-error missing types
     unocss(),
     vue({
       script: { defineModel: true },

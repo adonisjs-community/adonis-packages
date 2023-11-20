@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3'
-import AdonisLogo from './icons/adonis_logo.vue'
+
 import Socials from '@/components/socials.vue'
+import AdonisLogo from './icons/adonis_logo.vue'
 </script>
 
 <template>
-  <header class="border-b border-b-gray/4 backdrop-blur sticky top-0 z-10">
-    <div class="p-container py-4 flex justify-between w-full items-center">
+  <header class="sticky top-0 z-10 border-b border-b-gray/4 backdrop-blur">
+    <div class="w-full flex items-center justify-between py-4 p-container">
       <Link href="/" :preserve-scroll="true" :preserve-state="true">
         <AdonisLogo />
       </Link>

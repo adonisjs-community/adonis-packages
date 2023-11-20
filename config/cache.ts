@@ -1,5 +1,6 @@
-import env from '#start/env'
 import { defineConfig, store, drivers } from '@adonisjs/cache'
+
+import env from '#start/env'
 
 const cacheConfig = defineConfig({
   default: env.get('CACHE_STORE'),
@@ -43,7 +44,7 @@ const cacheConfig = defineConfig({
            * Keep only 50MB of cache in memory
            */
           maxSize: 50 * 1024 * 1024,
-        })
+        }),
       )
       .useL2Layer(drivers.database({ connectionName: 'sqlite' })),
 

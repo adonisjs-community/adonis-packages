@@ -1,14 +1,13 @@
-import type { PackageInfo } from '#types/main'
-
 import { dump } from 'js-yaml'
 import { join } from 'node:path'
 import { inject } from '@adonisjs/core'
 import { writeFile } from 'node:fs/promises'
 import { getDirname } from '@poppinss/utils'
 import { BaseCommand } from '@adonisjs/core/ace'
-import { PackageFetcher } from '#services/package_fetcher'
 
+import type { PackageInfo } from '#types/main'
 import { categories } from '../content/categories.js'
+import type { PackageFetcher } from '#services/package_fetcher'
 
 export default class AddPackage extends BaseCommand {
   static commandName = 'add:package'
@@ -86,7 +85,7 @@ export default class AddPackage extends BaseCommand {
         hint: 'e.g. AdonisJS Prometheus',
         default: githubPkg.name,
         validate: (value) => value.trim().length > 0,
-      }
+      },
     )
   }
 
@@ -97,7 +96,7 @@ export default class AddPackage extends BaseCommand {
     return await this.prompt.autocomplete(
       'What type your package belongs to?',
       categories.map(({ label }) => label),
-      { multiple: false, name: 'type' }
+      { multiple: false, name: 'type' },
     )
   }
 

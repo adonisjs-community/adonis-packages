@@ -15,13 +15,13 @@ watch(debounced, (value) => emit('update:modelValue', value))
 <template>
   <div class="relative shadow-sm">
     <i
-      class="absolute top-[14px] left-[18px] inline-block i-fluent-emoji-magnifying-glass-tilted-right"
+      class="i-fluent-emoji-magnifying-glass-tilted-right absolute left-[18px] top-[14px] inline-block"
     />
     <input
       v-model="input"
       type="text"
       placeholder="Search for a package"
-      class="bg-base2 w-full border-0 py-3 px-6 pl-12 rounded-xl focus:(ring-0 outline-0)"
+      class="w-full border-0 rounded-xl bg-base2 px-6 py-3 pl-12 focus:(outline-0 ring-0)"
     />
   </div>
 </template>

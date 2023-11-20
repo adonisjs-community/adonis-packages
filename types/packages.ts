@@ -3,7 +3,7 @@ import type { categories } from '../content/categories.js'
 /**
  * Module compatibility with AdonisJS
  */
-export interface ModuleCompatibility {
+export type ModuleCompatibility = {
   adonis: string
 }
 
@@ -17,7 +17,7 @@ export type ModuleType = 'community' | 'official' | '3rd-party'
  */
 export type PackageCategory = (typeof categories)[number]['label']
 
-export interface PackageInfo {
+export type PackageInfo = {
   /**
    * Name of the package
    * Displayed as title on the website

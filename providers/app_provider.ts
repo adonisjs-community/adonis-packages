@@ -1,8 +1,8 @@
-import type { ApplicationService } from '@adonisjs/core/types'
-
 import { join } from 'node:path'
 import { readFile } from 'node:fs/promises'
 import { getDirname } from '@poppinss/utils'
+import type { ApplicationService } from '@adonisjs/core/types'
+
 import { PackageFetcher } from '#services/package_fetcher'
 import { PackagesFetcher } from '#services/packages_fetcher'
 
