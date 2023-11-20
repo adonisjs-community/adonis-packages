@@ -2,7 +2,8 @@
 import { julr } from '@julr/tooling-configs/eslint'
 
 export default julr({
-  vue: true,
-  unocss: true,
-  adonisjs: true,
+  typescript: {
+    tsconfigPath: ['./tsconfig.node.json', './tsconfig.vue.json'],
+    typeAwareRules: false,
+  },
 })

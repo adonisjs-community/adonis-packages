@@ -74,7 +74,7 @@
     "@japa/file-system": "^2.0.1",
     "@japa/plugin-adonisjs": "^2.0.1",
     "@japa/runner": "^3.0.5",
-    "@julr/tooling-configs": "2.0.0-0",
+    "@julr/tooling-configs": "2.0.0-1",
     "@julr/unocss-preset-forms": "^0.1.0",
     "@swc/core": "1.3.82",
     "@types/js-yaml": "^4.0.9",

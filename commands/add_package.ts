@@ -7,7 +7,7 @@ import { BaseCommand } from '@adonisjs/core/ace'
 
 import type { PackageInfo } from '#types/main'
 import { categories } from '../content/categories.js'
-import type { PackageFetcher } from '#services/package_fetcher'
+import { PackageFetcher } from '#services/package_fetcher'
 
 export default class AddPackage extends BaseCommand {
   static commandName = 'add:package'
@@ -159,6 +159,7 @@ export default class AddPackage extends BaseCommand {
    */
   async completed() {
     if (this.error) {
+      console.log(this.error)
       this.logger.error(this.error.message)
       this.exitCode = 1
       return true

@@ -51,6 +51,6 @@ export class PackageFetcher {
    */
   fetchReadme(repository: string, branch = 'main') {
     const url = `https://raw.githubusercontent.com/${repository}/${branch}/README.md`
-    return fetch(url).then((res) => res.text()) as Promise<string>
+    return fetch(url).then((res) => res.text())
   }
 }

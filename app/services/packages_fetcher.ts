@@ -47,7 +47,7 @@ export class PackagesFetcher {
 
     const cacheKey = this.#createCacheKey(`github:repo:stars:${pkg.repo}`)
     return cache
-      .getOrSet(cacheKey, () => this.packageFetcher.fetchGithubStars(pkg.repo!))
+      .getOrSet(cacheKey, () => this.packageFetcher.fetchGithubStars(pkg.repo))
       .catch((err) => {
         logger.error(`Cannot fetch github repo info for ${pkg.repo}: ${err}`)
         return { stars: 0 }
