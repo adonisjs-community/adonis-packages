@@ -1,23 +1,11 @@
 {
-  "extends": "@adonisjs/tsconfig/tsconfig.app.json",
-  "compilerOptions": {
-    "rootDir": "./",
-    "moduleResolution": "Node16",
-    "module": "Node16",
-    "outDir": "./build",
-    "resolveJsonModule": true,
-    "paths": {
-      "#controllers/*": ["./app/controllers/*.js"],
-      "#exceptions/*": ["./app/exceptions/*.js"],
-      "#models/*": ["./app/models/*.js"],
-      "#services/*": ["./app/services/*.js"],
-      "#listeners/*": ["./app/listeners/*.js"],
-      "#events/*": ["./app/events/*.js"],
-      "#middleware/*": ["./app/middleware/*.js"],
-      "#validators/*": ["./app/validators/*.js"],
-      "#start/*": ["./start/*.js"],
-      "#config/*": ["./config/*.js"],
-      "#types/*": ["./types/*.js"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.vue.json"
     }
-  }
+  ],
+  "files": []
 }

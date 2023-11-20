@@ -15,7 +15,9 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "quick:test": "node ace test",
-    "typecheck": "tsc --noEmit"
+    "typecheck:adonis": "tsc --noEmit -p tsconfig.node.json --composite false",
+    "typecheck:vue": "vue-tsc --noEmit -p tsconfig.vue.json --composite false",
+    "typecheck": "pnpm typecheck:adonis && pnpm typecheck:vue"
   },
   "imports": {
     "#controllers/*": "./app/controllers/*.js",
@@ -62,8 +64,6 @@
   },
   "devDependencies": {
     "@adonisjs/assembler": "^6.1.3-25",
-    "@adonisjs/eslint-config": "^1.1.8",
-    "@adonisjs/prettier-config": "^1.1.8",
     "@adonisjs/tsconfig": "^1.1.8",
     "@faker-js/faker": "^8.3.1",
     "@iconify/json": "^2.2.143",
@@ -74,8 +74,7 @@
     "@japa/file-system": "^2.0.1",
     "@japa/plugin-adonisjs": "^2.0.1",
     "@japa/runner": "^3.0.5",
-    "@julr/eslint-config-prettier": "^1.0.0",
-    "@julr/eslint-config-vue": "^1.0.0",
+    "@julr/tooling-configs": "2.0.0-0",
     "@julr/unocss-preset-forms": "^0.1.0",
     "@swc/core": "1.3.82",
     "@types/js-yaml": "^4.0.9",
@@ -85,7 +84,6 @@
     "@unocss/reset": "^0.57.6",
     "@vitejs/plugin-vue": "^4.5.0",
     "eslint": "^8.54.0",
-    "eslint-plugin-perfectionist": "^2.4.0",
     "pino-pretty": "^10.2.3",
     "playwright": "^1.40.0",
     "postcss-nested": "^6.0.1",
@@ -97,53 +95,5 @@
     "vite": "^5.0.0",
     "vue-tsc": "^1.8.22"
   },
-  "eslintConfig": {
-    "extends": "@adonisjs/eslint-config/app",
-    "plugins": [
-      "perfectionist"
-    ],
-    "ignorePatterns": [
-      "public/**/*"
-    ],
-    "rules": {
-      "@typescript-eslint/consistent-type-imports": [
-        "error",
-        {
-          "prefer": "type-imports",
-          "disallowTypeAnnotations": false
-        }
-      ],
-      "perfectionist/sort-imports": [
-        "error",
-        {
-          "type": "line-length",
-          "order": "asc",
-          "groups": [
-            "type",
-            "react",
-            "nanostores",
-            [
-              "builtin",
-              "external"
-            ],
-            [
-              "internal-type",
-              "internal",
-              "parent-type",
-              "sibling-type",
-              "index-type",
-              "parent",
-              "sibling",
-              "index",
-              "side-effect",
-              "style",
-              "object",
-              "unknown"
-            ]
-          ]
-        }
-      ]
-    }
-  },
-  "prettier": "@adonisjs/prettier-config"
+  "prettier": "@julr/tooling-configs/prettier"
 }
