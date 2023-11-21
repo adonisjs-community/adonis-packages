@@ -3,6 +3,7 @@ import { HttpContext } from '@adonisjs/core/http'
 
 import { getHomeValidator } from '#validators/main'
 import { PackagesFetcher } from '#services/packages_fetcher'
+import type { GetHomeResponse, GetPackageResponse } from '#types/responses'
 
 export default class PackagesController {
   /**
@@ -12,7 +13,10 @@ export default class PackagesController {
   async getHome(ctx: HttpContext, statsFetcher: PackagesFetcher) {
     const payload = await ctx.request.validateUsing(getHomeValidator)
 
-    return ctx.inertia.render('home/main', await statsFetcher.fetchPackages(payload))
+    return ctx.inertia.render<GetHomeResponse>(
+      'home/main',
+      await statsFetcher.fetchPackages(payload),
+    )
   }
 
   /**
@@ -20,6 +24,10 @@ export default class PackagesController {
    */
   @inject()
   async getPackage(ctx: HttpContext, statsFetcher: PackagesFetcher) {
-    return ctx.inertia.render('package/main', await statsFetcher.fetchPackage(ctx.params.name))
+    const result = await statsFetcher.fetchPackage(ctx.params.name)
+
+    return ctx.inertia.render<GetPackageResponse>('package/main', result, {
+      meta: { title: result.package.name, description: result.package.description },
+    })
   }
 }

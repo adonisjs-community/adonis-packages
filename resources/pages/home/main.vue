@@ -33,7 +33,7 @@ watchDeep(filters, () => {
 
 <template>
   <Layout>
-    <Head title="AdonisJS packages - Discover the best AdonisJS packages" />
+    <Head title="AdonisJS Packages - Discover the best AdonisJS packages" />
     <Hero />
 
     <div class="relative pb-28">

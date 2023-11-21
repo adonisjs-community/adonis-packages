@@ -15,7 +15,7 @@ const props = defineProps<GetPackageResponse>()
 
 <template>
   <Layout>
-    <Head :title="`AdonisJS packages - ${props.package.name}`" />
+    <Head :title="`${props.package.name} - AdonisJS Packages`" />
 
     <div class="pb-28 pt-6" md="pt-12">
       <div class="absolute inset-0 overflow-hidden">
