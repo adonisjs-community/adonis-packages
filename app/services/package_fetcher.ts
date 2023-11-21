@@ -33,7 +33,7 @@ export class PackageFetcher {
    */
   async fetchGithubStars(repo: string) {
     // See https://github.com/adonisjs/road-to-v6/issues/38 to understand
-    // why we are importing env in the method
+    // Why we are importing env in the method
     const { default: env } = await import('#start/env')
 
     const result = await fetch(`https://api.github.com/repos/${repo}`, {
