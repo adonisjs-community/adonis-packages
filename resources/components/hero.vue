@@ -24,7 +24,12 @@ import Button from '@/components/ui/button.vue'
           </p>
 
           <div class="max-w-xl">
-            <Button as="a" theme="primary" left-icon="i-fa6-brands-github">
+            <Button
+              href="https://github.com/Julien-R44/adonis-packages"
+              as="a"
+              theme="primary"
+              left-icon="i-fa6-brands-github"
+            >
               Contribute on GitHub
             </Button>
           </div>
