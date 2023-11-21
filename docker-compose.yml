@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  adonis-packages-app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./tmp:/app/tmp
+    env_file:
+      - .env.prod
+    restart: unless-stopped
