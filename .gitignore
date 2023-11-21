@@ -8,6 +8,7 @@ tmp
 .env.local
 .env.production.local
 .env.development.local
+.env.prod
 
 # Frontend assets compiled code
 public/assets
