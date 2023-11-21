@@ -131,6 +131,7 @@ export default class AddPackage extends BaseCommand {
     this.#package.name = name
     this.#package.category = category
     this.#package.npm = githubPkg.name
+    this.#package.repo = repo.name
     this.#package.description = githubPkg.description
     this.#package.compatibility = { adonis: '^5.0.0' }
     this.#package.firstReleaseAt = npmPkg.time.created

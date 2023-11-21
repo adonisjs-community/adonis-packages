@@ -1,4 +1,4 @@
-name: adonis-socket.io
+name: socket.io
 description: Websocket provider using Socket.io
 repo: ruby184/adonis-socket.io
 npm: '@ruby184/adonis-socket.io'

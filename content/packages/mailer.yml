@@ -4,7 +4,7 @@ description: >-
   services to send emails
 repo: adonisjs/mail#develop
 npm: '@adonisjs/mail'
-icon: ''
+icon: adonis.png
 github: https://github.com/adonisjs/mail
 website: https://github.com/adonisjs/mail
 learn_more: ''

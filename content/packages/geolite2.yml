@@ -1,4 +1,4 @@
-name: adonis-geolite2
+name: geolite2
 description: Maxmind's GeoLite2 integration for Adonis
 repo: Xstoudi/adonis-geolite2
 npm: '@stouder-io/adonis-geolite2'

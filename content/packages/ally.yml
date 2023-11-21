@@ -2,7 +2,7 @@ name: ally
 description: Social authentication provider for AdonisJS
 repo: adonisjs/ally#develop
 npm: '@adonisjs/ally'
-icon: ''
+icon: adonis.png
 github: https://github.com/adonisjs/ally
 website: https://github.com/adonisjs/ally
 learn_more: ''

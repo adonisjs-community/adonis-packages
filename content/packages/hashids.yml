@@ -1,4 +1,4 @@
-name: adonis-hashids
+name: hashids
 description: Generate YouTube-like IDs for AdonisJS Lucid models
 repo: eokwukwe/adonis-hashids
 npm: '@fcoded/adonis-hashids'

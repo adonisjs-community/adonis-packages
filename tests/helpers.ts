@@ -25,6 +25,13 @@ export async function deletePackageFile(name: string) {
  * Will return random numbers for stars and downloads
  */
 export class FakePkgFetcher extends PackageFetcher {
+  async fetchReleaseDates(_name: string) {
+    return {
+      firstReleaseAt: faker.date.past().toString(),
+      lastReleaseAt: faker.date.past().toString(),
+    }
+  }
+
   async fetchGithubStars(_repo: string) {
     return { stars: faker.number.int({ min: 200 }) }
   }

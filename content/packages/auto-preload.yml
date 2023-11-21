@@ -1,4 +1,4 @@
-name: adonis-auto-preload
+name: auto-preload
 description: Auto-preload multiple relationships when retrieving Lucid models
 repo: Melchyore/adonis-auto-preload
 npm: '@melchyore/adonis-auto-preload'

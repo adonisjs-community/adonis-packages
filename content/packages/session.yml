@@ -2,7 +2,7 @@ name: session
 description: Session provider for AdonisJS
 repo: adonisjs/session#develop
 npm: '@adonisjs/session'
-icon: ''
+icon: adonis.png
 github: https://github.com/adonisjs/session
 website: https://github.com/adonisjs/session
 learn_more: ''

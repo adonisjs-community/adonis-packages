@@ -1,4 +1,4 @@
-name: adonis-lucid-observer
+name: lucid-observer
 description: Observer package for AdonisJS V5 Lucid ORM
 repo: Melchyore/adonis-lucid-observer#master
 npm: '@melchyore/adonis-lucid-observer'

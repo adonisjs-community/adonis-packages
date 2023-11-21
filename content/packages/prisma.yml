@@ -1,5 +1,5 @@
-name: adonis-prisma
-description: Prisma Provider
+name: prisma
+description: Prismxa Provider for AdonisJS
 repo: wahyubucil/adonis-prisma
 npm: '@wahyubucil/adonis-prisma'
 icon: 'prisma.png'

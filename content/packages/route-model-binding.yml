@@ -4,7 +4,7 @@ description: >-
   database
 repo: adonisjs/route-model-binding
 npm: '@adonisjs/route-model-binding'
-icon: ''
+icon: adonis.png
 github: https://github.com/adonisjs/route-model-binding
 website: https://github.com/adonisjs/route-model-binding
 learn_more: ''

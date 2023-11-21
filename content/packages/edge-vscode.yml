@@ -1,0 +1,11 @@
+name: Edge Vscode
+category: Devtools
+description: Official Vscode extension for Edge.js
+icon: 'edge.jpeg'
+compatibility:
+  adonis: ^5.0.0
+firstReleaseAt: '2022-07-13T06:38:27.337Z'
+lastReleaseAt: '2023-11-07T05:59:57.669Z'
+type: official
+github: https://github.com/edge-js/edge-vscode
+website: https://marketplace.visualstudio.com/items?itemName=AdonisJS.vscode-edge

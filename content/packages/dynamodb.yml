@@ -1,4 +1,4 @@
-name: adonis-dynamodb
+name: dynamodb
 description: A DynamoDB (Dyngoose) wrapper for AdonisJS
 repo: Melchyore/adonis-dynamodb#master
 npm: adonis-dynamodb

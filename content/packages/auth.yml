@@ -2,7 +2,7 @@ name: auth
 description: Offical authentication provider for Adonis framework
 repo: adonisjs/auth#develop
 npm: '@adonisjs/auth'
-icon: ''
+icon: adonis.png
 github: https://github.com/adonisjs/auth
 website: https://github.com/adonisjs/auth
 learn_more: ''
