@@ -13,3 +13,5 @@ const PackagesController = () => import('#controllers/packages_controller')
 
 router.get('/', [PackagesController, 'getHome'])
 router.get('/packages/:name', [PackagesController, 'getPackage'])
+
+router.get('/healthcheck', ({ response }) => response.noContent())
