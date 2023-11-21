@@ -36,7 +36,6 @@ watchDeep(filters, () => {
     <Head title="AdonisJS Packages - Discover the best AdonisJS packages" />
     <Hero />
 
-    Romain le boss
     <div class="relative pb-28">
       <div class="bg-mask pointer-events-none absolute inset-0">
         <div class="bg-topography absolute inset-0"></div>
