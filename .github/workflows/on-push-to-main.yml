@@ -2,7 +2,7 @@ name: Main
 
 on:
   push:
-    branches: [main, ci/docker]
+    branches: [main]
   workflow_dispatch:
 
 env:
@@ -60,12 +60,12 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      # - name: Deploy the new image
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     key: ${{ secrets.KEY }}
-      #     script: |
-      #       cd ~/stacks
-      #       docker stack deploy -c boumboum-back.yml boumboum-back --with-registry-auth
+      - name: Deploy the new image
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            cd ~/stacks
+            docker stack deploy -c package.yml package --with-registry-auth
