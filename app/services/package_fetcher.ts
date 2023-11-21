@@ -1,5 +1,3 @@
-import env from '#start/env'
-
 /**
  * Responsible for fetching package details from NPM and Github
  */
@@ -26,6 +24,10 @@ export class PackageFetcher {
    * Fetch github stars from github REST Api
    */
   async fetchGithubStars(repo: string) {
+    // See https://github.com/adonisjs/road-to-v6/issues/38 to understand
+    // why we are importing env in the method
+    const { default: env } = await import('#start/env')
+
     const result = await fetch(`https://api.github.com/repos/${repo}`, {
       headers: { Authorization: `token ${env.get('GITHUB_TOKEN')}` },
     })

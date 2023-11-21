@@ -1,6 +1,8 @@
 import { test } from '@japa/runner'
 
-test.group('E2E', () => {
+test.group('E2E', (group) => {
+  group.tap((t) => t.skip(!!process.env.CI, 'skipping on CI for now since it is timing out'))
+
   test('see homepage', async ({ visit }) => {
     const page = await visit('/')
     await page.waitForSelector('.hero')

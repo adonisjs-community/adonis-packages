@@ -21,6 +21,7 @@ FROM base as build
 WORKDIR /app
 COPY --from=deps /app/node_modules /app/node_modules
 ADD . .
+# NODE_ENV=test should be removed soon. See https://github.com/adonisjs/road-to-v6/issues/38
 RUN node ace build --ignore-ts-errors --package-manager=pnpm
 RUN node ace build:packages
 
