@@ -1,4 +1,5 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "adonisjs.inertia.pagesDirectory": "resources/pages"
+  "adonisjs.inertia.pagesDirectory": "resources/pages",
+  "eslint.experimental.useFlatConfig": true
 }
