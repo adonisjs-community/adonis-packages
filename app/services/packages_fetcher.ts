@@ -35,7 +35,7 @@ export class PackagesFetcher {
     return await cache
       .getOrSet(cacheKey, async () => this.packageFetcher.fetchReleaseDates(pkg.npm!))
       .catch((err) => {
-        logger.error(`Cannot fetch releases dates for ${pkg.npm}: ${err}`)
+        logger.error({ err }, `Cannot fetch releases dates for ${pkg.npm}`)
         return { firstReleaseAt: '', lastReleaseAt: '' }
       })
   }
@@ -50,7 +50,7 @@ export class PackagesFetcher {
     return await cache
       .getOrSet(cacheKey, () => this.packageFetcher.fetchPackageDownloads(pkg.npm!))
       .catch((err) => {
-        logger.error(`Cannot fetch npm info for ${pkg.npm}: ${err}`)
+        logger.error({ err }, `Cannot fetch npm info for ${pkg.npm}`)
         return { downloads: 0 }
       })
   }
@@ -65,7 +65,7 @@ export class PackagesFetcher {
     return cache
       .getOrSet(cacheKey, () => this.packageFetcher.fetchGithubStars(pkg.repo))
       .catch((err) => {
-        logger.error(`Cannot fetch github repo info for ${pkg.repo}: ${err}`)
+        logger.error({ err }, `Cannot fetch github repo info for ${pkg.repo}`)
         return { stars: 0 }
       })
   }
@@ -81,7 +81,7 @@ export class PackagesFetcher {
     return cache
       .getOrSet(cacheKey, () => this.packageFetcher.fetchReadme(repo, branch))
       .catch((err) => {
-        logger.error(`Cannot fetch github repo info for ${pkg.repo}: ${err}`)
+        logger.error({ err }, `Cannot fetch github repo info for ${pkg.repo}`)
         return ''
       })
   }
