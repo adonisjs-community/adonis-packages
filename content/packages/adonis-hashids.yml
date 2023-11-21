@@ -1,7 +1,7 @@
 name: adonis-hashids
 description: Generate YouTube-like IDs for AdonisJS Lucid models
 repo: eokwukwe/adonis-hashids
-npm: '@fcoded/adonis-hashids2'
+npm: '@fcoded/adonis-hashids'
 icon: ''
 github: https://github.com/eokwukwe/adonis-hashids
 website: https://github.com/eokwukwe/adonis-hashids

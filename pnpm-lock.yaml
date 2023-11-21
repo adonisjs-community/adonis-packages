@@ -170,7 +170,7 @@ devDependencies:
     specifier: ^10.9.1
     version: 10.9.1(@swc/core@1.3.82)(@types/node@20.9.2)(typescript@5.2.2)
   typescript:
-    specifier: ^5.2.2
+    specifier: ~5.2.2
     version: 5.2.2
   unocss:
     specifier: ^0.57.6

@@ -3,6 +3,14 @@
  */
 export class PackageFetcher {
   /**
+   * Get first and last release date for a given package
+   */
+  async fetchReleaseDates(name: string) {
+    const { time } = await this.fetchNpmPkg(name)
+    return { firstReleaseAt: time.created as string, lastReleaseAt: time.modified as string }
+  }
+
+  /**
    * Fetch given package details from NPM
    */
   async fetchNpmPkg(name: string) {

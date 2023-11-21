@@ -25,6 +25,22 @@ export class PackagesFetcher {
   }
 
   /**
+   * Get the first and last release dates from cache or fetch it from npm
+   */
+  async #getReleasesDates(pkg: PackageInfo) {
+    if (!pkg.npm) return { firstReleaseAt: '', lastReleaseAt: '' }
+
+    const cacheKey = this.#createCacheKey(`npm:package:releases:${pkg.npm}`)
+
+    return await cache
+      .getOrSet(cacheKey, async () => this.packageFetcher.fetchReleaseDates(pkg.npm!))
+      .catch((err) => {
+        logger.error(`Cannot fetch releases dates for ${pkg.npm}: ${err}`)
+        return { firstReleaseAt: '', lastReleaseAt: '' }
+      })
+  }
+
+  /**
    * Get the package downloads from cache or fetch it from npm
    */
   async #getPackageDownloads(pkg: PackageInfo) {
@@ -76,13 +92,16 @@ export class PackagesFetcher {
   async #fetchPackageStats(pkg: PackageInfo) {
     logger.debug(`Fetching stats for ${pkg.name}`)
 
-    const [npmStats, ghStats] = await Promise.all([
+    const [npmStats, ghStats, releases] = await Promise.all([
       this.#getPackageDownloads(pkg),
       this.#getGithubStars(pkg),
+      this.#getReleasesDates(pkg),
     ])
 
     pkg.downloads = npmStats.downloads
     pkg.stars = ghStats.stars
+    pkg.firstReleaseAt = releases.firstReleaseAt
+    pkg.lastReleaseAt = releases.lastReleaseAt
 
     return pkg
   }
@@ -92,11 +111,14 @@ export class PackagesFetcher {
    */
   async #sortPackages(sort: PackagesFilters['sort'], pkg: PackageInfo[]) {
     const sortFn = (property: string) => (a: any, b: any) => (b[property] || 0) - (a[property] || 0)
+    const sortDate = (property: string) => (a: any, b: any) => {
+      return new Date(b[property]).getTime() - new Date(a[property]).getTime()
+    }
 
     if (sort === 'stars') pkg.sort(sortFn('stars'))
     if (sort === 'downloads') pkg.sort(sortFn('downloads'))
-    if (sort === 'updated') pkg.sort(sortFn('lastReleaseAt'))
-    if (sort === 'created') pkg.sort(sortFn('firstReleaseAt'))
+    if (sort === 'updated') pkg.sort(sortDate('lastReleaseAt'))
+    if (sort === 'created') pkg.sort(sortDate('firstReleaseAt'))
   }
 
   /**

@@ -89,12 +89,12 @@ export type PackageInfo = {
   /**
    * First release date on NPM
    */
-  firstReleaseAt?: number
+  firstReleaseAt?: string
 
   /**
    * Last release date on NPM
    */
-  lastReleaseAt?: number
+  lastReleaseAt?: string
 }
 
 /**
