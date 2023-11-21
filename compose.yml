@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   adonis-packages-app:
     build: .
