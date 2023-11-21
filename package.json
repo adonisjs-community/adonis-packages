@@ -36,7 +36,7 @@
   "dependencies": {
     "@adonisjs/cache": "1.0.0-0",
     "@adonisjs/core": "^6.1.5-31",
-    "@adonisjs/inertia": "1.0.0-2",
+    "@adonisjs/inertia": "1.0.0-3",
     "@adonisjs/lucid": "19.0.0-3",
     "@adonisjs/session": "^7.0.0-13",
     "@adonisjs/shield": "^8.0.0-8",
