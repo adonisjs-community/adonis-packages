@@ -1,13 +1,11 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "composite": true,
     "target": "ESNext",
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "lib": ["DOM", "ESNext", "DOM.Iterable", "ES2020"],
     "useDefineForClassFields": true,
-    "baseUrl": "./resources",
+    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
@@ -21,5 +19,5 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["env.d.ts", "resources/**/*.ts", "resources/**/*.vue"]
+  "include": ["env.d.ts", "./**/*.ts", "./**/*.vue"]
 }

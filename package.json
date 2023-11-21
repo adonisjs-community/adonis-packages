@@ -15,8 +15,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "quick:test": "node ace test",
-    "typecheck:adonis": "tsc --noEmit -p tsconfig.node.json --composite false",
-    "typecheck:vue": "vue-tsc --noEmit -p tsconfig.vue.json --composite false",
+    "typecheck:adonis": "tsc --noEmit -p tsconfig.json",
+    "typecheck:vue": "vue-tsc --noEmit -p resources/tsconfig.json",
     "typecheck": "pnpm typecheck:adonis && pnpm typecheck:vue",
     "checks": "pnpm lint && pnpm typecheck"
   },
