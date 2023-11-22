@@ -39,6 +39,11 @@ defineProps<{
         </p>
         <i
           v-if="package.type === 'official'"
+          v-tooltip="{
+            content: 'Official package',
+            placement: 'bottom',
+            distance: 10,
+          }"
           class="i-fluent-emoji-military-medal relative top-[2px] inline-block text-lg"
         />
       </div>

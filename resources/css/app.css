@@ -11,3 +11,18 @@ html, body {
   @apply bg-base1 text-base12;
   font-family: 'PolySans', sans-serif;
 }
+
+body .v-popper--theme-tooltip .v-popper__inner {
+  background: rgb(48 48 48 / 64%);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  border-radius: 11px;
+  font-size: 13px;
+  padding: 7px 12px 6px;
+}
+
+body .v-popper--theme-tooltip .v-popper__arrow-outer {
+  border-color: rgb(48 48 48 / 64%);;
+  backdrop-filter: blur(6px);
+
+}
