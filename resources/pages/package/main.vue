@@ -78,6 +78,9 @@ const props = defineProps<GetPackageResponse>()
 
 .markdown-body {
   background-color: transparent;
+  max-width: 100%;
+  width: 100%;
+  overflow: auto;
 
   h1,
   h2,
@@ -94,6 +97,7 @@ const props = defineProps<GetPackageResponse>()
 
   pre {
     background-color: #171717 !important;
+    overflow: auto;
     @apply font-mono font-bold;
   }
 
