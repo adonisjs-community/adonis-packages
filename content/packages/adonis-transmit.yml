@@ -1,6 +1,6 @@
 name: transmit-v5
 description: SSE provider for AdonisJS 5
-repo: Bright-Hustle/adonis-transmit
+repo: Bright-Hustle/adonis-transmit#master
 npm: '@brighthustle/adonis-transmit'
 icon: ''
 github: https://github.com/Bright-Hustle/adonis-transmit

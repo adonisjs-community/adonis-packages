@@ -18,7 +18,7 @@ const props = defineProps<GetPackageResponse>()
     <Head :title="`${props.package.name} - AdonisJS Packages`" />
 
     <div class="pb-28 pt-6" md="pt-12">
-      <div class="absolute inset-0 overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 overflow-hidden">
         <span class="bg-gradient"></span>
       </div>
 
@@ -29,7 +29,7 @@ const props = defineProps<GetPackageResponse>()
         <!-- Readme & Toc -->
         <div class="relative flex flex-col-reverse gap-12" md="grid grid-cols-[1fr_18em] gap-24">
           <section class="markdown-body" v-html="readme"></section>
-          <div class="toc z-13 overflow-auto" md="sticky top-90px">
+          <div class="toc z-13 overflow-auto" md="sticky pb-4 top-90px">
             <div md="border-l border-white/6 pl-6 pr-4">
               <Toc :markdown="readme" />
               <Links class="mt-4" :package="package" />

@@ -1,19 +1,15 @@
 <script setup lang="ts">
-import { millify } from 'millify'
 import { Link } from '@inertiajs/vue3'
 
 import Tag from '@/components/tag.vue'
 import type { PackageInfo } from '@/types'
 import PackageLogo from '@/components/package_logo.vue'
+import PackageStats from '@/components/package_stats.vue'
 import AdonisIcon from '@/components/icons/adonis_icon.vue'
 
 defineProps<{
   package: PackageInfo
 }>()
-
-function numberFormatter(num: number) {
-  return millify(num || 0, { precision: 1 })
-}
 </script>
 
 <template>
@@ -51,29 +47,7 @@ function numberFormatter(num: number) {
       </p>
     </div>
 
-    <div class="text-md mt-4 flex gap-6 text-base10">
-      <a
-        class="flex items-center gap-1.3 transition-colors duration-600 hover:text-white"
-        :href="package.github"
-        target="_blank"
-      >
-        <i class="i-fluent-emoji-star inline-block" />
-        <span data-testid="package-stars" class="relative top-0.4 text-sm">
-          {{ package.stars }} stars
-        </span>
-      </a>
-
-      <a
-        class="flex items-center gap-1.3 transition-colors duration-600 hover:text-white"
-        :href="`https://www.npmjs.com/package/${package.npm}`"
-        target="_blank"
-      >
-        <i class="i-fluent-emoji-chart-increasing inline-block" />
-        <span class="relative top-0.4 text-sm">
-          {{ numberFormatter(package.downloads) }} installs
-        </span>
-      </a>
-    </div>
+    <PackageStats class="mt-4" :package="package" />
   </Link>
 </template>
 
