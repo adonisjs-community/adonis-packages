@@ -60,6 +60,7 @@
     "millify": "^6.1.0",
     "p-limit": "^4.0.0",
     "reflect-metadata": "^0.1.13",
+    "sanitize-html": "^2.11.0",
     "sqlite3": "^5.1.6",
     "vue": "^3.3.8"
   },
