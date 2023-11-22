@@ -8,7 +8,7 @@ import Socials from '@/components/socials.vue'
       <hr class="footer-separator h-0.2 flex-1 border-0 bg-primary/40" />
       <div class="relative w-12 flex items-center justify-center">
         <i
-          class="i-custom-adonis-icon absolute inline-block animate-head-shake text-5xl transition duration-500 ease-bounce"
+          class="i-custom-adonis-icon absolute inline-block text-5xl transition duration-500 ease-bounce"
           hover="rotate-360"
         />
       </div>
