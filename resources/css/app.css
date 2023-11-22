@@ -13,16 +13,11 @@ html, body {
 }
 
 body .v-popper--theme-tooltip .v-popper__inner {
-  background: rgb(48 48 48 / 64%);
-  color: #fff;
-  backdrop-filter: blur(6px);
-  border-radius: 11px;
-  font-size: 13px;
+  @apply font-content text-base12 bg-base4  rounded-xl text-xs;
   padding: 7px 12px 6px;
 }
 
 body .v-popper--theme-tooltip .v-popper__arrow-outer {
-  border-color: rgb(48 48 48 / 64%);;
-  backdrop-filter: blur(6px);
+  @apply border-base4 backdrop-blur;
 
 }
