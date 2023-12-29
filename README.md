@@ -8,7 +8,7 @@
 
 ## Introduction
 
-This is the source code of the [AdonisJS Packages](https://adonisjs.com/packages) website. The website is built using : 
+This is the source code of the [AdonisJS Packages](https://adonisjs.com/packages) website. The website is built using :
 
 - [AdonisJS](https://adonisjs.com)
 - [VueJS](https://vuejs.org/)
@@ -43,11 +43,11 @@ If you want to add an icon for you package, make sure to pick an appropriate ima
 
 #### Launch the website
 
-In order to run the website locally, you need to : 
+In order to run the website locally, you need to :
 
 - Install dependencies using `pnpm install`
 - Compile the package database using `node ace build:packages`
-- Create your `.env` file using the `.env.example` file. You can ignore `GITHUB_TOKEN`.if too lazy to create one.
+- Create your `.env` file using the `.env.example` file. Use `node ace generate:key` to generate a new key and, not mandatory, use `gh auth token` to generate a new Github token.
 - Start the dev server using `node ace serve --watch`
 
 Then you can visit the website at `http://localhost:3333`
