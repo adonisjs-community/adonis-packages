@@ -1,0 +1,13 @@
+name: transmit
+category: Communication
+npm: '@adonisjs/transmit'
+repo: adonisjs/transmit
+description: A Server-Sent-Event module bringing real-time capabilities to AdonisJS.
+icon: adonis.png
+compatibility:
+  adonis: ^5.0.0
+firstReleaseAt: '2023-07-07T19:44:21.244Z'
+lastReleaseAt: '2023-11-01T07:58:42.648Z'
+type: official
+github: https://github.com/adonisjs/transmit/tree/main
+website: https://github.com/adonisjs/transmit/tree/main

@@ -1,70 +1,53 @@
+![](./public/preview.png)
+
 <div align="center">
-  <img src="https://i.imgur.com/2wGdEJN.png" width="200" fill="red" />
-  <br />
   <h3>AdonisJS Packages</h3>
-  <p>Discover AdonisJS packages to supercharge your project !</p>
-  <p>👉 <a href="https://packages.adonisjs.com">https://packages.adonisjs.com</a> 👈</p>
+  <p>Discover the best AdonisJS packages</p>
 </div>
 
-## Packages Database
 
-Metadata of AdonisJS packages are maintained in [yml](https://en.wikipedia.org/wiki/YAML) files inside [./modules](./modules) directory and automatically synced from upstream to fetch latest information.
+## Introduction
 
-### Contribution
+This is the source code of the [AdonisJS Packages](https://adonisjs.com/packages) website. The website is built using : 
 
-- If you feel a package is missing, please create a new [issue]() or open a pull request after [syncing](#add-or-update-repository) your package
-- If some data is outdated please directly open a pull request
+- [AdonisJS](https://adonisjs.com)
+- [VueJS](https://vuejs.org/)
+- [InertiaJS](https://inertiajs.com/)
+- [UnoCSS](https://unocss.dev/)
+- [Vite](https://vitejs.dev/)
+- [BentoCache](https://bentocache.julr.dev/)
+- [Japa](https://japa.dev/)
 
-### Schema
+If you are looking for a good starting point to learn AdonisJS, then this repo may be a good starting point for you. It is a simple website, but it covers a lot of concepts like :
 
-Field Name      | Auto sync | Description
-----------------|-----------|--------------
-`name`          | No        | Canonical name or integration name
-`description`   | Yes       | Short description
-`repo`          | No        | Github repository. Format is `org/name` or `org/name#main/path`
-`npm`           | Yes       | NPM package name
-`icon`          | No        | Icon of package from [./website/static/icons](./website/static/icons) directory
-`github`        | No        | Github URL
-`website`       | No        | Website URL
-`learn_more`    | No        | Link to learn more (website or relevant integration website)
-`category`      | No        | Package category from [./lib/categories.ts](./lib/categories.ts)
-`type`          | No        | `community` (for [adonisjs-community](https://github.com/adonisjs-community/)), `official` (for https://github.com/) or `3rd-party`
-`maintainers`   | Yes       | List of maintainers each item has `name`, `github` and `avatar`
+- How we can super easily build a monolithic application using AdonisJS, InertiaJS and VueJS and still have a SPA feeling. No state management, routing, API calls, loading spinners, error management needed front-end side.
+- IoC container and Dependency injection using AdonisJS. For example, we leverage them to easily test our controller and comands without having to fetch real data from NPM and Github APIs
+- Developping custom commands with pretty prompts and spinners using AdonisJS Ace
+- Testing commands, controllers, and service using IoC container, Api Client, and Inertia test helpers
+- [End-to-end testing](./tests/browser/) using Playwright
+- [Dockerizing the application](./Dockerfile) in order to make it easy to deploy
+- Github Actions CI/CD : we use Github Actions to run our [tests, check linting, type checking](.github/workflows/checks.yml) and [build the application image](.github/workflows/on-push-to-main.yml) before deploying it to our server
+- Caching using Bentocache : instead of calling the NPM and Github APIs on each request, we use a 2-layer ( Memory + Sqlite ) cache system to store the data and refresh it only when needed. See [./config/cache.ts](./config/cache.ts) for more details.
+- How to setup Vite / Eslint ( [Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new) ) / Prettier / Tsconfig
+- Payload validation using VineJS
 
-## Maintenance
+## Contributions
 
-### Add or update repository
+### Add a new package
 
-```bash
-pnpm sync <name> <repo>
-```
+The packages database is a simple collection of YAML files, where each file represents a package. Files are located in [./content/packages](./content/packages) directory. If you want to add a new package, you can create a new file in the same directory, or preferably, use the `node ace add:package` command.
 
-Example: `pnpm sync eslint adonisjs-community/eslint-plugin-adonis`
+#### Custom Icon
 
-**To sync with a branch different than `master`, suffix the repo with `#repo-branch`, example: `pnpm sync eslint adonisjs-community/eslint-plugin-adonis#dev`**
+If you want to add an icon for you package, make sure to pick an appropriate image, not too big, not too small, in correct quality. Once you have the image, make sure to add it in `/public/icons` directory, and then add the path in the `icon` field of your package yaml file.
 
-### Auto update all current packages
+#### Launch the website
 
-```bash
-pnpm sync
-```
+In order to run the website locally, you need to : 
 
-### Generate `npm/modules.json`
+- Install dependencies using `pnpm install`
+- Compile the package database using `node ace build:packages`
+- Create your `.env` file using the `.env.example` file. You can ignore `GITHUB_TOKEN`.if too lazy to create one.
+- Start the dev server using `node ace serve --watch`
 
-```bash
-pnpm build
-```
-
-## Website development
-
-- Clone repository
-- Install website dependencies using `pnpm install -r`
-- Start development server using `pnpm dev`
-
-Then visit http://localhost:3000
-
-In the development, the npm downloads and GitHub stars will be mocked unless setting `USE_NUXT_API` variable.
-
-## Acknowledgement
-
-- Nuxt team for developing this awesome project. https://github.com/nuxt/modules
+Then you can visit the website at `http://localhost:3333`

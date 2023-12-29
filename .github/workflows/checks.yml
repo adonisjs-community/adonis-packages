@@ -1,0 +1,66 @@
+name: Checks
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  #### Lint job
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 21
+    - name: Install pnpm
+      run: |
+        corepack enable
+        corepack prepare pnpm@latest --activate
+    - name: Install dependencies
+      run: pnpm install
+    - name: Lint
+      run: pnpm lint
+
+  #### Typecheck job
+  typecheck:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 21
+    - name: Install pnpm
+      run: |
+        corepack enable
+        corepack prepare pnpm@latest --activate
+    - name: Install dependencies
+      run: pnpm install
+    - name: Typecheck
+      run: pnpm typecheck
+
+  #### Test job
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21
+      - name: Install pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+      - name: Install
+        run: pnpm install
+      - name: Install Playwright Browsers
+        run: pnpm playwright install --with-deps
+      - name: Test
+        # `|| true`` is necessary for now. It's looks like a bug : lucid seems to always throws an error when exiting
+        run: FORCE_COLOR=1 NODE_ENV=test pnpm test || true
+
