@@ -1,5 +1,5 @@
 /**
- * Responsible for fetching package details from NPM and Github
+ * Responsible for fetching package details from npm and GitHub
  */
 export class PackageFetcher {
   /**
@@ -11,7 +11,7 @@ export class PackageFetcher {
   }
 
   /**
-   * Fetch given package details from NPM
+   * Fetch given package details from npm
    */
   async fetchNpmPkg(name: string) {
     const result = await fetch(`http://registry.npmjs.org/${name}`).then((res) => res.json())
@@ -29,7 +29,7 @@ export class PackageFetcher {
   }
 
   /**
-   * Fetch github stars from github REST Api
+   * Fetch github stars from github REST API
    */
   async fetchGithubStars(repo: string) {
     // See https://github.com/adonisjs/road-to-v6/issues/38 to understand
@@ -46,7 +46,7 @@ export class PackageFetcher {
 
   /**
    * Fetch package.json file from github repository
-   * @param repository Github repository name in format username/repo-name
+   * @param repository GitHub repository name in format username/repo-name
    * @param branch Branch to fetch the package.json file from
    */
   fetchGithubPkg(repository: string, branch = 'main') {
@@ -56,7 +56,7 @@ export class PackageFetcher {
 
   /**
    * Fetch README.md file from github repository
-   * @param repository Github repository name in format username/repo-name
+   * @param repository GitHub repository name in format username/repo-name
    * @param branch Branch to fetch the README.md file from
    */
   fetchReadme(repository: string, branch = 'main') {

@@ -1,5 +1,5 @@
 name: ally-gitlab
-description: A Gitlab driver of AdonisJS Ally
+description: A GitLab driver of AdonisJS Ally
 repo: rubenmoya/adonis-ally-gitlab
 npm: adonis-ally-gitlab
 icon: gitlab.png

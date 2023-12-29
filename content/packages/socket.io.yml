@@ -1,5 +1,5 @@
 name: socket.io
-description: Websocket provider using Socket.io
+description: WebSocket provider using Socket.IO
 repo: ruby184/adonis-socket.io
 npm: '@ruby184/adonis-socket.io'
 icon: 'socketio.png'

@@ -136,7 +136,7 @@ export class PackagesFetcher {
    */
   async fetchPackages(options: PackagesFilters = {}) {
     /**
-     * Get list of packages with their NPM/Github stats
+     * Get list of packages with their npm/GitHub stats
      */
     const limit = pLimit(10)
     const categoriesWithCount = this.#getCategories(this.packagesList)

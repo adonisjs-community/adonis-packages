@@ -61,6 +61,5 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm playwright install --with-deps
       - name: Test
-        # `|| true`` is necessary for now. It's looks like a bug : lucid seems to always throws an error when exiting
+        # `|| true`` is necessary for now. It's looks like a bug: lucid seems to always throws an error when exiting
         run: FORCE_COLOR=1 NODE_ENV=test pnpm test || true
-
