@@ -1,4 +1,0 @@
-<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-  <ShortName>Adonis Packages</ShortName>
-  <Url type="text/html" template="https://packages.adonisjs.com/?q={searchTerms}"/>
-</OpenSearchDescription>
