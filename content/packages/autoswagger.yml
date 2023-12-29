@@ -1,0 +1,15 @@
+name: autoswagger
+description: Auto-Generator swagger docs for AdonisJS
+repo: ad-on-is/adonis-autoswagger#master
+npm: adonis-autoswagger
+icon: swagger.png
+github: https://github.com/ad-on-is/adonis-autoswagger
+website: https://github.com/ad-on-is/adonis-autoswagger
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: ad-on-is
+    github: ad-on-is
+compatibility:
+  adonis: ^5.0.0

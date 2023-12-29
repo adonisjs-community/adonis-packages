@@ -1,0 +1,17 @@
+name: shield
+description: >-
+  A middleware for AdonisJS to keep web applications secure from common web
+  attacks
+repo: adonisjs/shield#develop
+npm: '@adonisjs/shield'
+icon: adonis.png
+github: https://github.com/adonisjs/shield
+website: https://github.com/adonisjs/shield
+learn_more: ''
+category: Security
+type: official
+maintainers:
+  - name: adonisjs
+    github: adonisjs
+compatibility:
+  adonis: ^5.0.0 || ^6.0.0

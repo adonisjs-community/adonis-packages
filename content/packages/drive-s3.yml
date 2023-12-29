@@ -1,0 +1,15 @@
+name: drive-s3
+description: S3 driver for AdonisJS drive
+repo: adonisjs/drive-s3#develop
+npm: '@adonisjs/drive-s3'
+icon: s3.png
+github: https://github.com/adonisjs/drive-s3
+website: https://github.com/adonisjs/drive-s3
+learn_more: ''
+category: Storage
+type: official
+maintainers:
+  - name: adonisjs
+    github: adonisjs
+compatibility:
+  adonis: ^5.0.0 || ^6.0.0

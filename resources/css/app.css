@@ -1,0 +1,23 @@
+@import './fonts.css';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  @apply bg-base1 text-base12;
+  font-family: 'PolySans', sans-serif;
+}
+
+body .v-popper--theme-tooltip .v-popper__inner {
+  @apply font-content text-base12 bg-base4  rounded-xl text-xs;
+  padding: 7px 12px 6px;
+}
+
+body .v-popper--theme-tooltip .v-popper__arrow-outer {
+  @apply border-base4 backdrop-blur;
+
+}

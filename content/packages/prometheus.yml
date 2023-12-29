@@ -1,0 +1,15 @@
+name: prometheus
+description: '📊 Prometheus wrapper for Adonis 5'
+repo: Julien-R44/adonis5-prometheus
+npm: adonis5-prometheus
+icon: prometheus.png
+github: https://github.com/Julien-R44/adonis5-prometheus
+website: https://github.com/Julien-R44/adonis5-prometheus
+learn_more: ''
+category: Monitoring
+type: 3rd-party
+maintainers:
+  - name: Julien-R44
+    github: Julien-R44
+compatibility:
+  adonis: ^5.0.0

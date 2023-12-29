@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="dark-theme" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{-- Primary Meta tags --}}
+  @if (meta)
+    <title inertia>{{ `${meta.title} - AdonisJS Packages` }}</title>
+    <meta name="title" content="{{ `${meta.title} - AdonisJS Packages` }}">
+    <meta name="description" content="{{ meta.description }}">
+  @else
+    <title inertia>AdonisJS Packages - Discover the best AdonisJS packages</title>
+    <meta name="title" content="AdonisJS Packages - Discover the best AdonisJS packages" />
+    <meta name="description" content="Discover our list of packages to supercharge your AdonisJS project. Created by the AdonisJS team and community." />
+  @endif
+
+  <meta name="keywords" content="adonisjs, packages, modules, npm, github, adonis, node.js">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+
+  {{-- Open Graph/ Facebook --}}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://packages.adonisjs.com" />
+  <meta property="og:title" content="AdonisJS Packages - Discover the best AdonisJS packages" />
+  <meta property="og:description" content="Discover our list of packages to supercharge your AdonisJS project. Created by the AdonisJS team and community." />
+  <meta property="og:image" content="/preview.png" />
+
+  {{-- Twitter --}}
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://packages.adonisjs.com" />
+  <meta property="twitter:title" content="AdonisJS Packages - Discover the best AdonisJS packages" />
+  <meta property="twitter:description" content="Discover our list of packages to supercharge your AdonisJS project. Created by the AdonisJS team and community." />
+  <meta property="twitter:image" content="/preview.png" />
+
+  {{-- Favicons --}}
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5f5bd5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+  @vite(['resources/app.ts'])
+</head>
+
+<body>
+  @inertia({ as: 'main', class: 'h-full' })
+</body>
+
+</html>

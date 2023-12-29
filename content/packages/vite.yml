@@ -1,0 +1,13 @@
+name: vite
+category: Rendering
+npm: '@adonisjs/vite'
+repo: adonisjs/vite
+description: Vite plugin for Adonis.js
+icon: vite.png
+compatibility:
+  adonis: ^5.0.0
+firstReleaseAt: '2023-04-23T23:53:42.567Z'
+lastReleaseAt: '2023-10-19T09:48:22.804Z'
+type: official
+github: https://github.com/adonisjs/vite/tree/main
+website: https://github.com/adonisjs/vite/tree/main

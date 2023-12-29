@@ -1,0 +1,17 @@
+name: mailer
+description: >-
+  Mail provider for adonis framework and has support for all common mailing
+  services to send emails
+repo: adonisjs/mail#develop
+npm: '@adonisjs/mail'
+icon: adonis.png
+github: https://github.com/adonisjs/mail
+website: https://github.com/adonisjs/mail
+learn_more: ''
+category: Messaging
+type: official
+maintainers:
+  - name: adonisjs
+    github: adonisjs
+compatibility:
+  adonis: ^5.0.0 || ^6.0.0

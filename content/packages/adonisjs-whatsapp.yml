@@ -1,0 +1,15 @@
+name: adonisjs-whatsapp
+description: Connect your WhatsApp Cloud API with AdonisJS
+repo: sooluh/adonisjs-whatsapp
+npm: adonisjs-whatsapp
+icon: whatsapp.png
+github: https://github.com/sooluh/adonisjs-whatsapp
+website: https://github.com/sooluh/adonisjs-whatsapp
+learn_more: ''
+category: Messaging
+type: 3rd-party
+maintainers:
+  - name: Torch
+    github: sooluh
+compatibility:
+  adonis: ^5.0.0

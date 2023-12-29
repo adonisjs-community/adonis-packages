@@ -1,16 +1,26 @@
+# Dependencies and AdonisJS build
 node_modules
-*.log*
-dist
-.DS_Store
-.vercel
-.nuxt
-sw.js
+build
+tmp
+
+# Secrets
 .env
-.vscode
-cache
-.vercel_build_output
-.output
-package-lock.json
-npm/modules.json
+.env.local
+.env.production.local
+.env.development.local
+.env.prod
+
+# Frontend assets compiled code
+public/assets
+
+# Build tools specific
+npm-debug.log
+yarn-error.log
+
+# Editors specific
+.fleet
 .idea
-.tool-versions
+
+# Platform specific
+.DS_Store
+.todo

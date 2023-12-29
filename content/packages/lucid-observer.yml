@@ -1,0 +1,15 @@
+name: lucid-observer
+description: Observer package for AdonisJS V5 Lucid ORM
+repo: Melchyore/adonis-lucid-observer#master
+npm: '@melchyore/adonis-lucid-observer'
+icon: ''
+github: https://github.com/Melchyore/adonis-lucid-observer/tree/master
+website: https://github.com/Melchyore/adonis-lucid-observer/tree/master
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Melchyore
+    github: Melchyore
+compatibility:
+  adonis: ^5.0.0

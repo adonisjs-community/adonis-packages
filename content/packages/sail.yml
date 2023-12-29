@@ -1,0 +1,15 @@
+name: sail
+description: ⛵Generate a ready-to-use local docker environment for your Adonis application
+repo: Julien-R44/adonis-sail
+npm: adonis-sail
+icon: sail.png
+github: https://github.com/Julien-R44/adonis-sail
+website: https://github.com/Julien-R44/adonis-sail
+learn_more: ''
+category: Devtools
+type: 3rd-party
+maintainers:
+  - name: Julien-R44
+    github: Julien-R44
+compatibility:
+  adonis: ^5.0.0
