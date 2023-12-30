@@ -1,6 +1,6 @@
-name: Edge Vscode
-category: Devtools
-description: Official Vscode extension for Edge.js
+name: Edge VS Code
+category: DevTools
+description: Official VS Code extension for Edge.js
 icon: 'edge.jpeg'
 compatibility:
   adonis: ^5.0.0

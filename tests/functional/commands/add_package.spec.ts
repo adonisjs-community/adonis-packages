@@ -15,8 +15,8 @@ function swapPackageFetcher(options: { githubResponse?: any; npmResponse?: any }
       if (options.githubResponse) return options.githubResponse
       return {
         name: 'github-package-name',
-        description: 'Github package description',
-        author: { name: 'Github package author' },
+        description: 'GitHub package description',
+        author: { name: 'GitHub package author' },
       }
     }
 
@@ -24,7 +24,7 @@ function swapPackageFetcher(options: { githubResponse?: any; npmResponse?: any }
       if (options.npmResponse) return options.npmResponse
       return {
         time: { created: '2022-01-01', modified: '2023-01-01' },
-        description: 'Npm package description',
+        description: 'npm package description',
       }
     }
   }
@@ -57,7 +57,7 @@ test.group('[Commands] Add Package', (group) => {
       name: 'test-package',
       github: 'https://github.com/owner/repo/tree/main',
       website: 'https://github.com/owner/repo/tree/main',
-      description: 'Github package description',
+      description: 'GitHub package description',
       npm: 'github-package-name',
       compatibility: { adonis: '^5.0.0' },
       firstReleaseAt: '2022-01-01',

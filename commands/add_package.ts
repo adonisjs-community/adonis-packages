@@ -79,7 +79,7 @@ export default class AddPackage extends BaseCommand {
    */
   async #promptForPackageName(githubPkg: Record<string, any>) {
     return await this.prompt.ask(
-      'What is the package name ? This name will be displayed on the website.',
+      'What is the package name? This name will be displayed on the website.',
       {
         name: 'name',
         hint: 'e.g. AdonisJS Prometheus',
@@ -147,7 +147,7 @@ export default class AddPackage extends BaseCommand {
 
     this.ui
       .sticker()
-      .add('🎊 Package info collected successfully and saved to :')
+      .add('🎊 Package info collected successfully and saved to:')
       .add('')
       .add(this.ui.colors.cyan(`./content/packages/${this.#package.name}.yml`))
       .add('')

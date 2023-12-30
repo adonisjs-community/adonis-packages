@@ -31,12 +31,12 @@ export type PackageInfo = {
   description: string
 
   /**
-   * Github repository, formatted as `owner/repo#branch`
+   * GitHub repository, formatted as `owner/repo#branch`
    */
   repo: string
 
   /**
-   * NPM package name
+   * npm package name
    */
   npm?: string
 
@@ -47,7 +47,7 @@ export type PackageInfo = {
   icon?: string
 
   /**
-   * Github repository URL
+   * GitHub repository URL
    */
   github: string
 
@@ -77,22 +77,22 @@ export type PackageInfo = {
   keywords?: string[]
 
   /**
-   * Number of stars on Github
+   * Number of stars on GitHub
    */
   stars: number
 
   /**
-   * Monthly downloads from NPM
+   * Monthly downloads from npm
    */
   downloads: number
 
   /**
-   * First release date on NPM
+   * First release date on npm
    */
   firstReleaseAt?: string
 
   /**
-   * Last release date on NPM
+   * Last release date on npm
    */
   lastReleaseAt?: string
 }

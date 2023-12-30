@@ -25,7 +25,7 @@ export const categories = [
     color: 'bg-cyan5 group-hover:bg-cyan5',
   },
   {
-    label: 'Devtools',
+    label: 'DevTools',
     icon: 'i-carbon-code',
     color: 'bg-indigo5 group-hover:bg-indigo5',
   },

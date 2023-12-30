@@ -12,14 +12,14 @@ const cacheConfig = defineConfig({
   earlyExpiration: 0.9,
 
   /**
-   * We gonna wait for 300ms MAX for the Npm/Github API to respond.
+   * We gonna wait for 300ms MAX for the npm/GitHub API to respond.
    * Otherwise we gonna fallback to the old value and let the
    * API respond in the background and update the cache
    */
   timeouts: { soft: '300ms' },
 
   /**
-   * Cache each response for 1 day. This is okay since NPM / Github
+   * Cache each response for 1 day. This is okay since npm/GitHub
    * stats are not something that is absolutely required to be
    * real-time
    */
@@ -28,7 +28,7 @@ const cacheConfig = defineConfig({
   /**
    * Grace period is 2 hours. Meaning, we gonna keep serving the
    * old value for 2 hours, if we are unable to fetch the new
-   * value from the API ( Rate limit, Github / NPM down etc... ? )
+   * value from the API (Rate limit, GitHub/npm down etc...?)
    */
   gracePeriod: {
     enabled: true,

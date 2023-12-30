@@ -6,7 +6,7 @@ github: https://github.com/Julien-R44/adonis-vscode-extension
 website: >-
   https://marketplace.visualstudio.com/items?itemName=jripouteau.adonis-vscode-extension
 learn_more: ''
-category: Devtools
+category: DevTools
 type: official
 maintainers:
   - name: Julien Ripouteau
