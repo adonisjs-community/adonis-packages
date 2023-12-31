@@ -34,12 +34,12 @@
     "#types/*": "./types/*.js"
   },
   "dependencies": {
-    "@adonisjs/cache": "1.0.0-0",
-    "@adonisjs/core": "^6.1.5-38",
-    "@adonisjs/inertia": "1.0.0-4",
+    "@adonisjs/cache": "1.0.0-1",
+    "@adonisjs/core": "6.1.5-38",
+    "@adonisjs/inertia": "1.0.0-5",
     "@adonisjs/lucid": "19.0.0-8",
-    "@adonisjs/session": "^7.0.0-13",
-    "@adonisjs/shield": "^8.0.0-8",
+    "@adonisjs/session": "7.0.0-15",
+    "@adonisjs/shield": "8.0.0-10",
     "@adonisjs/static": "^1.0.4",
     "@adonisjs/vite": "2.0.2-0",
     "@headlessui/vue": "^1.7.16",
@@ -66,7 +66,7 @@
     "vue": "^3.4.0"
   },
   "devDependencies": {
-    "@adonisjs/assembler": "^7.0.0-1",
+    "@adonisjs/assembler": "7.0.0-1",
     "@adonisjs/tsconfig": "^1.2.1",
     "@faker-js/faker": "^8.3.1",
     "@iconify/json": "^2.2.163",
