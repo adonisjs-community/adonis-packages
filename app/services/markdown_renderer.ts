@@ -40,6 +40,8 @@ export class MarkdownRenderer {
       allowedAttributes: {
         ...sanitizeHtml.default.defaults.allowedAttributes,
         '*': ['class', 'align'],
+        'h1': ['id'],
+        'h2': ['id'],
       },
       allowedClasses: { '*': ['*'] },
     })
