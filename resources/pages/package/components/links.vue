@@ -24,7 +24,7 @@ defineProps<{
         :href="`https://www.npmjs.com/package/${package.npm}`"
       >
         <i class="i-mdi-npm-variant-outline inline-block" />
-        <span>npm package</span>
+        <span>Npm package</span>
       </a>
       <a
         v-if="package.website"
@@ -32,7 +32,7 @@ defineProps<{
         :href="package.website"
       >
         <i class="i-jam-arrow-square-up-right inline-block" />
-        <span>See webite</span>
+        <span>See website</span>
       </a>
     </div>
   </div>
