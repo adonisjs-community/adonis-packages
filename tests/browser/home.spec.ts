@@ -28,7 +28,7 @@ test.group('E2E', (group) => {
 
     await page.waitForURL(`/packages/${packageName}`)
     await page.assertTextContains('body', packageName!)
-  }).skip(true)
+  })
 
   test('can sort packages by stars', async ({ assert, visit }) => {
     const page = await visit('/')

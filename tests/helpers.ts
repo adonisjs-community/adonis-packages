@@ -7,6 +7,7 @@ import { readFile, rm } from 'node:fs/promises'
 import type { PackageInfo } from '#types/main'
 import { categories } from '../content/categories.js'
 import { PackageFetcher } from '#services/package_fetcher'
+import { PackageStatFactory } from '../database/factories/package_stat_factory.js'
 
 const dirname = getDirname(import.meta.url)
 
@@ -42,11 +43,16 @@ export class FakePkgFetcher extends PackageFetcher {
 }
 
 /**
- * Generate a fake package
+ * Generate a fake package. Also generates a fake package stat
+ * in database for the package
  */
-export function packageFactory(overrides: Partial<PackageInfo> = {}): PackageInfo {
+export async function packageFactory(overrides: Partial<PackageInfo> = {}): Promise<PackageInfo> {
+  const name = overrides.name || faker.string.alphanumeric(10)
+
+  await PackageStatFactory.merge({ packageName: name }).create()
+
   return {
-    name: faker.string.alphanumeric(10),
+    name,
     category: faker.helpers.arrayElement(categories).label,
     compatibility: { adonis: '>=5.0.0' },
     description: faker.lorem.sentence(),

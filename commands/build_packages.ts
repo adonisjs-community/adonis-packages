@@ -6,11 +6,16 @@ import { BaseCommand } from '@adonisjs/core/ace'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import type { CommandOptions } from '@adonisjs/core/types/ace'
 
+import { PackageFetcher } from '#services/package_fetcher'
+import { PackagesDataRefresher } from '#services/packages_data_refresher'
+
 export default class BuildPackages extends BaseCommand {
   static commandName = 'build:packages'
   static description = 'Create a big packages.json file with all the packages.'
 
-  static options: CommandOptions = {}
+  static options: CommandOptions = {
+    startApp: true,
+  }
 
   #contentFolder = join(getDirname(import.meta.url), '../content')
   #distFolder = join(getDirname(import.meta.url), '../content/build/')
@@ -44,6 +49,8 @@ export default class BuildPackages extends BaseCommand {
     const distFile = join(this.#distFolder, 'packages.json')
     await mkdir(this.#distFolder, { recursive: true })
     await writeFile(distFile, JSON.stringify(packages, null, 2))
+
+    await new PackagesDataRefresher(new PackageFetcher(), packages as any).refresh()
 
     this.logger.success(`Packages file created successfully at "${distFile}"`)
   }

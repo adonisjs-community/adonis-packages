@@ -1,6 +1,7 @@
 import { assert } from '@japa/assert'
 import { apiClient } from '@japa/api-client'
 import app from '@adonisjs/core/services/app'
+import ace from '@adonisjs/core/services/ace'
 import type { Config } from '@japa/runner/types'
 import { browserClient } from '@japa/browser-client'
 import { pluginAdonisJS } from '@japa/plugin-adonisjs'
@@ -27,7 +28,14 @@ export const plugins: Config['plugins'] = [
  * The teardown functions are executer after all the tests
  */
 export const runnerHooks: Required<Pick<Config, 'setup' | 'teardown'>> = {
-  setup: [],
+  setup: [
+    async () => {
+      await ace.exec('migration:run', ['--compact-output'])
+      return async () => {
+        await ace.exec('migration:rollback', ['--compact-output'])
+      }
+    },
+  ],
   teardown: [],
 }
 

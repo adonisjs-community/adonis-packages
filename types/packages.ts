@@ -36,7 +36,7 @@ export type PackageInfo = {
   repo: string
 
   /**
-   * npm package name
+   * Npm package name
    */
   npm?: string
 

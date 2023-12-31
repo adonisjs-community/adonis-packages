@@ -20,4 +20,5 @@ export default await Env.create(new URL('../', import.meta.url), {
   CACHE_STORE: Env.schema.enum(['cache', 'test'] as const),
   SESSION_DRIVER: Env.schema.enum(['cookie', 'memory'] as const),
   GITHUB_TOKEN: Env.schema.string(),
+  DB_CONNECTION: Env.schema.enum(['sqlite', 'test'] as const),
 })

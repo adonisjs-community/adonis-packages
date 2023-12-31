@@ -7,8 +7,8 @@ import { FakePkgFetcher, packageFactory } from '../../helpers.js'
 
 test.group('Home', () => {
   test('returns correct page object', async ({ assert, client }) => {
-    app.container.swap(PackagesFetcher, () => {
-      const packages = Array.from({ length: 7 }, () => packageFactory())
+    app.container.swap(PackagesFetcher, async () => {
+      const packages = await Promise.all(Array.from({ length: 7 }, () => packageFactory()))
       return new PackagesFetcher(new FakePkgFetcher(), packages)
     })
 
@@ -27,8 +27,8 @@ test.group('Home', () => {
   })
 
   test('filters using query parameters', async ({ assert, client }) => {
-    app.container.swap(PackagesFetcher, () => {
-      const packages = Array.from({ length: 50 }, () => packageFactory())
+    app.container.swap(PackagesFetcher, async () => {
+      const packages = await Promise.all(Array.from({ length: 50 }, () => packageFactory()))
       return new PackagesFetcher(new FakePkgFetcher(), packages)
     })
 

@@ -48,6 +48,7 @@
     "@sindresorhus/slugify": "^2.2.1",
     "@vinejs/vine": "^1.7.0",
     "@vueuse/core": "^10.7.1",
+    "cron": "^3.1.6",
     "edge.js": "^6.0.0",
     "floating-vue": "2.0.0-beta.24",
     "github-markdown-css": "^5.5.0",

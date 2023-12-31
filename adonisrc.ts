@@ -12,8 +12,8 @@ export default defineConfig({
   */
   commands: [
     () => import('@adonisjs/core/commands'),
-    () => import('@adonisjs/cache/commands'),
     () => import('@adonisjs/lucid/commands'),
+    () => import('@adonisjs/cache/commands'),
   ],
 
   /*
@@ -35,12 +35,12 @@ export default defineConfig({
     () => import('@adonisjs/core/providers/vinejs_provider'),
     () => import('@adonisjs/core/providers/edge_provider'),
     () => import('@adonisjs/session/session_provider'),
-    () => import('@adonisjs/vite/vite_provider'),
     () => import('@adonisjs/shield/shield_provider'),
+    () => import('@adonisjs/vite/vite_provider'),
     () => import('@adonisjs/static/static_provider'),
-    () => import('@adonisjs/cache/cache_provider'),
-    () => import('@adonisjs/inertia/inertia_provider'),
     () => import('@adonisjs/lucid/database_provider'),
+    () => import('@adonisjs/inertia/inertia_provider'),
+    () => import('@adonisjs/cache/cache_provider'),
     () => import('./providers/app_provider.js'),
   ],
 
@@ -52,7 +52,14 @@ export default defineConfig({
   | List of modules to import before starting the application.
   |
   */
-  preloads: [() => import('#start/routes'), () => import('#start/kernel')],
+  preloads: [
+    () => import('#start/routes'),
+    () => import('#start/kernel'),
+    {
+      file: () => import('#start/scheduler'),
+      environment: ['web'],
+    },
+  ],
 
   /*
   |--------------------------------------------------------------------------

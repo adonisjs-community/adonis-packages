@@ -26,26 +26,19 @@ const cacheConfig = defineConfig({
   ttl: '1d',
 
   /**
-   * Grace period is 2 hours. Meaning, we gonna keep serving the
-   * old value for 2 hours, if we are unable to fetch the new
+   * Grace period is 14 days. Meaning, we gonna keep serving the
+   * old value for 2 weeks, if we are unable to fetch the new
    * value from the API (Rate limit, GitHub/npm down etc...?)
    */
   gracePeriod: {
     enabled: true,
-    duration: '2h',
+    duration: '14d',
     fallbackDuration: '5m',
   },
 
   stores: {
     cache: store()
-      .useL1Layer(
-        drivers.memory({
-          /**
-           * Keep only 50MB of cache in memory
-           */
-          maxSize: 50 * 1024 * 1024,
-        }),
-      )
+      .useL1Layer(drivers.memory({ maxSize: 50 * 1024 * 1024 }))
       .useL2Layer(drivers.database({ connectionName: 'sqlite' })),
 
     test: store().useL1Layer(drivers.memory({})),

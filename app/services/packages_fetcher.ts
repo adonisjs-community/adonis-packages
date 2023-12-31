@@ -1,7 +1,7 @@
-import pLimit from 'p-limit'
 import cache from '@adonisjs/cache/services/main'
 import logger from '@adonisjs/core/services/logger'
 
+import PackageStats from '#models/package_stats'
 import { categories } from '../../content/categories.js'
 import { MarkdownRenderer } from './markdown_renderer.js'
 import type { PackageFetcher } from './package_fetcher.js'
@@ -16,67 +16,12 @@ export class PackagesFetcher {
   ) {}
 
   /**
-   * Creates a cache key with the given prefix and today's date
-   */
-  #createCacheKey(prefix: string) {
-    const today = new Date()
-    const todayKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
-    return `${prefix}:${todayKey}`
-  }
-
-  /**
-   * Get the first and last release dates from cache or fetch it from npm
-   */
-  async #getReleasesDates(pkg: PackageInfo) {
-    if (!pkg.npm) return { firstReleaseAt: '', lastReleaseAt: '' }
-
-    const cacheKey = this.#createCacheKey(`npm:package:releases:${pkg.npm}`)
-
-    return await cache
-      .getOrSet(cacheKey, async () => this.packageFetcher.fetchReleaseDates(pkg.npm!))
-      .catch((err) => {
-        logger.error({ err }, `Cannot fetch releases dates for ${pkg.npm}`)
-        return { firstReleaseAt: '', lastReleaseAt: '' }
-      })
-  }
-
-  /**
-   * Get the package downloads from cache or fetch it from npm
-   */
-  async #getPackageDownloads(pkg: PackageInfo) {
-    if (!pkg.npm) return { downloads: 0 }
-
-    const cacheKey = this.#createCacheKey(`npm:package:downloads:${pkg.npm}`)
-    return await cache
-      .getOrSet(cacheKey, () => this.packageFetcher.fetchPackageDownloads(pkg.npm!))
-      .catch((err) => {
-        logger.error({ err }, `Cannot fetch npm info for ${pkg.npm}`)
-        return { downloads: 0 }
-      })
-  }
-
-  /**
-   * Get the github stars from cache or fetch it from github
-   */
-  async #getGithubStars(pkg: PackageInfo) {
-    if (!pkg.repo) return { stars: 0 }
-
-    const cacheKey = this.#createCacheKey(`github:repo:stars:${pkg.repo}`)
-    return cache
-      .getOrSet(cacheKey, () => this.packageFetcher.fetchGithubStars(pkg.repo))
-      .catch((err) => {
-        logger.error({ err }, `Cannot fetch github repo info for ${pkg.repo}`)
-        return { stars: 0 }
-      })
-  }
-
-  /**
    * Get the github readme from cache or fetch it from github
    */
   async #getPackageReadme(pkg: PackageInfo) {
     if (!pkg.repo) return ''
 
-    const cacheKey = this.#createCacheKey(`github:repo:readme:${pkg.repo}`)
+    const cacheKey = `github:repo:readme:${pkg.repo}`
     const [repo, branch] = pkg.repo.split('#')
     return cache
       .getOrSet(cacheKey, () => this.packageFetcher.fetchReadme(repo, branch))
@@ -84,26 +29,6 @@ export class PackagesFetcher {
         logger.error({ err }, `Cannot fetch github repo info for ${pkg.repo}`)
         return ''
       })
-  }
-
-  /**
-   * Get stats about a single package
-   */
-  async #fetchPackageStats(pkg: PackageInfo) {
-    logger.debug(`Fetching stats for ${pkg.name}`)
-
-    const [npmStats, ghStats, releases] = await Promise.all([
-      this.#getPackageDownloads(pkg),
-      this.#getGithubStars(pkg),
-      this.#getReleasesDates(pkg),
-    ])
-
-    pkg.downloads = npmStats.downloads
-    pkg.stars = ghStats.stars
-    pkg.firstReleaseAt = releases.firstReleaseAt
-    pkg.lastReleaseAt = releases.lastReleaseAt
-
-    return pkg
   }
 
   /**
@@ -132,17 +57,34 @@ export class PackagesFetcher {
   }
 
   /**
+   * Merge raw package .yml data with the stats fetched from npm/github stored
+   * on our database
+   */
+  #mergePackageStatsAndInfo(pkg: PackageInfo, stats: PackageStats) {
+    return {
+      ...pkg,
+      firstReleaseAt: stats.firstReleaseAt?.toISODate() || undefined,
+      lastReleaseAt: stats.lastReleaseAt?.toISODate() || undefined,
+      stars: stats.githubStars,
+      downloads: stats.weeklyDownloads,
+    }
+  }
+
+  /**
    * Fetch stats for all packages, either from cache or from npm/github
    */
   async fetchPackages(options: PackagesFilters = {}) {
-    /**
-     * Get list of packages with their npm/GitHub stats
-     */
-    const limit = pLimit(10)
     const categoriesWithCount = this.#getCategories(this.packagesList)
-    let packages = [...this.packagesList]
 
-    packages = await Promise.all(packages.map((pkg) => limit(() => this.#fetchPackageStats(pkg))))
+    /**
+     * Get packages list with stats
+     */
+    const stats = await PackageStats.all()
+
+    let packages = [...this.packagesList].map((pkg) => {
+      const info = stats.find((info) => info.packageName === pkg.name)
+      return this.#mergePackageStatsAndInfo(pkg, info!)
+    })
 
     /**
      * Filter them based on the given options
@@ -174,23 +116,25 @@ export class PackagesFetcher {
     return {
       packages,
       categories: categoriesWithCount,
-      meta: {
-        pages: totalPage,
-        total: this.packagesList.length,
-        currentPage: page,
-      },
+      meta: { pages: totalPage, total: this.packagesList.length, currentPage: page },
     }
   }
 
+  /**
+   * Fetch a single package with its readme
+   */
   async fetchPackage(name: string) {
     const pkg = this.packagesList.find((pkg_) => pkg_.name === name)
     if (!pkg) {
       throw new Error(`Cannot find package ${name}`)
     }
 
-    const stats = await this.#fetchPackageStats(pkg)
+    const stats = await PackageStats.findByOrFail('packageName', name)
     const readme = await this.#getPackageReadme(pkg)
 
-    return { package: stats, readme: this.#markdownRenderer.render(readme) }
+    return {
+      package: this.#mergePackageStatsAndInfo(pkg, stats),
+      readme: this.#markdownRenderer.render(readme),
+    }
   }
 }
