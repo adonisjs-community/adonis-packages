@@ -20,6 +20,7 @@ const filters = ref<PackagesFilters>({
   search: params.search,
   page: +(props.meta.currentPage || 1),
 })
+const scrollToTopRef = ref<HTMLElement | null>(null)
 
 watchDeep(filters, () => {
   router.visit('/', {
@@ -29,6 +30,19 @@ watchDeep(filters, () => {
     preserveScroll: true,
   })
 })
+
+function changePage(newPage: number) {
+  filters.value.page = newPage
+  scrollToTop()
+}
+
+function scrollToTop() {
+  const el = scrollToTopRef.value
+
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
@@ -48,7 +62,11 @@ watchDeep(filters, () => {
 
           <!-- Search and sort -->
           <div class="w-full flex flex-col">
-            <div class="w-full flex flex-col justify-between gap-2" md="items-center flex-row">
+            <div
+              ref="scrollToTopRef"
+              class="w-full flex flex-col justify-between gap-2"
+              md="items-center flex-row"
+            >
               <SearchBar v-model="filters.search" />
               <SortBy v-model="filters.sort" />
             </div>
@@ -61,7 +79,7 @@ watchDeep(filters, () => {
                 :pages="meta.pages"
                 :current-page="meta.currentPage"
                 :total="meta.total"
-                @update:current-page="filters.page = $event"
+                @update:current-page="changePage($event)"
               />
             </div>
           </div>
