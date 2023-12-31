@@ -14,7 +14,7 @@ defineProps<{
       <PackageLogo class="flex-shrink-0" size="16" :package="package" />
       <div class="flex flex-col">
         <h1 class="relative top-2 mt-1 text-5xl font-bold">{{ package.name }}</h1>
-        <span class="mt-5 text-base font-content text-base11">
+        <span class="mt-5 text-base text-base11 font-content">
           {{ package.description }}
         </span>
 
