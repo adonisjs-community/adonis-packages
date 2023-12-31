@@ -25,7 +25,7 @@ import Button from '@/components/ui/button.vue'
 
           <div class="max-w-xl">
             <Button
-              href="https://github.com/Julien-R44/adonis-packages"
+              href="https://github.com/adonisjs-community/adonis-packages"
               as="a"
               theme="primary"
               left-icon="i-fa6-brands-github"
