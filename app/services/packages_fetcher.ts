@@ -112,7 +112,6 @@ export class PackagesFetcher {
 
     if (options.parties) {
       packages = packages.filter((pkg) => {
-        console.log(options.parties, pkg.type, options.parties!.includes(pkg.type))
         return options.parties!.includes(pkg.type)
       })
     }
@@ -120,9 +119,10 @@ export class PackagesFetcher {
     if (options.versions) {
       const specifiersRegex = /[\^~]/g
       packages = packages.filter((pkg) => {
-        // Split compatibility since we can have multiple versions
+        // Some packages don't have compatibility
         if (!pkg.compatibility) return false
 
+        // Split compatibility since we can have multiple versions
         const versions = pkg.compatibility.adonis.split('||').map((v) => v.trim())
         // Remove ^ and ~ from the version
         const cleanVersion = versions.map((v) => v.replace(specifiersRegex, ''))
@@ -148,7 +148,7 @@ export class PackagesFetcher {
     }
 
     const sortedPackages = this.#sortPackages(
-      Number(options.order ?? 1) as -1 | 1,
+      options.order ?? 1,
       options.orderBy ?? 'name',
       packages,
     )

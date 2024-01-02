@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { Head, router } from '@inertiajs/vue3'
-import { refDebounced, useUrlSearchParams } from '@vueuse/core'
+import { useUrlSearchParams, watchDebounced } from '@vueuse/core'
 
 import Hero from '@/components/hero.vue'
 import Layout from '@/layouts/default.vue'
@@ -12,7 +12,13 @@ import Pagination from './components/pagination.vue'
 import SelectMenu from './components/select_menu.vue'
 import MainSection from './components/main_section.vue'
 import ButtonGroup from './components/button_group.vue'
-import type { GetHomeResponse, ModuleType, PackageCategory, PackagesFilters } from '@/types'
+import type {
+  GetHomeResponse,
+  ModuleType,
+  PackageCategories,
+  PackageCategory,
+  PackagesFilters,
+} from '@/types'
 
 const props = defineProps<GetHomeResponse>()
 
@@ -28,15 +34,40 @@ function scrollToTop() {
 const params = useUrlSearchParams<Partial<PackagesFilters>>('history')
 
 const page = ref<number>(props.meta.currentPage || 1)
+// Do not watch page to avoid 2 requests when filters change
+function onChangePage(newPage: number) {
+  changePage(newPage)
+  fetchNewData()
+}
 function changePage(newPage: number) {
   page.value = newPage
   scrollToTop()
 }
 
-const category = ref<PackageCategory | null>((params.category as PackageCategory) || null)
+const categories = ref<PackageCategories>(props.categories)
+const categoriesOptions = [
+  { label: 'All', value: '' },
+  ...props.categories.map((category) => ({
+    label: category.label,
+    value: category.label,
+  })),
+]
+const category = ref<PackageCategory>(params.category || ('' as PackageCategory))
+
+watch(category, () => {
+  changePage(1)
+  fetchNewData()
+})
 
 const search = ref<string>((params.search as string) || '')
-const debouncedSearch = refDebounced(search, 400)
+watchDebounced(
+  search,
+  () => {
+    changePage(1)
+    fetchNewData()
+  },
+  { debounce: 400 },
+)
 
 const orderByOptions = [
   {
@@ -64,11 +95,21 @@ const orderByOptions = [
 const order = ref<-1 | 1>(params.order ? (Number(params.order) as -1 | 1) : 1)
 const orderBy = ref<string>(params.orderBy || orderByOptions[0].value)
 
+watch([order, orderBy], () => {
+  changePage(1)
+  fetchNewData()
+})
+
 const versionsOptions = [
   { value: '6', label: 'v6' },
   { value: '5', label: 'v5' },
 ]
 const selectedVersions = ref<string[]>((params.versions as string[]) ?? [])
+
+watch(selectedVersions, () => {
+  changePage(1)
+  fetchNewData()
+})
 
 const partiesOptions = [
   { value: 'official', label: 'Official' },
@@ -77,70 +118,29 @@ const partiesOptions = [
 ]
 const selectedParties = ref<ModuleType[]>((params.parties as ModuleType[]) ?? [])
 
-watch(
-  [page, category, debouncedSearch, selectedVersions, selectedParties, order, orderBy],
-  (
-    [
-      newPage,
-      newCategory,
-      newSearch,
-      newSelectedVersions,
-      newSelectedParties,
-      newOrder,
-      newOrderBy,
-    ],
-    [_, oldCategory, oldSearch, oldSelectedVersions, oldSelectedParties, oldOrder, oldOrderBy],
-  ) => {
-    if (newCategory !== oldCategory) {
-      changePage(1)
-    }
+watch(selectedParties, () => {
+  changePage(1)
+  fetchNewData()
+})
 
-    if (newSearch !== oldSearch) {
-      changePage(1)
-    }
-
-    if (newSelectedVersions !== oldSelectedVersions) {
-      changePage(1)
-    }
-
-    if (newSelectedParties !== oldSelectedParties) {
-      changePage(1)
-    }
-
-    if (newOrder !== oldOrder) {
-      changePage(1)
-    }
-
-    if (newOrderBy !== oldOrderBy) {
-      changePage(1)
-    }
-
-    router.get(
-      '/',
-      {
-        page: newPage,
-        category: newCategory,
-        search: newSearch,
-        versions: newSelectedVersions,
-        parties: newSelectedParties,
-        order: newOrder,
-        orderBy: newOrderBy,
-      },
-      {
-        preserveState: true,
-        preserveScroll: true,
-      },
-    )
-  },
-)
-
-const categoriesOptions = [
-  { label: 'All', value: '' },
-  ...props.categories.map((category) => ({
-    label: category.label,
-    value: category.label,
-  })),
-]
+function fetchNewData() {
+  router.get(
+    '/',
+    {
+      page: page.value,
+      category: category.value,
+      search: search.value,
+      versions: selectedVersions.value,
+      parties: selectedParties.value,
+      order: order.value,
+      orderBy: orderBy.value,
+    },
+    {
+      preserveState: true,
+      preserveScroll: true,
+    },
+  )
+}
 </script>
 
 <template>
@@ -205,7 +205,7 @@ const categoriesOptions = [
                 :pages="meta.pages"
                 :current-page="meta.currentPage"
                 :total="meta.total"
-                @update:current-page="changePage($event)"
+                @update:current-page="onChangePage($event)"
               />
             </div>
           </div>
