@@ -8,7 +8,7 @@
 
 ## Introduction
 
-This is the source code of the [AdonisJS Packages](https://adonisjs.com/packages) website. The website is built using :
+This is the source code of the [AdonisJS Packages](https://adonisjs.com/packages) website. The website is built using:
 
 - [AdonisJS](https://adonisjs.com)
 - [VueJS](https://vuejs.org/)
@@ -43,7 +43,7 @@ If you want to add an icon for you package, make sure to pick an appropriate ima
 
 #### Launch the website
 
-In order to run the website locally, you need to :
+In order to run the website locally, you need to:
 
 - Install dependencies using `pnpm install`
 - Compile the package database using `node ace build:packages`
