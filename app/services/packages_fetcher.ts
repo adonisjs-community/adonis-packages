@@ -34,16 +34,33 @@ export class PackagesFetcher {
   /**
    * Sort packages based on PackagesFilters
    */
-  async #sortPackages(sort: PackagesFilters['sort'], pkg: PackageInfo[]) {
-    const sortFn = (property: string) => (a: any, b: any) => (b[property] || 0) - (a[property] || 0)
-    const sortDate = (property: string) => (a: any, b: any) => {
-      return new Date(b[property]).getTime() - new Date(a[property]).getTime()
+  #sortPackages(order: -1 | 1, orderBy: PackagesFilters['orderBy'], pkg: PackageInfo[]) {
+    const sortFn = (property: PackagesFilters['orderBy']) => (a: PackageInfo, b: PackageInfo) => {
+      const valueA = a[property]
+      const valueB = b[property]
+
+      if (typeof valueA === 'number' && typeof valueB === 'number') {
+        return valueA - valueB * order
+      }
+
+      if (typeof valueA === 'string' && typeof valueB === 'string') {
+        return valueA.localeCompare(valueB) * order
+      }
+
+      return 0
     }
 
-    if (sort === 'stars') pkg.sort(sortFn('stars'))
-    if (sort === 'downloads') pkg.sort(sortFn('downloads'))
-    if (sort === 'updated') pkg.sort(sortDate('lastReleaseAt'))
-    if (sort === 'created') pkg.sort(sortDate('firstReleaseAt'))
+    const sortDate = (property: string) => (a: any, b: any) => {
+      return new Date(b[property]).getTime() - new Date(a[property]).getTime() * order
+    }
+
+    if (orderBy === 'name') return pkg.sort(sortFn('name'))
+    if (orderBy === 'stars') return pkg.sort(sortFn('stars'))
+    if (orderBy === 'downloads') return pkg.sort(sortFn('downloads'))
+    if (orderBy === 'updated') return pkg.sort(sortDate('lastReleaseAt'))
+    if (orderBy === 'created') return pkg.sort(sortDate('firstReleaseAt'))
+
+    return pkg
   }
 
   /**
@@ -73,7 +90,7 @@ export class PackagesFetcher {
   /**
    * Fetch stats for all packages, either from cache or from npm/github
    */
-  async fetchPackages(options: PackagesFilters = {}) {
+  async fetchPackages(options: Partial<PackagesFilters> = {}) {
     const categoriesWithCount = this.#getCategories(this.packagesList)
 
     /**
@@ -93,6 +110,33 @@ export class PackagesFetcher {
       packages = packages.filter((pkg) => pkg.category === options.category)
     }
 
+    if (options.parties) {
+      packages = packages.filter((pkg) => {
+        console.log(options.parties, pkg.type, options.parties!.includes(pkg.type))
+        return options.parties!.includes(pkg.type)
+      })
+    }
+
+    if (options.versions) {
+      const specifiersRegex = /[\^~]/g
+      packages = packages.filter((pkg) => {
+        // Split compatibility since we can have multiple versions
+        if (!pkg.compatibility) return false
+
+        const versions = pkg.compatibility.adonis.split('||').map((v) => v.trim())
+        // Remove ^ and ~ from the version
+        const cleanVersion = versions.map((v) => v.replace(specifiersRegex, ''))
+
+        for (const version of cleanVersion) {
+          if (options.versions!.some((v) => version.startsWith(v))) {
+            return true
+          }
+        }
+
+        return false
+      })
+    }
+
     if (options.search) {
       packages = packages.filter((pkg) => {
         const search = options.search!.toLowerCase()
@@ -103,18 +147,21 @@ export class PackagesFetcher {
       })
     }
 
-    this.#sortPackages(options.sort, packages)
+    const sortedPackages = this.#sortPackages(
+      Number(options.order ?? 1) as -1 | 1,
+      options.orderBy ?? 'name',
+      packages,
+    )
 
     /**
      * Paginate the results
      */
     const perPage = 9
-    const page = +options.page! || 1
+    const page = options.page || 1
     const totalPage = Math.ceil(packages.length / perPage)
-    packages = packages.slice((page - 1) * perPage, page * perPage)
 
     return {
-      packages,
+      packages: sortedPackages.slice((page - 1) * perPage, page * perPage),
       categories: categoriesWithCount,
       meta: { pages: totalPage, total: this.packagesList.length, currentPage: page },
     }

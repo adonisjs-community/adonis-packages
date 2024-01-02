@@ -1,15 +1,22 @@
 <script setup lang="ts">
-import type { PackageCategories, PackageCategory, PackagesFilters } from '@/types'
+import type { PackageCategories, PackageCategory } from '@/types'
 
 const props = defineProps<{
+  modelValue: PackageCategory | null
   categories: PackageCategories
 }>()
 
-const filters = defineModel<PackagesFilters>({ required: true })
+const emits = defineEmits<{
+  'update:modelValue': [PackageCategory | null]
+}>()
 
-function handleCategoryClick(category: PackageCategory) {
-  filters.value.category = filters.value.category === category ? undefined : category
-  filters.value.page = 1
+function handleCategoryClick(selection: PackageCategory) {
+  if (props.modelValue === selection) {
+    emits('update:modelValue', null)
+    return
+  }
+
+  emits('update:modelValue', selection)
 }
 </script>
 
@@ -30,7 +37,7 @@ function handleCategoryClick(category: PackageCategory) {
             <div
               class="flex items-center rounded-xl px-2.4 py-2 text-sm transition-colors duration-500"
               :class="[
-                filters.category === category.label ? category.color : 'bg-base2',
+                modelValue === category.label ? category.color : 'bg-base2',
                 `group-hover:${category.color}`,
               ]"
             >
@@ -38,7 +45,7 @@ function handleCategoryClick(category: PackageCategory) {
                 class="inline-block group-hover:text-base12"
                 :class="[
                   category.icon,
-                  filters.category !== category.label ? 'text-base12' : 'text-base12',
+                  modelValue !== category.label ? 'text-base12' : 'text-base12',
                 ]"
               />
             </div>
@@ -52,5 +59,3 @@ function handleCategoryClick(category: PackageCategory) {
     </div>
   </div>
 </template>
-
-<style scoped></style>

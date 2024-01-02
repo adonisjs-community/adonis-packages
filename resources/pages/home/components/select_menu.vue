@@ -1,37 +1,62 @@
-<script setup lang="ts">
-import { computed } from 'vue'
+<script lang="ts" setup>
+import { computed, inject } from 'vue'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/vue'
 
-import type { PackagesFilters } from '@/types'
+const props = defineProps<{
+  options: {
+    label: string
+    value: string
+    description?: string
+  }[]
+  modelValue: string | string[]
+  placeholder: string
+  multiple?: boolean
+}>()
 
-const sortOptions = [
-  { label: 'Newest', value: 'created', description: 'Check out the newest packages on the block' },
-  { label: 'Top stars', value: 'stars', description: 'See the packages that are crowd favorites' },
-  {
-    label: 'Most downloads',
-    value: 'downloads',
-    description: 'Find packages that everyone is downloading',
-  },
-  {
-    label: 'Recently updated',
-    value: 'updated',
-    description: 'Look at packages that just got updated',
-  },
-] as Array<{ label: string; value: PackagesFilters['sort']; description: string }>
+const emits = defineEmits<{
+  'update:modelValue': [string | string[]]
+}>()
 
-const value = defineModel<PackagesFilters['sort']>({ default: 'downloads' })
-const selectedOption = computed(() => sortOptions.find((option) => option.value === value.value))
+const onChange = (value: string | string[]) => {
+  emits('update:modelValue', value)
+}
+
+const display = computed(() => {
+  if (Array.isArray(props.modelValue) && props.modelValue.length > 0) {
+    return `${props.modelValue.length} selected`
+  }
+
+  if (props.modelValue) {
+    const option = props.options.find((option) => option.value === props.modelValue)
+
+    if (option) {
+      return option.label
+    }
+  }
+
+  return props.placeholder
+})
+
+const group = inject<boolean>('group', false)
 </script>
 
 <template>
-  <Listbox v-model="value" as="div" data-testid="sort-by">
+  <Listbox
+    :model-value="modelValue"
+    :multiple="multiple"
+    as="div"
+    @update:model-value="onChange($event)"
+  >
     <div class="relative">
       <ListboxButton
         v-slot="{ open }"
-        class="relative w-full cursor-pointer rounded-xl py-3 pl-5 pr-10 text-left text-base12 shadow-sm md:w-[230px] !bg-base2 sm:leading-6"
+        class="relative w-full cursor-pointer py-3 pl-5 pr-10 text-left text-base12 shadow-sm md:w-[230px] sm:leading-6"
+        :class="{ '!bg-base2 rounded-xl': !group }"
       >
         <span class="w-full inline-flex truncate text-base-11">
-          <span class="truncate">{{ selectedOption?.label }}</span>
+          <span class="truncate">
+            {{ display }}
+          </span>
         </span>
         <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center pr-2">
           <i
@@ -53,7 +78,7 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
           class="absolute z-10 mt-2 w-full overflow-auto rounded-xl bg-base2 px-2 py-2 text-base shadow-lg"
         >
           <ListboxOption
-            v-for="option in sortOptions"
+            v-for="option in options"
             :key="option.value"
             v-slot="{ active, selected }"
             as="template"
@@ -68,6 +93,7 @@ const selectedOption = computed(() => sortOptions.find((option) => option.value 
                   {{ option.label }}
                 </span>
                 <span
+                  v-if="option.description"
                   class="pr-8 text-xs font-thin"
                   :class="[active ? 'text-indigo-200' : 'text-gray-500']"
                 >
