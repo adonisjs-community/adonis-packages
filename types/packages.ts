@@ -69,7 +69,7 @@ export type PackageInfo = {
   /**
    * Compatibility with AdonisJS
    */
-  compatibility: ModuleCompatibility
+  compatibility?: ModuleCompatibility
 
   /**
    * Keywords for the package. Used for search
@@ -95,16 +95,21 @@ export type PackageInfo = {
    * Last release date on npm
    */
   lastReleaseAt?: string
+
+  [key: string]: string | string[] | number | undefined | ModuleCompatibility
 }
 
 /**
  * Packages filtering options
  */
 export type PackagesFilters = {
-  category?: PackageCategory
-  search?: string
-  sort?: 'downloads' | 'stars' | 'updated' | 'created'
-  page?: number
+  category: PackageCategory
+  search: string
+  order: -1 | 1
+  orderBy: 'name' | 'downloads' | 'stars' | 'updated' | 'created'
+  versions: ('5' | '6')[]
+  parties: ModuleType[]
+  page: number
 }
 
 /**

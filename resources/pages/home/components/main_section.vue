@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import type { PackageInfo } from '@/types'
 import PackageCard from './package_card.vue'
 import Button from '@/components/ui/button.vue'
-import type { PackageInfo, PackagesFilters } from '@/types'
 
 defineProps<{
   packages: PackageInfo[]
-  filters: PackagesFilters
 }>()
+
+defineOptions({
+  inheritAttrs: false,
+})
 </script>
 
 <template>
@@ -14,6 +17,7 @@ defineProps<{
   <section
     v-if="packages.length > 0"
     class="grid grid-cols-1 gap-5"
+    :class="$attrs.class"
     md="grid-cols-1"
     lg="grid-cols-2"
     xl="grid-cols-3"
@@ -21,7 +25,7 @@ defineProps<{
     <PackageCard v-for="pkg in packages" :key="pkg.name" :package="pkg" />
   </section>
   <!-- Not found package section -->
-  <div v-else class="h-96 flex flex-col items-center justify-center">
+  <div v-else class="h-96 flex flex-col items-center justify-center" :class="$attrs.class">
     <p class="text-2xl">No packages found !</p>
     <div class="mt-4 text-center text-base10">
       If you think a package is missing here,
