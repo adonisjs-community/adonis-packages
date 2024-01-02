@@ -50,4 +50,7 @@ In order to run the website locally, you need to :
 - Create your `.env` file using the `.env.example` file. Use `node ace generate:key` to generate a new key and, not mandatory, use `gh auth token` to generate a new Github token.
 - Start the dev server using `node ace serve --watch`
 
+> [!NOTE]
+> Fist launch may take some time, as the website will need to fetch data from NPM and Github APIs.
+
 Then you can visit the website at `http://localhost:3333`
