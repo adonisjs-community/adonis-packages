@@ -48,6 +48,7 @@ In order to run the website locally, you need to:
 - Install dependencies using `pnpm install`
 - Compile the package database using `node ace build:packages`
 - Create your `.env` file using the `.env.example` file. Use `node ace generate:key` to generate a new key and, not mandatory, use `gh auth token` to generate a new Github token.
+- Migrate and seed your database using `node ace migration:fresh --seed`
 - Start the dev server using `node ace serve --watch`
 
 Then you can visit the website at `http://localhost:3333`
