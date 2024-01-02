@@ -2,6 +2,10 @@ import vine from '@vinejs/vine'
 
 import { categories } from '../../content/categories.js'
 
+/**
+ * Required
+ * @see https://vinejs.dev/docs/html_forms_and_surprises#empty-fields-lead-to-empty-strings
+ */
 vine.convertEmptyStringsToNull = true
 
 export const getHomeValidator = vine.compile(
