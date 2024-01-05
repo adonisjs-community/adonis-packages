@@ -88,6 +88,39 @@ export class PackagesFetcher {
   }
 
   /**
+   * Filter packages based on the given versions
+   * Each package have a `compatibility` property that is semver compatible
+   */
+  #filterByVersions<T extends PackageInfo>(packages: T[], versions: string[]) {
+    const specifiersRegex = /[\^~]/g
+    return packages.filter((pkg) => {
+      // Some packages don't have compatibility
+      if (!pkg.compatibility) return false
+
+      // Split compatibility since we can have multiple versions
+      const pkgVersions = pkg.compatibility.adonis.split('||').map((v) => v.trim())
+
+      // Remove ^ and ~ from the version
+      const cleanVersion = pkgVersions.map((v) => v.replace(specifiersRegex, ''))
+
+      return cleanVersion.some((v) => versions.some((version) => version.startsWith(v)))
+    })
+  }
+
+  /**
+   * Filter packages based on the given search string
+   */
+  #filterBySearch<T extends PackageInfo>(packages: T[], search: string) {
+    const loweredSearch = search.toLowerCase()
+    return packages.filter((pkg) => {
+      const name = pkg.name.toLowerCase()
+      const description = pkg.description.toLowerCase()
+
+      return name.includes(loweredSearch) || description.includes(loweredSearch)
+    })
+  }
+
+  /**
    * Fetch stats for all packages, either from cache or from npm/github
    */
   async fetchPackages(options: Partial<PackagesFilters> = {}) {
@@ -97,7 +130,6 @@ export class PackagesFetcher {
      * Get packages list with stats
      */
     const stats = await PackageStats.all()
-
     let packages = [...this.packagesList].map((pkg) => {
       const info = stats.find((info) => info.packageName === pkg.name)
       return this.#mergePackageStatsAndInfo(pkg, info!)
@@ -106,47 +138,14 @@ export class PackagesFetcher {
     /**
      * Filter them based on the given options
      */
-    if (options.category) {
-      packages = packages.filter((pkg) => pkg.category === options.category)
-    }
+    if (options.category) packages = packages.filter((pkg) => pkg.category === options.category)
+    if (options.parties) packages = packages.filter((pkg) => options.parties!.includes(pkg.type))
+    if (options.versions) packages = this.#filterByVersions(packages, options.versions)
+    if (options.search) packages = this.#filterBySearch(packages, options.search)
 
-    if (options.parties) {
-      packages = packages.filter((pkg) => {
-        return options.parties!.includes(pkg.type)
-      })
-    }
-
-    if (options.versions) {
-      const specifiersRegex = /[\^~]/g
-      packages = packages.filter((pkg) => {
-        // Some packages don't have compatibility
-        if (!pkg.compatibility) return false
-
-        // Split compatibility since we can have multiple versions
-        const versions = pkg.compatibility.adonis.split('||').map((v) => v.trim())
-        // Remove ^ and ~ from the version
-        const cleanVersion = versions.map((v) => v.replace(specifiersRegex, ''))
-
-        for (const version of cleanVersion) {
-          if (options.versions!.some((v) => version.startsWith(v))) {
-            return true
-          }
-        }
-
-        return false
-      })
-    }
-
-    if (options.search) {
-      packages = packages.filter((pkg) => {
-        const search = options.search!.toLowerCase()
-        const name = pkg.name.toLowerCase()
-        const description = pkg.description.toLowerCase()
-
-        return name.includes(search) || description.includes(search)
-      })
-    }
-
+    /**
+     * Sort the results
+     */
     const sortedPackages = this.#sortPackages(
       options.order ?? 1,
       options.orderBy ?? 'name',
@@ -172,9 +171,7 @@ export class PackagesFetcher {
    */
   async fetchPackage(name: string) {
     const pkg = this.packagesList.find((pkg_) => pkg_.name === name)
-    if (!pkg) {
-      throw new Error(`Cannot find package ${name}`)
-    }
+    if (!pkg) throw new Error(`Cannot find package ${name}`)
 
     const stats = await PackageStats.findByOrFail('packageName', name)
     const readme = await this.#getPackageReadme(pkg)
