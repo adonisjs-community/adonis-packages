@@ -11,11 +11,11 @@ export default class PackagesController {
    */
   @inject()
   async getHome(ctx: HttpContext, statsFetcher: PackagesFetcher) {
-    const validatedParams = await ctx.request.validateUsing(getHomeValidator)
+    const payload = await ctx.request.validateUsing(getHomeValidator)
 
     return ctx.inertia.render<GetHomeResponse>(
       'home/main',
-      await statsFetcher.fetchPackages(validatedParams),
+      await statsFetcher.fetchPackages(payload),
     )
   }
 
