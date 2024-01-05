@@ -22,29 +22,17 @@ import type {
 } from '@/types'
 
 const props = defineProps<GetHomeResponse>()
+const params = useUrlSearchParams<Partial<PackagesFilters>>('history')
 
 const scrollToTopRef = ref<HTMLElement | null>(null)
 function scrollToTop() {
-  const el = scrollToTopRef.value
-
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
-  }
+  if (!scrollToTopRef.value) return
+  scrollToTopRef.value.scrollIntoView({ behavior: 'smooth' })
 }
 
-const params = useUrlSearchParams<Partial<PackagesFilters>>('history')
-
-const page = ref<number>(props.meta.currentPage || 1)
-// Do not watch page to avoid 2 requests when filters change
-function onChangePage(newPage: number) {
-  changePage(newPage)
-  fetchNewData()
-}
-function changePage(newPage: number) {
-  page.value = newPage
-  scrollToTop()
-}
-
+/**
+ * Package categories
+ */
 const categories = ref<PackageCategories>(props.categories)
 const categoriesOptions = [
   { label: 'All', value: '' },
@@ -55,27 +43,17 @@ const categoriesOptions = [
 ]
 const category = ref<PackageCategory>(params.category || ('' as PackageCategory))
 
-watch(category, () => {
-  changePage(1)
-  fetchNewData()
-})
-
+/**
+ * Search
+ */
 const search = ref<string>((params.search as string) || '')
-watchDebounced(
-  search,
-  () => {
-    changePage(1)
-    fetchNewData()
-  },
-  { debounce: 400 },
-)
+watchDebounced(search, () => fetchNewPageData(1), { debounce: 400 })
 
+/**
+ * Order by
+ */
 const orderByOptions = [
-  {
-    label: 'Name',
-    value: 'name',
-    description: 'Order packages by their name',
-  },
+  { label: 'Name', value: 'name', description: 'Order packages by their name' },
   {
     label: 'Creation Date',
     value: 'created',
@@ -96,22 +74,18 @@ const orderByOptions = [
 const order = ref<SortOrder>(params.order ? (+params.order as SortOrder) : 1)
 const orderBy = ref<string>(params.orderBy || orderByOptions[0].value)
 
-watch([order, orderBy], () => {
-  changePage(1)
-  fetchNewData()
-})
-
+/**
+ * Package versions
+ */
 const versionsOptions = [
   { value: '6', label: 'v6' },
   { value: '5', label: 'v5' },
 ]
 const selectedVersions = ref<string[]>((params.versions as string[]) ?? [])
 
-watch(selectedVersions, () => {
-  changePage(1)
-  fetchNewData()
-})
-
+/**
+ * Package parties
+ */
 const partiesOptions = [
   { value: 'official', label: 'Official' },
   { value: 'community', label: 'Community' },
@@ -119,16 +93,16 @@ const partiesOptions = [
 ]
 const selectedParties = ref<ModuleType[]>((params.parties as ModuleType[]) ?? [])
 
-watch(selectedParties, () => {
-  changePage(1)
-  fetchNewData()
-})
+/**
+ * Refetch when any of the filters change
+ */
+watch([selectedParties, order, orderBy, selectedVersions, category], () => fetchNewPageData(1))
 
-function fetchNewData() {
+function fetchNewPageData(page: number) {
   router.get(
     '/',
     {
-      page: page.value,
+      page,
       category: category.value,
       search: search.value,
       versions: selectedVersions.value,
@@ -136,11 +110,10 @@ function fetchNewData() {
       order: order.value,
       orderBy: orderBy.value,
     },
-    {
-      preserveState: true,
-      preserveScroll: true,
-    },
+    { preserveState: true, preserveScroll: true },
   )
+
+  scrollToTop()
 }
 </script>
 
@@ -206,7 +179,7 @@ function fetchNewData() {
                 :pages="meta.pages"
                 :current-page="meta.currentPage"
                 :total="meta.total"
-                @update:current-page="onChangePage($event)"
+                @update:current-page="fetchNewPageData"
               />
             </div>
           </div>
