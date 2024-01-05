@@ -1,5 +1,6 @@
 import vine from '@vinejs/vine'
 
+import type { SortOrder } from '#types/packages'
 import { categories } from '../../content/categories.js'
 
 /**
@@ -17,7 +18,7 @@ export const getHomeValidator = vine.compile(
     parties: vine.array(vine.enum(['3rd-party', 'community', 'official'])).optional(),
     order: vine
       .enum(['-1', '1'])
-      .transform((value) => Number(value) as -1 | 1)
+      .transform((value) => Number(value) as SortOrder)
       .optional(),
     orderBy: vine.enum(['name', 'downloads', 'stars', 'updated', 'created']).optional(),
   }),

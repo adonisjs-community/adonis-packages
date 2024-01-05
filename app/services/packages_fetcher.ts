@@ -5,7 +5,7 @@ import PackageStats from '#models/package_stats'
 import { categories } from '../../content/categories.js'
 import { MarkdownRenderer } from './markdown_renderer.js'
 import type { PackageFetcher } from './package_fetcher.js'
-import type { PackageInfo, PackagesFilters } from '#types/main'
+import type { PackageInfo, PackagesFilters, SortOrder } from '#types/main'
 
 export class PackagesFetcher {
   #markdownRenderer = new MarkdownRenderer()
@@ -34,7 +34,7 @@ export class PackagesFetcher {
   /**
    * Sort packages based on PackagesFilters
    */
-  #sortPackages(order: -1 | 1, orderBy: PackagesFilters['orderBy'], pkg: PackageInfo[]) {
+  #sortPackages(order: SortOrder, orderBy: PackagesFilters['orderBy'], pkg: PackageInfo[]) {
     const sortFn = (property: PackagesFilters['orderBy']) => (a: PackageInfo, b: PackageInfo) => {
       const valueA = a[property]
       const valueB = b[property]
