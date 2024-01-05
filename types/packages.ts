@@ -100,12 +100,17 @@ export type PackageInfo = {
 }
 
 /**
+ * Sort order. -1 is descending, 1 is ascending
+ */
+export type SortOrder = -1 | 1
+
+/**
  * Packages filtering options
  */
 export type PackagesFilters = {
   category: PackageCategory
   search: string
-  order: -1 | 1
+  order: SortOrder
   orderBy: 'name' | 'downloads' | 'stars' | 'updated' | 'created'
   versions: ('5' | '6')[]
   parties: ModuleType[]

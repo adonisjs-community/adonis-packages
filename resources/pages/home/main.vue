@@ -18,6 +18,7 @@ import type {
   PackageCategories,
   PackageCategory,
   PackagesFilters,
+  SortOrder,
 } from '@/types'
 
 const props = defineProps<GetHomeResponse>()
@@ -92,7 +93,7 @@ const orderByOptions = [
     description: 'Sort packages by their last update date',
   },
 ]
-const order = ref<-1 | 1>(params.order ? (Number(params.order) as -1 | 1) : 1)
+const order = ref<SortOrder>(params.order ? (+params.order as SortOrder) : 1)
 const orderBy = ref<string>(params.orderBy || orderByOptions[0].value)
 
 watch([order, orderBy], () => {
