@@ -8,45 +8,29 @@ const props = defineProps<{
     value: string
     description?: string
   }[]
-  modelValue: string | string[]
   placeholder: string
   multiple?: boolean
 }>()
 
-const emits = defineEmits<{
-  'update:modelValue': [string | string[]]
-}>()
-
-const onChange = (value: string | string[]) => {
-  emits('update:modelValue', value)
-}
+const group = inject<boolean>('group', false)
+const model = defineModel<string | string[]>({ required: true })
 
 const display = computed(() => {
-  if (Array.isArray(props.modelValue) && props.modelValue.length > 0) {
-    return `${props.modelValue.length} selected`
+  if (Array.isArray(model.value) && model.length > 0) {
+    return `${model.length} selected`
   }
 
-  if (props.modelValue) {
-    const option = props.options.find((option) => option.value === props.modelValue)
-
-    if (option) {
-      return option.label
-    }
+  if (model) {
+    const option = props.options.find((option) => option.value === model.value)
+    if (option) return option.label
   }
 
   return props.placeholder
 })
-
-const group = inject<boolean>('group', false)
 </script>
 
 <template>
-  <Listbox
-    :model-value="modelValue"
-    :multiple="multiple"
-    as="div"
-    @update:model-value="onChange($event)"
-  >
+  <Listbox v-model="model" :multiple="multiple" as="div">
     <div class="relative">
       <ListboxButton
         v-slot="{ open }"
