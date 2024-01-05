@@ -2,21 +2,18 @@
 import type { PackageCategories, PackageCategory } from '@/types'
 
 const props = defineProps<{
-  modelValue: PackageCategory | null
   categories: PackageCategories
 }>()
 
-const emits = defineEmits<{
-  'update:modelValue': [PackageCategory | null]
-}>()
+const model = defineModel<PackageCategory | null>()
 
 function handleCategoryClick(selection: PackageCategory) {
-  if (props.modelValue === selection) {
-    emits('update:modelValue', null)
+  if (model.value === selection) {
+    model.value = null
     return
   }
 
-  emits('update:modelValue', selection)
+  model.value = selection
 }
 </script>
 
