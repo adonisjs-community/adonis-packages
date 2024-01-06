@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { Head, router } from '@inertiajs/vue3'
 import { useUrlSearchParams, watchDebounced } from '@vueuse/core'
 
@@ -12,6 +12,9 @@ import Pagination from './components/pagination.vue'
 import SelectMenu from './components/select_menu.vue'
 import MainSection from './components/main_section.vue'
 import ButtonGroup from './components/button_group.vue'
+import FiltersModal from './components/filters/filters_modal.vue'
+import FilterParties from './components/filters/filter_parties.vue'
+import FilterVersions from './components/filters/filter_versions.vue'
 import type {
   GetHomeResponse,
   ModuleType,
@@ -115,6 +118,31 @@ function fetchNewPageData(page: number) {
 
   scrollToTop()
 }
+
+const filters = computed(() => {
+  return {
+    category: category.value,
+    versions: selectedVersions.value,
+    parties: selectedParties.value,
+    order: order.value,
+    orderBy: orderBy.value,
+  }
+})
+
+const options = {
+  categories: categoriesOptions,
+  versions: versionsOptions,
+  parties: partiesOptions,
+  orderBy: orderByOptions,
+}
+
+function onUpdateFilters(newFilters: PackagesFilters) {
+  category.value = newFilters.category
+  selectedVersions.value = newFilters.versions
+  selectedParties.value = newFilters.parties
+  order.value = newFilters.order
+  orderBy.value = newFilters.orderBy
+}
 </script>
 
 <template>
@@ -136,37 +164,41 @@ function fetchNewPageData(page: number) {
           <div class="w-full flex flex-col">
             <div
               ref="scrollToTopRef"
-              class="w-full flex flex-col flex-wrap justify-between gap-2"
-              md="items-center flex-row"
+              class="w-full flex flex-row justify-between gap-2"
+              md="items-center"
             >
-              <SearchBar v-model="search" />
+              <SearchBar v-model="search" class="grow lg:grow-0" />
 
-              <div class="flex flex-row flex-wrap gap-2">
-                <SelectMenu
-                  v-model="category"
-                  class="w-48 md:hidden"
-                  :options="categoriesOptions"
-                  placeholder="Select a category"
+              <div class="lg:hidden">
+                <FiltersModal
+                  :options="options"
+                  :filters="filters"
+                  @update:filters="onUpdateFilters"
                 />
+              </div>
 
-                <SelectMenu
+              <div class="hidden flex-row gap-2 lg:flex">
+                <FilterVersions
                   v-model="selectedVersions"
-                  :options="versionsOptions"
-                  multiple
-                  placeholder="Select a version"
+                  class="md:w-[230px]"
+                  :versions="versionsOptions"
                 />
 
-                <SelectMenu
+                <FilterParties
                   v-model="selectedParties"
-                  :options="partiesOptions"
-                  multiple
-                  placeholder="Select a party"
+                  class="md:w-[230px]"
+                  :parties="partiesOptions"
                 />
 
                 <ButtonGroup>
                   <Order v-model="order" />
 
-                  <SelectMenu v-model="orderBy" :options="orderByOptions" placeholder="Order by" />
+                  <SelectMenu
+                    v-model="orderBy"
+                    class="md:w-[230px]"
+                    :options="orderByOptions"
+                    placeholder="Order by"
+                  />
                 </ButtonGroup>
               </div>
             </div>
