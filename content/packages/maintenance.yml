@@ -1,0 +1,15 @@
+name: adonisjs-maintenance
+description: A maintenance mode for the AdonisJS framework
+repo: MichaelBelgium/adonisjs-maintenance#master
+npm: 'adonisjs-maintenance'
+icon: ''
+github: https://github.com/MichaelBelgium/adonisjs-maintenance
+website: https://github.com/MichaelBelgium/adonisjs-maintenance
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Michael V.
+    github: MichaelBelgium
+compatibility:
+  adonis: ^5.9.0
