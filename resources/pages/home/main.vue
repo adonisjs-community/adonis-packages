@@ -78,10 +78,22 @@ const orderBy = ref<string>(params.orderBy || orderByOptions[0].value)
  * Package versions
  */
 const versionsOptions = [
-  { value: '6', label: 'v6' },
-  { value: '5', label: 'v5' },
+  {
+    value: '6',
+    label: 'AdonisJS 6',
+    color: 'bg-purple5 group-hover:bg-purple5',
+    icon: 'i-mynaui-six-hexagon',
+    subline: 'Compatible with AdonisJS 6',
+  },
+  {
+    value: '5',
+    label: 'AdonisJS 5',
+    color: 'bg-violet5 group-hover:bg-violet5',
+    icon: 'i-mynaui-five-hexagon',
+    subline: 'Compatible with AdonisJS 5',
+  },
 ]
-const selectedVersions = ref<string[]>((params.versions as string[]) ?? [])
+const selectedVersion = ref<string | null>(null)
 
 /**
  * Package parties
@@ -95,7 +107,7 @@ const selectedParties = ref<ModuleType[]>((params.parties as ModuleType[]) ?? []
 /**
  * Refetch when any of the filters change
  */
-watch([selectedParties, order, orderBy, selectedVersions, category], () => fetchNewPageData(1))
+watch([selectedParties, order, orderBy, selectedVersion, category], () => fetchNewPageData(1))
 
 function fetchNewPageData(page: number) {
   router.get(
@@ -104,7 +116,7 @@ function fetchNewPageData(page: number) {
       page,
       category: category.value,
       search: search.value,
-      versions: selectedVersions.value,
+      version: selectedVersion.value,
       parties: selectedParties.value,
       order: order.value,
       orderBy: orderBy.value,
@@ -129,7 +141,12 @@ function fetchNewPageData(page: number) {
       <div class="p-container">
         <div class="items-start gap-4 2xl:gap-12" md="grid grid-cols-[18em_1fr]">
           <!-- Category filters -->
-          <Filters v-model="category" :categories="categories" />
+          <Filters
+            v-model:category="category"
+            v-model:version="selectedVersion"
+            :categories="categories"
+            :versions="versionsOptions"
+          />
 
           <!-- Search, version and party filters and sort -->
           <div class="w-full flex flex-col">
@@ -146,13 +163,6 @@ function fetchNewPageData(page: number) {
                   class="w-48 md:hidden"
                   :options="categoriesOptions"
                   placeholder="Select a category"
-                />
-
-                <SelectMenu
-                  v-model="selectedVersions"
-                  :options="versionsOptions"
-                  multiple
-                  placeholder="Select a version"
                 />
 
                 <SelectMenu

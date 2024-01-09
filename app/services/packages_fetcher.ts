@@ -91,7 +91,7 @@ export class PackagesFetcher {
    * Filter packages based on the given versions
    * Each package have a `compatibility` property that is semver compatible
    */
-  #filterByVersions<T extends PackageInfo>(packages: T[], versions: string[]) {
+  #filterByVersions<T extends PackageInfo>(packages: T[], version: string) {
     const specifiersRegex = /[\^~]/g
     return packages.filter((pkg) => {
       // Some packages don't have compatibility
@@ -103,7 +103,7 @@ export class PackagesFetcher {
       // Remove ^ and ~ from the version
       const cleanVersion = pkgVersions.map((v) => v.replace(specifiersRegex, ''))
 
-      return cleanVersion.some((v) => versions.some((version) => version.startsWith(v)))
+      return cleanVersion.some((v) => v.startsWith(version))
     })
   }
 
@@ -140,7 +140,7 @@ export class PackagesFetcher {
      */
     if (options.category) packages = packages.filter((pkg) => pkg.category === options.category)
     if (options.parties) packages = packages.filter((pkg) => options.parties!.includes(pkg.type))
-    if (options.versions) packages = this.#filterByVersions(packages, options.versions)
+    if (options.version) packages = this.#filterByVersions(packages, options.version)
     if (options.search) packages = this.#filterBySearch(packages, options.search)
 
     /**
