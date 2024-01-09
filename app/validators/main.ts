@@ -14,7 +14,7 @@ export const getHomeValidator = vine.compile(
     page: vine.number().optional(),
     category: vine.enum(categories.map((category) => category.label)).optional(),
     search: vine.string().optional(),
-    versions: vine.array(vine.enum(['5', '6'])).optional(),
+    version: vine.enum(['5', '6']).optional(),
     parties: vine.array(vine.enum(['3rd-party', 'official'])).optional(),
     order: vine
       .enum(['-1', '1'])

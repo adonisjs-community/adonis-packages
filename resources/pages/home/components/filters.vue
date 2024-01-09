@@ -3,22 +3,51 @@ import type { PackageCategories, PackageCategory } from '@/types'
 
 const props = defineProps<{
   categories: PackageCategories
+  versions: Array<{ icon: string; label: string; value: string; color: string; subline: string }>
 }>()
 
-const model = defineModel<PackageCategory | null>()
-
-function handleCategoryClick(selection: PackageCategory) {
-  if (model.value === selection) {
-    model.value = null
-    return
-  }
-
-  model.value = selection
-}
+const categoryModel = defineModel<PackageCategory | null>('category')
+const versionModel = defineModel<string | null>('version')
 </script>
 
 <template>
   <div class="hidden flex-col gap-y-8" md="flex">
+    <div>
+      <p class="text-3xl font-bold">Version</p>
+      <div class="mt-6 flex gap-x-6">
+        <div class="flex flex-col gap-y-4 font-content">
+          <button
+            v-for="version in versions"
+            :key="version.value"
+            class="group flex cursor-pointer items-center gap-x-4 text-left transition-all duration-200 ease-in-out"
+            hover="translate-x-2"
+            data-testid="category-button"
+            @click="versionModel = versionModel === version.value ? null : version.value"
+          >
+            <div
+              class="flex items-center rounded-xl px-2.4 py-2 text-sm transition-colors duration-500"
+              :class="[
+                versionModel === version.value ? version.color : 'bg-base2',
+                `group-hover:${version.color}`,
+              ]"
+            >
+              <i
+                class="inline-block group-hover:text-base12"
+                :class="[
+                  version.icon,
+                  versionModel !== version.label ? 'text-base12' : 'text-base12',
+                ]"
+              />
+            </div>
+            <div>
+              <p data-testid="category-label" class="text-base12">{{ version.label }}</p>
+              <p class="text-xs text-base10">{{ version.subline }}</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div>
       <p class="text-3xl font-bold">Categories</p>
       <div class="mt-6 flex gap-x-6">
@@ -29,12 +58,12 @@ function handleCategoryClick(selection: PackageCategory) {
             class="group flex cursor-pointer items-center gap-x-4 text-left transition-all duration-200 ease-in-out"
             hover="translate-x-2"
             data-testid="category-button"
-            @click="handleCategoryClick(category.label)"
+            @click="categoryModel = categoryModel === category.label ? null : category.label"
           >
             <div
               class="flex items-center rounded-xl px-2.4 py-2 text-sm transition-colors duration-500"
               :class="[
-                modelValue === category.label ? category.color : 'bg-base2',
+                categoryModel === category.label ? category.color : 'bg-base2',
                 `group-hover:${category.color}`,
               ]"
             >
@@ -42,7 +71,7 @@ function handleCategoryClick(selection: PackageCategory) {
                 class="inline-block group-hover:text-base12"
                 :class="[
                   category.icon,
-                  modelValue !== category.label ? 'text-base12' : 'text-base12',
+                  categoryModel !== category.label ? 'text-base12' : 'text-base12',
                 ]"
               />
             </div>

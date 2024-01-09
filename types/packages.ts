@@ -112,7 +112,7 @@ export type PackagesFilters = {
   search: string
   order: SortOrder
   orderBy: 'name' | 'downloads' | 'stars' | 'updated' | 'created'
-  versions: ('5' | '6')[]
+  version?: '5' | '6'
   parties: ModuleType[]
   page: number
 }
