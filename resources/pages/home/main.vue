@@ -14,7 +14,6 @@ import MainSection from './components/main_section.vue'
 import ButtonGroup from './components/button_group.vue'
 import type {
   GetHomeResponse,
-  ModuleType,
   PackageCategories,
   PackageCategory,
   PackagesFilters,
@@ -93,33 +92,27 @@ const versionsOptions = [
     subline: 'Compatible with AdonisJS 5',
   },
 ]
-const selectedVersion = ref<string | null>(null)
 
-/**
- * Package parties
- */
-const partiesOptions = [
-  { value: 'official', label: 'Official' },
-  { value: '3rd-party', label: '3rd Party' },
-]
-const selectedParties = ref<ModuleType[]>((params.parties as ModuleType[]) ?? [])
+const selectedVersion = ref<string | null>(params.version || null)
+
+const officialPackagesOnly = ref<boolean>(params.officialOnly)
 
 /**
  * Refetch when any of the filters change
  */
-watch([selectedParties, order, orderBy, selectedVersion, category], () => fetchNewPageData(1))
+watch([officialPackagesOnly, order, orderBy, selectedVersion, category], () => fetchNewPageData(1))
 
 function fetchNewPageData(page: number) {
   router.get(
     '/',
     {
       page,
-      category: category.value,
-      search: search.value,
-      version: selectedVersion.value,
-      parties: selectedParties.value,
       order: order.value,
+      search: search.value,
       orderBy: orderBy.value,
+      category: category.value,
+      version: selectedVersion.value,
+      officialOnly: officialPackagesOnly.value,
     },
     { preserveState: true, preserveScroll: true },
   )
@@ -160,22 +153,33 @@ function fetchNewPageData(page: number) {
               <div class="flex flex-row flex-wrap gap-2">
                 <SelectMenu
                   v-model="category"
-                  class="w-48 md:hidden"
+                  class="w-full md:hidden"
                   :options="categoriesOptions"
                   placeholder="Select a category"
                 />
 
-                <SelectMenu
-                  v-model="selectedParties"
-                  :options="partiesOptions"
-                  multiple
-                  placeholder="Select a party"
-                />
+                <button
+                  theme="primary"
+                  size="s"
+                  class="flex items-center justify-center rounded-xl bg-base2 px-4 text-base shadow-sm transition-all space-x-2 hover:(bg-base3 shadow-md)"
+                  :class="{
+                    'bg-base shadow-md': officialPackagesOnly,
+                  }"
+                  @click="officialPackagesOnly = !officialPackagesOnly"
+                >
+                  <i class="i-fluent-emoji-military-medal inline-block text-xl" />
+                  <p v-if="officialPackagesOnly" class="text-sm text-base11">Official packages</p>
+                </button>
 
-                <ButtonGroup>
+                <ButtonGroup class="flex-1" md="flex-auto">
                   <Order v-model="order" />
 
-                  <SelectMenu v-model="orderBy" :options="orderByOptions" placeholder="Order by" />
+                  <SelectMenu
+                    v-model="orderBy"
+                    class="flex-1"
+                    :options="orderByOptions"
+                    placeholder="Order by"
+                  />
                 </ButtonGroup>
               </div>
             </div>

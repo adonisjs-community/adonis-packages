@@ -139,7 +139,7 @@ export class PackagesFetcher {
      * Filter them based on the given options
      */
     if (options.category) packages = packages.filter((pkg) => pkg.category === options.category)
-    if (options.parties) packages = packages.filter((pkg) => options.parties!.includes(pkg.type))
+    if (options.officialOnly) packages = packages.filter((pkg) => pkg.type === 'official')
     if (options.version) packages = this.#filterByVersions(packages, options.version)
     if (options.search) packages = this.#filterBySearch(packages, options.search)
 
