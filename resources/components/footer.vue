@@ -35,7 +35,7 @@ import Socials from '@/components/socials.vue'
               <a href="https://japa.dev/" class="item">Japa</a>
               <a href="https://edgejs.dev/docs/introduction" class="item">EdgeJS</a>
               <a href="https://vinejs.dev/docs/introduction" class="item">VineJS</a>
-              <a href="https://bentocache.julr.dev" class="item">BentoCache</a>
+              <a href="https://bentocache.dev" class="item">Bentocache</a>
             </div>
             <div class="flex flex-col gap-y-2 text-sm font-content">
               <p class="mb-2 text-lg text-base12 font-title">Others</p>

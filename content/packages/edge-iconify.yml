@@ -4,7 +4,7 @@ npm: edge-iconify
 description: Iconify integration for the Edge template engine
 icon: 'edge.jpeg'
 compatibility:
-  adonis: ^5.0.0
+  adonis: ^5.0.0 || ^6.0.0
 firstReleaseAt: '2022-07-13T06:38:27.337Z'
 lastReleaseAt: '2023-11-07T05:59:57.669Z'
 type: official

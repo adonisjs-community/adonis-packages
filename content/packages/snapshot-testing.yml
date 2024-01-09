@@ -12,4 +12,4 @@ maintainers:
   - name: japa
     github: japa
 compatibility:
-  adonis: ^5.0.0
+  adonis: ^5.0.0 || ^6.0.0
