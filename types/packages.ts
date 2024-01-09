@@ -10,7 +10,7 @@ export type ModuleCompatibility = {
 /**
  * Module type
  */
-export type ModuleType = 'community' | 'official' | '3rd-party'
+export type ModuleType = 'official' | '3rd-party'
 
 /**
  * Package category type
@@ -62,7 +62,7 @@ export type PackageInfo = {
   category: PackageCategory
 
   /**
-   * Type of the package. Made by the community, official, or 3rd-party
+   * Type of the package.
    */
   type: ModuleType
 

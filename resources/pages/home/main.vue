@@ -91,7 +91,6 @@ const selectedVersions = ref<string[]>((params.versions as string[]) ?? [])
  */
 const partiesOptions = [
   { value: 'official', label: 'Official' },
-  { value: 'community', label: 'Community' },
   { value: '3rd-party', label: '3rd Party' },
 ]
 const selectedParties = ref<ModuleType[]>((params.parties as ModuleType[]) ?? [])

@@ -107,7 +107,6 @@ export default class AddPackage extends BaseCommand {
     const repoScope = repoName.split('/')[0]
     const officialScopes = ['adonisjs', 'japa', 'edge-js', 'vinejs']
 
-    if (repoScope === 'adonisjs-community') return 'community'
     if (officialScopes.includes(repoScope)) return 'official'
 
     return 'community'
