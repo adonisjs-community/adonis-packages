@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import { inject } from 'vue'
 
-import type { SortOrder } from '../../../types'
-
-const order = defineModel<SortOrder>()
+const order = defineModel<1 | -1>()
 const group = inject<boolean>('group', false)
 </script>
 

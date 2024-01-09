@@ -16,8 +16,8 @@ const group = inject<boolean>('group', false)
 const model = defineModel<string | string[]>({ required: true })
 
 const display = computed(() => {
-  if (Array.isArray(model.value) && model.value.length > 0) {
-    return `${model.value.length} selected`
+  if (Array.isArray(model.value) && model.length > 0) {
+    return `${model.length} selected`
   }
 
   if (model) {
@@ -34,8 +34,8 @@ const display = computed(() => {
     <div class="relative">
       <ListboxButton
         v-slot="{ open }"
-        class="relative cursor-pointer py-3 pl-5 pr-10 text-left text-base12 shadow-sm sm:leading-6"
-        :class="[{ '!bg-base2 rounded-xl': !group }, $attrs.class]"
+        class="relative w-full cursor-pointer py-3 pl-5 pr-10 text-left text-base12 shadow-sm md:w-[230px] sm:leading-6"
+        :class="{ '!bg-base2 rounded-xl': !group }"
       >
         <span class="w-full inline-flex truncate text-base-11">
           <span class="truncate">
