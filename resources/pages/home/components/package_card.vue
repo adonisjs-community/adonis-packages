@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { Link } from '@inertiajs/vue3'
 
 import Tag from '@/components/tag.vue'
@@ -7,9 +8,11 @@ import PackageLogo from '@/components/package_logo.vue'
 import PackageStats from '@/components/package_stats.vue'
 import AdonisIcon from '@/components/icons/adonis_icon.vue'
 
-defineProps<{
+const props = defineProps<{
   package: PackageInfo
 }>()
+
+const isV6Compatible = computed(() => props.package.compatibility?.adonis.includes('^6'))
 </script>
 
 <template>
@@ -19,7 +22,10 @@ defineProps<{
     target="_blank"
   >
     <div class="w-full flex items-center justify-between">
-      <Tag data-testid="package-category">{{ package.category }}</Tag>
+      <div class="flex gap-2">
+        <Tag data-testid="package-category">{{ package.category }}</Tag>
+        <Tag v-if="isV6Compatible" class="bg-primary bg-opacity70">V6 support</Tag>
+      </div>
       <i
         class="i-icon-park-outline-share inline-block text-xs text-base10 opacity-0 transition duration-500 hover:text-white group-hover:opacity-100"
       />
