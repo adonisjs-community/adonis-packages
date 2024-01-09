@@ -113,7 +113,7 @@ export type PackagesFilters = {
   order: SortOrder
   orderBy: 'name' | 'downloads' | 'stars' | 'updated' | 'created'
   version?: '5' | '6'
-  parties: ModuleType[]
+  officialOnly: boolean
   page: number
 }
 

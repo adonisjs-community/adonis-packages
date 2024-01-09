@@ -5,7 +5,7 @@ provide('group', true)
 </script>
 
 <template>
-  <div class="flex flex-row rounded-xl bg-base2 divide-x divide-zinc-700">
+  <div class="flex flex-row rounded-xl bg-base2 divide-x divide-zinc-800">
     <slot />
   </div>
 </template>
