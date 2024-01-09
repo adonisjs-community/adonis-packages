@@ -35,10 +35,7 @@ function scrollToTop() {
 const categories = ref<PackageCategories>(props.categories)
 const categoriesOptions = [
   { label: 'All', value: '' },
-  ...props.categories.map((category) => ({
-    label: category.label,
-    value: category.label,
-  })),
+  ...props.categories.map((category) => ({ label: category.label, value: category.label })),
 ]
 const category = ref<PackageCategory>(params.category || ('' as PackageCategory))
 
@@ -74,27 +71,9 @@ const order = ref<SortOrder>(params.order ? (+params.order as SortOrder) : 1)
 const orderBy = ref<string>(params.orderBy || orderByOptions[0].value)
 
 /**
- * Package versions
+ * Filters
  */
-const versionsOptions = [
-  {
-    value: '6',
-    label: 'AdonisJS 6',
-    color: 'bg-purple5 group-hover:bg-purple5',
-    icon: 'i-mynaui-six-hexagon',
-    subline: 'Compatible with AdonisJS 6',
-  },
-  {
-    value: '5',
-    label: 'AdonisJS 5',
-    color: 'bg-violet5 group-hover:bg-violet5',
-    icon: 'i-mynaui-five-hexagon',
-    subline: 'Compatible with AdonisJS 5',
-  },
-]
-
 const selectedVersion = ref<string | null>(params.version || null)
-
 const officialPackagesOnly = ref<boolean>(params.officialOnly)
 
 /**
@@ -103,20 +82,17 @@ const officialPackagesOnly = ref<boolean>(params.officialOnly)
 watch([officialPackagesOnly, order, orderBy, selectedVersion, category], () => fetchNewPageData(1))
 
 function fetchNewPageData(page: number) {
-  router.get(
-    '/',
-    {
-      page,
-      order: order.value,
-      search: search.value,
-      orderBy: orderBy.value,
-      category: category.value,
-      version: selectedVersion.value,
-      officialOnly: officialPackagesOnly.value,
-    },
-    { preserveState: true, preserveScroll: true },
-  )
+  const props = {
+    page,
+    order: order.value,
+    search: search.value,
+    orderBy: orderBy.value,
+    category: category.value,
+    version: selectedVersion.value,
+    officialOnly: officialPackagesOnly.value,
+  }
 
+  router.get('/', props, { preserveState: true, preserveScroll: true })
   scrollToTop()
 }
 </script>
@@ -138,7 +114,6 @@ function fetchNewPageData(page: number) {
             v-model:category="category"
             v-model:version="selectedVersion"
             :categories="categories"
-            :versions="versionsOptions"
           />
 
           <!-- Search, version and party filters and sort -->
