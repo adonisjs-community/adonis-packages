@@ -62,7 +62,7 @@ test.group('Packages Fetcher', (group) => {
       await packageFactory(),
       await packageFactory(),
       await packageFactory(),
-    ]).fetchPackages({ sort: 'stars' })
+    ]).fetchPackages({ orderBy: 'stars' })
 
     const stars = result.packages.map((pkg) => pkg.stars)
 

@@ -109,7 +109,7 @@ export default class AddPackage extends BaseCommand {
 
     if (officialScopes.includes(repoScope)) return 'official'
 
-    return 'community'
+    return '3rd-party'
   }
 
   @inject()
