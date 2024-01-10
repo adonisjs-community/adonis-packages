@@ -12,8 +12,8 @@ dependencies:
     specifier: 6.2.0
     version: 6.2.0(@adonisjs/assembler@7.0.0)(@vinejs/vine@1.7.0)(edge.js@6.0.1)
   '@adonisjs/inertia':
-    specifier: 1.0.0-5
-    version: 1.0.0-5(@adonisjs/assembler@7.0.0)(@adonisjs/core@6.2.0)(@adonisjs/session@7.0.0)(@japa/api-client@2.0.2)(edge.js@6.0.1)
+    specifier: 1.0.0-6
+    version: 1.0.0-6(@adonisjs/core@6.2.0)(@adonisjs/session@7.0.0)(@japa/api-client@2.0.2)(edge.js@6.0.1)
   '@adonisjs/lucid':
     specifier: 19.0.0-8
     version: 19.0.0-8(@adonisjs/assembler@7.0.0)(@adonisjs/core@6.2.0)(luxon@3.4.4)(sqlite3@5.1.7)
@@ -454,23 +454,24 @@ packages:
       vary: 1.1.2
       youch: 3.3.3
 
-  /@adonisjs/inertia@1.0.0-5(@adonisjs/assembler@7.0.0)(@adonisjs/core@6.2.0)(@adonisjs/session@7.0.0)(@japa/api-client@2.0.2)(edge.js@6.0.1):
-    resolution: {integrity: sha512-dFlUOiBeq/IykLoRAhKrhlfpmo1aLHgqQuWfadr4oP31Tt5dEd3QvEG/Nw90RhrMdqKTV3QT2DuUcf+eOVfZtg==}
+  /@adonisjs/inertia@1.0.0-6(@adonisjs/core@6.2.0)(@adonisjs/session@7.0.0)(@japa/api-client@2.0.2)(edge.js@6.0.1):
+    resolution: {integrity: sha512-DBY0DG+oF5LwPoHzsXbZn3YDc6yYgJbJHzcXO2FGv1H9l7ByP9Rv5T3sUWGSRnF19aesyJtyuFO0p94o5Li5cg==}
     engines: {node: '>=18.16.0'}
     peerDependencies:
-      '@adonisjs/assembler': 7.0.0-1
-      '@adonisjs/core': 6.1.5-38
-      '@adonisjs/session': 7.0.0-15
+      '@adonisjs/core': ^6.2.0
+      '@adonisjs/session': ^7.0.0
       '@japa/api-client': ^2.0.0
       edge.js: ^6.0.0
+    peerDependenciesMeta:
+      '@japa/api-client':
+        optional: true
     dependencies:
-      '@adonisjs/assembler': 7.0.0(typescript@5.2.2)
       '@adonisjs/core': 6.2.0(@adonisjs/assembler@7.0.0)(@vinejs/vine@1.7.0)(edge.js@6.0.1)
       '@adonisjs/session': 7.0.0(@adonisjs/core@6.2.0)(@japa/api-client@2.0.2)(@japa/browser-client@2.0.2)(edge.js@6.0.1)
       '@japa/api-client': 2.0.2(@japa/assert@2.1.0)(@japa/runner@3.1.1)
       '@poppinss/utils': 6.7.0
       crc-32: 1.2.2
-      edge-error: 4.0.0
+      edge-error: 4.0.1
       edge.js: 6.0.1
       html-entities: 2.4.0
       qs: 6.11.2
@@ -3623,11 +3624,6 @@ packages:
   /duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
     dev: true
-
-  /edge-error@4.0.0:
-    resolution: {integrity: sha512-cDGCk+JsxhuA2QqlmLXqfynXz6upzfVUwzyabKTFSS+9g8YlZ2+tEMPNDX1Y5TMZ4+g2B59mkcf8PL+gzZVqrQ==}
-    engines: {node: '>=18.16.0'}
-    dev: false
 
   /edge-error@4.0.1:
     resolution: {integrity: sha512-z5mNO97k8hRVpJ6Ew1qbkMTfQ44CwuWnl+ShMCrEFgD+b324CnjBS6HbiR+Wh6Wcmw9C+/XsFBHzZ+376PpD/w==}
