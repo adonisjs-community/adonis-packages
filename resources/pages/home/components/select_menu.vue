@@ -16,11 +16,11 @@ const group = inject<boolean>('group', false)
 const model = defineModel<string | string[]>({ required: true })
 
 const display = computed(() => {
-  if (Array.isArray(model.value) && model.length > 0) {
-    return `${model.length} selected`
+  if (Array.isArray(model.value) && model.value.length > 0) {
+    return `${model.value.length} selected`
   }
 
-  if (model) {
+  if (model.value) {
     const option = props.options.find((option) => option.value === model.value)
     if (option) return option.label
   }
