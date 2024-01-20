@@ -1,3 +1,4 @@
+import app from '@adonisjs/core/services/app'
 import { defineConfig, store, drivers } from '@adonisjs/cache'
 
 import env from '#start/env'
@@ -40,6 +41,8 @@ const cacheConfig = defineConfig({
     cache: store()
       .useL1Layer(drivers.memory({ maxSize: 50 * 1024 * 1024 }))
       .useL2Layer(drivers.database({ connectionName: 'sqlite' })),
+
+    ogImage: store({ ttl: null }).useL2Layer(drivers.file({ directory: app.tmpPath('og_images') })),
 
     test: store().useL1Layer(drivers.memory({})),
   },

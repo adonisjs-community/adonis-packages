@@ -5,16 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {{-- Primary Meta tags --}}
-  @if (meta)
-    <title inertia>{{ `${meta.title} - AdonisJS Packages` }}</title>
-    <meta name="title" content="{{ `${meta.title} - AdonisJS Packages` }}">
-    <meta name="description" content="{{ meta.description }}">
-  @else
-    <title inertia>AdonisJS Packages - Discover the best AdonisJS packages</title>
-    <meta name="title" content="AdonisJS Packages - Discover the best AdonisJS packages" />
-    <meta name="description" content="Discover our list of packages to supercharge your AdonisJS project. Created by the AdonisJS team and community." />
-  @endif
+  @!component('components/meta', {
+    title: meta?.title,
+    description: meta?.description,
+    image: meta?.image,
+  })
 
   <meta name="keywords" content="adonisjs, packages, modules, npm, github, adonis, node.js">
   <meta name="robots" content="index, follow">

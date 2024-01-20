@@ -1,5 +1,6 @@
 import { inject } from '@adonisjs/core'
 import { HttpContext } from '@adonisjs/core/http'
+import router from '@adonisjs/core/services/router'
 
 import { getHomeValidator } from '#validators/main'
 import { PackagesFetcher } from '#services/packages_fetcher'
@@ -27,7 +28,11 @@ export default class PackagesController {
     const result = await statsFetcher.fetchPackage(ctx.params.name)
 
     return ctx.inertia.render<GetPackageResponse>('package/main', result, {
-      meta: { title: result.package.name, description: result.package.description },
+      meta: {
+        title: result.package.name,
+        description: result.package.description,
+        image: router.builder().params({ name: result.package.name }).make('og_image'),
+      },
     })
   }
 }
