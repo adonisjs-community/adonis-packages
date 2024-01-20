@@ -30,6 +30,7 @@ If you are looking for a good starting point to learn AdonisJS, then this repo m
 - Caching using BentoCache: instead of calling the npm and GitHub APIs on each request, we use a 2-layer (Memory + SQLite) cache system to store the data and refresh it only when needed. See [./config/cache.ts](./config/cache.ts) for more details.
 - How to setup Vite/ESLint ([Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new))/Prettier/TSconfig
 - Payload validation using VineJS
+- Dynamic OpenGraph image generation
 
 ## Contributions
 
