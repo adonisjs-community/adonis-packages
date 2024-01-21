@@ -40,7 +40,7 @@ export class PackagesFetcher {
       const valueB = b[property]
 
       if (typeof valueA === 'number' && typeof valueB === 'number') {
-        return valueA - valueB * order
+        return (valueA - valueB) * order
       }
 
       if (typeof valueA === 'string' && typeof valueB === 'string') {
@@ -146,11 +146,13 @@ export class PackagesFetcher {
     /**
      * Sort the results
      */
+    console.log(options)
     const sortedPackages = this.#sortPackages(
-      options.order ?? 1,
-      options.orderBy ?? 'name',
+      options.order ?? -1,
+      options.orderBy ?? 'downloads',
       packages,
     )
+    console.log(sortedPackages)
 
     /**
      * Paginate the results

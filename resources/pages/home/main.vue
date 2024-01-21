@@ -67,8 +67,8 @@ const orderByOptions = [
     description: 'Sort packages by their last update date',
   },
 ]
-const order = ref<SortOrder>(params.order ? (+params.order as SortOrder) : 1)
-const orderBy = ref<string>(params.orderBy || orderByOptions[0].value)
+const order = ref<SortOrder>(params.order ? (+params.order as SortOrder) : -1)
+const orderBy = ref<string>(params.orderBy || orderByOptions[3].value)
 
 /**
  * Filters
