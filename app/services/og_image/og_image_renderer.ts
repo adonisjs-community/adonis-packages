@@ -136,7 +136,6 @@ export class OgImageGenerator {
    */
   async generate(name: string, description: string) {
     const base64Og = await cache.use('ogImage').getOrSet(`og-image:${name}`, async () => {
-      console.log('Generating new OG image for %s', name)
       const svg = await this.#generateSvg(name, description)
       return new Resvg(svg).render().asPng().toString('base64')
     })

@@ -146,13 +146,11 @@ export class PackagesFetcher {
     /**
      * Sort the results
      */
-    console.log(options)
     const sortedPackages = this.#sortPackages(
       options.order ?? -1,
       options.orderBy ?? 'downloads',
       packages,
     )
-    console.log(sortedPackages)
 
     /**
      * Paginate the results
