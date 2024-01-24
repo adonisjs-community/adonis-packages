@@ -26,7 +26,7 @@ import Socials from '@/components/socials.vue'
               <p class="mb-2 text-lg text-base12 font-title">General Resources</p>
               <a href="https://docs.adonisjs.com" class="item">Documentation</a>
               <a href="https://packages.adonisjs.com" class="item">Packages</a>
-              <a href="https://buttondown.email/adonisjs" class="item">Newsletter</a>
+              <a href="https://adonisjs.com/blog/" class="item">Newsletter</a>
               <a href="https://github.com/adonisjs/core/discussions" class="item">Discussions</a>
             </div>
             <div class="flex flex-col gap-y-2 text-sm font-content">
@@ -39,9 +39,9 @@ import Socials from '@/components/socials.vue'
             </div>
             <div class="flex flex-col gap-y-2 text-sm font-content">
               <p class="mb-2 text-lg text-base12 font-title">Others</p>
-              <a href="https://blog.adonisjs.com" class="item">Blog</a>
-              <a href="https://about.adonisjs.com" class="item">About</a>
-              <a href="https://support.adonisjs.com" class="item">Entreprise Support</a>
+              <a href="https://adonisjs.com/blog/" class="item">Blog</a>
+              <a href="https://adonisjs.com/about" class="item">About</a>
+              <a href="https://adonisjs.com/support_program" class="item">Support program</a>
             </div>
           </div>
 
