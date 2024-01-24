@@ -15,7 +15,7 @@ import Socials from '@/components/socials.vue'
       <hr class="footer-separator h-0.2 flex-1 border-0 bg-primary/40" />
     </div>
 
-    <div class="bg-base1 py-12 pb-0">
+    <div class="mb-8 bg-base1 py-12 pb-0">
       <div class="p-container">
         <div
           class="flex flex-col items-center justify-between gap-y-8 text-center"
@@ -48,15 +48,6 @@ import Socials from '@/components/socials.vue'
           <Socials />
         </div>
       </div>
-
-      <p class="mt-8 py-2 pb-4 text-center text-xs text-base10 font-content">
-        Created with
-        <i
-          class="i-fluent-emoji-sparkling-heart mx1 inline-block align-sub text-base text-red-500"
-        />
-        by
-        <a href="https://twitter.com/julien_rpt" class="underline">Julien Ripouteau</a>
-      </p>
     </div>
   </div>
 </template>
