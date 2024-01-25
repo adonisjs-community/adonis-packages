@@ -1,3 +1,4 @@
+import edge from 'edge.js'
 import { join } from 'node:path'
 import { readFile } from 'node:fs/promises'
 import { getDirname } from '@poppinss/utils'
@@ -25,5 +26,10 @@ export default class AppProvider {
     this.app.container.bind(PackagesFetcher, async (resolver) => {
       return new PackagesFetcher(await resolver.make(PackageFetcher), packagesFile)
     })
+
+    /**
+     * Helper for removing double slashes from urls
+     */
+    edge.global('cleanUrl', (url: string) => url.replace(/([^:]\/)\/+/g, '$1'))
   }
 }

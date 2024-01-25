@@ -1,6 +1,6 @@
 @assign(title = title ?? 'AdonisJS Packages')
 @assign(description = description ?? 'Discover our list of packages to supercharge your AdonisJS project. Created by the AdonisJS team and community.')
-@assign(image = image ?? 'https://packages.adonisjs.com/preview.png')
+@assign(image = image ?? '/preview.png')
 
 <title inertia>{{ `${title} - AdonisJS Packages` }}</title>
 <meta name="title" content="{{ `${title} - AdonisJS Packages` }}">
@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://package.adonisjs.com" />
 <meta property="og:title" content="{{ title }}" />
 <meta property="og:description" content="{{ description }}" />
-<meta property="og:image" content="{{ image }}" />
+<meta property="og:image" content="{{ cleanUrl(`https://packages.adonisjs.com/${image}`) }}" />
 
 {{-- Twitter --}}
 <meta name="twitter:card" content="summary_large_image">
@@ -19,4 +19,4 @@
 <meta property="twitter:url" content="https://package.adonisjs.com">
 <meta name="twitter:title" content="AdonisJS Packages">
 <meta name="twitter:description" content="Discover our list of packages to supercharge your AdonisJS project. Created by the AdonisJS team and community.">
-<meta name="twitter:image" content="{{ image }}">
+<meta name="twitter:image" content="{{ cleanUrl(`https://packages.adonisjs.com/${image}`) }}">
