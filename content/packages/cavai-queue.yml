@@ -1,4 +1,4 @@
-name: 'cavai/adonis-queue'
+name: '@cavai/adonis-queue'
 description: Queue package for Adonis V5. Comes with built-in database driver and allows easy extension with custom drivers
 repo: cavai-research/Adonis-Queue
 npm: '@cavai/adonis-queue'

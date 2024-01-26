@@ -1,6 +1,6 @@
-name: bull-queue
+name: '@rlanz/bull-queue'
 description: Queue system based on BullMQ for AdonisJS
-repo: setten-io/adonis-bull-queue
+repo: RomainLanz/adonis-bull-queue
 npm: '@rlanz/bull-queue'
 icon: ''
 github: https://github.com/romainlanz/adonis-bull-queue
