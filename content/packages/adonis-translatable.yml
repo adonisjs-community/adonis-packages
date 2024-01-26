@@ -1,0 +1,12 @@
+name: adonis-translatable
+category: Database
+npm: '@stouder-io/adonis-translatable'
+repo: StouderIO/adonis-translatable
+description: Translatable fields for AdonisJS models.
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2024-01-07T15:53:28.157Z'
+lastReleaseAt: '2024-01-07T16:40:08.747Z'
+type: 3rd-party
+github: https://github.com/StouderIO/adonis-translatable/tree/main
+website: https://github.com/StouderIO/adonis-translatable/tree/main
