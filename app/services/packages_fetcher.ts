@@ -169,11 +169,11 @@ export class PackagesFetcher {
   /**
    * Fetch a single package with its readme
    */
-  async fetchPackage(name: string) {
-    const pkg = this.packagesList.find((pkg_) => pkg_.name === name)
-    if (!pkg) throw new Error(`Cannot find package ${name}`)
+  async fetchPackage(slug: string) {
+    const pkg = this.packagesList.find((pkg_) => pkg_.slug === slug)
+    if (!pkg) throw new Error(`Cannot find package ${slug}`)
 
-    const stats = await PackageStats.findByOrFail('packageName', name)
+    const stats = await PackageStats.findByOrFail('packageName', pkg.name)
     const readme = await this.#getPackageReadme(pkg)
 
     return {

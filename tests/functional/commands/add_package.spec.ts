@@ -62,7 +62,7 @@ test.group('[Commands] Add Package', (group) => {
       compatibility: { adonis: '^5.0.0' },
       firstReleaseAt: '2022-01-01',
       lastReleaseAt: '2023-01-01',
-      type: 'community',
+      type: '3rd-party',
       category: 'Database',
     })
   })

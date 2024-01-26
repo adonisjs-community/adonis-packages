@@ -25,6 +25,11 @@ export type PackageInfo = {
   name: string
 
   /**
+   * Slug of the package
+   */
+  slug: string
+
+  /**
    * Description of the package
    * Displayed as subline on the website
    */

@@ -1,6 +1,7 @@
 import edge from 'edge.js'
 import { join } from 'node:path'
 import { readFile } from 'node:fs/promises'
+import slugify from '@sindresorhus/slugify'
 import { getDirname } from '@poppinss/utils'
 import type { ApplicationService } from '@adonisjs/core/types'
 
@@ -17,6 +18,10 @@ export default class AppProvider {
   async register() {
     const packagesFilePath = join(getDirname(import.meta.url), '../content/build/packages.json')
     const packagesFile = JSON.parse(await readFile(packagesFilePath, 'utf-8'))
+
+    packagesFile.forEach((pkg: any) => {
+      pkg.slug = slugify(pkg.name)
+    })
 
     this.app.container.singleton(PackageFetcher, () => new PackageFetcher())
     this.app.container.bind(PackagesDataRefresher, async (resolver) => {
