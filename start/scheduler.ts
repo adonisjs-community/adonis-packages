@@ -11,4 +11,5 @@ CronJob.from({
   start: true,
   cronTime: '0 */3 * * *',
   onTick: () => refresher.refresh(),
+  runOnInit: true,
 })
