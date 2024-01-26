@@ -57,6 +57,7 @@ export async function packageFactory(overrides: Partial<PackageInfo> = {}): Prom
     compatibility: { adonis: '>=5.0.0' },
     description: faker.lorem.sentence(),
     downloads: 0,
+    slug: faker.helpers.slugify(name),
     github: faker.string.alphanumeric(10),
     repo: faker.string.alphanumeric(10),
     stars: 0,
