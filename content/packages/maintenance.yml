@@ -12,4 +12,4 @@ maintainers:
   - name: Michael V.
     github: MichaelBelgium
 compatibility:
-  adonis: ^5.9.0
+  adonis: ^5.9.0 || ^6.2.0
