@@ -1,4 +1,4 @@
-name: adonisjs-whatsapp
+name: CodeSyncr/adonisjs-whatsapp
 description: Whatsapp API integration with multiple business api numbers compatibility (database provider).
 repo: CodeSyncr/adonisjs-whatsapp#develop
 npm: '@brighthustle/adonisjs-whatsapp'
