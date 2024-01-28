@@ -24,6 +24,10 @@ createInertiaApp({
 })
 
 window.requestIdleCallback(() => {
+  if (!window.matchMedia('(min-width: 768px)').matches) {
+    return
+  }
+
   const scriptEl = document.createElement('script')
   scriptEl.src = 'https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js'
   scriptEl.async = true
