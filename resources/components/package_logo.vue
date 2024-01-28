@@ -27,6 +27,8 @@ function iconPlaceholder({ category }: PackageInfo) {
       class="h-full object-contain"
       :src="`/icons/${package.icon}`"
       loading="lazy"
+      height="48"
+      width="48"
     />
     <div v-else class="h-full flex items-center justify-center overflow-hidden rounded-xl bg-base3">
       <i class="bg-grey inline-block text-lg" :class="iconPlaceholder(package)" />
