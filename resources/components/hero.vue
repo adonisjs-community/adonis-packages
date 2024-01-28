@@ -36,7 +36,7 @@ import Button from '@/components/ui/button.vue'
         </div>
 
         <model-viewer
-          data-not-loaded
+          :data-script-loaded="modelViewerScriptLoaded.value"
           alt="AdonisJS 3d logo"
           class="hidden h-110 flex-1"
           md="block"
