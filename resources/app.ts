@@ -23,14 +23,17 @@ createInertiaApp({
   },
 })
 
-window.requestIdleCallback(() => {
-  if (!window.matchMedia('(min-width: 768px)').matches) {
+let modelViewerScriptLoaded = false
+
+function loadModelViewerScript() {
+  if (!window.matchMedia('(min-width: 768px)').matches || modelViewerScriptLoaded) {
     return
   }
 
   const scriptEl = document.createElement('script')
   scriptEl.src = 'https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js'
   scriptEl.async = true
+  scriptEl.type = 'module'
   scriptEl.onload = () => {
     const modelViewerEls = document.querySelectorAll('model-viewer[data-not-loaded]')
 
@@ -38,5 +41,15 @@ window.requestIdleCallback(() => {
       modelViewerEl.removeAttribute('data-not-loaded')
     }
   }
+
   document.body.appendChild(scriptEl)
+  modelViewerScriptLoaded = true
+}
+
+window.requestIdleCallback(() => {
+  loadModelViewerScript()
+})
+
+window.addEventListener('resize', () => {
+  loadModelViewerScript()
 })
