@@ -46,10 +46,12 @@ function loadModelViewerScript() {
   modelViewerScriptLoaded = true
 }
 
-window.requestIdleCallback(() => {
-  loadModelViewerScript()
-})
+setTimeout(() => {
+  window.requestIdleCallback(() => {
+    loadModelViewerScript()
+  })
 
-window.addEventListener('resize', () => {
-  loadModelViewerScript()
-})
+  window.addEventListener('resize', () => {
+    loadModelViewerScript()
+  })
+}, 100)
