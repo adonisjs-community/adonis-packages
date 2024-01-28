@@ -24,5 +24,12 @@ body .v-popper--theme-tooltip .v-popper__inner {
 
 body .v-popper--theme-tooltip .v-popper__arrow-outer {
   @apply border-base4 backdrop-blur;
+}
 
+model-viewer {
+  height: 440px;
+}
+
+model-viewer[data-not-loaded] {
+  @apply hidden;
 }

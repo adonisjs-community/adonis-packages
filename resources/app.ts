@@ -22,3 +22,17 @@ createInertiaApp({
       .mount(el)
   },
 })
+
+window.requestIdleCallback(() => {
+  const scriptEl = document.createElement('script')
+  scriptEl.src = 'https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js'
+  scriptEl.async = true
+  scriptEl.onload = () => {
+    const modelViewerEls = document.querySelectorAll('model-viewer[data-not-loaded]')
+
+    for (const modelViewerEl of modelViewerEls) {
+      modelViewerEl.removeAttribute('data-not-loaded')
+    }
+  }
+  document.body.appendChild(scriptEl)
+})
