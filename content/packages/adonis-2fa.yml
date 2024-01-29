@@ -1,0 +1,12 @@
+name: adonis-2fa
+category: Authentication
+npm: "@nulix/adonis-2fa"
+repo: nulix-dev/adonis-2fa
+description: A Two Factor Authentication Helper for AdonisJS
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: "2024-01-26T03:04:15.938Z"
+lastReleaseAt: "2024-01-28T00:11:15.019Z"
+type: 3rd-party
+github: https://github.com/nulix-dev/adonis-2fa/tree/main
+website: https://adonis-2fa.netlify.app/docs/introduction
