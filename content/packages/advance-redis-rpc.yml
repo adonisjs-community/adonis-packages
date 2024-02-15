@@ -1,0 +1,15 @@
+name: advance-redis-rpc
+description: Advance RPC Provider for Adonisjs, based on Redis pub/sub transport
+repo: craftnotion/adonis-advance-redis-rpc
+npm: craftnotion/adonis5-advance-redis-rpc
+icon: ""
+github: https://github.com/Craftnotion/adonis-advance-redis-rpc
+website: https://github.com/Craftnotion/adonis-advance-redis-rpc
+learn_more: ""
+category: Communication
+type: 3rd-party
+maintainers:
+  - name: Craftnotion
+    github: Craftnotion
+compatibility:
+  adonis: ^5.0.0 || ^6.0.0
