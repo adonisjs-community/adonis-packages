@@ -7,6 +7,7 @@ import type { ApplicationService } from '@adonisjs/core/types'
 
 import { PackageFetcher } from '#services/package_fetcher'
 import { PackagesFetcher } from '#services/packages_fetcher'
+import { SitemapGenerator } from '#services/sitemap_generator'
 import { PackagesDataRefresher } from '#services/packages_data_refresher'
 
 export default class AppProvider {
@@ -31,6 +32,8 @@ export default class AppProvider {
     this.app.container.bind(PackagesFetcher, async (resolver) => {
       return new PackagesFetcher(await resolver.make(PackageFetcher), packagesFile)
     })
+
+    this.app.container.bind(SitemapGenerator, async () => new SitemapGenerator(packagesFile))
 
     /**
      * Helper for removing double slashes from urls

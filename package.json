@@ -66,6 +66,7 @@
     "sanitize-html": "^2.11.0",
     "satori": "^0.10.11",
     "satori-html": "^0.3.2",
+    "sitemap": "^7.1.1",
     "sqlite3": "^5.1.7",
     "vue": "^3.4.7"
   },
