@@ -31,6 +31,8 @@ function handleScroll() {
  * Parse the markdown and extract the headings
  */
 function parseMarkdown() {
+  if (import.meta.env.SSR) return
+
   const parser = new DOMParser()
   const doc = parser.parseFromString(props.markdown, 'text/html')
   const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6')

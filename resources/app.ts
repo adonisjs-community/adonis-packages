@@ -3,15 +3,15 @@ import 'virtual:uno.css'
 import '@unocss/reset/tailwind.css'
 import 'floating-vue/dist/style.css'
 
-import { createApp, h, ref } from 'vue'
 import { VTooltip } from 'floating-vue'
 import { createInertiaApp } from '@inertiajs/vue3'
+import { createApp, h, ref, type DefineComponent } from 'vue'
 
 void createInertiaApp({
   progress: { color: '#5468FF' },
 
   resolve: (name) => {
-    const pages = import.meta.glob('./pages/**/*.vue', { eager: true })
+    const pages = import.meta.glob<DefineComponent>('./pages/**/*.vue', { eager: true })
     return pages[`./pages/${name}.vue`] as any
   },
 
@@ -21,7 +21,6 @@ void createInertiaApp({
       .use(plugin)
 
     const modelViewerScriptLoaded = ref(false)
-
     app.config.globalProperties.modelViewerScriptLoaded = modelViewerScriptLoaded
 
     function loadModelViewerScript() {

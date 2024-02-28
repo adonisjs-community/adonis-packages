@@ -14,6 +14,7 @@
     "test": "node ace test",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "build:preview": "pnpm build && sed 's/NODE_ENV=development/NODE_ENV=production/' .env > ./build/.env && cp -r ./content ./build/ && cp -r ./tmp ./build/",
     "quick:test": "node ace test",
     "typecheck:adonis": "tsc --noEmit -p tsconfig.json",
     "typecheck:vue": "vue-tsc --noEmit -p resources/tsconfig.json",
@@ -34,15 +35,15 @@
     "#types/*": "./types/*.js"
   },
   "dependencies": {
-    "@adonisjs/cache": "1.0.0-1",
-    "@adonisjs/core": "6.2.0",
-    "@adonisjs/inertia": "1.0.0-7",
+    "@adonisjs/cache": "1.0.0-2",
+    "@adonisjs/core": "6.3.1",
+    "@adonisjs/inertia": "1.0.0-9",
     "@adonisjs/lucid": "19.0.0",
     "@adonisjs/session": "7.0.0",
     "@adonisjs/shield": "8.0.1",
     "@adonisjs/static": "^1.1.1",
-    "@adonisjs/vite": "2.0.2",
-    "@headlessui/vue": "^1.7.17",
+    "@adonisjs/vite": "3.0.0-3",
+    "@headlessui/vue": "^1.7.19",
     "@inertiajs/vue3": "^1.0.14",
     "@poppinss/utils": "^6.7.1",
     "@resvg/resvg-js": "^2.6.0",
@@ -71,7 +72,7 @@
     "vue": "^3.4.7"
   },
   "devDependencies": {
-    "@adonisjs/assembler": "7.0.0",
+    "@adonisjs/assembler": "7.2.2",
     "@adonisjs/tsconfig": "^1.2.1",
     "@faker-js/faker": "^8.3.1",
     "@iconify/json": "^2.2.166",
@@ -101,7 +102,7 @@
     "typescript": "~5.2.2",
     "unocss": "^0.58.3",
     "unocss-preset-radix": "^2.5.5",
-    "vite": "^5.0.11",
+    "vite": "^5.1.4",
     "vue-tsc": "^1.8.27"
   },
   "prettier": "@julr/tooling-configs/prettier"
