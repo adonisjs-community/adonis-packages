@@ -87,7 +87,7 @@ export default defineConfig({
         content: { name: 'Graphik', provider: 'none' },
         sans: {
           name: 'Poppins',
-          weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+          weights: [300, 500, 700],
         },
       },
     }),
