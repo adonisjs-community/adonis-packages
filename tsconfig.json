@@ -15,11 +15,11 @@
       "#validators/*": ["./app/validators/*.js"],
       "#start/*": ["./start/*.js"],
       "#config/*": ["./config/*.js"],
-      "#types/*": ["./types/*.js"],
+      "#types/*": ["./types/*.js"]
     },
     "resolveJsonModule": true,
-    "outDir": "./build",
+    "outDir": "./build"
   },
   "include": ["./**/*"],
-  "exclude": ["./resources/**/*"],
+  "exclude": ["./resources/**/*", "uno.config.ts"]
 }
