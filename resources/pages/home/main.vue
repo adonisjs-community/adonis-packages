@@ -134,6 +134,7 @@ function fetchNewPageData(page: number) {
                 />
 
                 <button
+                  aria-label="Official packages"
                   theme="primary"
                   size="s"
                   class="flex items-center justify-center rounded-xl bg-base2 px-4 text-base shadow-sm transition-all space-x-2 hover:(bg-base3 shadow-md)"

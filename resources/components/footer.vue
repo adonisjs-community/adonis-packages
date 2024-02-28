@@ -59,6 +59,6 @@ import Socials from '@/components/socials.vue'
 
 .item {
   transition: color 0.2s ease-in-out;
-  @apply text-base10 text-sm hover:text-base12;
+  @apply text-base11 text-sm hover:text-base12;
 }
 </style>
