@@ -37,7 +37,11 @@ import Button from '@/components/ui/button.vue'
 
         <model-viewer
           alt="AdonisJS 3d logo"
-          class="hidden h-110 flex-1"
+          class="hidden h-110 flex-1 transition-opacity duration-4000 ease-in-out"
+          :class="{
+            'opacity-0': modelViewerScriptLoaded.value === false,
+            'opacity-100': modelViewerScriptLoaded.value === true,
+          }"
           md="block"
           auto-rotate
           disable-zoom
