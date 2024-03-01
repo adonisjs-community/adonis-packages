@@ -17,7 +17,7 @@ const isV6Compatible = computed(() => props.package.compatibility?.adonis.includ
 
 <template>
   <Link
-    class="group card relative flex cursor-pointer gap-y-2 rounded-xl px-5 py-5"
+    class="group card relative h-66 flex cursor-pointer gap-y-2 rounded-xl px-5 py-5"
     :href="`/packages/${package.slug}`"
     target="_blank"
   >

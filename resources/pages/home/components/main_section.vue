@@ -16,6 +16,7 @@ defineOptions({
   <!-- Packages list -->
   <section
     v-if="packages.length > 0"
+    v-auto-animate
     class="grid grid-cols-1 gap-5"
     :class="$attrs.class"
     md="grid-cols-1"

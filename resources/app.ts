@@ -3,9 +3,10 @@ import 'virtual:uno.css'
 import '@unocss/reset/tailwind.css'
 import 'floating-vue/dist/style.css'
 
-import { VTooltip } from 'floating-vue'
+import { vTooltip } from 'floating-vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { createApp, h, ref, type DefineComponent } from 'vue'
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 
 void createInertiaApp({
   progress: { color: '#5468FF' },
@@ -17,7 +18,8 @@ void createInertiaApp({
 
   setup({ el, App, props, plugin }) {
     const app = createApp({ render: () => h(App, props) })
-      .directive('tooltip', VTooltip)
+      .directive('tooltip', vTooltip)
+      .use(autoAnimatePlugin)
       .use(plugin)
 
     const modelViewerScriptLoaded = ref(false)

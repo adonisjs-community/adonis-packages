@@ -43,6 +43,7 @@
     "@adonisjs/shield": "8.1.1",
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "3.0.0-3",
+    "@formkit/auto-animate": "^0.8.1",
     "@headlessui/vue": "^1.7.19",
     "@inertiajs/vue3": "^1.0.15",
     "@poppinss/utils": "^6.7.2",
