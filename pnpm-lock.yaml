@@ -12,8 +12,8 @@ dependencies:
     specifier: 6.3.1
     version: 6.3.1(@adonisjs/assembler@7.2.2)(@vinejs/vine@1.7.1)(edge.js@6.0.1)
   '@adonisjs/inertia':
-    specifier: 1.0.0-9
-    version: 1.0.0-9(@adonisjs/core@6.3.1)(@adonisjs/session@7.1.1)(@adonisjs/vite@3.0.0-3)(@japa/api-client@2.0.2)(edge.js@6.0.1)
+    specifier: 1.0.0-12
+    version: 1.0.0-12(@adonisjs/core@6.3.1)(@adonisjs/session@7.1.1)(@adonisjs/vite@3.0.0-4)(@japa/api-client@2.0.2)(edge.js@6.0.1)
   '@adonisjs/lucid':
     specifier: 19.0.0
     version: 19.0.0(@adonisjs/assembler@7.2.2)(@adonisjs/core@6.3.1)(luxon@3.4.4)(sqlite3@5.1.7)
@@ -27,8 +27,8 @@ dependencies:
     specifier: ^1.1.1
     version: 1.1.1(@adonisjs/core@6.3.1)
   '@adonisjs/vite':
-    specifier: 3.0.0-3
-    version: 3.0.0-3(@adonisjs/core@6.3.1)(@adonisjs/shield@8.1.1)(edge.js@6.0.1)(vite@5.1.4)
+    specifier: 3.0.0-4
+    version: 3.0.0-4(@adonisjs/core@6.3.1)(@adonisjs/shield@8.1.1)(edge.js@6.0.1)(vite@5.1.4)
   '@formkit/auto-animate':
     specifier: ^0.8.1
     version: 0.8.1
@@ -472,13 +472,13 @@ packages:
       vary: 1.1.2
       youch: 3.3.3
 
-  /@adonisjs/inertia@1.0.0-9(@adonisjs/core@6.3.1)(@adonisjs/session@7.1.1)(@adonisjs/vite@3.0.0-3)(@japa/api-client@2.0.2)(edge.js@6.0.1):
-    resolution: {integrity: sha512-yGnsRMtBSxLw4CxbOmH7pp/d5K2SBWYhgRSvw5sb7987pM6OeFX06NWDtA2F9vB3nFemMzLIV4Vh77xABouMzw==}
+  /@adonisjs/inertia@1.0.0-12(@adonisjs/core@6.3.1)(@adonisjs/session@7.1.1)(@adonisjs/vite@3.0.0-4)(@japa/api-client@2.0.2)(edge.js@6.0.1):
+    resolution: {integrity: sha512-5e1DdsM7ABXkIA6ajwF80Rr1ioaYUgTfi6Dy5sVJY95EAVXWXsXheRv1I97z47mFjSFgSwpR2Qeum9pOXhyBjA==}
     engines: {node: '>=18.16.0'}
     peerDependencies:
       '@adonisjs/core': ^6.2.0
       '@adonisjs/session': ^7.0.0
-      '@adonisjs/vite': ^3.0.0-2
+      '@adonisjs/vite': ^3.0.0-4
       '@japa/api-client': ^2.0.0
       edge.js: ^6.0.0
     peerDependenciesMeta:
@@ -487,7 +487,7 @@ packages:
     dependencies:
       '@adonisjs/core': 6.3.1(@adonisjs/assembler@7.2.2)(@vinejs/vine@1.7.1)(edge.js@6.0.1)
       '@adonisjs/session': 7.1.1(@adonisjs/core@6.3.1)(@japa/api-client@2.0.2)(@japa/browser-client@2.0.2)(edge.js@6.0.1)
-      '@adonisjs/vite': 3.0.0-3(@adonisjs/core@6.3.1)(@adonisjs/shield@8.1.1)(edge.js@6.0.1)(vite@5.1.4)
+      '@adonisjs/vite': 3.0.0-4(@adonisjs/core@6.3.1)(@adonisjs/shield@8.1.1)(edge.js@6.0.1)(vite@5.1.4)
       '@japa/api-client': 2.0.2(@japa/assert@2.1.0)(@japa/runner@3.1.1)
       '@poppinss/utils': 6.7.2
       crc-32: 1.2.2
@@ -635,8 +635,8 @@ packages:
     resolution: {integrity: sha512-N8zdNw/bC3ft64e7CGr/LfYDCumoWe3wwePEqq2LRTCjBN/ICyxywW6f60QHLr+q17yHMU6fRFDt0GuRLXtPSA==}
     dev: true
 
-  /@adonisjs/vite@3.0.0-3(@adonisjs/core@6.3.1)(@adonisjs/shield@8.1.1)(edge.js@6.0.1)(vite@5.1.4):
-    resolution: {integrity: sha512-BKHXuE/XGyvv3j9mBi1KSINOlgoV+eFIHrM+6oLJaQyNuyXCK8vrsLHwPyid/75s9yzcJlFtW5m8lPNSVqGThQ==}
+  /@adonisjs/vite@3.0.0-4(@adonisjs/core@6.3.1)(@adonisjs/shield@8.1.1)(edge.js@6.0.1)(vite@5.1.4):
+    resolution: {integrity: sha512-qNmM0erD5U1ycVnPR+Zbfw0g0z8UAPKyDPXUdtAmqUbI8iD4FzBo3YoO4doaCtcg4GBpwywdskpq5E7AyFwMMw==}
     engines: {node: '>=20.6.0'}
     peerDependencies:
       '@adonisjs/core': ^6.3.0
