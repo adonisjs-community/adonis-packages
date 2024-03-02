@@ -9,8 +9,6 @@ import { createApp, h, ref, type DefineComponent } from 'vue'
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 
-console.log('app.ts')
-
 void createInertiaApp({
   progress: { color: '#5468FF' },
 
