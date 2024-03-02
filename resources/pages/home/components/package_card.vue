@@ -20,6 +20,7 @@ const isV6Compatible = computed(() => props.package.compatibility?.adonis.includ
     class="group card relative h-66 flex cursor-pointer gap-y-2 rounded-xl px-5 py-5"
     :href="`/packages/${package.slug}`"
     target="_blank"
+    as="div"
   >
     <div class="w-full flex items-center justify-between">
       <div class="flex gap-2">
