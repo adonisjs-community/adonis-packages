@@ -12,8 +12,8 @@ dependencies:
     specifier: 6.3.1
     version: 6.3.1(@adonisjs/assembler@7.2.2)(@vinejs/vine@1.7.1)(edge.js@6.0.1)
   '@adonisjs/inertia':
-    specifier: 1.0.0-12
-    version: 1.0.0-12(@adonisjs/core@6.3.1)(@adonisjs/session@7.1.1)(@adonisjs/vite@3.0.0-4)(@japa/api-client@2.0.2)(edge.js@6.0.1)
+    specifier: 1.0.0-13
+    version: 1.0.0-13(@adonisjs/core@6.3.1)(@adonisjs/session@7.1.1)(@adonisjs/vite@3.0.0-4)(@japa/api-client@2.0.2)(edge.js@6.0.1)
   '@adonisjs/lucid':
     specifier: 19.0.0
     version: 19.0.0(@adonisjs/assembler@7.2.2)(@adonisjs/core@6.3.1)(luxon@3.4.4)(sqlite3@5.1.7)
@@ -472,8 +472,8 @@ packages:
       vary: 1.1.2
       youch: 3.3.3
 
-  /@adonisjs/inertia@1.0.0-12(@adonisjs/core@6.3.1)(@adonisjs/session@7.1.1)(@adonisjs/vite@3.0.0-4)(@japa/api-client@2.0.2)(edge.js@6.0.1):
-    resolution: {integrity: sha512-5e1DdsM7ABXkIA6ajwF80Rr1ioaYUgTfi6Dy5sVJY95EAVXWXsXheRv1I97z47mFjSFgSwpR2Qeum9pOXhyBjA==}
+  /@adonisjs/inertia@1.0.0-13(@adonisjs/core@6.3.1)(@adonisjs/session@7.1.1)(@adonisjs/vite@3.0.0-4)(@japa/api-client@2.0.2)(edge.js@6.0.1):
+    resolution: {integrity: sha512-75D9lVj/LPdrqBs4/wN19IuVXLoGES/SD0wHZVXCDAbbZ9MSRWnszf0+oPDAeINvnM5l1/CbWQw0UCqaYX8h2g==}
     engines: {node: '>=18.16.0'}
     peerDependencies:
       '@adonisjs/core': ^6.2.0
@@ -494,6 +494,7 @@ packages:
       edge-error: 4.0.1
       edge.js: 6.0.1
       html-entities: 2.4.0
+      locate-path: 7.2.0
       qs: 6.11.2
     dev: false
 
