@@ -1,0 +1,15 @@
+name: '@matfire/edge-view-transitions'
+description: utilities to handle view transitions classes generation in Edge.js
+repo: matfire/edge-view-transitions
+npm: '@matfire/edge-view-transitions'
+icon: edge.jpeg
+github: https://github.com/matfire/edge-view-transitions
+website: https://github.com/matfire/edge-view-transitions
+learn_more: ''
+category: Rendering
+type: 3rd-party
+maintainers:
+  - name: Matteo Gassend
+    github: matfire
+compatibility:
+  adonis: ^6.0.0
