@@ -97,7 +97,7 @@ export default defineConfig({
       reloadServer: false,
     },
     {
-      pattern: 'resources/assets/fonts/**',
+      pattern: 'inertia/assets/fonts/**',
       reloadServer: false,
     },
     {

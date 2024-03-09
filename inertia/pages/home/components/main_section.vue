@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { PackageInfo } from '@/types'
 import PackageCard from './package_card.vue'
+import type { PackageInfo } from '@/app/types'
 import Button from '@/components/ui/button.vue'
 
 defineProps<{
@@ -38,3 +38,4 @@ defineOptions({
     </Button>
   </div>
 </template>
+@/app/types

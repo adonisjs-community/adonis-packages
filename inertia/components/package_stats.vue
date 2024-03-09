@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { millify } from 'millify'
 
-import type { PackageInfo } from '@/types'
+import type { PackageInfo } from '@/app/types'
 
 defineProps<{
   package: PackageInfo
@@ -41,3 +41,4 @@ function numberFormatter(num: number) {
 </template>
 
 <style scoped></style>
+@/app/types

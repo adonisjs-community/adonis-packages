@@ -1,4 +1,4 @@
-import './css/app.css'
+import '../css/app.css'
 import 'virtual:uno.css'
 import '@unocss/reset/tailwind.css'
 import 'floating-vue/dist/style.css'
@@ -14,8 +14,8 @@ void createInertiaApp({
 
   resolve: (name) => {
     return resolvePageComponent(
-      `./pages/${name}.vue`,
-      import.meta.glob<DefineComponent>('./pages/**/*.vue'),
+      `../pages/${name}.vue`,
+      import.meta.glob<DefineComponent>('../pages/**/*.vue'),
     )
   },
 

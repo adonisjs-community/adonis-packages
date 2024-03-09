@@ -18,7 +18,7 @@ import type {
   PackageCategory,
   PackagesFilters,
   SortOrder,
-} from '@/types'
+} from '@/app/types'
 
 const props = defineProps<GetHomeResponse>()
 const params = useUrlSearchParams<Partial<PackagesFilters>>('history')
@@ -74,7 +74,7 @@ const orderBy = ref<string>(params.orderBy || orderByOptions[3].value)
  * Filters
  */
 const selectedVersion = ref<string | null>(params.version || null)
-const officialPackagesOnly = ref<boolean>(params.officialOnly)
+const officialPackagesOnly = ref<boolean>(params.officialOnly || false)
 
 /**
  * Refetch when any of the filters change
@@ -189,3 +189,4 @@ function fetchNewPageData(page: number) {
   background-image: url('@/assets/topography.svg');
 }
 </style>
+@/app/types

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PackageCategories, PackageCategory } from '@/types'
+import type { PackageCategories, PackageCategory } from '@/app/types'
 
 const props = defineProps<{
   categories: PackageCategories
@@ -101,3 +101,4 @@ const versionModel = defineModel<string | null>('version')
     </div>
   </div>
 </template>
+@/app/types

@@ -73,7 +73,7 @@ export default defineConfig({
       scale: 1.2,
       warn: true,
       collections: {
-        custom: FileSystemIconLoader('./resources/assets/icons', (svg) =>
+        custom: FileSystemIconLoader('./inertia/assets/icons', (svg) =>
           svg.replace(/#fff/, 'currentColor'),
         ),
       },

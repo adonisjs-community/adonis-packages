@@ -111,7 +111,7 @@ export class OgImageGenerator {
   async #generateSvg(name: string, description: string) {
     const markup = this.#buildMarkup(name, description)
 
-    const fontsPath = app.makePath('resources/assets/fonts')
+    const fontsPath = app.makePath('inertia/assets/fonts')
 
     const fontPath1 = `${fontsPath}/Graphik-Regular.ttf`
     const fontPath2 = `${fontsPath}/PolySans-Median.ttf`

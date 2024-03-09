@@ -1,9 +1,9 @@
-// @ts-check
 import { julr } from '@julr/tooling-configs/eslint'
 
 export default julr({
+  unocss: false,
   typescript: {
-    tsconfigPath: ['./tsconfig.json', './resources/tsconfig.json'],
+    tsconfigPath: ['./tsconfig.json', './inertia/tsconfig.json'],
     typeAwareRules: false,
   },
 })

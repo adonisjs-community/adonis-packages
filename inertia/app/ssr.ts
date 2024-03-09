@@ -4,14 +4,14 @@ import { renderToString } from '@vue/server-renderer'
 import { createSSRApp, h, type DefineComponent, ref } from 'vue'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 
-export default function render(page) {
+export default function render(page: any) {
   return createInertiaApp({
     page,
     render: renderToString,
     resolve: (name) => {
       return resolvePageComponent(
-        `./pages/${name}.vue`,
-        import.meta.glob<DefineComponent>('./pages/**/*.vue'),
+        `../pages/${name}.vue`,
+        import.meta.glob<DefineComponent>('../pages/**/*.vue'),
       )
     },
 

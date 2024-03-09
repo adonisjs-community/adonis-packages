@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PackageInfo } from '@/types'
+import type { PackageInfo } from '@/app/types'
 import PackageLogo from '@/components/package_logo.vue'
 import PackageStats from '@/components/package_stats.vue'
 
@@ -26,3 +26,4 @@ defineProps<{
 </template>
 
 <style scoped></style>
+@/app/types

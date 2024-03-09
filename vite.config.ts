@@ -10,11 +10,13 @@ import inertia from '@adonisjs/inertia/client'
 export default defineConfig({
   plugins: [
     // @ts-expect-error missing types
-    unocss(),
+    unocss({
+      configFile: 'inertia/app/uno.config.ts',
+    }),
     inertia({
       ssr: {
         enabled: true,
-        entrypoint: 'resources/ssr.ts',
+        entrypoint: 'inertia/app/ssr.ts',
       },
     }),
     vue({
@@ -22,14 +24,14 @@ export default defineConfig({
       template: { compilerOptions: { isCustomElement: (tag) => ['model-viewer'].includes(tag) } },
     }),
     adonisjs({
-      entrypoints: ['resources/app.ts'],
+      entrypoints: ['inertia/app/app.ts'],
       reload: ['resources/views/**/*.edge'],
     }),
   ],
 
   resolve: {
     alias: {
-      '@/': `${resolve(getDirname(import.meta.url), 'resources')}/`,
+      '@/': `${resolve(getDirname(import.meta.url), 'inertia')}/`,
       '~/': `${resolve(getDirname(import.meta.url), '.')}/`,
     },
   },

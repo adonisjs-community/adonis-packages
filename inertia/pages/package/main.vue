@@ -8,7 +8,7 @@ import Toc from './components/toc.vue'
 import Layout from '@/layouts/default.vue'
 import Links from './components/links.vue'
 import Heading from './components/heading.vue'
-import type { GetPackageResponse } from '@/types'
+import type { GetPackageResponse } from '@/app/types'
 
 const props = defineProps<GetPackageResponse>()
 </script>
@@ -111,3 +111,4 @@ const props = defineProps<GetPackageResponse>()
   }
 }
 </style>
+@/app/types

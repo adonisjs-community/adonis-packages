@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { Link } from '@inertiajs/vue3'
 
 import Tag from '@/components/tag.vue'
-import type { PackageInfo } from '@/types'
+import type { PackageInfo } from '@/app/types'
 import PackageLogo from '@/components/package_logo.vue'
 import PackageStats from '@/components/package_stats.vue'
 import AdonisIcon from '@/components/icons/adonis_icon.vue'
@@ -69,3 +69,4 @@ const isV6Compatible = computed(() => props.package.compatibility?.adonis.includ
   border: 1px solid transparent;
 }
 </style>
+@/app/types
