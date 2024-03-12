@@ -1,0 +1,16 @@
+name: clickhouse
+category: Database
+npm: adonis-clickhouse
+icon: clickhouse.png
+github: https://github.com/shiny/adonis-clickhouse
+repo: shiny/adonis-clickhouse
+description: A ClickHouse provider for AdonisJS
+compatibility:
+  adonis: ^6.0.0
+maintainers:
+  - name: Dai Jie
+    github: shiny
+firstReleaseAt: '2024-03-07T12:18:12.280Z'
+lastReleaseAt: '2024-03-07T12:53:26.756Z'
+type: 3rd-party
+website: https://github.com/shiny/adonis-clickhouse
