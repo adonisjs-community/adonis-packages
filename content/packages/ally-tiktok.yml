@@ -1,0 +1,15 @@
+name: ally-tiktok
+description: An TikTok driver for AdonisJS Ally
+repo: monojson/adonis-ally-tiktok
+npm: adonis-ally-tiktok
+icon: tiktok.png
+github: https://github.com/monojson/adonis-ally-tiktok
+website: https://github.com/monojson/adonis-ally-tiktok
+learn_more: ''
+category: Authentication
+type: 3rd-party
+maintainers:
+  - name: monojson
+    github: monojson
+compatibility:
+  adonis: ^6.0.0
