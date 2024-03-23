@@ -178,7 +178,7 @@ export class PackagesFetcher {
 
     return {
       package: this.#mergePackageStatsAndInfo(pkg, stats),
-      readme: this.#markdownRenderer.render(readme),
+      readme: this.#markdownRenderer.render(readme, pkg.github),
     }
   }
 }
