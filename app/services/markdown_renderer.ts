@@ -48,9 +48,36 @@ export class MarkdownRenderer {
   }
 
   /**
+   * Rewrite markdown link tokens to include
+   * baseUrl when there isn't one.
+   */
+  #rewrite(tokens: any[], baseUrl: string) {
+    for (const token of tokens) {
+      if (token.type === 'link_open') {
+        for (const attr of token.attrs) {
+          if (attr[0] === 'href') {
+            const value: string = attr[1]
+            try {
+              new URL(value)
+            } catch (_) {
+              attr[1] = new URL(value, `${baseUrl}/`).href
+            }
+          }
+        }
+      }
+      if (token.children !== null) {
+        this.#rewrite(token.children, baseUrl)
+      }
+    }
+  }
+
+  /**
    * Render the markdown to HTML
    */
-  render(markdown: string): string {
+  render(markdown: string, baseUrl: string): string {
+    this.#renderer.core.ruler.push('baseurl', (state) => {
+      this.#rewrite(state.tokens, baseUrl)
+    })
     const unsanitized = this.#renderer.render(markdown)
     return this.#sanitize(unsanitized)
   }
