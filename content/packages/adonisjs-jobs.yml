@@ -1,0 +1,15 @@
+name: adonisjs-jobs
+description: Job processing for AdonisJS
+repo: KABBOUCHI/adonisjs-jobs
+npm: adonisjs-jobs
+icon: ''
+github: https://github.com/KABBOUCHI/adonisjs-jobs
+website: https://github.com/KABBOUCHI/adonisjs-jobs
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Georges KABBOUCHI
+    github: KABBOUCHI
+compatibility:
+  adonis: ^6.0.0
