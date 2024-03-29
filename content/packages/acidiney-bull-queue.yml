@@ -1,0 +1,15 @@
+name: '@acidiney/bull-queue'
+description: Queue system based on BullMQ for AdonisJS v6 with bullboard
+repo: acidiney/bull-queue
+npm: '@acidiney/bull-queue'
+icon: ''
+github: https://github.com/acidiney/bull-queue
+website: https://github.comacidiney/bull-queue
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Acidiney Dias
+    github: acidiney
+compatibility:
+  adonis: ^6.0.0
