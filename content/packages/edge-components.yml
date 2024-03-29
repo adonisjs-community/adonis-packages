@@ -6,12 +6,12 @@ repo: batosai/edge-components
 npm: '@jrmc/edge-components'
 icon: ''
 github: https://github.com/batosai/edge-components
-website: https://github.com/batosai/edge-components
+website: https://edge-components.jrmc.dev/
 learn_more: ''
 category: Extensions
 type: 3rd-party
 maintainers:
-  - name: batosai
+  - name: Jeremy Chaufourier
     github: batosai
 compatibility:
-  adonis: ^5.0.0
+  adonis: ^6.0.0
