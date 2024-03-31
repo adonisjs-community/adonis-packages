@@ -1,15 +1,13 @@
 name: inertia
-description: InertiaJS provider for AdonisJS
-repo: eidellev/inertiajs-adonisjs
-npm: '@eidellev/inertia-adonisjs'
-icon: inertia.png
-github: https://github.com/eidellev/inertiajs-adonisjs
-website: https://github.com/eidellev/inertiajs-adonisjs
-learn_more: ''
 category: Rendering
-type: 3rd-party
-maintainers:
-  - name: eidellev
-    github: eidellev
+npm: '@adonisjs/inertia'
+repo: adonisjs/inertia
+description: Official Inertia.js adapter for AdonisJS
+icon: inertia.png
 compatibility:
-  adonis: ^5.0.0
+  adonis: ^6.0.0
+firstReleaseAt: '2023-11-15T23:16:23.326Z'
+lastReleaseAt: '2024-03-30T18:58:26.686Z'
+type: official
+github: https://github.com/adonisjs/inertia/tree/main
+website: https://github.com/adonisjs/inertia/tree/main
