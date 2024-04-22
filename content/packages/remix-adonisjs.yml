@@ -1,0 +1,15 @@
+name: remix-adonisjs
+description: Build fullstack Remix applications with AdonisJS
+category: Rendering
+npm: '@matstack/remix-adonisjs'
+repo: jarle/remix-adonisjs
+learn_more: ''
+compatibility:
+  adonis: ^6.0.0
+maintainers:
+  - name: Jarle Mathiesen
+    github: jarle
+type: 3rd-party
+icon: remix.png
+github: https://github.com/jarle/remix-adonisjs
+website: https://remix-adonisjs.matstack.dev/
