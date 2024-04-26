@@ -1,0 +1,15 @@
+name: adonisjs-permissions
+description: Role permissions system for AdonisJs V6+
+repo: holoyan/adonisjs-permissions#master
+npm: '@holoyan/adonisjs-permissions'
+icon: ''
+github: https://github.com/holoyan/adonisjs-permissions
+website: https://github.com/holoyan/adonisjs-permissions
+learn_more: ''
+category: Authorization
+type: 3rd-party
+maintainers:
+  - name: Artak
+    github: holoyan
+compatibility:
+  adonis: ^6.0.0
