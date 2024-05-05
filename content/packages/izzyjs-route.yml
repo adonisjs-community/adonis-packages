@@ -1,0 +1,12 @@
+name: Izzyjs Route
+category: Extensions
+npm: '@izzyjs/route'
+repo: izzyjs/route
+description: Use your AdonisJs routes in your Inertia.js application
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2024-05-02T20:41:59.095Z'
+lastReleaseAt: '2024-05-04T21:34:10.431Z'
+type: 3rd-party
+github: https://github.com/izzyjs/route/tree/main
+website: https://github.com/izzyjs/route/tree/main
