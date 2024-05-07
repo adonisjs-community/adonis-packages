@@ -1,0 +1,12 @@
+name: '@mdsadique-inam/adonisjs-2fa'
+category: Authentication
+npm: '@mdsadique-inam/adonisjs-2fa'
+repo: mdsadique-inam/adonisjs-2fa
+description: A Two Factor Authentication Helper for AdonisJS
+compatibility:
+  adonis: ^5.0.0
+firstReleaseAt: '2024-05-06T09:29:35.723Z'
+lastReleaseAt: '2024-05-06T09:29:36.450Z'
+type: 3rd-party
+github: https://github.com/mdsadique-inam/adonisjs-2fa/tree/main
+website: https://github.com/mdsadique-inam/adonisjs-2fa/tree/main
