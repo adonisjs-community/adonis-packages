@@ -4,7 +4,7 @@ npm: '@mdsadique-inam/adonisjs-2fa'
 repo: mdsadique-inam/adonisjs-2fa
 description: A Two Factor Authentication Helper for AdonisJS
 compatibility:
-  adonis: ^5.0.0
+  adonis: ^6.0.0
 firstReleaseAt: '2024-05-06T09:29:35.723Z'
 lastReleaseAt: '2024-05-06T09:29:36.450Z'
 type: 3rd-party
