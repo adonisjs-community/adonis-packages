@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node bin/server.js",
     "build": "node ace build",
-    "dev": "node ace serve --watch",
+    "dev": "node ace serve --hmr",
     "test": "node ace test",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -95,6 +95,7 @@
     "@unocss/reset": "^0.60.2",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.57.0",
+    "hot-hook": "^0.2.6",
     "pino-pretty": "^11.0.0",
     "playwright": "^1.44.0",
     "postcss-nested": "^6.0.1",
@@ -106,5 +107,11 @@
     "vite": "^5.2.11",
     "vue-tsc": "^2.0.17"
   },
-  "prettier": "@julr/tooling-configs/prettier"
+  "prettier": "@julr/tooling-configs/prettier",
+  "hotHook": {
+    "boundaries": [
+      "./app/controllers/**/*.ts",
+      "./app/middleware/*.ts"
+    ]
+  }
 }
