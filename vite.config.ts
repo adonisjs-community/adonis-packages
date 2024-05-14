@@ -9,7 +9,6 @@ import inertia from '@adonisjs/inertia/client'
 
 export default defineConfig({
   plugins: [
-    // @ts-expect-error missing types
     unocss({
       configFile: 'inertia/app/uno.config.ts',
     }),
