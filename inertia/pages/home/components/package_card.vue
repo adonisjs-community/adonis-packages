@@ -16,57 +16,53 @@ const isV6Compatible = computed(() => props.package.compatibility?.adonis.includ
 </script>
 
 <template>
-  <Link
-    class="group card relative h-66 flex cursor-pointer gap-y-2 rounded-xl px-5 py-5"
-    :href="`/packages/${package.slug}`"
-    target="_blank"
-    as="div"
-  >
-    <div class="w-full flex items-center justify-between">
+  <div class="group card gap-y-3 relative h-66 py-5 flex rounded-xl">
+    <div class="w-full flex grow-0 items-center cursor-default px-5">
       <div class="flex gap-2">
         <Tag data-testid="package-category">{{ package.category }}</Tag>
         <Tag v-if="isV6Compatible" class="bg-primary bg-opacity70">V6 support</Tag>
       </div>
-      <i
-        class="i-icon-park-outline-share inline-block text-xs text-base10 opacity-0 transition duration-500 hover:text-white group-hover:opacity-100"
-      />
     </div>
-    <PackageLogo size="12" :package="package" />
+    <Link
+      class="flex flex-col grow gap-y-2 content-around w-full px-5"
+      :href="`/packages/${package.slug}`"
+    >
+      <PackageLogo class="mt-3" size="12" :package="package" />
 
-    <div class="flex flex-col gap-y-1">
-      <div class="pointer-events-none absolute inset-0 m-1 overflow-hidden rounded-xl">
-        <AdonisIcon
-          v-if="package.type === 'official'"
-          class="absolute top-2 scale-600 opacity-2 -right-2 -rotate-20"
-        />
-      </div>
-      <div class="flex items-baseline gap-2">
-        <p data-testid="package-name" class="line-clamp-1 text-2xl font-bold">
-          {{ package.name }}
+      <div class="flex flex-col gap-y-1">
+        <div class="pointer-events-none absolute inset-0 m-1 overflow-hidden rounded-xl">
+          <AdonisIcon
+            v-if="package.type === 'official'"
+            class="absolute top-3 scale-600 opacity-2 -right-2 -rotate-20"
+          />
+        </div>
+        <div class="flex items-baseline gap-2">
+          <p data-testid="package-name" class="line-clamp-1 text-2xl font-bold">
+            {{ package.name }}
+          </p>
+          <i
+            v-if="package.type === 'official'"
+            v-tooltip="{ content: 'Official package', distance: 10 }"
+            class="i-fluent-emoji-military-medal relative top-[2px] inline-block text-lg"
+          />
+        </div>
+        <p class="line-clamp-2 text-sm text-base10 mb-4">
+          {{ package.description }}
         </p>
-        <i
-          v-if="package.type === 'official'"
-          v-tooltip="{ content: 'Official package', distance: 10 }"
-          class="i-fluent-emoji-military-medal relative top-[2px] inline-block text-lg"
-        />
       </div>
-      <p class="line-clamp-2 text-sm text-base10">
-        {{ package.description }}
-      </p>
-    </div>
-
-    <PackageStats class="mt-4" :package="package" />
-  </Link>
+    </Link>
+    <PackageStats class="place-self-start justify-self-end px-5" :package="package" />
+  </div>
 </template>
 
 <style scoped lang="postcss">
 .card {
   @apply bg-base2;
+  /*transition: all 0.6s ease-in-out;*/
+  border: 1px solid transparent;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  transition: all 0.6s ease-in-out;
-  border: 1px solid transparent;
 }
 </style>
 @/app/types

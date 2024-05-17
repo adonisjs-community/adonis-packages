@@ -15,7 +15,7 @@ function iconPlaceholder({ category }: PackageInfo) {
 
 <template>
   <div
-    class="mt-4 items-center justify-center"
+    class="items-center justify-center"
     :class="{
       'h-12 w-12': size === '12',
       'h-16 w-16': size === '16',
