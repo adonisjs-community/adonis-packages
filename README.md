@@ -8,7 +8,7 @@
 
 ## Introduction
 
-This is the source code of the [AdonisJS Packages](https://adonisjs.com/packages) website. The website is built using:
+This is the source code of the [AdonisJS Packages](https://packages.adonisjs.com/) website. The website is built using:
 
 - [AdonisJS](https://adonisjs.com)
 - [VueJS](https://vuejs.org/)
