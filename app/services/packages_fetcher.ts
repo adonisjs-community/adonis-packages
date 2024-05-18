@@ -77,7 +77,7 @@ export class PackagesFetcher {
    * Merge raw package .yml data with the stats fetched from npm/github stored
    * on our database
    */
-  #mergePackageStatsAndInfo(pkg: PackageInfo, stats: PackageStats | undefined) {
+  #mergePackageStatsAndInfo(pkg: PackageInfo, stats: PackageStats) {
     return {
       ...pkg,
       firstReleaseAt: stats?.firstReleaseAt?.toISODate() || undefined,
@@ -132,7 +132,7 @@ export class PackagesFetcher {
     const stats = await PackageStats.all()
     let packages = [...this.packagesList].map((pkg) => {
       const info = stats.find((info) => info.packageName === pkg.name)
-      return this.#mergePackageStatsAndInfo(pkg, info)
+      return this.#mergePackageStatsAndInfo(pkg, info!)
     })
 
     /**
