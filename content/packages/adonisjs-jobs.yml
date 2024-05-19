@@ -8,6 +8,11 @@ website: https://github.com/KABBOUCHI/adonisjs-jobs
 learn_more: ''
 category: Extensions
 type: 3rd-party
+keywords:
+  - queue
+  - bullmq
+  - background-jobs
+  - redis
 maintainers:
   - name: Georges KABBOUCHI
     github: KABBOUCHI
