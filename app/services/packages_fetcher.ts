@@ -115,8 +115,13 @@ export class PackagesFetcher {
     return packages.filter((pkg) => {
       const name = pkg.name.toLowerCase()
       const description = pkg.description.toLowerCase()
+      const keywords = pkg.keywords?.join(' ') || ''
 
-      return name.includes(loweredSearch) || description.includes(loweredSearch)
+      return (
+        name.includes(loweredSearch) ||
+        description.includes(loweredSearch) ||
+        keywords.includes(loweredSearch)
+      )
     })
   }
 
