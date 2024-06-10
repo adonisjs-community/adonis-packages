@@ -1,0 +1,15 @@
+name: adonis-unpoly
+description: Provider and middleware unpoly for adonisjs
+repo: batosai/adonis-unpoly#main
+npm: '@jrmc/adonis-unpoly'
+icon: ''
+github: https://github.com/batosai/adonis-unpoly
+website: https://github.com/batosai/adonis-unpoly
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Jeremy Chaufourier
+    github: batosai
+compatibility:
+  adonis: ^6.0.0
