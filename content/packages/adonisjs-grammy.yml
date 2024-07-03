@@ -1,5 +1,5 @@
 name: sooluh/adonisjs-grammy
-description: Use Webhook on Telegram Bot Framework
+description: GrammY Web Framework Adapter for AdonisJS
 repo: sooluh/adonisjs-grammy
 npm: adonisjs-grammy
 icon: telegram.png
