@@ -2,7 +2,7 @@ name: adonis-unpoly
 description: Provider and middleware unpoly for adonisjs
 repo: batosai/adonis-unpoly#main
 npm: '@jrmc/adonis-unpoly'
-icon: ''
+icon: unpoly.png
 github: https://github.com/batosai/adonis-unpoly
 website: https://github.com/batosai/adonis-unpoly
 learn_more: ''
