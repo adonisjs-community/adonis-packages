@@ -1,0 +1,15 @@
+name: adonis-attachment
+description: Transform any field in your Lucid model into an attachment data type, automatically generating various sizes and formats.
+repo: batosai/adonis-attachment#main
+npm: '@jrmc/adonis-attachment'
+icon: ''
+github: https://github.com/batosai/adonis-attachment
+website: https://github.com/batosai/adonis-attachment
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Jeremy Chaufourier
+    github: batosai
+compatibility:
+  adonis: ^6.0.0
