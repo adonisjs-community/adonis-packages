@@ -1,0 +1,15 @@
+name: '@tpointurier/ally-microsoft'
+description: A Microsoft driver for AdonisJS Ally
+repo: ThibaultPointurier/ally-microsoft
+npm: '@tpointurier/ally-microsoft'
+icon: microsoft.png
+github: https://github.com/ThibaultPointurier/ally-microsoft
+website: https://github.com/ThibaultPointurier/ally-microsoft
+learn_more: ''
+category: Authentication
+type: 3rd-party
+maintainers:
+  - name: Thibault Pointurier
+    github: thibaultpointurier
+compatibility:
+  adonis: ^6.0.0
