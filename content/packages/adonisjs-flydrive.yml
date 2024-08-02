@@ -1,0 +1,15 @@
+name: adonisjs-flydrive
+description: AdonisJS FlyDrive integrates the flydrive.dev file storage library into AdonisJS, providing a seamless cloud storage solution within the AdonisJS framework.
+repo: mixxtor/adonisjs-flydrive#master
+npm: 'adonisjs-flydrive'
+icon: cloud-storage.png
+github: https://github.com/mixxtor/adonisjs-flydrive
+website: https://github.com/mixxtor/adonisjs-flydrive
+learn_more: ''
+category: Storage
+type: 3rd-party
+maintainers:
+  - name: Mixxtor R.
+    github: mixxtor
+compatibility:
+  adonis: ^6.0.0
