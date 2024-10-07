@@ -1,4 +1,4 @@
-name: adonis-slack
+name: adonis-slack-logger
 description: Package logger send to slack for AdonisJS
 repo: adityadarma/adonis-logger-slack
 npm: '@adityadarma/adonis-logger-slack'
