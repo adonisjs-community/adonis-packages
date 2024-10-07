@@ -1,0 +1,15 @@
+name: '@c0ldplasma/adonisjs-ally-apple'
+description: An Apple driver for AdonisJS v6 Ally
+repo: c0ldplasma/adonisjs-ally-apple
+npm: '@c0ldplasma/adonisjs-ally-apple'
+icon: apple.png
+github: https://github.com/c0ldplasma/adonisjs-ally-apple
+website: https://github.com/c0ldplasma/adonisjs-ally-apple
+learn_more: ''
+category: Authentication
+type: 3rd-party
+maintainers:
+  - name: c0ldplasma
+    github: c0ldplasma
+compatibility:
+  adonis: ^6.0.0
