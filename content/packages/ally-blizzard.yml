@@ -1,0 +1,15 @@
+name: ally-blizzard
+description: A Blizzard/Battle.net driver for AdonisJS Ally
+repo: tom-laplace/ally-blizzard
+npm: "ally-blizzard"
+icon: blizzard.png
+github: https://github.com/tom-laplace/ally-blizzard
+website: https://github.com/tom-laplace/ally-blizzard
+learn_more: ""
+category: Authentication
+type: 3rd-party
+maintainers:
+  - name: tom-laplace
+    github: tom-laplace
+compatibility:
+  adonis: ^6.0.0
