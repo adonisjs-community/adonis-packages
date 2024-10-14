@@ -1,0 +1,15 @@
+name: adonis-database-cryptable
+description: Database Encryption is a feature that allows developers to store data with encrypted and consume again with data decrypted.
+repo: adityadarma/adonis-database-cryptable
+npm: '@adityadarma/adonis-database-cryptable'
+icon: encryption.png
+github: https://github.com/adityadarma/adonis-database-cryptable
+website: https://github.com/adityadarma/adonis-database-cryptable
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: adityadarma
+    github: adityadarma
+compatibility:
+  adonis: ^6.0.0
