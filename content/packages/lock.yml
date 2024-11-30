@@ -2,6 +2,7 @@ name: lock
 category: Extensions
 npm: '@adonisjs/lock'
 repo: adonisjs/lock
+icon: adonis.png
 description: Atomic locks (mutex) for AdonisJS applications
 compatibility:
   adonis: ^6.0.0

@@ -1,0 +1,15 @@
+name: Tuyau
+description: 'RPC / End-to-end typesafe client For AdonisJS, Ziggy-like helpers'
+repo: https://github.com/Julien-R44/tuyau
+npm: '@tuyau/client'
+icon: tuyau.png
+github: https://github.com/Julien-R44/tuyau
+website: https://github.com/Julien-R44/tuyau
+learn_more: ''
+category: Communication
+type: 3rd-party
+maintainers:
+  - name: Julien-R44
+    github: Julien-R44
+compatibility:
+  adonis: ^6.0.0
