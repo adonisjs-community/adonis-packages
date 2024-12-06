@@ -1,6 +1,6 @@
-name: adonis6-ally-yandex
+name: adonis6_ally_yandex
 category: Authentication
-npm: adonis6-ally-yandex
+npm: adonis6_ally_yandex
 repo: dmitry-makovsky/adonis6_ally_yandex
 icon: yandex.png
 description: AdonisJS 6 Ally Yandex Driver

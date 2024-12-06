@@ -1,6 +1,6 @@
-name: adonis6-ally-vk
+name: adonis6_ally_vk
 category: Authentication
-npm: adonis6-ally-vk
+npm: adonis6_ally_vk
 repo: dmitry-makovsky/adonis6_ally_vk
 icon: vk.png
 description: AdonisJS 6 Ally Vk.com (Vkontakte.ru) Driver
