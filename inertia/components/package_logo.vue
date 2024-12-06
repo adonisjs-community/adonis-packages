@@ -9,7 +9,7 @@ defineProps<{
 }>()
 
 function iconPlaceholder({ category }: PackageInfo) {
-  return categories.find((c) => c.label === category)?.icon || 'i-fluent-emoji-package-24-regular'
+  return categories.find((c) => c.label === category)?.icon || 'i-carbon-ibm-data-product-exchange'
 }
 </script>
 
