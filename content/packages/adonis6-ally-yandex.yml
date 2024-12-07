@@ -1,0 +1,16 @@
+name: adonis6_ally_yandex
+category: Authentication
+npm: adonis6_ally_yandex
+repo: dmitry-makovsky/adonis6_ally_yandex
+icon: yandex.png
+description: AdonisJS 6 Ally Yandex Driver
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2024-11-16T11:58:42.318Z'
+lastReleaseAt: '2024-11-18T17:15:23.528Z'
+type: 3rd-party
+maintainers:
+  - name: Dmitry Makovsky
+    github: dmitry-makovsky
+github: https://github.com/dmitry-makovsky/adonis6_ally_yandex/tree/main
+website: https://github.com/dmitry-makovsky/adonis6_ally_yandex/tree/main
