@@ -1,0 +1,15 @@
+name: '@vbusatta/adonis-stripe'
+category: Payment
+npm: '@vbusatta/adonis-stripe'
+repo: vittoriobusatta/adonis-stripe
+icon: stripe6.png
+description: >-
+  Provider for AdonisJS 6. Simplifies Stripe integration with webhooks and
+  services.
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2024-11-27T22:22:37.899Z'
+lastReleaseAt: '2024-11-27T22:40:32.928Z'
+type: 3rd-party
+github: https://github.com/vittoriobusatta/adonis-stripe/tree/main
+website: https://github.com/vittoriobusatta/adonis-stripe/tree/main
