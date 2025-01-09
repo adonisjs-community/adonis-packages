@@ -83,7 +83,7 @@ export class PackagesDataRefresher {
       'packageName',
       packages.map((pkg) => ({
         packageName: pkg.name,
-        githubStars: pkg.stars,
+        githubStars: pkg.stars || 0,
         weeklyDownloads: pkg.downloads ? pkg.downloads : 0,
         firstReleaseAt: pkg.firstReleaseAt ? DateTime.fromISO(pkg.firstReleaseAt) : null,
         lastReleaseAt: pkg.lastReleaseAt ? DateTime.fromISO(pkg.lastReleaseAt) : null,
