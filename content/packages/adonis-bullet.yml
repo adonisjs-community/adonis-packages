@@ -1,0 +1,12 @@
+name: '@7nohe/adonis-bullet'
+category: DevTools
+npm: '@7nohe/adonis-bullet'
+repo: 7nohe/adonis-bullet
+description: AdonisJS helper to kill N+1 queries
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2025-02-02T23:32:51.896Z'
+lastReleaseAt: '2025-02-09T07:44:08.695Z'
+type: 3rd-party
+github: https://github.com/7nohe/adonis-bullet/tree/main
+website: https://github.com/7nohe/adonis-bullet/tree/main
