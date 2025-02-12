@@ -1,0 +1,12 @@
+name: '@7nohe/adonis-typed-links'
+category: Communication
+npm: '@7nohe/adonis-typed-links'
+repo: 7nohe/adonis-typed-links
+description: Provides strongly-typed wrappers for Inertia.js's Links, Manual Visits, and Form Helper from AdonisJS routing
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2024-10-06T13:12:56.319Z'
+lastReleaseAt: '2025-02-11T23:57:07.975Z'
+type: 3rd-party
+github: https://github.com/7nohe/adonis-typed-links/tree/main
+website: https://github.com/7nohe/adonis-typed-links/tree/main
