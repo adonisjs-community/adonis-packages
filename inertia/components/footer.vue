@@ -33,15 +33,17 @@ import Socials from '@/components/socials.vue'
               <p class="mb-2 text-lg text-base12 font-title">Documentations</p>
               <a href="https://docs.adonisjs.com" class="item">AdonisJS</a>
               <a href="https://japa.dev/" class="item">Japa</a>
+              <a href="https://lucid.adonisjs.com/" class="item">Lucid</a>
               <a href="https://edgejs.dev/docs/introduction" class="item">EdgeJS</a>
               <a href="https://vinejs.dev/docs/introduction" class="item">VineJS</a>
               <a href="https://bentocache.dev" class="item">Bentocache</a>
+              <a href="https://verrou.dev" class="item">Verrou</a>
+              <a href="https://flydrive.dev/docs/introduction" class="item">Flydrive</a>
             </div>
             <div class="flex flex-col gap-y-2 text-sm font-content">
               <p class="mb-2 text-lg text-base12 font-title">Others</p>
               <a href="https://adonisjs.com/blog/" class="item">Blog</a>
               <a href="https://adonisjs.com/about" class="item">About</a>
-              <a href="https://adonisjs.com/support_program" class="item">Support program</a>
             </div>
           </div>
 
