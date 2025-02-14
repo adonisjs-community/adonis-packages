@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { categories } from '~/content/categories'
-
 import type { PackageInfo } from '@/app/types'
+import { categories } from '~/content/categories'
 
 defineProps<{
   package: PackageInfo

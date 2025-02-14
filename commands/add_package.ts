@@ -67,7 +67,7 @@ export default class AddPackage extends BaseCommand {
       const npmPkg = await fetcher.fetchNpmPkg(githubPkg.name)
 
       return { githubPkg, npmPkg }
-    } catch (error) {
+    } catch {
       throw new Error('Unable to fetch details from github and npm. Double check the repo name')
     } finally {
       spinner.stop()
