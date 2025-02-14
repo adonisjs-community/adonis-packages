@@ -24,7 +24,10 @@ export class PackagesFetcher {
     const cacheKey = `github:repo:readme:${pkg.repo}`
     const [repo, branch] = pkg.repo.split('#')
     return cache
-      .getOrSet(cacheKey, () => this.packageFetcher.fetchReadme(repo, branch))
+      .getOrSet({
+        key: cacheKey,
+        factory: () => this.packageFetcher.fetchReadme(repo, branch),
+      })
       .catch((err) => {
         logger.error({ err }, `Cannot fetch github repo info for ${pkg.repo}`)
         return ''

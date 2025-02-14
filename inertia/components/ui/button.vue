@@ -25,7 +25,7 @@ const properties = withDefaults(
   },
 )
 
-const slots = useSlots()
+const slots: any = useSlots()
 
 const component = computed(() => properties.as)
 const isDisabled = computed(

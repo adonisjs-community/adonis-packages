@@ -64,6 +64,7 @@ export default defineConfig({
     presetUno(),
     presetAttributify(),
     presetForms(),
+    // @ts-expect-error tkt
     presetRadix({
       extend: true,
       aliases: { base: 'mauve' },

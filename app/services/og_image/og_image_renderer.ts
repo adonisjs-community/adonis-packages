@@ -150,9 +150,12 @@ export class OgImageGenerator {
    * - Finally, cache the result so that we don't have to generate it again and again
    */
   async generate(name: string, description: string) {
-    const base64Og = await cache.use('ogImage').getOrSet(`og-image:${name}`, async () => {
-      const svg = await this.#generateSvg(name, description)
-      return new Resvg(svg).render().asPng().toString('base64')
+    const base64Og = await cache.use('ogImage').getOrSet({
+      key: `og-image:${name}`,
+      factory: async () => {
+        const svg = await this.#generateSvg(name, description)
+        return new Resvg(svg).render().asPng().toString('base64')
+      },
     })
 
     return Buffer.from(base64Og, 'base64')
