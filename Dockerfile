@@ -1,6 +1,7 @@
 FROM node:20-alpine3.18 as base
 
 RUN apk --no-cache add curl
+RUN npm install -g corepack@latest
 RUN corepack enable
 
 # All deps stage
