@@ -1,7 +1,7 @@
 name: adonisjs-websocket
 category: Extensions
 npm: adonisjs-websocket
-repo: KABBOUCHI/adonisjs-websocket
+repo: KABBOUCHI/adonisjs-websocket#master
 description: Websocket provider for AdonisJS
 compatibility:
   adonis: ^6.0.0
