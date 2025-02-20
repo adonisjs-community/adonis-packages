@@ -33,7 +33,7 @@ defineOptions({
       <br />
       please feel free to create a PR on the repository to add it !
     </div>
-    <Button class="mt-6" as="a" theme="primary" left-icon="i-fa6-brands-github">
+    <Button href="https://github.com/adonisjs-community/adonis-packages" class="mt-6" as="a" theme="primary" left-icon="i-fa6-brands-github">
       Contribute on GitHub
     </Button>
   </div>
