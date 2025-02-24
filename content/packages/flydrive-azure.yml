@@ -1,0 +1,14 @@
+name: 'flydrive-azure'
+description: Flydrive - Azure blob storage driver
+repo: necessarylion/flydrive-azure-driver
+npm: 'flydrive-azure'
+icon: azure.png
+github: https://github.com/necessarylion/flydrive-azure-driver
+website: https://github.com/necessarylion/flydrive-azure-driver
+category: Storage
+type: 3rd-party
+maintainers:
+  - name: AJ
+    github: necessarylion
+compatibility:
+  adonis: ^6.0.0
