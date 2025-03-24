@@ -1,0 +1,15 @@
+name: ally-apple-v6
+description: An Apple driver for AdonisJS Ally
+repo: WailRoth/adonis-ally-apple-v6
+npm: '@wailroth/adonis-ally-apple-v6'
+icon: apple.png
+github: https://github.com/WailRoth/adonis-ally-apple-v6
+website: https://github.com/WailRoth/adonis-ally-apple-v6
+learn_more: ''
+category: Authentication
+type: 3rd-party
+maintainers:
+  - name: wailroth
+    github: wailroth
+compatibility:
+  adonis: ^6.0.0
