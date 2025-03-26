@@ -1,0 +1,15 @@
+name: apitally
+description: Simple API monitoring, analytics and request logging for AdonisJS
+repo: apitally/apitally-js
+npm: apitally
+icon: apitally.png
+github: https://github.com/apitally/apitally-js
+website: https://docs.apitally.io/frameworks/adonisjs
+learn_more: ''
+category: Monitoring
+type: 3rd-party
+maintainers:
+  - name: itssimon
+    github: itssimon
+compatibility:
+  adonis: ^6.0.0
