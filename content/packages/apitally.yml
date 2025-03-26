@@ -5,7 +5,6 @@ npm: apitally
 icon: apitally.png
 github: https://github.com/apitally/apitally-js
 website: https://docs.apitally.io/frameworks/adonisjs
-learn_more: ''
 category: Monitoring
 type: 3rd-party
 maintainers:
