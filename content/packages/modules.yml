@@ -1,6 +1,6 @@
 name: modules
 category: DevTools
-npm: @adonisjs-community/modules
+npm: "@adonisjs-community/modules"
 repo: adonisjs-community/modules#main
 icon: modules.png
 description: Modules for AdonisJS
