@@ -6,7 +6,7 @@ import SideCard from '@/pages/package/components/side_card.vue'
 
 type TocElement = { id: string; level: number; textContent: string | null }
 
-const props = defineProps<{ markdown: string }>()
+const props = defineProps<{ markdown: string | null }>()
 const elements = ref<TocElement[]>([])
 const activeSections = ref<string>()
 
@@ -38,7 +38,7 @@ function parseMarkdown() {
   if (import.meta.env.SSR) return
 
   const parser = new DOMParser()
-  const doc = parser.parseFromString(props.markdown, 'text/html')
+  const doc = parser.parseFromString(props.markdown || '', 'text/html')
   const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6')
 
   elements.value = [...headings].flatMap(({ id, textContent, tagName }) => {
