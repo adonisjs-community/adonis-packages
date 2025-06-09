@@ -1,0 +1,18 @@
+name: Unpoly Starter Kit
+description: AdonisJS, Unpoly, AlpineJS, DaisyUI...
+repo: batosai/adonis-starter-kit
+github: https://github.com/batosai/adonis-starter-kit
+website: https://github.com/batosai/adonis-starter-kit
+category: Starter kits
+type: 3rd-party
+maintainers:
+  - name: Jeremy Chaufourier
+    github: batosai
+compatibility:
+  adonis: ^6.0.0
+keywords:
+  - Starter Kit
+  - template
+  - Unpoly
+  - AlpineJS
+  - DaisyUI

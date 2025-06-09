@@ -123,7 +123,7 @@ function fetchNewPageData(page: number) {
           <div class="w-full flex flex-col">
             <div
               ref="scrollToTopRef"
-              class="w-full flex flex-col flex-wrap justify-between gap-2"
+              class="w-full flex flex-col flex-wrap justify-between gap-2 scroll-mt-20"
               md="items-center flex-row"
             >
               <SearchBar v-model="search" />

@@ -16,10 +16,6 @@ export const categories = [
     icon: 'i-carbon-data-base',
   },
   {
-    label: 'Deployment',
-    icon: 'i-carbon-3rd-party-connected',
-  },
-  {
     label: 'DevTools',
     icon: 'i-carbon-code',
   },
@@ -46,6 +42,10 @@ export const categories = [
   {
     label: 'Security',
     icon: 'i-carbon-block-storage-alt',
+  },
+  {
+    label: 'Starter kits',
+    icon: 'i-carbon-rocket',
   },
   {
     label: 'Storage',

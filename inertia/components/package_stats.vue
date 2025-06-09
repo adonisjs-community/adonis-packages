@@ -25,6 +25,7 @@ function numberFormatter(num: number) {
     </a>
 
     <a
+      v-if="package.npm"
       v-tooltip="{ content: 'Monthly downloads from npm', distance: 10, delay: 500 }"
       class="flex items-center gap-1.3 transition-colors duration-600 hover:text-base12"
       :href="`https://www.npmjs.com/package/${package.npm}`"

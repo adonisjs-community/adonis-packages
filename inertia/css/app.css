@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-html {
-  scroll-padding-top: 6rem;
-}
-
 html,
 body {
   height: 100%;
