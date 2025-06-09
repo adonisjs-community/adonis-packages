@@ -22,11 +22,11 @@ export class PackagesFetcher {
     if (!pkg.repo) return ''
 
     const cacheKey = `github:repo:readme:${pkg.repo}`
-    const [repo, branch] = pkg.repo.split('#')
+    const [repo] = pkg.repo.split('#')
     return cache
       .getOrSet({
         key: cacheKey,
-        factory: () => this.packageFetcher.fetchReadme(repo, branch),
+        factory: () => this.packageFetcher.fetchReadme(repo),
       })
       .catch((err) => {
         logger.error({ err }, `Cannot fetch github repo info for ${pkg.repo}`)

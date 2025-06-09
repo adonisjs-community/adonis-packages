@@ -59,7 +59,7 @@ export class PackageFetcher {
    * @param repository GitHub repository name in format username/repo-name
    * @param branch Branch to fetch the README.md file from
    */
-  async fetchReadme(repository: string, branch = 'main') {
+  async fetchReadme(repository: string) {
     const { default: env } = await import('#start/env')
     const result = await fetch(`https://api.github.com/repos/${repository}/readme`, {
       headers: { Authorization: `token ${env.get('GITHUB_TOKEN')}` },
