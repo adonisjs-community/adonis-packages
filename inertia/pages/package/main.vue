@@ -2,6 +2,7 @@
 import 'highlight.js/styles/felipec.min.css'
 import 'github-markdown-css/github-markdown-dark.css'
 
+import { Motion } from 'motion-v'
 import { Head } from '@inertiajs/vue3'
 
 import Toc from './components/toc.vue'
@@ -17,24 +18,48 @@ const props = defineProps<GetPackageResponse>()
   <Layout>
     <Head :title="`${props.package.name} - AdonisJS Packages`" />
 
-    <div class="pb-28 pt-6" md="pt-12">
-      <div class="pointer-events-none absolute inset-0 overflow-hidden">
-        <span class="bg-gradient"></span>
+    <div class="pb-28 pt-6 relative">
+      <div class="pointer-events-none absolute inset-0">
+        <div class="gradient-splash-1"></div>
+        <div class="gradient-splash-2"></div>
+        <div class="gradient-splash-3"></div>
       </div>
 
-      <div class="z-1 p-container">
+      <div class="z-1 relative p-container">
         <!-- Heading -->
-        <Heading :package="package" />
+        <Motion
+          :initial="{ opacity: 0, y: 20 }"
+          :animate="{ opacity: 1, y: 0 }"
+          :transition="{ duration: 0.6, ease: 'easeOut' }"
+        >
+          <Heading :package="package" />
+        </Motion>
 
-        <!-- Readme & Toc -->
-        <div class="relative flex flex-col-reverse gap-12" md="grid grid-cols-[1fr_18em] gap-24">
-          <section class="markdown-body" v-html="readme"></section>
-          <div class="toc z-13 overflow-auto" md="sticky pb-4 top-90px">
-            <div md="border-l border-white/6 pl-6 pr-4">
-              <Toc :markdown="readme" />
-              <Links class="mt-4" :package="package" />
+        <!-- Content Layout -->
+        <div class="mt-6 flex flex-col-reverse lg:grid lg:grid-cols-[1fr_280px] lg:gap-6">
+          <Motion
+            :initial="{ opacity: 0, y: 30 }"
+            :animate="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 0.7, delay: 0.2, ease: 'easeOut' }"
+          >
+            <div class="min-w-0 bg-base3 border border-base5 rounded p-6">
+              <article class="markdown-body max-w-none" v-html="readme"></article>
             </div>
-          </div>
+          </Motion>
+
+          <!-- Sidebar -->
+          <Motion
+            :initial="{ opacity: 0, y: 20 }"
+            :animate="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 0.6, delay: 0.4, ease: 'easeOut' }"
+          >
+            <aside class="mb-8 lg:mt-0">
+              <div class="sticky top-25 space-y-6">
+                <Toc :markdown="readme" />
+                <Links :package="package" />
+              </div>
+            </aside>
+          </Motion>
         </div>
       </div>
     </div>
@@ -42,73 +67,139 @@ const props = defineProps<GetPackageResponse>()
 </template>
 
 <style lang="postcss">
-.toc {
-  max-height: calc(100vh - 90px);
-  height: fit-content;
-}
-
-.bg-gradient::before {
+.gradient-splash-1 {
   position: absolute;
-  z-index: 0;
-  content: '';
-  top: -403px;
-  bottom: 0%;
-  left: 150px;
-  height: 1250px;
-  width: 100%;
-  pointer-events: none;
-  background:
-    url(@/assets/noise.webp) repeat,
-    linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-  background-blend-mode: overlay;
-  -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
-  mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
-  opacity: 0.5;
+  top: -200px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(50, 69, 255, 0.15) 0%,
+    rgba(188, 82, 238, 0.1) 50%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(80px);
 }
 
-.bg-mask {
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 1) 620px);
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 1) 8%);
+.gradient-splash-2 {
+  position: absolute;
+  top: 400px;
+  left: -200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.12) 0%,
+    rgba(59, 130, 246, 0.08) 50%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(100px);
 }
 
-.bg-topography {
-  background-size: 620px;
-  background-image: url('@/assets/topography.svg');
+.gradient-splash-3 {
+  position: absolute;
+  top: 200px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(239, 68, 68, 0.15) 0%,
+    rgba(220, 38, 38, 0.1) 50%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(70px);
 }
 
 .markdown-body {
+  color: rgb(229 231 235);
   background-color: transparent;
-  max-width: 100%;
-  width: 100%;
-  overflow: auto;
 
   h1,
   h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title text-white border-b border-white/10;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
   h3 {
-    @apply font-title;
-    @apply border-white/6;
+    @apply text-xl;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   ul,
   ol {
-    list-style: disc !important;
-    padding-left: 2em;
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    list-style-position: outside;
+    list-style-type: disc;
   }
 
   pre {
-    background-color: #171717 !important;
-    overflow: auto;
-    @apply font-mono font-bold;
+    @apply rounded border border-base6 bg-base4 p-4 font-mono text-sm;
+    overflow-x: auto;
+    margin: 1.5rem 0;
   }
 
-  a,
-  img {
-    display: inline-block;
+  code {
+    @apply rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm;
+  }
+
+  pre code {
+    @apply bg-transparent p-0;
+  }
+
+  a {
+    @apply text-blue-400 hover:text-blue-300 transition-colors;
+  }
+
+  blockquote {
+    @apply border-l-4 border-blue-500/50 bg-blue-500/5 pl-4 py-2 my-4 italic;
+  }
+
+  table {
+    @apply w-full border-collapse border border-white/10 my-4;
+  }
+
+  th,
+  td {
+    @apply border border-white/10 px-3 py-2 text-left;
+  }
+
+  th {
+    @apply bg-white/5 font-semibold;
   }
 
   img {
-    background-color: transparent;
+    @apply rounded-lg border border-white/10 my-4;
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>
-@/app/types

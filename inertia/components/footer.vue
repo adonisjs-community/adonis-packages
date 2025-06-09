@@ -3,64 +3,110 @@ import Socials from '@/components/socials.vue'
 </script>
 
 <template>
-  <div>
-    <div class="flex items-center">
-      <hr class="footer-separator h-0.2 flex-1 border-0 bg-primary/40" />
-      <div class="relative w-12 flex items-center justify-center">
-        <i
-          class="i-custom-adonis-icon absolute inline-block text-5xl transition duration-500 ease-bounce"
-          hover="rotate-360"
-        />
-      </div>
-      <hr class="footer-separator h-0.2 flex-1 border-0 bg-primary/40" />
-    </div>
-
-    <div class="mb-8 bg-base1 py-12 pb-0">
-      <div class="p-container">
-        <div
-          class="flex flex-col items-center justify-between gap-y-8 text-center"
-          md="flex-row items-start text-left"
-        >
-          <div class="flex flex-col gap-x-24 gap-y-8" md="flex-row">
-            <div class="flex flex-col gap-y-2 text-sm font-content">
-              <p class="mb-2 text-lg text-base12 font-title">General Resources</p>
-              <a href="https://docs.adonisjs.com" class="item">Documentation</a>
-              <a href="https://packages.adonisjs.com" class="item">Packages</a>
-              <a href="https://adonisjs.com/blog/" class="item">Newsletter</a>
-              <a href="https://github.com/adonisjs/core/discussions" class="item">Discussions</a>
-            </div>
-            <div class="flex flex-col gap-y-2 text-sm font-content">
-              <p class="mb-2 text-lg text-base12 font-title">Documentations</p>
-              <a href="https://docs.adonisjs.com" class="item">AdonisJS</a>
-              <a href="https://japa.dev/" class="item">Japa</a>
-              <a href="https://lucid.adonisjs.com/" class="item">Lucid</a>
-              <a href="https://edgejs.dev/docs/introduction" class="item">EdgeJS</a>
-              <a href="https://vinejs.dev/docs/introduction" class="item">VineJS</a>
-              <a href="https://bentocache.dev" class="item">Bentocache</a>
-              <a href="https://verrou.dev" class="item">Verrou</a>
-              <a href="https://flydrive.dev/docs/introduction" class="item">Flydrive</a>
-            </div>
-            <div class="flex flex-col gap-y-2 text-sm font-content">
-              <p class="mb-2 text-lg text-base12 font-title">Others</p>
-              <a href="https://adonisjs.com/blog/" class="item">Blog</a>
-              <a href="https://adonisjs.com/about" class="item">About</a>
+  <div class="p-container mb-4 footer">
+    <div class="flex flex-col gap-5">
+      <div class="grid grid-cols-1 gap-8" md="grid-cols-4">
+        <div class="bg-base2 rounded p-4 border border-base3 group">
+          <div class="h-full flex flex-col justify-between">
+            <div class="space-y-4">
+              <div>
+                <h3 class="mb-3 flex items-center gap-2 border-b border-base4 border-dashed pb-3">
+                  <div
+                    class="p-1 flex items-center justify-center rounded border border-primary/30"
+                  >
+                    <i class="i-tabler-book-2 text-xs text-base11"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-base12">Resources</span>
+                </h3>
+                <div class="flex flex-col text-[0.8rem] text-base11 gap-2">
+                  <a href="https://docs.adonisjs.com">• Documentation</a>
+                  <a href="https://adonisjs.com/blog/">• Newsletter</a>
+                  <a href="https://github.com/adonisjs/core/discussions">• Discussions</a>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <Socials />
+        <div class="bg-base2 rounded p-4 border border-base3 group" md="col-span-2">
+          <div class="h-full flex flex-col justify-between">
+            <div class="space-y-4">
+              <div>
+                <h3 class="mb-3 flex items-center gap-2 border-b border-base4 border-dashed pb-3">
+                  <div
+                    class="p-1 flex items-center justify-center rounded border border-primary/30"
+                  >
+                    <i class="i-tabler-network text-xs text-base11"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-base12">Ecosystem</span>
+                </h3>
+                <div class="grid grid-cols-3 gap-x-6 gap-y-2 text-[0.8rem] text-base11">
+                  <a href="https://docs.adonisjs.com">• AdonisJS</a>
+                  <a href="https://japa.dev/">• Japa</a>
+                  <a href="https://lucid.adonisjs.com/">• Lucid</a>
+                  <a href="https://edgejs.dev/docs/introduction">• EdgeJS</a>
+                  <a href="https://vinejs.dev/docs/introduction">• VineJS</a>
+                  <a href="https://bentocache.dev">• Bentocache</a>
+                  <a href="https://verrou.dev">• Verrou</a>
+                  <a href="https://flydrive.dev/docs/introduction">• Flydrive</a>
+                  <a href="https://tuyau.julr.dev/">• Tuyau</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-base2 rounded p-4 pb-0 border border-base3 pt-4 border group">
+          <div class="h-full flex flex-col justify-between">
+            <div class="space-y-4">
+              <div>
+                <h3 class="mb-3 flex items-center gap-2 border-b border-base4 border-dashed pb-3">
+                  <div
+                    class="p-1 flex items-center justify-center rounded border border-primary/30"
+                  >
+                    <i class="i-tabler-plus text-xs text-base11"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-base12">More</span>
+                </h3>
+                <div class="flex flex-col text-[0.8rem] text-base11 gap-2">
+                  <a href="https://adonisjs.com/blog/">• Blog</a>
+                  <a href="https://adonisjs.com/about">• About</a>
+                </div>
+              </div>
+
+              <div
+                class="py-3 border-t border-base4 border-dashed flex justify-between items-center"
+              >
+                <p class="text-xs text-base10">Connect with us</p>
+                <Socials />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-base2 text-xs p-3 rounded border border-base3 text-base11">
+        <div class="flex flex-col items-center justify-between gap-4" sm="flex-row gap-2">
+          <div class="flex items-center gap-1">
+            <span>©</span>
+            <span>{{ new Date().getFullYear() }}</span>
+            <span>AdonisJS</span>
+            <span>•</span>
+            <span>Made with</span>
+            <i class="i-tabler-heart text-red-500"></i>
+            <span>by the community</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="i-custom-adonis-icon text-xs text-primary"></i>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.footer-separator {
-  box-shadow: 0px 0px 10px 1px rgba(84, 104, 255, 0.1);
-}
-
-.item {
-  transition: color 0.2s ease-in-out;
-  @apply text-base11 text-sm hover:text-base12;
+<style lang="postcss">
+.footer a {
+  @apply text-base11 hover:text-base-12 transition-colors duration-500;
 }
 </style>

@@ -4,7 +4,7 @@ import { categories } from '~/content/categories'
 
 defineProps<{
   package: PackageInfo
-  size?: '12' | '16'
+  size?: '12' | '16' | '19'
 }>()
 
 function iconPlaceholder({ category }: PackageInfo) {
@@ -18,6 +18,7 @@ function iconPlaceholder({ category }: PackageInfo) {
     :class="{
       'h-12 w-12': size === '12',
       'h-16 w-16': size === '16',
+      'h-19 w-19': size === '19',
     }"
   >
     <img
@@ -29,7 +30,7 @@ function iconPlaceholder({ category }: PackageInfo) {
       height="48"
       width="48"
     />
-    <div v-else class="h-full flex items-center justify-center overflow-hidden rounded-xl bg-base3">
+    <div v-else class="h-full flex items-center justify-center overflow-hidden rounded-xl bg-base5">
       <i class="bg-grey inline-block text-lg" :class="iconPlaceholder(package)" />
     </div>
   </div>

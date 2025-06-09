@@ -163,7 +163,7 @@ export class PackagesFetcher {
     /**
      * Paginate the results
      */
-    const perPage = 9
+    const perPage = 12
     const page = options.page || 1
     const totalPage = Math.ceil(packages.length / perPage)
 

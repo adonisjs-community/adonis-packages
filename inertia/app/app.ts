@@ -1,3 +1,4 @@
+import '@fontsource-variable/instrument-sans'
 import '../css/app.css'
 import 'virtual:uno.css'
 import '@unocss/reset/tailwind.css'
