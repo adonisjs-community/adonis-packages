@@ -42,7 +42,7 @@ export default defineConfig({
   },
 
   shortcuts: {
-    'p-container': 'px-8 container mx-auto',
+    'p-container': 'px-4 md:px-8 container mx-auto',
   },
 
   rules: [

@@ -6,8 +6,8 @@ import Button from '@/components/ui/button.vue'
   <div class="relative md:mb-12 overflow-visible">
     <div class="absolute inset-0 grid-pattern" />
 
-    <div class="relative px-6 py-6 lg:py-12">
-      <div class="mx-auto p-container">
+    <div class="relative p-container py-6">
+      <div class="mx-auto">
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div class="flex flex-col justify-center gap-4">
             <div class="flex">
