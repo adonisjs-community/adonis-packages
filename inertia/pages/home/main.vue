@@ -12,7 +12,6 @@ import Pagination from './components/pagination.vue'
 import SelectMenu from './components/select_menu.vue'
 import MainSection from './components/main_section.vue'
 import ButtonGroup from './components/button_group.vue'
-import BackgroundGradient from '@/components/background_gradient.vue'
 import OfficialPackageButton from './components/official_package_button.vue'
 import type {
   GetHomeResponse,
