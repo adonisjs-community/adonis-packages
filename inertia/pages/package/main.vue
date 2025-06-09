@@ -10,6 +10,7 @@ import Layout from '@/layouts/default.vue'
 import Links from './components/links.vue'
 import Heading from './components/heading.vue'
 import type { GetPackageResponse } from '@/app/types'
+import BackgroundGradient from '@/components/background_gradient.vue'
 
 const props = defineProps<GetPackageResponse>()
 </script>
@@ -19,13 +20,23 @@ const props = defineProps<GetPackageResponse>()
     <Head :title="`${props.package.name} - AdonisJS Packages`" />
 
     <div class="pb-28 pt-6 relative">
-      <div class="pointer-events-none absolute inset-0">
-        <div class="gradient-splash-1"></div>
-        <div class="gradient-splash-2"></div>
-        <div class="gradient-splash-3"></div>
-      </div>
+      <div class="relative z-10 p-container">
+        <BackgroundGradient
+          class="hidden md:block"
+          variant="red"
+          intensity="normal"
+          :position="{ top: '00px', right: '-100px' }"
+          :size="{ width: '600px', height: '600px' }"
+          :opacity="0.4"
+        />
+        <BackgroundGradient
+          variant="purple"
+          intensity="normal"
+          :position="{ top: '200px', right: '-400px' }"
+          :size="{ width: '500px', height: '500px' }"
+          :opacity="0.5"
+        />
 
-      <div class="z-1 relative p-container">
         <!-- Heading -->
         <Motion
           :initial="{ opacity: 0, y: 20 }"
@@ -68,54 +79,6 @@ const props = defineProps<GetPackageResponse>()
 </template>
 
 <style lang="postcss">
-.gradient-splash-1 {
-  position: absolute;
-  top: -200px;
-  right: -100px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(
-    circle,
-    rgba(50, 69, 255, 0.15) 0%,
-    rgba(188, 82, 238, 0.1) 50%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  filter: blur(80px);
-}
-
-.gradient-splash-2 {
-  position: absolute;
-  top: 400px;
-  left: -200px;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(
-    circle,
-    rgba(6, 182, 212, 0.12) 0%,
-    rgba(59, 130, 246, 0.08) 50%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  filter: blur(100px);
-}
-
-.gradient-splash-3 {
-  position: absolute;
-  top: 200px;
-  right: -150px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(
-    circle,
-    rgba(239, 68, 68, 0.15) 0%,
-    rgba(220, 38, 38, 0.1) 50%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  filter: blur(70px);
-}
-
 .markdown-body {
   color: rgb(229 231 235);
   background-color: transparent;

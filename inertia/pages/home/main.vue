@@ -12,6 +12,7 @@ import Pagination from './components/pagination.vue'
 import SelectMenu from './components/select_menu.vue'
 import MainSection from './components/main_section.vue'
 import ButtonGroup from './components/button_group.vue'
+import BackgroundGradient from '@/components/background_gradient.vue'
 import OfficialPackageButton from './components/official_package_button.vue'
 import type {
   GetHomeResponse,
@@ -110,7 +111,7 @@ function fetchNewPageData(page: number) {
         <div class="bg-topography absolute inset-0"></div>
       </div>
 
-      <div class="p-container">
+      <div class="relative z-10 p-container">
         <div class="items-start gap-4" md="grid grid-cols-[18em_1fr]">
           <!-- Category filters -->
           <Filters

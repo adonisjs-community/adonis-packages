@@ -20,7 +20,6 @@ const emit = defineEmits<{
 <template>
   <button
     class="group flex cursor-pointer items-center gap-x-4 text-left transition-all duration-200 ease-in-out"
-    hover="translate-x-2"
     data-testid="category-button"
     @click="emit('click')"
   >
