@@ -61,6 +61,10 @@ export class PackageFetcher {
    */
   fetchReadme(repository: string, branch = 'main') {
     const url = `https://raw.githubusercontent.com/${repository}/${branch}/README.md`
-    return fetch(url).then((res) => res.text())
+    return fetch(url).then((res) => {
+      if (res.status === 404) return null
+
+      return res.text()
+    })
   }
 }

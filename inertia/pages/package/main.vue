@@ -54,8 +54,29 @@ const props = defineProps<GetPackageResponse>()
             :transition="{ duration: 0.7, delay: 0.2, ease: 'easeOut' }"
             class="overflow-hidden"
           >
-            <div class="bg-base3 overflow-hidden border border-base5 rounded p-6 overflow-hidden">
+            <div
+              v-if="readme"
+              class="bg-base3 overflow-hidden border border-base5 rounded p-6 overflow-hidden"
+            >
               <article class="markdown-body max-w-none" v-html="readme"></article>
+            </div>
+            <div v-else class="bg-base3 border border-base5 rounded p-6">
+              <div class="text-center py-12">
+                <h3 class="text-2xl font-title text-white mb-4">README not found</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm mb-6">
+                  No README could be found for this package. The repository link might be broken or
+                  the branch may no longer exist. Feel free to open a PR to fix it.
+                </p>
+                <a
+                  :href="`https://github.com/adonisjs-community/adonis-packages/blob/main/content/packages/${package.name}.yml`"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                  <div class="i-tabler-external-link w-4 h-4"></div>
+                  Fix package configuration
+                </a>
+              </div>
             </div>
           </Motion>
 
