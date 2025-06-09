@@ -129,6 +129,7 @@ const props = defineProps<GetPackageResponse>()
     @apply font-title text-white border-b border-white/10;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    scroll-margin-top: 5rem;
   }
 
   h1 {

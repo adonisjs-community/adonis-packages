@@ -17,7 +17,9 @@ useEventListener('scroll', handleScroll)
  * Handle scroll event and set active section
  */
 function handleScroll() {
-  const sections = elements.value.map((element) => document.querySelector(`#${element.id}`))
+  const sections = elements.value.map((element) =>
+    document.querySelector(`#${CSS.escape(element.id)}`),
+  )
   activeSections.value = undefined
 
   for (const section of sections) {
@@ -54,12 +56,10 @@ function parseMarkdown() {
  * does not overlap the section
  */
 function onTocClick(id: string) {
-  const element = document.querySelector(`#${id}`)
+  const element = document.querySelector(`#${CSS.escape(id)}`)
+  if (!element) return
 
-  const elementPosition = element!.getBoundingClientRect().top
-  const offsetPosition = elementPosition + window.scrollY - 90
-
-  window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 </script>
 
