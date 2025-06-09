@@ -5,7 +5,7 @@ import Socials from '@/components/socials.vue'
 <template>
   <div class="p-container mb-4 footer">
     <div class="flex flex-col gap-5">
-      <div class="grid grid-cols-1 gap-8" md="grid-cols-4">
+      <div class="grid grid-cols-1 gap-4" md="grid-cols-4 gap-8">
         <div class="bg-base2 rounded p-4 border border-base3 group">
           <div class="h-full flex flex-col justify-between">
             <div class="space-y-4">

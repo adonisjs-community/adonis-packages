@@ -9,7 +9,7 @@ const officialPackagesOnly = defineModel<boolean>()
     aria-label="Official packages"
     theme="primary"
     size="s"
-    class="flex items-center justify-center rounded border border-base5 bg-base3 px-4 text-base transition-all space-x-2 text-sm transition duration-300"
+    class="flex items-center justify-center rounded border border-base5 bg-base3 px-4 text-base transition-all space-x-2 text-sm transition duration-300 py-2"
     hover="bg-base4"
     :class="{
       'bg-base border-yellow-500/30': officialPackagesOnly,
