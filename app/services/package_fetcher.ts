@@ -56,8 +56,6 @@ export class PackageFetcher {
 
   /**
    * Fetch README.md file from github repository
-   * @param repository GitHub repository name in format username/repo-name
-   * @param branch Branch to fetch the README.md file from
    */
   async fetchReadme(repository: string) {
     const { default: env } = await import('#start/env')
