@@ -1,24 +1,43 @@
-@import './fonts.css';
-
 * {
   margin: 0;
   padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
-  @apply bg-base1 text-base12;
-  font-family: 'PolySans', sans-serif;
+  @apply bg-base2 text-base12;
+  font-family: 'Instrument Sans Variable', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Force native scrollbar appearance on macOS */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
 body .v-popper--theme-tooltip .v-popper__inner {
-  @apply font-content text-base12 bg-base4  rounded-xl text-xs;
+  @apply font-content text-base12 bg-base4 rounded-lg border border-base6 shadow-lg text-xs;
   padding: 7px 12px 6px;
 }
 

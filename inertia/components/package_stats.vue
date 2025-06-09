@@ -13,17 +13,15 @@ function numberFormatter(num: number) {
 </script>
 
 <template>
-  <div class="text-md flex gap-6 text-base10">
+  <div class="text-sm flex gap-6 text-base10">
     <a
       v-tooltip="{ content: 'Stars on GitHub', distance: 10, delay: 500 }"
       class="flex items-center gap-1.3 transition-colors duration-600 hover:text-base12"
       :href="package.github"
       target="_blank"
     >
-      <i class="i-fluent-emoji-star inline-block" />
-      <span data-testid="package-stars" class="relative top-0.4 text-sm">
-        {{ package.stars }} stars
-      </span>
+      <i class="i-tabler-star text-yellow-500 inline-block" />
+      <span data-testid="package-stars" class="relative">{{ package.stars }} stars</span>
     </a>
 
     <a
@@ -32,13 +30,10 @@ function numberFormatter(num: number) {
       :href="`https://www.npmjs.com/package/${package.npm}`"
       target="_blank"
     >
-      <i class="i-fluent-emoji-chart-increasing inline-block" />
-      <span class="relative top-0.4 text-sm">
-        {{ numberFormatter(package.downloads) }} installs
-      </span>
+      <i class="i-tabler-trending-up text-green-500 inline-block" />
+      <span class="relative">{{ numberFormatter(package.downloads) }} installs</span>
     </a>
   </div>
 </template>
 
 <style scoped></style>
-@/app/types

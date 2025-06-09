@@ -2,6 +2,7 @@
 import 'highlight.js/styles/felipec.min.css'
 import 'github-markdown-css/github-markdown-dark.css'
 
+import { Motion } from 'motion-v'
 import { Head } from '@inertiajs/vue3'
 
 import Toc from './components/toc.vue'
@@ -9,6 +10,7 @@ import Layout from '@/layouts/default.vue'
 import Links from './components/links.vue'
 import Heading from './components/heading.vue'
 import type { GetPackageResponse } from '@/app/types'
+import BackgroundGradient from '@/components/background_gradient.vue'
 
 const props = defineProps<GetPackageResponse>()
 </script>
@@ -17,24 +19,59 @@ const props = defineProps<GetPackageResponse>()
   <Layout>
     <Head :title="`${props.package.name} - AdonisJS Packages`" />
 
-    <div class="pb-28 pt-6" md="pt-12">
-      <div class="pointer-events-none absolute inset-0 overflow-hidden">
-        <span class="bg-gradient"></span>
-      </div>
+    <div class="pb-28 pt-6 relative">
+      <div class="relative z-10 p-container">
+        <BackgroundGradient
+          class="hidden md:block"
+          variant="red"
+          intensity="normal"
+          :position="{ top: '00px', right: '-100px' }"
+          :size="{ width: '600px', height: '600px' }"
+          :opacity="0.4"
+        />
+        <BackgroundGradient
+          variant="purple"
+          intensity="normal"
+          :position="{ top: '200px', right: '-400px' }"
+          :size="{ width: '500px', height: '500px' }"
+          :opacity="0.5"
+        />
 
-      <div class="z-1 p-container">
         <!-- Heading -->
-        <Heading :package="package" />
+        <Motion
+          :initial="{ opacity: 0, y: 20 }"
+          :animate="{ opacity: 1, y: 0 }"
+          :transition="{ duration: 0.6, ease: 'easeOut' }"
+        >
+          <Heading :package="package" />
+        </Motion>
 
-        <!-- Readme & Toc -->
-        <div class="relative flex flex-col-reverse gap-12" md="grid grid-cols-[1fr_18em] gap-24">
-          <section class="markdown-body" v-html="readme"></section>
-          <div class="toc z-13 overflow-auto" md="sticky pb-4 top-90px">
-            <div md="border-l border-white/6 pl-6 pr-4">
-              <Toc :markdown="readme" />
-              <Links class="mt-4" :package="package" />
+        <!-- Content Layout -->
+        <div class="mt-6 flex flex-col-reverse lg:grid lg:grid-cols-[1fr_280px] lg:gap-6">
+          <Motion
+            :initial="{ opacity: 0, y: 30 }"
+            :animate="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 0.7, delay: 0.2, ease: 'easeOut' }"
+            class="overflow-hidden"
+          >
+            <div class="bg-base3 overflow-hidden border border-base5 rounded p-6 overflow-hidden">
+              <article class="markdown-body max-w-none" v-html="readme"></article>
             </div>
-          </div>
+          </Motion>
+
+          <!-- Sidebar -->
+          <Motion
+            :initial="{ opacity: 0, y: 20 }"
+            :animate="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 0.6, delay: 0.4, ease: 'easeOut' }"
+          >
+            <aside class="mb-8 lg:mt-0">
+              <div class="sticky top-25 space-y-6">
+                <Toc :markdown="readme" />
+                <Links :package="package" />
+              </div>
+            </aside>
+          </Motion>
         </div>
       </div>
     </div>
@@ -42,73 +79,92 @@ const props = defineProps<GetPackageResponse>()
 </template>
 
 <style lang="postcss">
-.toc {
-  max-height: calc(100vh - 90px);
-  height: fit-content;
-}
-
-.bg-gradient::before {
-  position: absolute;
-  z-index: 0;
-  content: '';
-  top: -403px;
-  bottom: 0%;
-  left: 150px;
-  height: 1250px;
-  width: 100%;
-  pointer-events: none;
-  background:
-    url(@/assets/noise.webp) repeat,
-    linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-  background-blend-mode: overlay;
-  -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
-  mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
-  opacity: 0.5;
-}
-
-.bg-mask {
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 1) 620px);
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 1) 8%);
-}
-
-.bg-topography {
-  background-size: 620px;
-  background-image: url('@/assets/topography.svg');
-}
-
 .markdown-body {
+  color: rgb(229 231 235);
   background-color: transparent;
-  max-width: 100%;
-  width: 100%;
-  overflow: auto;
 
   h1,
   h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title text-white border-b border-white/10;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 5rem;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
   h3 {
-    @apply font-title;
-    @apply border-white/6;
+    @apply text-xl;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   ul,
   ol {
-    list-style: disc !important;
-    padding-left: 2em;
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    list-style-position: outside;
+    list-style-type: disc;
   }
 
   pre {
-    background-color: #171717 !important;
-    overflow: auto;
-    @apply font-mono font-bold;
+    @apply rounded border border-base6 bg-base4 p-4 font-mono text-sm;
+    overflow-x: auto;
+    margin: 1.5rem 0;
   }
 
-  a,
-  img {
-    display: inline-block;
+  code {
+    @apply rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm overflow-hidden;
+  }
+
+  pre code {
+    @apply bg-transparent p-0 overflow-hidden;
+  }
+
+  a {
+    @apply text-blue-400 hover:text-blue-300 transition-colors;
+  }
+
+  blockquote {
+    @apply border-l-4 border-blue-500/50 bg-blue-500/5 pl-4 py-2 my-4 italic;
+  }
+
+  table {
+    @apply w-full border-collapse border border-white/10 my-4;
+  }
+
+  th,
+  td {
+    @apply border border-white/10 px-3 py-2 text-left;
+  }
+
+  th {
+    @apply bg-white/5 font-semibold;
   }
 
   img {
-    background-color: transparent;
+    @apply rounded-lg border border-white/10 my-4;
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>
-@/app/types
