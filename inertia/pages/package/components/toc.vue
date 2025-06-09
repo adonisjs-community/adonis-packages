@@ -64,7 +64,7 @@ function onTocClick(id: string) {
 </script>
 
 <template>
-  <SideCard title="Table of contents">
+  <SideCard v-if="elements.length > 0" title="Table of contents">
     <div class="flex flex-col gap-1 font-content">
       <div v-for="element in elements" :key="element.id">
         <a
