@@ -41,8 +41,9 @@ const props = defineProps<GetPackageResponse>()
             :initial="{ opacity: 0, y: 30 }"
             :animate="{ opacity: 1, y: 0 }"
             :transition="{ duration: 0.7, delay: 0.2, ease: 'easeOut' }"
+            class="overflow-hidden"
           >
-            <div class="min-w-0 bg-base3 border border-base5 rounded p-6">
+            <div class="bg-base3 overflow-hidden border border-base5 rounded p-6 overflow-hidden">
               <article class="markdown-body max-w-none" v-html="readme"></article>
             </div>
           </Motion>
@@ -168,11 +169,11 @@ const props = defineProps<GetPackageResponse>()
   }
 
   code {
-    @apply rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm;
+    @apply rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm overflow-hidden;
   }
 
   pre code {
-    @apply bg-transparent p-0;
+    @apply bg-transparent p-0 overflow-hidden;
   }
 
   a {
