@@ -2,6 +2,7 @@ name: edge-iconify
 category: Rendering
 npm: edge-iconify
 description: Iconify integration for the Edge template engine
+repo: https://github.com/edge-js/edge-iconify
 icon: 'edge.jpeg'
 compatibility:
   adonis: ^5.0.0 || ^6.0.0

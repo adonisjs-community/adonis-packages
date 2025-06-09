@@ -31,7 +31,7 @@ const formatDate = (dateString: string) => {
 
     <div class="flex flex-col items-start text-left space-y-4">
       <div class="flex items-center gap-4 min-w-0">
-        <PackageLogo class="flex-shrink-0" size="19" :package="package" />
+        <PackageLogo class="flex-shrink-0 flex" :package="package" />
         <div class="flex flex-col min-w-0 flex-1">
           <div class="flex flex-wrap items-start gap-3 mb-1">
             <h1 class="text-4xl font-bold min-w-0 flex-shrink">{{ package.name }}</h1>

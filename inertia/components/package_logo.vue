@@ -30,7 +30,10 @@ function iconPlaceholder({ category }: PackageInfo) {
       height="48"
       width="48"
     />
-    <div v-else class="h-full flex items-center justify-center overflow-hidden rounded-xl bg-base5">
+    <div
+      v-else
+      class="h-full flex items-center min-h-12 min-w-12 justify-center overflow-hidden rounded-xl bg-base5"
+    >
       <i class="bg-grey inline-block text-lg" :class="iconPlaceholder(package)" />
     </div>
   </div>
