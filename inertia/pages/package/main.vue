@@ -19,7 +19,7 @@ const props = defineProps<GetPackageResponse>()
   <Layout>
     <Head :title="`${props.package.name} - AdonisJS Packages`" />
 
-    <div class="pb-28 pt-6 relative">
+    <div class="pb-28 pt-6">
       <div class="relative z-10 p-container">
         <BackgroundGradient
           class="hidden md:block"
@@ -47,7 +47,7 @@ const props = defineProps<GetPackageResponse>()
         </Motion>
 
         <!-- Content Layout -->
-        <div class="mt-6 flex flex-col-reverse lg:grid lg:grid-cols-[1fr_280px] lg:gap-6">
+        <div class="mt-6 flex z-20 flex-col-reverse lg:grid lg:grid-cols-[1fr_280px] lg:gap-6">
           <Motion
             :initial="{ opacity: 0, y: 30 }"
             :animate="{ opacity: 1, y: 0 }"
