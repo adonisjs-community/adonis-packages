@@ -38,6 +38,7 @@ import Button from '@/components/ui/button.vue'
 
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center mt-4">
               <Button
+                as="a"
                 href="https://github.com/adonisjs-community/adonis-packages"
                 theme="primary"
                 left-icon="i-fa6-brands-github"
