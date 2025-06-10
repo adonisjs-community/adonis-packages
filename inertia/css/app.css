@@ -3,13 +3,16 @@
   padding: 0;
 }
 
-html,
-body {
+html {
   height: 100%;
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100%;
   width: 100%;
   @apply bg-base2 text-base12;
   font-family: 'Instrument Sans Variable', sans-serif;
-  overflow-x: hidden;
 }
 
 /* Force native scrollbar appearance on macOS */

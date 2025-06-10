@@ -74,7 +74,7 @@ function onTocClick(id: string) {
             'ml-2': element.level === 2,
             'ml-4': element.level === 3,
             'ml-6': element.level === 4,
-            'text-indigo': activeSections === element.id,
+            'text-base12': activeSections === element.id,
           }"
           @click.prevent="onTocClick(element.id)"
         >

@@ -47,7 +47,9 @@ const props = defineProps<GetPackageResponse>()
         </Motion>
 
         <!-- Content Layout -->
-        <div class="mt-6 flex z-20 flex-col-reverse lg:grid lg:grid-cols-[1fr_280px] lg:gap-6">
+        <div
+          class="mt-6 flex z-20 flex-col-reverse lg:grid lg:grid-cols-[1fr_280px] lg:gap-6 relative"
+        >
           <Motion
             :initial="{ opacity: 0, y: 30 }"
             :animate="{ opacity: 1, y: 0 }"
@@ -81,18 +83,24 @@ const props = defineProps<GetPackageResponse>()
           </Motion>
 
           <!-- Sidebar -->
-          <Motion
-            :initial="{ opacity: 0, y: 20 }"
-            :animate="{ opacity: 1, y: 0 }"
-            :transition="{ duration: 0.6, delay: 0.4, ease: 'easeOut' }"
-          >
-            <aside class="mb-8 lg:mt-0">
-              <div class="sticky top-25 space-y-6">
+          <aside class="mb-8 lg:mt-0 relative z-20">
+            <div class="sticky top-25 space-y-6">
+              <Motion
+                :initial="{ opacity: 0, y: 20 }"
+                :animate="{ opacity: 1, y: 0 }"
+                :transition="{ duration: 0.6, delay: 0.4, ease: 'easeOut' }"
+              >
                 <Toc :markdown="readme" />
+              </Motion>
+              <Motion
+                :initial="{ opacity: 0, y: 20 }"
+                :animate="{ opacity: 1, y: 0 }"
+                :transition="{ duration: 0.6, delay: 0.5, ease: 'easeOut' }"
+              >
                 <Links :package="package" />
-              </div>
-            </aside>
-          </Motion>
+              </Motion>
+            </div>
+          </aside>
         </div>
       </div>
     </div>

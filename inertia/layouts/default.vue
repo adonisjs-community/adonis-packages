@@ -5,7 +5,7 @@ import BackgroundGradient from '@/components/background_gradient.vue'
 </script>
 
 <template>
-  <div class="min-h-full relative flex flex-col">
+  <div class="min-h-screen relative flex flex-col">
     <Header />
 
     <slot />
