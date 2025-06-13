@@ -12,6 +12,7 @@ body {
   min-height: 100%;
   width: 100%;
   @apply bg-base2 text-base12;
+  overflow-x: clip;
   font-family: 'Instrument Sans Variable', sans-serif;
 }
 
