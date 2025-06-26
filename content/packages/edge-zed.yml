@@ -10,5 +10,5 @@ maintainers:
   - name: Abdelmadjid Cherfaoui
     github: Hexacker
 type: 3rd-party
-github: https://github.com/Hexacker/zed-edge
+github: https://github.com/Hexacker/zed-edge/tree/main
 website: https://github.com/Hexacker/zed-edge
