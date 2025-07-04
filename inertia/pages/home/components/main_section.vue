@@ -40,7 +40,17 @@ defineOptions({
   </section>
 
   <!-- Not found package section -->
-  <div v-else class="h-96 flex flex-col items-center justify-center" :class="$attrs.class">
+  <motion.div
+    v-else
+    class="h-96 flex flex-col items-center justify-center"
+    :class="$attrs.class"
+    :initial="{ opacity: 0, y: 30 }"
+    :animate="{
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    }"
+  >
     <p class="text-4xl font-semibold">No packages found !</p>
     <div class="mt-4 text-center text-base11 text-sm">
       If you think a package is missing here,
@@ -56,5 +66,5 @@ defineOptions({
     >
       Contribute on GitHub
     </Button>
-  </div>
+  </motion.div>
 </template>
