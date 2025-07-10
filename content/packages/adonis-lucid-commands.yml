@@ -1,0 +1,15 @@
+name: adonis-lucid-commands
+description: A set of commands to help you manage your databases.
+repo: batosai/adonis-lucid-commands#main
+npm: '@jrmc/adonis-lucid-commands'
+icon: ''
+github: https://github.com/batosai/adonis-lucid-commands
+website: https://github.com/batosai/adonis-lucid-commands
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Jeremy Chaufourier
+    github: batosai
+compatibility:
+  adonis: ^6.0.0
