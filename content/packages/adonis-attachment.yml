@@ -4,7 +4,7 @@ repo: batosai/adonis-attachment#main
 npm: '@jrmc/adonis-attachment'
 icon: ''
 github: https://github.com/batosai/adonis-attachment
-website: https://github.com/batosai/adonis-attachment
+website: https://adonis-attachment.jrmc.dev
 learn_more: ''
 category: Database
 type: 3rd-party
