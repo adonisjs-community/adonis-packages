@@ -1,0 +1,22 @@
+name: InertiaJS Starter Kit
+description: AdonisJS Monorepo, Inertia, Shadcn, React ...
+repo: filipebraida/adonisjs-starter-kit
+github: https://github.com/filipebraida/adonisjs-starter-kit
+website: https://github.com/filipebraida/adonisjs-starter-kit
+category: Starter kits
+type: 3rd-party
+maintainers:
+  - name: Filipe Braida
+    github: filipebraida
+compatibility:
+  adonis: ^6.0.0
+keywords:
+  - starter-kit
+  - template
+  - monorepo
+  - turbo
+  - shadcn
+  - inertia
+  - tailwind
+  - react
+  - typescript

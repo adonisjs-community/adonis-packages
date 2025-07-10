@@ -13,7 +13,7 @@ const group = inject<boolean>('group', false)
     @click="order = order === 1 ? -1 : 1"
   >
     <i
-      :class="order === 1 ? 'i-carbon-sort-ascending' : 'i-carbon-sort-descending'"
+      :class="order === 1 ? 'i-tabler:sort-ascending' : 'i-tabler:sort-descending'"
       class="inline-block text-sm"
     />
   </button>

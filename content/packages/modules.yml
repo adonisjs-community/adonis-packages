@@ -1,0 +1,18 @@
+name: modules
+category: DevTools
+npm: "@adonisjs-community/modules"
+repo: adonisjs-community/modules#main
+icon: modules.png
+description: Modules for AdonisJS
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2025-06-08T14:54:00.655Z'
+lastReleaseAt: '2025-06-08T14:54:00.655Z'
+type: 3rd-party
+github: https://github.com/adonisjs-community/modules/tree/main
+website: https://github.com/adonisjs-community/modules/tree/main
+maintainers:
+  - name: Densetsuuu
+    github: densetsuuu
+  - name: HowWhat42
+    github: howwhat42

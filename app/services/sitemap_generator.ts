@@ -22,6 +22,10 @@ export class SitemapGenerator {
   }
 
   async generate() {
-    return cache.getOrSet('sitemap', () => this.#generateSitemap(), { ttl: '1d' })
+    return cache.getOrSet({
+      ttl: '1d',
+      key: 'sitemap',
+      factory: () => this.#generateSitemap(),
+    })
   }
 }

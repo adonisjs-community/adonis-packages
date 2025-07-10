@@ -5,7 +5,7 @@ const properties = withDefaults(
   defineProps<{
     as?: 'button' | 'a'
     size?: 'l' | 'm' | 's'
-    theme?: 'primary' | 'outline'
+    theme?: 'primary' | 'outline' | 'soft'
     type?: 'button' | 'submit'
     loading?: boolean
     disabled?: boolean
@@ -25,7 +25,7 @@ const properties = withDefaults(
   },
 )
 
-const slots = useSlots()
+const slots: any = useSlots()
 
 const component = computed(() => properties.as)
 const isDisabled = computed(
@@ -61,7 +61,7 @@ const hasIcon = computed(() => hasLeftIcon.value || hasRightIcon.value)
   >
     <div v-if="hasLeftIcon" class="btn__icon-left flex">
       <slot name="left-icon">
-        <i v-if="leftIcon" :class="`inline-block text-xl ${leftIcon} ${iconClass}`" />
+        <i v-if="leftIcon" :class="`inline-block text-lg ${leftIcon} ${iconClass}`" />
       </slot>
     </div>
     <span class="w-full flex">
@@ -69,7 +69,7 @@ const hasIcon = computed(() => hasLeftIcon.value || hasRightIcon.value)
     </span>
     <div v-if="hasRightIcon" class="btn__icon-right flex">
       <slot name="right-icon">
-        <i v-if="rightIcon" :class="`inline-block text-xl ${rightIcon} ${iconClass}`" />
+        <i v-if="rightIcon" :class="`inline-block text-lg ${rightIcon} ${iconClass}`" />
       </slot>
     </div>
   </Component>
@@ -77,7 +77,7 @@ const hasIcon = computed(() => hasLeftIcon.value || hasRightIcon.value)
 
 <style lang="postcss" scoped>
 .btn {
-  @apply inline-flex items-center cursor-pointer overflow-hidden rounded-xl cursor-pointer;
+  @apply inline-flex items-center text-sm cursor-pointer overflow-hidden rounded-md cursor-pointer;
   transition: all 0.2s ease-in-out;
 
   &.--m {

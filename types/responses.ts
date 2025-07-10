@@ -12,5 +12,5 @@ export interface GetHomeResponse {
 
 export interface GetPackageResponse {
   package: PackageInfo
-  readme: string
+  readme: string | null
 }

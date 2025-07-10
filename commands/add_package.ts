@@ -1,6 +1,7 @@
 import { dump } from 'js-yaml'
 import { join } from 'node:path'
 import { inject } from '@adonisjs/core'
+import slugify from '@sindresorhus/slugify'
 import { writeFile } from 'node:fs/promises'
 import { getDirname } from '@poppinss/utils'
 import { BaseCommand } from '@adonisjs/core/ace'
@@ -32,7 +33,10 @@ export default class AddPackage extends BaseCommand {
    * Write the final package file to the disk
    */
   async #writePackageFile() {
-    const file = join(getDirname(import.meta.url), `../content/packages/${this.#package.name}.yml`)
+    const file = join(
+      getDirname(import.meta.url),
+      `../content/packages/${slugify(this.#package.name!)}.yml`,
+    )
     await writeFile(file, dump(this.#package), 'utf-8')
   }
 
@@ -67,7 +71,7 @@ export default class AddPackage extends BaseCommand {
       const npmPkg = await fetcher.fetchNpmPkg(githubPkg.name)
 
       return { githubPkg, npmPkg }
-    } catch (error) {
+    } catch {
       throw new Error('Unable to fetch details from github and npm. Double check the repo name')
     } finally {
       spinner.stop()

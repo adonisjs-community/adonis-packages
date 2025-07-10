@@ -1,0 +1,17 @@
+name: '@nemoventures/adonis-jobs'
+description: BullMQ integration for AdonisJS, with FlowJobs, Telemetry, UI Dashboard, and more.
+repo: '@nemoventures/adonis-jobs'
+npm: '@nemoventures/adonis-jobs'
+icon: 'redis.png'
+github: https://github.com/nemoengineering/adonis-jobs
+website: https://github.com/nemoengineering/adonis-jobs
+learn_more: ''
+category: Extensions
+type: 3rd-party
+keywords:
+  - queue
+  - bullmq
+  - background-jobs
+  - redis
+compatibility:
+  adonis: ^6.0.0

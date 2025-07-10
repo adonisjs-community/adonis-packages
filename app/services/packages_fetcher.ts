@@ -22,9 +22,12 @@ export class PackagesFetcher {
     if (!pkg.repo) return ''
 
     const cacheKey = `github:repo:readme:${pkg.repo}`
-    const [repo, branch] = pkg.repo.split('#')
+    const [repo] = pkg.repo.split('#')
     return cache
-      .getOrSet(cacheKey, () => this.packageFetcher.fetchReadme(repo, branch))
+      .getOrSet({
+        key: cacheKey,
+        factory: () => this.packageFetcher.fetchReadme(repo),
+      })
       .catch((err) => {
         logger.error({ err }, `Cannot fetch github repo info for ${pkg.repo}`)
         return ''
@@ -160,7 +163,7 @@ export class PackagesFetcher {
     /**
      * Paginate the results
      */
-    const perPage = 9
+    const perPage = 12
     const page = options.page || 1
     const totalPage = Math.ceil(packages.length / perPage)
 
@@ -183,7 +186,7 @@ export class PackagesFetcher {
 
     return {
       package: this.#mergePackageStatsAndInfo(pkg, stats),
-      readme: this.#markdownRenderer.render(readme, pkg.github),
+      readme: readme ? this.#markdownRenderer.render(readme, pkg.github) : null,
     }
   }
 }

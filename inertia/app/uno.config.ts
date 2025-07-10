@@ -36,24 +36,13 @@ export default defineConfig({
         DEFAULT: '#EEEEF0',
       },
 
-      plum: { 5: '#512454' },
-      amber: { 5: '#4c3000' },
-      orange: { 5: '#f76b15' },
-      grass: { 9: '#46A758' },
-      cyan: { 5: '#23AFD0' },
-      indigo: { 5: '#5472E4' },
-      violet: { 5: '#7D66D9' },
-      pink: { 5: '#DE51A8' },
-      ruby: { 5: '#EC5A72' },
-      tomato: { 5: '#EC6142' },
-      olive: { 5: '#767D74' },
-      lime: { 5: '#BDEE63' },
-      sky: { 5: '#7CE2FE' },
+      indigo: { 5: '#5472E4', 12: '#849DFF' },
+      violet: { 5: '#7D66D9', 12: '#B794F6' },
     },
   },
 
   shortcuts: {
-    'p-container': 'px-8 container mx-auto',
+    'p-container': 'px-4 md:px-8 container mx-auto',
   },
 
   rules: [
@@ -64,6 +53,7 @@ export default defineConfig({
     presetUno(),
     presetAttributify(),
     presetForms(),
+    // @ts-expect-error tkt
     presetRadix({
       extend: true,
       aliases: { base: 'mauve' },
@@ -82,9 +72,9 @@ export default defineConfig({
     presetWebFonts({
       provider: 'bunny',
       fonts: {
-        title: { name: 'PolySans', provider: 'none' },
+        title: { name: 'Instrument Sans Variable', provider: 'none' },
         mono: { name: 'JetBrains Mono', provider: 'google' },
-        content: { name: 'Graphik', provider: 'none' },
+        content: { name: 'Instrument Sans Variable', provider: 'none' },
         sans: {
           name: 'Poppins',
           weights: [300, 500, 700],

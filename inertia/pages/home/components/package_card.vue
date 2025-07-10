@@ -1,68 +1,60 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { Link } from '@inertiajs/vue3'
 
 import Tag from '@/components/tag.vue'
 import type { PackageInfo } from '@/app/types'
 import PackageLogo from '@/components/package_logo.vue'
 import PackageStats from '@/components/package_stats.vue'
-import AdonisIcon from '@/components/icons/adonis_icon.vue'
 
-const props = defineProps<{
+defineProps<{
   package: PackageInfo
 }>()
-
-const isV6Compatible = computed(() => props.package.compatibility?.adonis.includes('^6'))
 </script>
 
 <template>
-  <div class="group card gap-y-3 relative h-66 py-5 flex rounded-xl">
-    <div class="w-full flex grow-0 items-center cursor-default px-5">
-      <div class="flex gap-2">
-        <Tag data-testid="package-category">{{ package.category }}</Tag>
-        <Tag v-if="isV6Compatible" class="bg-primary bg-opacity70">V6 support</Tag>
+  <div
+    class="group relative overflow-hidden rounded bg-base3 border border-base5 transition-all h-full"
+    hover="border-base7 bg-base3"
+  >
+    <Link class="relative block p-6 h-full flex flex-col" :href="`/packages/${package.slug}`">
+      <!-- Header with category and logo -->
+      <div class="flex items-start justify-between mb-2">
+        <Tag data-testid="package-category" variant="accent">
+          {{ package.category }}
+        </Tag>
+        <PackageLogo
+          size="12"
+          :package="package"
+          class="transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+        />
       </div>
-    </div>
-    <Link
-      class="flex flex-col grow gap-y-2 content-around w-full px-5"
-      :href="`/packages/${package.slug}`"
-    >
-      <PackageLogo class="mt-3" size="12" :package="package" />
 
-      <div class="flex flex-col gap-y-1">
-        <div class="pointer-events-none absolute inset-0 m-1 overflow-hidden rounded-xl">
-          <AdonisIcon
-            v-if="package.type === 'official'"
-            class="absolute top-3 scale-600 opacity-2 -right-2 -rotate-20"
-          />
-        </div>
-        <div class="flex items-baseline gap-2">
-          <p data-testid="package-name" class="line-clamp-1 text-2xl font-bold">
+      <!-- Main content -->
+      <div class="flex-1 flex flex-col justify-center space-y-0">
+        <div class="flex items-center gap-3">
+          <h3
+            data-testid="package-name"
+            class="text-2xl font-bold text-base12 line-clamp-1 transition-colors duration-300 group-hover:text-primary-500"
+          >
             {{ package.name }}
-          </p>
+          </h3>
           <i
             v-if="package.type === 'official'"
             v-tooltip="{ content: 'Official package', distance: 10 }"
-            class="i-fluent-emoji-military-medal relative top-[2px] inline-block text-lg"
+            class="i-tabler:crown text-yellow-500 text-xl"
           />
         </div>
-        <p class="line-clamp-2 text-sm text-base10 mb-4">
+
+        <p
+          class="text-base10 text-sm leading-relaxed line-clamp-2 transition-colors duration-300 group-hover:text-base11"
+        >
           {{ package.description }}
         </p>
       </div>
+
+      <div class="mt-4 pt-4 border-t border-base5 border-dashed">
+        <PackageStats :package="package" />
+      </div>
     </Link>
-    <PackageStats class="place-self-start justify-self-end px-5" :package="package" />
   </div>
 </template>
-
-<style scoped lang="postcss">
-.card {
-  @apply bg-base2;
-  /*transition: all 0.6s ease-in-out;*/
-  border: 1px solid transparent;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-</style>
-@/app/types

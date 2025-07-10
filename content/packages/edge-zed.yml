@@ -1,0 +1,14 @@
+name: Edge Zed
+category: DevTools
+description: Zed extension for Edge.js
+icon: 'zed.png'
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2025-05-6T06:38:27.337Z'
+lastReleaseAt: '2025-05-6T06:38:27.337Z'
+maintainers:
+  - name: Abdelmadjid Cherfaoui
+    github: Hexacker
+type: 3rd-party
+github: https://github.com/Hexacker/zed-edge/tree/main
+website: https://github.com/Hexacker/zed-edge

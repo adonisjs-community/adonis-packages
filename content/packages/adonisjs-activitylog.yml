@@ -1,0 +1,15 @@
+name: adonisjs-activitylog
+description: Log activity inside your AdonisJS app
+repo: holoyan/adonisjs-activitylog#master
+npm: '@holoyan/adonisjs-activitylog'
+icon: ''
+github: https://github.com/holoyan/adonisjs-activitylog
+website: https://github.com/holoyan/adonisjs-activitylog
+learn_more: ''
+category: Monitoring
+type: 3rd-party
+maintainers:
+  - name: Artak
+    github: holoyan
+compatibility:
+  adonis: ^6.0.0

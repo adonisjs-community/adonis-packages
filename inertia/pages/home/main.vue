@@ -12,6 +12,7 @@ import Pagination from './components/pagination.vue'
 import SelectMenu from './components/select_menu.vue'
 import MainSection from './components/main_section.vue'
 import ButtonGroup from './components/button_group.vue'
+import OfficialPackageButton from './components/official_package_button.vue'
 import type {
   GetHomeResponse,
   PackageCategories,
@@ -74,7 +75,7 @@ const orderBy = ref<string>(params.orderBy || orderByOptions[3].value)
  * Filters
  */
 const selectedVersion = ref<string | null>(params.version || null)
-const officialPackagesOnly = ref<boolean>(params.officialOnly || false)
+const officialPackagesOnly = ref<boolean>((params.officialOnly as any) === 'true' || false)
 
 /**
  * Refetch when any of the filters change
@@ -82,7 +83,8 @@ const officialPackagesOnly = ref<boolean>(params.officialOnly || false)
 watch([officialPackagesOnly, order, orderBy, selectedVersion, category], () => fetchNewPageData(1))
 
 function fetchNewPageData(page: number) {
-  const props = {
+  const isNewPage = +(params.page || 1) !== page
+  const newProps = {
     page,
     order: order.value,
     search: search.value,
@@ -92,8 +94,9 @@ function fetchNewPageData(page: number) {
     officialOnly: officialPackagesOnly.value,
   }
 
-  router.get('/', props, { preserveState: true, preserveScroll: true })
-  scrollToTop()
+  router.get('/', newProps, { preserveState: true, preserveScroll: true })
+
+  if (isNewPage) scrollToTop()
 }
 </script>
 
@@ -107,8 +110,8 @@ function fetchNewPageData(page: number) {
         <div class="bg-topography absolute inset-0"></div>
       </div>
 
-      <div class="p-container">
-        <div class="items-start gap-4 2xl:gap-12" md="grid grid-cols-[18em_1fr]">
+      <div class="relative z-10 p-container">
+        <div class="items-start gap-4" md="grid grid-cols-[18em_1fr]">
           <!-- Category filters -->
           <Filters
             v-model:category="category"
@@ -120,7 +123,7 @@ function fetchNewPageData(page: number) {
           <div class="w-full flex flex-col">
             <div
               ref="scrollToTopRef"
-              class="w-full flex flex-col flex-wrap justify-between gap-2"
+              class="w-full flex flex-col flex-wrap justify-between gap-2 scroll-mt-20"
               md="items-center flex-row"
             >
               <SearchBar v-model="search" />
@@ -133,19 +136,7 @@ function fetchNewPageData(page: number) {
                   placeholder="Select a category"
                 />
 
-                <button
-                  aria-label="Official packages"
-                  theme="primary"
-                  size="s"
-                  class="flex items-center justify-center rounded-xl bg-base2 px-4 text-base shadow-sm transition-all space-x-2 hover:(bg-base3 shadow-md)"
-                  :class="{
-                    'bg-base shadow-md': officialPackagesOnly,
-                  }"
-                  @click="officialPackagesOnly = !officialPackagesOnly"
-                >
-                  <i class="i-fluent-emoji-military-medal inline-block text-xl" />
-                  <p v-if="officialPackagesOnly" class="text-sm text-base11">Official packages</p>
-                </button>
+                <OfficialPackageButton v-model="officialPackagesOnly" />
 
                 <ButtonGroup class="flex-1" md="flex-auto">
                   <Order v-model="order" />
@@ -177,16 +168,3 @@ function fetchNewPageData(page: number) {
     </div>
   </Layout>
 </template>
-
-<style scoped>
-.bg-mask {
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 1) 620px);
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 1) 8%);
-}
-
-.bg-topography {
-  background-size: 620px;
-  background-image: url('@/assets/topography.svg');
-}
-</style>
-@/app/types

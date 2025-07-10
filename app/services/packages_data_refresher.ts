@@ -16,7 +16,7 @@ export class PackagesDataRefresher {
    * Get the first and last release dates from cache or fetch it from npm
    */
   async #getReleasesDates(pkg: PackageInfo) {
-    if (!pkg.npm) return { firstReleaseAt: '', lastReleaseAt: '' }
+    if (!pkg.npm || this.#shouldSkipNpmFetch(pkg)) return { firstReleaseAt: '', lastReleaseAt: '' }
 
     return this.packageFetcher.fetchReleaseDates(pkg.npm!).catch((err) => {
       logger.error({ err }, `Cannot fetch releases dates for ${pkg.npm}`)
@@ -28,12 +28,19 @@ export class PackagesDataRefresher {
    * Get the package downloads from cache or fetch it from npm
    */
   async #getPackageDownloads(pkg: PackageInfo) {
-    if (!pkg.npm) return { downloads: 0 }
+    if (!pkg.npm || this.#shouldSkipNpmFetch(pkg)) return { downloads: 0 }
 
     return this.packageFetcher.fetchPackageDownloads(pkg.npm!).catch((err) => {
       logger.error({ err }, `Cannot fetch npm info for ${pkg.npm}`)
       return { downloads: 0 }
     })
+  }
+
+  /**
+   * Check if we should skip npm fetching for specific package types
+   */
+  #shouldSkipNpmFetch(pkg: PackageInfo): boolean {
+    return ['Starter kits'].includes(pkg.category) || !pkg.npm
   }
 
   /**
@@ -83,7 +90,7 @@ export class PackagesDataRefresher {
       'packageName',
       packages.map((pkg) => ({
         packageName: pkg.name,
-        githubStars: pkg.stars,
+        githubStars: pkg.stars || 0,
         weeklyDownloads: pkg.downloads ? pkg.downloads : 0,
         firstReleaseAt: pkg.firstReleaseAt ? DateTime.fromISO(pkg.firstReleaseAt) : null,
         lastReleaseAt: pkg.lastReleaseAt ? DateTime.fromISO(pkg.lastReleaseAt) : null,
