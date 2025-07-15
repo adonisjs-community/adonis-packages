@@ -1,0 +1,15 @@
+name: EaseAdmin
+description: Admin Panel Based on AdonisJS & Amis
+repo: easeadmin/core#main
+npm: '@easeadmin/core'
+icon: 'easeadmin.png'
+github: https://github.com/easeadmin/core
+website: https://github.com/easeadmin
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Leon
+    github: tmkook
+compatibility:
+  adonis: ^6.0.0
