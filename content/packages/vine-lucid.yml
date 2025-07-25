@@ -1,0 +1,19 @@
+name: '@akago/vine-lucid'
+description: Generate a vine schema based on a lucid model definition
+repo: akago-dev/vine-lucid
+npm: '@akago/vine-lucid'
+icon: ''
+github: https://github.com/akago-dev/vine-lucid
+website: https://github.com/akago-dev/vine-lucid
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: P.O Marec
+    github: pomarec
+compatibility:
+  adonis: ^6.0.0
+keywords:
+  - lucid
+  - vine
+  - validation
