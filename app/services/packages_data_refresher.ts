@@ -1,11 +1,13 @@
 import pLimit from 'p-limit'
 import { DateTime } from 'luxon'
+import { inject } from '@adonisjs/core'
 import logger from '@adonisjs/core/services/logger'
 
 import type { PackageInfo } from '#types/main'
 import PackageStats from '#models/package_stats'
-import type { PackageFetcher } from './package_fetcher.js'
+import { PackageFetcher } from './package_fetcher.js'
 
+@inject()
 export class PackagesDataRefresher {
   constructor(
     protected packageFetcher: PackageFetcher,

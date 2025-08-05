@@ -1,12 +1,14 @@
+import { inject } from '@adonisjs/core'
 import cache from '@adonisjs/cache/services/main'
 import logger from '@adonisjs/core/services/logger'
 
 import PackageStats from '#models/package_stats'
+import { PackageFetcher } from './package_fetcher.js'
 import { categories } from '../../content/categories.js'
 import { MarkdownRenderer } from './markdown_renderer.js'
-import type { PackageFetcher } from './package_fetcher.js'
 import type { PackageInfo, PackagesFilters, SortOrder } from '#types/main'
 
+@inject()
 export class PackagesFetcher {
   #markdownRenderer = new MarkdownRenderer()
 
