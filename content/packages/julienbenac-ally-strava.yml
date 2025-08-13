@@ -1,0 +1,15 @@
+name: '@julienbenac/ally-strava'
+description: A Strava driver for AdonisJS Ally
+repo: julienbenac/ally-strava
+npm: '@julienbenac/ally-strava'
+icon: strava.png
+github: https://github.com/julienbenac/ally-strava
+website: https://github.com/julienbenac/ally-strava
+learn_more: ''
+category: Authentication
+type: 3rd-party
+maintainers:
+  - name: Julien Benac
+    github: julienbenac
+compatibility:
+  adonis: ^6.0.0
