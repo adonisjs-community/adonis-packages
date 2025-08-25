@@ -1,0 +1,17 @@
+name: easeadmin
+category: Extensions
+npm: easeadmin
+repo: easeadmin/core
+icon: 'easeadmin.png'
+description: EaseAdmin is a NodeJS Administrator Panels Based on AdonisJS and Amis
+compatibility:
+  adonis: ^6.0.0
+keywords:
+  - amis
+  - lowcode
+  - scaffold
+firstReleaseAt: '2025-08-17T20:04:46.646Z'
+lastReleaseAt: '2025-08-22T17:36:59.846Z'
+type: 3rd-party
+github: https://github.com/easeadmin/core/tree/main
+website: https://easeadmin.github.io/docs
