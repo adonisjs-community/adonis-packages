@@ -1,0 +1,15 @@
+name: '@julienbenac/ally-gerermesaffaires'
+description: A GererMesAffaires driver for AdonisJS Ally
+repo: julienbenac/ally-gerermesaffaires
+npm: '@julienbenac/ally-gerermesaffaires'
+icon: gerermesaffaires.png
+github: https://github.com/julienbenac/ally-gerermesaffaires
+website: https://github.com/julienbenac/ally-gerermesaffaires
+learn_more: ''
+category: Authentication
+type: 3rd-party
+maintainers:
+  - name: Julien Benac
+    github: julienbenac
+compatibility:
+  adonis: ^6.0.0
