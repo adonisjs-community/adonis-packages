@@ -1,0 +1,15 @@
+name: react-adonisjs
+description: Build fullstack React Router applications with AdonisJS
+category: Rendering
+npm: '@matstack/react-adonisjs'
+repo: jarle/react-adonisjs
+learn_more: ''
+compatibility:
+  adonis: ^6.0.0
+maintainers:
+  - name: Jarle Mathiesen
+    github: jarle
+type: 3rd-party
+icon: react-router.png
+github: https://github.com/jarle/react-adonisjs
+website: https://matstack.dev/react-adonisjs/
