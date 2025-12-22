@@ -1,0 +1,15 @@
+name: adonis-mcp
+description: MCP (Model Context Protocol) for AdonisJS.
+repo: batosai/adonis-mcp#main
+npm: '@jrmc/adonis-mcp'
+icon: ''
+github: https://github.com/batosai/adonis-mcp
+website: https://adonis-mcp.jrmc.dev
+learn_more: ''
+category: Extensions
+type: 3rd-party
+maintainers:
+  - name: Jeremy Chaufourier
+    github: batosai
+compatibility:
+  adonis: ^6.0.0
