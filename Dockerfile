@@ -1,5 +1,6 @@
 FROM node:lts-bookworm-slim AS base
 
+RUN apt-get update && apt-get install -y python3 build-essential && rm -rf /var/lib/apt/lists/*
 RUN npm install -g corepack@latest
 RUN corepack enable
 
