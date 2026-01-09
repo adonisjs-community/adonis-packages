@@ -1,0 +1,15 @@
+name: adonisjs-elasticsearch
+category: Database
+npm: @aurelien-conte/adonisjs-elasticsearch
+repo: AurelienConte/adonisjs-elasticsearch
+icon: elasticsearch.png
+description: >-
+  A wrapper for ElasticSearch support.
+compatibility:
+  adonis: ^6.0.0
+type: 3rd-party
+github: https://github.com/AurelienConte/adonis-packages
+website: https://github.com/AurelienConte/adonis-packages
+maintainers:
+  - name: Aurelien Conte
+    github: AurelienConte
