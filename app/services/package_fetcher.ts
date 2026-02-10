@@ -47,10 +47,11 @@ export class PackageFetcher {
   /**
    * Fetch package.json file from github repository
    * @param repository GitHub repository name in format username/repo-name
+   * @param directory Directory inside the repository where the package.json file is located.
    * @param branch Branch to fetch the package.json file from
    */
-  fetchGithubPkg(repository: string, branch = 'main') {
-    const url = `https://raw.githubusercontent.com/${repository}/${branch}/package.json`
+  fetchGithubPkg(repository: string, directory: string, branch = 'main') {
+    const url = `https://raw.githubusercontent.com/${repository}/${branch}/${directory.length ? `${directory}/` : ''}package.json`
     return fetch(url).then((res) => res.json()) as Promise<Record<string, any>>
   }
 

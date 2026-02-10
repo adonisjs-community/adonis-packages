@@ -46,16 +46,39 @@ export default class AddPackage extends BaseCommand {
   async #promptForGithubRepo() {
     return await this.prompt.ask('What is the github repo?', {
       name: 'repo',
-      hint: 'owner/repo#main',
+      hint: 'owner/repo[/path]#main',
       result: (value) => {
-        const [name, branch] = value.trim().split('#')
-        return { name, branch: branch || 'main' }
+        const trimmed = value.trim()
+        const [repoAndDirectory, branch = 'main'] = trimmed.split('#')
+
+        const [owner, repo, ...directoryParts] = repoAndDirectory.split('/')
+        const directory = directoryParts.join('/')
+
+        return {
+          owner,
+          repo,
+          branch,
+          directory,
+          get name() {
+            return `${owner}/${repo}`
+          },
+        }
       },
 
       validate: (value) => {
-        const isValid = value.trim().length > 0 && value.includes('/')
-        if (isValid) return true
-        return 'Please enter a valid github repo name'
+        const trimmed = value.trim()
+        if (!trimmed) {
+          return 'Please enter a GitHub repo'
+        }
+
+        const [repoPart] = trimmed.split('#')
+        const parts = repoPart.split('/')
+
+        if (parts.length < 2) {
+          return 'Format must be owner/repo[/path]'
+        }
+
+        return true
       },
     })
   }
@@ -63,11 +86,20 @@ export default class AddPackage extends BaseCommand {
   /**
    * Fetch package details from github and npm registry
    */
-  async #fetchPackageDetails(fetcher: PackageFetcher, repo: { name: string; branch: string }) {
+  async #fetchPackageDetails(
+    fetcher: PackageFetcher,
+    repo: {
+      owner: string
+      repo: string
+      branch: string
+      directory: string
+      name: string
+    },
+  ) {
     const spinner = this.ui.logger.await('Fetching package details from github and npm').start()
 
     try {
-      const githubPkg = await fetcher.fetchGithubPkg(repo.name, repo.branch)
+      const githubPkg = await fetcher.fetchGithubPkg(repo.name, repo.directory, repo.branch)
       const npmPkg = await fetcher.fetchNpmPkg(githubPkg.name)
 
       return { githubPkg, npmPkg }
@@ -140,7 +172,7 @@ export default class AddPackage extends BaseCommand {
     this.#package.firstReleaseAt = npmPkg.time.created
     this.#package.lastReleaseAt = npmPkg.time.modified
     this.#package.type = this.#determinePackageType(repo.name)
-    this.#package.github = `https://github.com/${repo.name}/tree/${repo.branch}`
+    this.#package.github = `https://github.com/${repo.name}/tree/${repo.branch}${repo.directory.length ? `/${repo.directory}` : ''}`
     this.#package.website = this.#package.github
 
     /**
