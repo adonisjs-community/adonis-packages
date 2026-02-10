@@ -1,0 +1,12 @@
+name: '@adogrove/adonis-geolite2'
+category: Extensions
+npm: '@adogrove/adonis-geolite2'
+repo: adogrove/monorepo
+description: Maxmind's GeoLite2 integration for Adonis.
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2026-02-08T16:31:39.660Z'
+lastReleaseAt: '2026-02-08T18:52:38.177Z'
+type: 3rd-party
+github: https://github.com/adogrove/monorepo/tree/main/packages/geolite2
+website: https://adogrove.stouder.io/packages/geolite2

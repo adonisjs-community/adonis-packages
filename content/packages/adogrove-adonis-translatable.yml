@@ -1,0 +1,12 @@
+name: '@adogrove/adonis-translatable'
+category: Database
+npm: '@adogrove/adonis-translatable'
+repo: adogrove/monorepo
+description: Translatable fields for Lucid models.
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2026-02-10T21:02:14.776Z'
+lastReleaseAt: '2026-02-10T22:02:49.503Z'
+type: 3rd-party
+github: https://github.com/adogrove/monorepo/tree/main/packages/translatable
+website: https://adogrove.stouder.io/packages/translatable

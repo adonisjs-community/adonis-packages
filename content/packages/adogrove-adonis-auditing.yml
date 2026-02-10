@@ -1,0 +1,12 @@
+name: '@adogrove/adonis-auditing'
+category: Database
+npm: '@adogrove/adonis-auditing'
+repo: adogrove/monorepo
+description: Audit your Lucid models with ease.
+compatibility:
+  adonis: ^6.0.0
+firstReleaseAt: '2026-02-08T16:28:02.407Z'
+lastReleaseAt: '2026-02-08T18:52:38.169Z'
+type: 3rd-party
+github: https://github.com/adogrove/monorepo/tree/main/packages/auditing
+website: https://adogrove.stouder.io/packages/auditing
