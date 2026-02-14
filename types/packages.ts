@@ -117,7 +117,7 @@ export type PackagesFilters = {
   search: string
   order: SortOrder
   orderBy: 'name' | 'downloads' | 'stars' | 'updated' | 'created'
-  version?: '5' | '6'
+  version?: '5' | '6' | '7'
   officialOnly: boolean
   page: number
 }
