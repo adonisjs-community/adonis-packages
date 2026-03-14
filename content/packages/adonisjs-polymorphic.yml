@@ -1,0 +1,15 @@
+name: adonisjs-polymorphic
+description: Polymorphic relations (morphOne, morphMany, morphTo) for AdonisJS Lucid ORM
+repo: holoyan/adonisjs-polymorphic#master
+npm: '@holoyan/adonisjs-polymorphic'
+icon: ''
+github: https://github.com/holoyan/adonisjs-polymorphic
+website: https://github.com/holoyan/adonisjs-polymorphic
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Artak
+    github: holoyan
+compatibility:
+  adonis: ^6.0.0 || ^7.0.0
