@@ -1,0 +1,14 @@
+name: adonisjs-server-stats
+category: Monitoring
+npm: adonisjs-server-stats
+repo: simulieren/adonisjs-server-stats
+description: Laravel Telescope-inspired dev toolbar and real-time server monitor for AdonisJS v6 & v7
+compatibility:
+  adonis: ^6.0.0 || ^7.0.0
+type: 3rd-party
+github: https://github.com/simulieren/adonisjs-server-stats
+website: https://github.com/simulieren/adonisjs-server-stats
+learn_more: ''
+maintainers:
+  - name: simulieren
+    github: simulieren
