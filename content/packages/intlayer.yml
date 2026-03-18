@@ -1,0 +1,17 @@
+name: adonis-intlayer
+description: Scoped i18n for AdonisJS apps
+repo: aymericzip/intlayer
+npm: 'adonis-intlayer'
+icon: ''
+github: https://github.com/aymericzip/intlayer
+website: https://intlayer.org/doc/environment/adonisjs
+learn_more: 'https://intlayer.org/doc'
+category: DevTools
+type: 3rd-party
+maintainers:
+  - name: Aymeric PINEAU
+    github: aymericzip
+compatibility:
+  adonis: ^5.0.0 || ^6.0.0 || ^7.0.0
+keywords:
+  - i18n
