@@ -1,0 +1,16 @@
+name: adonis-debugbar
+npm: adonis-debugbar
+description: Per-request debug bar for AdonisJS. Captures queries, timeline, route, session, logs, exceptions and
+Inertia data.
+repo: imsyedabdullah/adonis-debugbar
+icon: adonis-debugbar.png
+github: https://github.com/imsyedabdullah/adonis-debugbar
+website: https://github.com/imsyedabdullah/adonis-debugbar
+learn_more: ''
+category: DevTools
+type: 3rd-party
+maintainers:
+  - name: Syed Abdullah
+    github: imsyedabdullah
+compatibility:
+  adonis: ^6.0.0 || ^7.0.0
