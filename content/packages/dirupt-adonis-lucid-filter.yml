@@ -1,0 +1,15 @@
+name: '@dirupt/adonis-lucid-filter'
+description: Addon for filtering AdonisJS Lucid ORM (AdonisJS v7 fork).
+repo: dirupt-agency/adonis-lucid-filter#master
+npm: '@dirupt/adonis-lucid-filter'
+icon: dirupt-adonis-lucid-filter.png
+github: https://github.com/dirupt-agency/adonis-lucid-filter
+website: https://github.com/dirupt-agency/adonis-lucid-filter
+learn_more: ''
+category: Database
+type: 3rd-party
+maintainers:
+  - name: Dirupt
+    github: dirupt-agency
+compatibility:
+  adonis: ^7.0.0
