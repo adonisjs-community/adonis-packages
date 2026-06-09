@@ -1,0 +1,12 @@
+name: adonisjs-mongoose
+category: Database
+npm: adonisjs-mongoose
+repo: sakib412/adonisjs-mongoose
+description: Mongoose ODM integration for AdonisJS — config-driven multiple connections, container-managed manager, models, ace command, REPL bindings and health checks.
+compatibility:
+  adonis: ^7.0.0
+firstReleaseAt: '2026-01-14T12:11:53.332Z'
+lastReleaseAt: '2026-06-09T11:59:57.780Z'
+type: 3rd-party
+github: https://github.com/sakib412/adonisjs-mongoose/tree/main
+website: https://github.com/sakib412/adonisjs-mongoose/tree/main
