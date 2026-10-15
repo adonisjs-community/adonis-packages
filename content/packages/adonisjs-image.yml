@@ -1,0 +1,19 @@
+name: AdonisJS Image
+category: Storage
+npm: adonisjs-image
+repo: guoyunhe/adonisjs-image#main
+description: Image upload, processing and management for AdonisJS
+compatibility:
+  adonis: ^7.0.0
+type: 3rd-party
+github: https://github.com/guoyunhe/adonisjs-image
+website: https://github.com/guoyunhe/adonisjs-image
+maintainers:
+  - name: Guo Yunhe
+    github: guoyunhe
+keywords:
+  - image
+  - upload
+  - processing
+  - drive
+  - lucid
