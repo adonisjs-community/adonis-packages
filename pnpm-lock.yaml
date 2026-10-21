@@ -116,6 +116,9 @@ importers:
       satori-html:
         specifier: ^0.3.2
         version: 0.3.2
+      semver:
+        specifier: ^7.7.2
+        version: 7.7.2
       sitemap:
         specifier: ^8.0.0
         version: 8.0.0
@@ -180,6 +183,9 @@ importers:
       '@types/sanitize-html':
         specifier: ^2.16.0
         version: 2.16.0
+      '@types/semver':
+        specifier: ^7.8.0
+        version: 7.8.0
       '@unocss/reset':
         specifier: ^66.1.4
         version: 66.1.4
@@ -1532,6 +1538,9 @@ packages:
 
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
+
+  '@types/semver@7.8.0':
+    resolution: {integrity: sha512-1mAINjtQCXXeLkJ9ehXkwOcBpqtLxiVtKhpUf83DdRNdQKV0iXZpaHYqRr7nj+wvxuJzoAmAwXI+sCNMv1CzLQ==}
 
   '@types/superagent@8.1.9':
     resolution: {integrity: sha512-pTVjI73witn+9ILmoJdajHGW2jkSaOzhiFYF1Rd3EQ94kymLqB9PjD9ISg7WaALC7+dCHT0FGe9T2LktLq/3GQ==}
@@ -5748,6 +5757,8 @@ snapshots:
   '@types/sax@1.2.7':
     dependencies:
       '@types/node': 24.0.0
+
+  '@types/semver@7.8.0': {}
 
   '@types/superagent@8.1.9':
     dependencies:

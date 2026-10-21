@@ -1,15 +1,7 @@
 name: lucid-filter
 description: Addon for filtering AdonisJS Lucid ORM
-repo: lookinlab/adonis-lucid-filter#develop
-npm: adonis-lucid-filter
-icon: ''
-github: https://github.com/lookinlab/adonis-lucid-filter
-website: https://github.com/lookinlab/adonis-lucid-filter
-learn_more: ''
 category: Database
 type: 3rd-party
-maintainers:
-  - name: lookinlab
-    github: lookinlab
-compatibility:
-  adonis: ^5.0.0 || ^6.0.0
+npm: adonis-lucid-filter
+repo: https://github.com/lookinlab/adonis-lucid-filter
+compatibility: ^5.0.0 || ^6.0.0

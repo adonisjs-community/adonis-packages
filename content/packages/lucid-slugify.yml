@@ -1,15 +1,8 @@
 name: lucid-slugify
 description: Generate unique slugs for your Lucid models
-repo: adonisjs/lucid-slugify#develop
-npm: '@adonisjs/lucid-slugify'
-icon: adonis.png
-github: https://github.com/adonisjs/lucid-slugify
-website: https://github.com/adonisjs/lucid-slugify
-learn_more: ''
 category: Database
 type: official
-maintainers:
-  - name: adonisjs
-    github: adonisjs
-compatibility:
-  adonis: ^5.0.0
+npm: '@adonisjs/lucid-slugify'
+repo: https://github.com/adonisjs/lucid-slugify
+icon: adonis.png
+compatibility: ^5.0.0 || ^6.0.0 || ^7.0.0

@@ -1,17 +1,8 @@
-name: 'girouette'
-description: 'An AdonisJS package allowing decorators-based routing.'
-repo: adonisjs-community/girouette
-npm: '@adonisjs-community/girouette'
-icon: 'girouette.png'
-github: https://github.com/adonisjs-community/girouette
-website: https://github.com/adonisjs-community/girouette
-learn_more: ''
+name: girouette
+description: An AdonisJS package allowing decorators-based routing.
 category: Extensions
 type: 3rd-party
-maintainers:
-  - name: Alexis Bouchez
-    github: alexisbouchez
-  - name: Raphaël Alarcon
-    github: densetsuuu
-compatibility:
-  adonis: ^6.0.0
+npm: '@adonisjs-community/girouette'
+repo: https://github.com/adonisjs-community/girouette
+icon: girouette.png
+compatibility: ^6.0.0 || ^7.0.0

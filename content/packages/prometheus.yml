@@ -1,15 +1,8 @@
 name: prometheus
-description: '📊 Prometheus integration for AdonisJS'
-repo: Julien-R44/adonis5-prometheus
-npm: '@julr/adonisjs-prometheus'
-icon: prometheus.png
-github: https://github.com/Julien-R44/adonisjs-prometheus
-website: https://github.com/Julien-R44/adonisjs-prometheus
-learn_more: ''
+description: 📊 Prometheus integration for AdonisJS
 category: Monitoring
 type: 3rd-party
-maintainers:
-  - name: Julien-R44
-    github: Julien-R44
-compatibility:
-  adonis: ^6.0.0
+npm: '@julr/adonisjs-prometheus'
+repo: https://github.com/Julien-R44/adonisjs-prometheus
+icon: prometheus.png
+compatibility: ^6.0.0 || ^7.0.0

@@ -4,16 +4,16 @@ import { faker } from '@faker-js/faker'
 import { getDirname } from '@poppinss/utils'
 import { readFile, rm } from 'node:fs/promises'
 
-import type { PackageInfo } from '#types/main'
 import { categories } from '../content/categories.js'
 import { PackageFetcher } from '#services/package_fetcher'
+import type { PackageInfo, PackageManifest } from '#types/main'
 import { PackageStatFactory } from '../database/factories/package_stat_factory.js'
 
 const dirname = getDirname(import.meta.url)
 
 export async function readPackageFile(name: string) {
   const yml = await readFile(join(dirname, `../content/packages/${name}.yml`), 'utf-8')
-  return load(yml) as PackageInfo
+  return load(yml) as PackageManifest
 }
 
 export async function deletePackageFile(name: string) {
@@ -54,7 +54,7 @@ export async function packageFactory(overrides: Partial<PackageInfo> = {}): Prom
   return {
     name,
     category: faker.helpers.arrayElement(categories).label,
-    compatibility: { adonis: '>=5.0.0' },
+    compatibility: '^6.0.0 || ^7.0.0',
     description: faker.lorem.sentence(),
     downloads: 0,
     slug: faker.helpers.slugify(name),

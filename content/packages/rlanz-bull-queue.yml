@@ -1,15 +1,7 @@
 name: '@rlanz/bull-queue'
 description: Queue system based on BullMQ for AdonisJS
-repo: RomainLanz/adonis-bull-queue
-npm: '@rlanz/bull-queue'
-icon: ''
-github: https://github.com/romainlanz/adonis-bull-queue
-website: https://github.com/romainlanz/adonis-bull-queue
-learn_more: ''
 category: Extensions
 type: 3rd-party
-maintainers:
-  - name: Romain Lanz
-    github: romainlanz
-compatibility:
-  adonis: ^5.0.0 || ^6.0.0
+npm: '@rlanz/bull-queue'
+repo: https://github.com/romainlanz/adonis-bull-queue
+compatibility: ^5.0.0 || ^6.0.0

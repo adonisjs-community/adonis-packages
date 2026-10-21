@@ -1,0 +1,44 @@
+name: Packages
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'content/**'
+      - 'public/icons/**'
+  schedule:
+    # Every Monday, to catch packages that got archived or deprecated
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: test
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+      - name: Install dependencies
+        run: pnpm install
+      - name: Validate all package files
+        run: node ace validate:packages
+      - name: Check changed package files against npm and GitHub
+        if: github.event_name == 'pull_request'
+        run: |
+          files=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD -- 'content/packages/*.yml')
+          if [ -n "$files" ]; then node ace validate:packages --online $files; fi
+      - name: Check all package files against npm and GitHub
+        if: github.event_name != 'pull_request'
+        run: node ace validate:packages --online

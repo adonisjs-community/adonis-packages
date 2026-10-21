@@ -1,13 +1,8 @@
 name: inertia
-category: Rendering
-npm: '@adonisjs/inertia'
-repo: adonisjs/inertia
 description: Official Inertia.js adapter for AdonisJS
-icon: inertia.png
-compatibility:
-  adonis: ^6.0.0
-firstReleaseAt: '2023-11-15T23:16:23.326Z'
-lastReleaseAt: '2024-03-30T18:58:26.686Z'
+category: Rendering
 type: official
-github: https://github.com/adonisjs/inertia/tree/main
-website: https://github.com/adonisjs/inertia/tree/main
+npm: '@adonisjs/inertia'
+repo: https://github.com/adonisjs/inertia/tree/main
+icon: inertia.png
+compatibility: ^6.0.0 || ^7.0.0

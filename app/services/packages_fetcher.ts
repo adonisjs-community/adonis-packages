@@ -99,11 +99,8 @@ export class PackagesFetcher {
   #filterByVersions<T extends PackageInfo>(packages: T[], version: string) {
     const specifiersRegex = /[\^~]/g
     return packages.filter((pkg) => {
-      // Some packages don't have compatibility
-      if (!pkg.compatibility) return false
-
       // Split compatibility since we can have multiple versions
-      const pkgVersions = pkg.compatibility.adonis.split('||').map((v) => v.trim())
+      const pkgVersions = pkg.compatibility.split('||').map((v) => v.trim())
 
       // Remove ^ and ~ from the version
       const cleanVersion = pkgVersions.map((v) => v.replace(specifiersRegex, ''))
