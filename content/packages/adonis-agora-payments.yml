@@ -1,0 +1,9 @@
+name: '@adonis-agora/payments'
+description: 'Billing library for AdonisJS — 18 payment gateways behind one driver contract, with a Cashier-style subscription layer: Billable mixin, Lucid stores and idempotent webhook processing. Part of the Agora ecosystem.'
+category: Payment
+type: 3rd-party
+npm: '@adonis-agora/payments'
+repo: https://github.com/DavideCarvalho/adonis-agora-payments
+website: https://davidecarvalho.github.io/agora/docs/payments
+icon: agora.svg
+compatibility: ^7.0.0

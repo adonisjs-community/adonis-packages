@@ -1,13 +1,9 @@
 name: '@foadonis/magnify'
-category: Database
-npm: '@foadonis/magnify'
-repo: FriendsOfAdonis/FriendsOfAdonis
 description: Plug and play full-text search for your Adonis application.
-icon: foadonis.png
-compatibility:
-  adonis: ^6.0.0
-firstReleaseAt: '2024-09-28T15:18:50.355Z'
-lastReleaseAt: '2024-10-02T22:03:47.155Z'
+category: Database
 type: 3rd-party
-github: https://github.com/FriendsOfAdonis/FriendsOfAdonis/tree/main/packages/magnify
+npm: '@foadonis/magnify'
+repo: https://github.com/FriendsOfAdonis/FriendsOfAdonis/tree/main/packages/magnify
 website: https://friendsofadonis.com/docs/magnify
+icon: foadonis.png
+compatibility: ^6.0.0 || ^7.0.0

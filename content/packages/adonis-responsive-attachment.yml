@@ -1,17 +1,7 @@
 name: responsive-attachment
-description: >-
-  Turn any field on your Lucid models to an image attachment data type while
-  automatically generating responsive sizes for the attached image files.
-repo: ndianabasi/adonis-responsive-attachment#develop
-npm: adonis-responsive-attachment
-icon: ''
-github: https://github.com/ndianabasi/adonis-responsive-attachment
-website: https://github.com/ndianabasi/adonis-responsive-attachment
-learn_more: ''
+description: Turn any field on your Lucid models to an image attachment data type while automatically generating responsive sizes for the attached image files.
 category: Database
 type: 3rd-party
-maintainers:
-  - name: Ndianabasi Udonkang
-    github: ndianabasi
-compatibility:
-  adonis: ^5.0.0
+npm: adonis-responsive-attachment
+repo: https://github.com/ndianabasi/adonis-responsive-attachment
+compatibility: ^5.0.0

@@ -1,0 +1,9 @@
+name: '@adonis-agora/filter'
+description: Server-side query filtering/sorting/pagination for AdonisJS — Spatie-style input, a Lucid adapter, and field allow-listing. Part of the Agora ecosystem.
+category: Database
+type: 3rd-party
+npm: '@adonis-agora/filter'
+repo: https://github.com/DavideCarvalho/adonis-agora-filter
+website: https://davidecarvalho.github.io/agora/docs/filter
+icon: agora.svg
+compatibility: ^7.0.0

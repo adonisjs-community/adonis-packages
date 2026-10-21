@@ -1,0 +1,9 @@
+name: '@adonis-agora/collaboration'
+description: Collaborative editing (CRDT) for AdonisJS 7 — Yjs (Hocuspocus) and Automerge drivers, Redis-backed presence, unified version control. Part of the Agora ecosystem.
+category: Communication
+type: 3rd-party
+npm: '@adonis-agora/collaboration'
+repo: https://github.com/DavideCarvalho/adonis-agora-collaboration
+website: https://davidecarvalho.github.io/agora/docs/collaboration
+icon: agora.svg
+compatibility: ^7.0.0

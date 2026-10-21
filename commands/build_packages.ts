@@ -1,10 +1,14 @@
-import { load } from 'js-yaml'
-import { globby } from 'globby'
-import { basename, join } from 'node:path'
-import { getDirname } from '@poppinss/utils'
+import { join } from 'node:path'
 import { BaseCommand } from '@adonisjs/core/ace'
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, writeFile } from 'node:fs/promises'
 import type { CommandOptions } from '@adonisjs/core/types/ace'
+
+import {
+  contentFolder,
+  readManifests,
+  toPackageInfo,
+  validateManifest,
+} from '#services/packages_content'
 
 export default class BuildPackages extends BaseCommand {
   static options: CommandOptions = { startApp: false }
@@ -12,34 +16,32 @@ export default class BuildPackages extends BaseCommand {
   static commandName = 'build:packages'
   static description = 'Create a big packages.json file with all the packages.'
 
-  #contentFolder = join(getDirname(import.meta.url), '../content')
-  #distFolder = join(getDirname(import.meta.url), '../content/build/')
+  #distFolder = join(contentFolder, 'build')
 
   /**
-   * Read a package file from the disk
-   */
-  async #readPackageFile(fileName: string) {
-    const filePath = join(this.#contentFolder, 'packages', `${fileName}.yml`)
-    return load(await readFile(filePath, 'utf-8')) as Record<string, any>
-  }
-
-  /**
-   * Read all stored packages from the disk
-   */
-  async #readPackages() {
-    const globPattern = join(this.#contentFolder, 'packages', '*.yml').replace(/\\/g, '/')
-    const files = await globby(globPattern)
-    const names = files.map((p) => basename(p, '.yml')).filter(Boolean)
-
-    return await Promise.all(names.map((n) => this.#readPackageFile(n)))
-  }
-
-  /**
-   * Read all packages stored as .yml and store them as a single
+   * Validate all the package files and store them as a single
    * JSON file
    */
   async run() {
-    const packages = await this.#readPackages()
+    const packages = []
+    let invalidFiles = 0
+
+    for (const { file, manifest } of await readManifests()) {
+      const result = await validateManifest(manifest)
+      if (!result.manifest || result.problems.length) {
+        invalidFiles++
+        this.logger.error(`${file}: ${result.problems.join('; ')}`)
+        continue
+      }
+
+      packages.push(toPackageInfo(result.manifest))
+    }
+
+    if (invalidFiles) {
+      this.logger.error(`${invalidFiles} invalid package file(s). Run "node ace validate:packages"`)
+      this.exitCode = 1
+      return
+    }
 
     const distFile = join(this.#distFolder, 'packages.json')
     await mkdir(this.#distFolder, { recursive: true })

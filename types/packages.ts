@@ -1,13 +1,6 @@
 import type { categories } from '../content/categories.js'
 
 /**
- * Module compatibility with AdonisJS
- */
-export type ModuleCompatibility = {
-  adonis: string
-}
-
-/**
  * Module type
  */
 export type ModuleType = 'official' | '3rd-party'
@@ -16,6 +9,65 @@ export type ModuleType = 'official' | '3rd-party'
  * Package category type
  */
 export type PackageCategory = (typeof categories)[number]['label']
+
+/**
+ * Shape of a package file stored in `content/packages/*.yml`. It mirrors
+ * the fields rendered by https://adonisjs.com/packages
+ */
+export type PackageManifest = {
+  /**
+   * Name of the package, displayed as title
+   */
+  name: string
+
+  /**
+   * Short description, displayed as subline
+   */
+  description: string
+
+  /**
+   * Category of the package
+   */
+  category: PackageCategory
+
+  /**
+   * Type of the package
+   */
+  type: ModuleType
+
+  /**
+   * GitHub URL of the package. Can point to a folder of a monorepo,
+   * e.g. `https://github.com/owner/repo/tree/main/packages/foo`
+   */
+  repo: string
+
+  /**
+   * AdonisJS major versions the package works with, written as caret
+   * ranges, e.g. `^6.0.0 || ^7.0.0`
+   */
+  compatibility: string
+
+  /**
+   * Npm package name. Omitted for packages not published on npm
+   * (starter kits, editor extensions)
+   */
+  npm?: string
+
+  /**
+   * Icon file name, stored in `public/icons`
+   */
+  icon?: string
+
+  /**
+   * Website or documentation URL, when different from the repo
+   */
+  website?: string
+
+  /**
+   * Keywords used for search
+   */
+  keywords?: string[]
+}
 
 export type PackageInfo = {
   /**
@@ -36,7 +88,7 @@ export type PackageInfo = {
   description: string
 
   /**
-   * GitHub repository, formatted as `owner/repo#branch`
+   * GitHub repository, formatted as `owner/repo`
    */
   repo: string
 
@@ -59,7 +111,7 @@ export type PackageInfo = {
   /**
    * Website URL. Default to github repo
    */
-  website: string
+  website?: string
 
   /**
    * Category of the package
@@ -74,7 +126,7 @@ export type PackageInfo = {
   /**
    * Compatibility with AdonisJS
    */
-  compatibility?: ModuleCompatibility
+  compatibility: string
 
   /**
    * Keywords for the package. Used for search
@@ -101,7 +153,7 @@ export type PackageInfo = {
    */
   lastReleaseAt?: string
 
-  [key: string]: string | string[] | number | undefined | ModuleCompatibility
+  [key: string]: string | string[] | number | undefined
 }
 
 /**
@@ -117,7 +169,7 @@ export type PackagesFilters = {
   search: string
   order: SortOrder
   orderBy: 'name' | 'downloads' | 'stars' | 'updated' | 'created'
-  version?: '5' | '6'
+  version?: '5' | '6' | '7'
   officialOnly: boolean
   page: number
 }

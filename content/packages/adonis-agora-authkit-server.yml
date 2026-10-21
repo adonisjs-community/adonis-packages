@@ -1,0 +1,9 @@
+name: '@adonis-agora/authkit-server'
+description: 'AdonisJS OIDC/OAuth2 provider (Identity Provider) toolkit: ejectable auth server with sessions, rate-limiting, MFA/TOTP, audit log, federated logout and OpenTelemetry metrics.'
+category: Authentication
+type: 3rd-party
+npm: '@adonis-agora/authkit-server'
+repo: https://github.com/DavideCarvalho/adonis-agora-authkit
+website: https://davidecarvalho.github.io/agora/docs/authkit
+icon: agora.svg
+compatibility: ^7.0.0

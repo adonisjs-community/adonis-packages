@@ -1,0 +1,9 @@
+name: '@adonis-agora/diagnostics'
+description: A standard convention for @adonis-agora/* AdonisJS libs to emit observability events over node:diagnostics_channel — recorded by a single generic Telescope watcher.
+category: Monitoring
+type: 3rd-party
+npm: '@adonis-agora/diagnostics'
+repo: https://github.com/DavideCarvalho/adonis-agora-diagnostics
+website: https://davidecarvalho.github.io/agora/docs/diagnostics
+icon: agora.svg
+compatibility: ^6.0.0 || ^7.0.0

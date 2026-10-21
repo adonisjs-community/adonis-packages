@@ -1,0 +1,9 @@
+name: '@adonis-agora/context'
+description: Shared AsyncLocalStorage context for AdonisJS — carries user/tenant/traceId across the request and the Agora ecosystem.
+category: Extensions
+type: 3rd-party
+npm: '@adonis-agora/context'
+repo: https://github.com/DavideCarvalho/adonis-agora-context
+website: https://davidecarvalho.github.io/agora/docs/context
+icon: agora.svg
+compatibility: ^6.0.0 || ^7.0.0

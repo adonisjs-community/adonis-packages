@@ -1,13 +1,8 @@
 name: admin-panel-generator
-repo: shagital/adonisjs-crud-generator#master
-description: 'Adonisjs Admin Panel Generator is a package that helps you quickly scaffold your typical CRUD admin interfaces. It generates the admin panel code based on the existing (migrated) table in the database'
-icon: adonisjs-crud-generator.png
-github: https://github.com/Shagital/adonisjs-crud-generator
-website: https://github.com/Shagital/adonisjs-crud-generator
-npm: '@shagital/adonisjs-crud-generator'
-learn_more: ''
+description: Adonisjs Admin Panel Generator is a package that helps you quickly scaffold your typical CRUD admin interfaces. It generates the admin panel code based on the existing (migrated) table in the database
 category: DevTools
 type: 3rd-party
-maintainers:
-  - name: djunehor
-    github: djunehor
+npm: '@shagital/adonisjs-crud-generator'
+repo: https://github.com/Shagital/adonisjs-crud-generator
+icon: adonisjs-crud-generator.png
+compatibility: ^5.0.0

@@ -23,8 +23,9 @@ function swapPackageFetcher(options: { githubResponse?: any; npmResponse?: any }
     async fetchNpmPkg() {
       if (options.npmResponse) return options.npmResponse
       return {
-        time: { created: '2022-01-01', modified: '2023-01-01' },
-        description: 'npm package description',
+        'dist-tags': { latest: '1.0.0' },
+        'versions': { '1.0.0': { peerDependencies: { '@adonisjs/core': '^6.2.0 || ^7.0.0' } } },
+        'description': 'npm package description',
       }
     }
   }
@@ -53,17 +54,14 @@ test.group('[Commands] Add Package', (group) => {
     await command.exec()
 
     const file = await readPackageFile('test-package')
-    assert.containsSubset(file, {
+    assert.deepEqual(file, {
       name: 'test-package',
-      github: 'https://github.com/owner/repo/tree/main',
-      website: 'https://github.com/owner/repo/tree/main',
       description: 'GitHub package description',
-      npm: 'github-package-name',
-      compatibility: { adonis: '^5.0.0' },
-      firstReleaseAt: '2022-01-01',
-      lastReleaseAt: '2023-01-01',
-      type: '3rd-party',
       category: 'Database',
+      type: '3rd-party',
+      npm: 'github-package-name',
+      repo: 'https://github.com/owner/repo',
+      compatibility: '^6.0.0 || ^7.0.0',
     })
   })
 

@@ -36,11 +36,33 @@ If you are looking for a good starting point to learn AdonisJS, then this repo m
 
 ### Add a new package
 
-The packages database is a simple collection of YAML files, where each file represents a package. Files are located in [./content/packages](./content/packages) directory. If you want to add a new package, you can create a new file in the same directory, or preferably, use the `node ace add:package` command.
+The packages database is a collection of YAML files, where each file represents a package. Files are located in the [./content/packages](./content/packages) directory and are used by both this website and [adonisjs.com/packages](https://adonisjs.com/packages).
+
+To add a package, create a new file in that directory, or preferably, use the `node ace add:package` command. A package file looks like this:
+
+```yaml
+# Required
+name: '@my-scope/my-package'
+description: A short description of what the package does
+category: Database # One of the labels in ./content/categories.ts
+type: 3rd-party # Or "official" for packages maintained by the AdonisJS core team
+repo: https://github.com/owner/repo # Can point to a monorepo folder: https://github.com/owner/repo/tree/main/packages/my-package
+compatibility: ^6.0.0 || ^7.0.0 # AdonisJS major versions the package works with
+
+# Optional
+npm: '@my-scope/my-package' # Omit for packages not published on npm
+website: https://my-package.dev # When the docs live outside the repo
+icon: my-package.png # File stored in ./public/icons
+keywords: [queue, jobs] # Used for search
+```
+
+Run `node ace validate:packages` to check your file. Pull requests run it automatically, along with `--online`, which also checks that the npm package and GitHub repository exist, are not deprecated or archived, and that `compatibility` matches the `@adonisjs/core` versions declared on npm. `node ace validate:packages --fix` updates `compatibility` from npm.
+
+Packages whose repository gets archived, or whose npm package gets deprecated, are removed from the list. A weekly job reports them.
 
 #### Custom Icon
 
-If you want to add an icon for you package, make sure to pick an appropriate image, not too big, not too small, in correct quality. Once you have the image, make sure to add it in `/public/icons` directory, and then add the path in the `icon` field of your package yaml file.
+If you want to add an icon for your package, make sure to pick an appropriate image, not too big, not too small, in correct quality. Once you have the image, make sure to add it in `/public/icons` directory, and then add the file name in the `icon` field of your package yaml file.
 
 #### Launch the website
 

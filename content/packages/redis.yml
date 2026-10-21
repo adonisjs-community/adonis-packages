@@ -1,15 +1,8 @@
 name: redis
 description: AdonisJS addon for Redis
-repo: adonisjs/redis#develop
-npm: '@adonisjs/redis'
-icon: redis.png
-github: https://github.com/adonisjs/redis
-website: https://github.com/adonisjs/redis
-learn_more: ''
 category: Database
 type: official
-maintainers:
-  - name: adonisjs
-    github: adonisjs
-compatibility:
-  adonis: ^5.0.0 || ^6.0.0
+npm: '@adonisjs/redis'
+repo: https://github.com/adonisjs/redis
+icon: redis.png
+compatibility: ^5.0.0 || ^6.0.0 || ^7.0.0

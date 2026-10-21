@@ -1,0 +1,9 @@
+name: '@adonis-agora/durable'
+description: Durable cross-app workflows for AdonisJS — deterministic replay engine, AdonisJS binding, ace commands, dashboard, OpenTelemetry, Telescope, testing harness and Redis admission, all in one package. Part of the Agora ecosystem.
+category: Extensions
+type: 3rd-party
+npm: '@adonis-agora/durable'
+repo: https://github.com/DavideCarvalho/adonis-agora-durable
+website: https://davidecarvalho.github.io/agora/docs/durable
+icon: agora.svg
+compatibility: ^6.0.0 || ^7.0.0

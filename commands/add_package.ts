@@ -1,20 +1,21 @@
-import { dump } from 'js-yaml'
-import { join } from 'node:path'
 import { inject } from '@adonisjs/core'
 import slugify from '@sindresorhus/slugify'
-import { writeFile } from 'node:fs/promises'
-import { getDirname } from '@poppinss/utils'
 import { BaseCommand } from '@adonisjs/core/ace'
 
-import type { PackageInfo } from '#types/main'
+import type { PackageManifest } from '#types/main'
 import { categories } from '../content/categories.js'
 import { PackageFetcher } from '#services/package_fetcher'
+import {
+  compatibilityFromCoreRanges,
+  coreRangesFromNpmDocument,
+  writeManifest,
+} from '#services/packages_content'
 
 export default class AddPackage extends BaseCommand {
   static commandName = 'add:package'
   static description = 'Add a new package to the Adonis Packages list.'
 
-  #package: Partial<PackageInfo> = {}
+  #package: Partial<PackageManifest> = {}
 
   /**
    * Display instructions to the user
@@ -33,11 +34,7 @@ export default class AddPackage extends BaseCommand {
    * Write the final package file to the disk
    */
   async #writePackageFile() {
-    const file = join(
-      getDirname(import.meta.url),
-      `../content/packages/${slugify(this.#package.name!)}.yml`,
-    )
-    await writeFile(file, dump(this.#package), 'utf-8')
+    await writeManifest(`${slugify(this.#package.name!)}.yml`, this.#package)
   }
 
   /**
@@ -132,16 +129,13 @@ export default class AddPackage extends BaseCommand {
      * Assign values to the final package file
      */
     this.#package.name = name
-    this.#package.category = category
-    this.#package.npm = githubPkg.name
-    this.#package.repo = repo.name
     this.#package.description = githubPkg.description
-    this.#package.compatibility = { adonis: '^5.0.0' }
-    this.#package.firstReleaseAt = npmPkg.time.created
-    this.#package.lastReleaseAt = npmPkg.time.modified
+    this.#package.category = category
     this.#package.type = this.#determinePackageType(repo.name)
-    this.#package.github = `https://github.com/${repo.name}/tree/${repo.branch}`
-    this.#package.website = this.#package.github
+    this.#package.npm = githubPkg.name
+    this.#package.repo = `https://github.com/${repo.name}`
+    this.#package.compatibility =
+      compatibilityFromCoreRanges(coreRangesFromNpmDocument(npmPkg)) ?? undefined
 
     /**
      * Write the final package file

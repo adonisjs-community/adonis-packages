@@ -13,6 +13,12 @@ const versionModel = defineModel<string | null>('version')
 
 const adonisVersions = [
   {
+    label: 'AdonisJS 7',
+    value: '7',
+    icon: 'i-mynaui:seven-waves',
+    subline: 'Compatible with AdonisJS 7',
+  },
+  {
     label: 'AdonisJS 6',
     value: '6',
     icon: 'i-mynaui:six-waves',

@@ -1,0 +1,12 @@
+name: '@outloud/adonis-scheduler'
+description: Cron job scheduler for AdonisJS 6.
+category: Extensions
+type: 3rd-party
+npm: '@outloud/adonis-scheduler'
+repo: https://github.com/madebyoutloud/adonis-scheduler
+compatibility: ^6.0.0 || ^7.0.0
+keywords:
+  - cron
+  - job
+  - task
+  - scheduler

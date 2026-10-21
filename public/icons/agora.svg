@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Agora</title>
+  <defs>
+    <linearGradient id="a" x1="16" y1="6" x2="16" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C6BFF"/>
+      <stop offset="1" stop-color="#5A45FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#0C0A0E"/>
+  <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M8.5 24 16 7.5 23.5 24" stroke="url(#a)" stroke-width="3.2"/>
+    <path d="M12.1 18.4H19.9" stroke="#ECE7E1" stroke-width="2.6"/>
+  </g>
+</svg>

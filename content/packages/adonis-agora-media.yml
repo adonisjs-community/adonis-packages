@@ -1,0 +1,9 @@
+name: '@adonis-agora/media'
+description: Media library for AdonisJS — owner collections, image conversions, pluggable content transformers (HLS video, metadata probe) and column attachments on top of @adonisjs/drive. Part of the Agora ecosystem.
+category: Storage
+type: 3rd-party
+npm: '@adonis-agora/media'
+repo: https://github.com/DavideCarvalho/adonis-agora-media
+website: https://davidecarvalho.github.io/agora/docs/media
+icon: agora.svg
+compatibility: ^7.0.0
